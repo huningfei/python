@@ -38,15 +38,6 @@ while a < 3:
 
 
 
-
-
-
-
-
-
-
-
-
 # 博客地址   http://www.cnblogs.com/huningfei/articles/8692321.html
 
 
