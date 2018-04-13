@@ -146,39 +146,39 @@
 #         i+=1
 #         #print (sum)
 # print (sum)
-
-
-
-
-li = [{'username':'alex','password':'SB'},
-     {'username':'wusir','password':'sb'},
-     {'username':'taibai','password':'123'},]
-a=0
-b=0
-while a < 3:
-
-    username = input("请输入你的用户名：")
-    passwd = input("请输入你的密码：")
-    for i in li:
-
-       if username == i['username'] and passwd == i['password']:
-            print('登录成功')
-            exit()
-    else:
-        print("登录失败请重新登录")
-    a += 1
-    b += 1
-    if a == 3:##当第一次的机会用完之后，在给她三次机会
-        a=0
-        if b  == 6: ##当b=6的时候就已经循环了两次，所有退出占整个循环
-            print ("你的六次机会已经全部用完，拜拜！")
-            break
-        m=input("还可以给你三次机会，请输入Y:")
-        if m=="Y":
-            continue
-        else:
-            print ("臭不要脸,你已经放弃了在玩三次的机会。")
-            break
+#
+#
+#
+#
+# li = [{'username':'alex','password':'SB'},
+#      {'username':'wusir','password':'sb'},
+#      {'username':'taibai','password':'123'},]
+# a=0
+# b=0
+# while a < 3:
+#
+#     username = input("请输入你的用户名：")
+#     passwd = input("请输入你的密码：")
+#     for i in li:
+#
+#        if username == i['username'] and passwd == i['password']:
+#             print('登录成功')
+#             exit()
+#     else:
+#         print("登录失败请重新登录")
+#     a += 1
+#     b += 1
+#     if a == 3:##当第一次的机会用完之后，在给她三次机会
+#         a=0
+#         if b  == 6: ##当b=6的时候就已经循环了两次，所有退出占整个循环
+#             print ("你的六次机会已经全部用完，拜拜！")
+#             break
+#         m=input("还可以给你三次机会，请输入Y:")
+#         if m=="Y":
+#             continue
+#         else:
+#             print ("臭不要脸,你已经放弃了在玩三次的机会。")
+#             break
 
 
 #
