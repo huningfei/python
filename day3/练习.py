@@ -98,62 +98,62 @@
 #         list.append({k:v for k,v in zip(keys,volumes.split())})
 #     print(list)
 ##注册
-user_status = {
-    'username': None,
-    'status': False
-}
-
-# flag = True
-# while True:
-#     with open('register', encoding='utf-8', mode='r') as f1,\
-#             open('register', encoding='utf-8', mode='a') as f2:
-#         username = input("请输入你要注册的用户名：")
-#         for i in f1:
-#             if username in i:
-#                 print("用户名已经存在，请更改")
-#                 break
-#         else:
-#             while flag:
-#                 one_passwd = input("请输入你的密码：")
-#                 two_passwd = input("请再次输入你的密码:")
-#                 if one_passwd != two_passwd:
-#                     print("你的密码不一致，请重新输入")
-#                     continue
-#                 else:
-#                     f2.write('%s  %s\n' % (username, two_passwd))
-#                     user_status['status'] = True
-#                     if user_status.get('status'):
-#                         print("你已经注册并登陆成功")
-#                     flag = False
+# user_status = {
+#     'username': None,
+#     'status': False
+# }
+# def register():
+#     flag = True
+#     while True:
+#         with open('register', encoding='utf-8', mode='r') as f1,\
+#                 open('register', encoding='utf-8', mode='a') as f2:
+#             username = input("请输入你要注册的用户名：")
+#             for i in f1:
+#                 if username in i:
+#                     print("用户名已经存在，请更改")
+#                     break
+#             else:
+#                 while flag:
+#                     one_passwd = input("请输入你的密码：")
+#                     two_passwd = input("请再次输入你的密码:")
+#                     if one_passwd != two_passwd:
+#                         print("你的密码不一致，请重新输入")
+#                         continue
+#                     else:
+#                         f2.write('%s  %s\n' % (username, two_passwd))
+#                         user_status['status'] = True
+#                         if user_status.get('status'):
+#                             print("你已经注册并登陆成功")
+#                         flag = False
 #
-#             break
-#     f1.close()
-#     f2.close()
-##登录
+#                 break
+#         f1.close()
+#         f2.close()
+# register()
+# ##登录
+#
+#
+# def login():
+#     print('注意，超过三次锁定用户')
+#     b = 0
+#     while b < 3:
+#         username = input("请输入你的用户名：")
+#         password = input("请输入你的密码:")
+#         with open('register',encoding='utf-8')as f1:
+#             for i in f1:
+#                 a = (i.split())
+#                 if a[0] == username and a[1] == password:
+#                     user_status['status'] = True
+#                     print(user_status.get('status'))
+#                     print("登录成功")
+#                     exit()
+#             else:
+#                 print("登录失败，请重新登录,你已经用了%s次" % (b+1))
+#             b += 1
+# login()
 
-a = 0
-while a < 3:
-    username = input("请输入你的用户名：")
-    password = input("请输入你的密码:")
-    with open('register',encoding='utf-8')as f1:
-        for i in f1:
-            a = (i.split())
-            #print(a[0],a[1])
-            if a[0] == username and a[1] == password:
-                    f1.seek(0,2)
-                    print("登录成功")
-                    exit()
-        else:
-            print("登录失败，请重新登录")
-            continue
-a += 1
 
-
-
-
-
-
-
+##装饰
 # def wrapper(f1):
 #     def inner(*args,**kwargs):
 #         if user_status.get('status')  ##如果登录成功，则正常访问
@@ -164,7 +164,12 @@ a += 1
 #     return f1
 # wrapper()
 
+dic = {1:'login',
+       2:'register',
+       3:'article'
+       }
 
+print(dic.get(1))
 
 
 
