@@ -72,19 +72,24 @@ import time
 # func1(111,222)  ##inner  把 111和222传给了上面的inner(*args）
 
 ##带返回值的装饰器
-def timer(f1):
-    def inner(*args,**kwargs):
-        start_time = time.time()
-        ret = f1(*args,**kwargs)  ##func1(111,222)
-        end_time = time.time()
-        print('此函数执行效率%s' % (end_time-start_time))
-        return ret  ##返回给了func1
-    return inner
-@timer  #func1 = timer(func1)
-def func1(a,b):
-    print(a,b)
-    print('hello world')
-    time.sleep(0.4)
-    return 666
-ret2 = func1(111,222)  ##inner(111,222)
-print(ret2)
+# def timer(f1):
+#     def inner(*args,**kwargs):
+#         start_time = time.time()
+#         ret = f1(*args,**kwargs)  ##func1(111,222)
+#         end_time = time.time()
+#         print('此函数执行效率%s' % (end_time-start_time))
+#         return ret  ##返回给了func1
+#     return inner
+# @timer  #func1 = timer(func1)
+# def func1(a,b):
+#     print(a,b)
+#     print('hello world')
+#     time.sleep(0.4)
+#     return 666
+# ret2 = func1(111,222)  ##inner(111,222)
+# print(ret2)
+
+def diary():
+    a =  ('-----欢迎来到日记页面-----')
+    return a
+print(diary())

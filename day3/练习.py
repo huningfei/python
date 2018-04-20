@@ -8,7 +8,7 @@
 
 #new_list=[]
 # total = 0
-# with open('a.txt',encoding='utf-8') as f1:
+# with open('article',encoding='utf-8') as f1:
 #     for i in f1:
 #         a=(i.split())
 #         # print(a)
@@ -23,7 +23,7 @@
 
 ##第二种写法，别人的
 # product = []
-# file = open("a.txt")
+# file = open("article")
 # flag = True
 # total = 0
 # while flag:
@@ -164,14 +164,14 @@
 #     return f1
 # wrapper()
 
-dic = {1:'login',
-       2:'register',
-       3:'article'
-       }
-
-print(dic.get(1))
 
 
+def comment():
+    with open('article',encoding='utf-8') as f1:
+        wen = f1.read()
+        print(wen)
+
+comment()
 
 
 
