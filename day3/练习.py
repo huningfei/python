@@ -166,12 +166,14 @@
 
 
 
-def comment():
+def inner():
     with open('article',encoding='utf-8') as f1:
         wen = f1.read()
-        print(wen)
+        return wen
 
-comment()
+print(type(inner))
+print(type(str(inner)))
 
-
+if logout() in inner:
+    exit()
 

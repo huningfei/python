@@ -9,22 +9,24 @@ user_status = {
 ##登录函数
 def wrapper(f2):
     def inner():
+        func1 = str(inner)
+        func2 = str(quit)
+        if func2 in func1:
+            exit()
         if user_status.get('status'):
             f2()  ##就是被装饰的函数
         else:
-            # login()
-            print('注意，请先登录，在操作，超过三次锁定用户')
+            print('\033[1;33m注意，请先登录，在操作，超过三次锁定用户\033[0m')
             b = 0
             while b < 3:
-                username = input("请输入你的用户名：")
-                password = input("请输入你的密码:")
+                username = input("\033[1;33m请输入你的用户名:\033[0m")
+                password = input("\033[1;33m请输入你的密码:\033[0m")
                 with open('register',encoding='utf-8')as f1:
                     for i in f1:
                         a = (i.split())
                         if a[0] == username and a[1] == password:
                             user_status['status'] = True
-                            print(user_status.get('status'))
-                            print("登录成功")
+                            print("\033[1;33m登录成功\033[0m")
                             return username
                     else:
                         print("登录失败，请重新登录,你已经用了%s次" % (b+1))
@@ -59,8 +61,6 @@ def register(): ##注册
                     else:
                         f2.write('%s  %s\n' % (username, two_passwd))
                         user_status['status'] = True
-                        if user_status.get('status'):
-                            print("你已经注册并登陆成功")
                         flag = False
                 break
         f1.close()
@@ -78,14 +78,14 @@ def diary():
 
 @wrapper
 def comment():
-    print('-----欢迎来到评论页面------')
+    print('\033[1;33m-----欢迎来到评论页面------\033[0m')
 @wrapper
 def collection():
-    print('------欢迎来到收藏页面------')
+    print('\033[1;33m------欢迎来到收藏页面------\033[0m')
 @wrapper
 def logout():
     user_status['status'] = False
-    print("你已经退出")
+    print("\033[1;33m你已经退出\033[0m'")
 @wrapper
 def quit():
     print("你已退出整个程序")
@@ -105,6 +105,6 @@ dic = {1:login,
 while True:
     with open('zuoye',encoding='utf-8') as f1:
           print(f1.read())
-          a = int(input("请选择一个序号操作：").strip())
-          dic.get(a)()
+          num= int(input("请选择一个序号操作：").strip())
+          dic.get(num)()
 
