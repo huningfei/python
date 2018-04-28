@@ -1,4 +1,3 @@
-from prettytable import PrettyTable  ##导入可以打印表格的模块
 
 ##转换数据
 TITLE=['id','name','age','phone','job']
@@ -91,11 +90,39 @@ def check_where(right_yuju):
     解析where条件，判断大于，小于，等于和like
     :return: age>22
     '''
+def select(match_data,left_yuju):
+    """
+
+    :param match_data:[['2', 'Egon', '23', '13304320533', 'Tearcher\n'], ['3', 'nezha', '25', '1333235322', 'IT']]
+    :param left_yuju: select name, age  from userinfo
+                    select name, age
+    :return:
+    """
+    filter_cols_tmp = left_yuju.split('from')[0].split()[1:] # [1:] # .split(',')#取出name,和age 例：[' name', ' age ']
+    # print("filter_cols_tmp", filter_cols_tmp)
+    #print(filter_cols_tmp)
+    filter_cols = [i.strip().strip(",") for i in filter_cols_tmp] ##取出干净的name和age
+    print(filter_cols)
+    reformat_data_set = []##最终要打印的数据
+    for row in match_data:  #
+        filtered_vals=[]
+        for col in filter_cols:
+            col_index = TITLE.index(col)
+            filtered_vals.append(row[col_index])
+        reformat_data_set.append(filtered_vals)
+    print(reformat_data_set)
+
+
 def check_input(cmd):  ## 检测输入的语句，并分割成两个语句（cmd是从用户输入的命令传过来的）
+    """
+
+    :param cmd: select name, age where age>22
+    :return:
+    """
     syntax_list={
         'select':select,
         'update':update,
-        'add':add,
+        'add':insert,
         'delete':delete
 
     }
@@ -103,9 +130,11 @@ def check_input(cmd):  ## 检测输入的语句，并分割成两个语句（cmd
         left_yuju,right_yuju = cmd.split('where')#以where关键字分割语句
         # print(left_yuju,right_yuju)
         matched_data=check_where(right_yuju)#把where后面的语句传送给了check_where
-        cmd_action=left_yuju.split()[0] ##获取是4个语句中的那个
-        if cmd_action in syntax_list:
-            syntax_list[cmd_action](matched_data,left_yuju)
+        print("matched_data", matched_data)
+        # cmd_action=left_yuju.split()[0] ##获取是4个语句是增删改查的那个语句
+        # if cmd_action in syntax_list:
+        syntax_list[cmd.split()[0]](matched_data,left_yuju)
+
     else:
         print("语法错误")
 
@@ -114,14 +143,8 @@ def check_input(cmd):  ## 检测输入的语句，并分割成两个语句（cmd
 def where():
     pass
 
-def select(match_data,left_yuju):
-
-    '''
-    :param match_data: [['2', 'Egon', '23', '13304320533', 'Tearcher\n'], ['3', 'nezha', '25', '1333235322', 'IT']]
-    :param left_yuju: elect name, age 左边的语句
-    :return:
-    '''
-
+def insert():
+    pass
 
 def update():
     pass
