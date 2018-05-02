@@ -1,3 +1,4 @@
+import os
 
 ##转换数据
 TITLE=['id','name','age','phone','job']
@@ -13,7 +14,7 @@ with open('userinfo',encoding='utf-8',mode='r') as f1:
         dic['age'].append(age)
         dic['phone'].append(phone)
         dic['job'].append(job)
-#print(dic)
+print(dic)
 
 def gt(a,b):
     match_list =[]
@@ -48,7 +49,7 @@ def lt(a,b):
 def eq(a,b):
     match_list = []
     for index, val in enumerate(dic[a]):  ##age[22,23,]并求出age的各个索引
-        if val == b:  ##匹配上了
+        if str(val) == str(b):  ##匹配上了
             # print("match",val)
             onwer_list = []
             for col in TITLE:
@@ -92,30 +93,40 @@ def check_where(right_yuju):
     '''
 def select(match_data,left_yuju):
     """
-
+    ##这个只是可以查看name和age的语句
     :param match_data:[['2', 'Egon', '23', '13304320533', 'Tearcher\n'], ['3', 'nezha', '25', '1333235322', 'IT']]
     :param left_yuju: select name, age  from userinfo
-                    select name, age
     :return:
     """
-    filter_cols_tmp = left_yuju.split('from')[0].split()[1:] # [1:] # .split(',')#取出name,和age 例：[' name', ' age ']
-    # print("filter_cols_tmp", filter_cols_tmp)
-    #print(filter_cols_tmp)
+
+    filter_cols_tmp = left_yuju.split('from')[0].split()[1:] #取出name,和age 例：[' name', ' age ']
     filter_cols = [i.strip().strip(",") for i in filter_cols_tmp] ##取出干净的name和age
-    print(filter_cols)
-    reformat_data_set = []##最终要打印的数据
-    for row in match_data:  #
-        filtered_vals=[]
-        for col in filter_cols:
-            col_index = TITLE.index(col)
-            filtered_vals.append(row[col_index])
-        reformat_data_set.append(filtered_vals)
-    print(reformat_data_set)
+    reformat_data_set = []  ##最终要打印的数据
+    if filter_cols==['*']:
+        #reformat_data_set = []  ##最终要打印的数据
+        for row in match_data:  ##row是['3', 'nezha', '25', '1333235322', 'IT']
+            filtered_vals = []  ##['Egon', '23']  ['nezha', '25']
+            for col in TITLE:  ##col是name和age
+                #print(col)
+                col_index = TITLE.index(col)  ##name和age在title里面的索引1和2的位置
+                filtered_vals.append(row[col_index])  # ['3', 'nezha', '25', '1333235322', 'IT'][1]
+            #print(filtered_vals)
+            reformat_data_set.append(filtered_vals)
+        print(reformat_data_set)
+
+    else:
+        for row in match_data: ##row是['3', 'nezha', '25', '1333235322', 'IT']
+            filtered_vals=[]  ##['Egon', '23']  ['nezha', '25']
+            for col in filter_cols: ##col是name和age
+                col_index = TITLE.index(col) ##name和age在title里面的索引1和2的位置
+                filtered_vals.append(row[col_index])#['3', 'nezha', '25', '1333235322', 'IT'][1]
+            reformat_data_set.append(filtered_vals)
+        print(reformat_data_set)
+
 
 
 def check_input(cmd):  ## 检测输入的语句，并分割成两个语句（cmd是从用户输入的命令传过来的）
     """
-
     :param cmd: select name, age where age>22
     :return:
     """
@@ -128,30 +139,56 @@ def check_input(cmd):  ## 检测输入的语句，并分割成两个语句（cmd
     }
     if cmd.split()[0] in ('select','update','delete','insert'):#取出用户输入的第一个命令
         left_yuju,right_yuju = cmd.split('where')#以where关键字分割语句
-        # print(left_yuju,right_yuju)
         matched_data=check_where(right_yuju)#把where后面的语句传送给了check_where
-        print("matched_data", matched_data)
-        # cmd_action=left_yuju.split()[0] ##获取是4个语句是增删改查的那个语句
-        # if cmd_action in syntax_list:
-        syntax_list[cmd.split()[0]](matched_data,left_yuju)
-
+        #print(matched_data)
+        syntax_list[cmd.split()[0]](matched_data,left_yuju)  #  select update inst select() res = dic
+        # update_file(res)
     else:
         print("语法错误")
 
-
-
-def where():
+def insert(cmd):
     pass
 
-def insert():
-    pass
-
-def update():
-    pass
+def update(match_data,left_yuju):
+    '''
+        :param match_data: ['3', 'nezha', '25', '1333235322', 'IT'] ['4', 'hnf', '25', '1333235322', 'IT']
+        :param left_yuju: update name='bob' from  userinfo
+        :return:
+        '''
+    filter_cols = left_yuju.split('from')[0].split()[1].split('=') #取出['name', 'bob']
+    # filter_valus = left_yuju.split('from')[0].split()[1].split('=')[1].strip("'")##取出name对应的值
+    for line in match_data:
+        line_id = line[0]
+        index = dic["id"].index(line_id)
+        dic[filter_cols[0]][index] = filter_cols[1]
+        update_file(dic)
+        #return dic
 
 def delete():
     pass
+#
+def update_file(update):
+    list_id = dic.get('id')
+    list_name = dic.get('name')
+    list_age = dic.get('age')
+    list_phone = dic.get('phone')
+    list_job = dic.get('job')
+    a = zip(list_id, list_name,list_age, list_phone, list_job)
+    for i in a:
+        with open("userinfo.bak", "a", encoding="utf-8") as f1:
+                str_i = ",".join(i)
+                print(str_i)
+                f1.write(str_i)
+    os.remove("userinfo")
+    os.rename('userinfo.bak','userinfo')
 
+    # with open('userinfo',encoding='utf-8',mode='a')as f1,\
+    #     open('userinfo.bak',encoding='utf-8',mode='w')as f2:
+    #     for line in f1:
+    #         new_line=line.replace('filtered_str','i')
+    #         f2.write(new_line)
+    # os.remove('userinfo')
+    # os.rename('userinfo.bak','userinfo')
 ##输入语句
 def yuju():
     while True:
@@ -160,14 +197,3 @@ def yuju():
             continue
         check_input(cmd) ##传给检测你输入语句的函数
 yuju()
-
-
-    # query = input('请输入你的sql语句>>>:').strip()
-    # if 'select' in query:
-    #     select()
-    # elif 'update' in query:
-    #     update()
-    # elif 'update' in query:
-    #     delete()
-    # else:
-    #     print("语法错误")

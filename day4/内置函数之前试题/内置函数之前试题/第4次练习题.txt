@@ -1,0 +1,64 @@
+
+
+1.使用lamda表达下面函数。 
+
+```
+  def func(x, y):
+    return x+y
+```
+
+2.
+
+	def foo():
+	　　print('hello foo')
+	　　return()
+
+	def bar():
+	　　print('hello bar')
+
+（1）为这些基础函数加一个装饰器，执行对应函数内容后，将当前时间写入一个文件做一个日志记录。
+（2）改成参数装饰器，即可以根据调用时传的参数决定是否记录时间，比如@logger(True)
+
+
+3. 通过内置函数计算5除以2的余数
+4. 现有两元祖  (('a'),('b'),('c'),('d') ) ,请使用Python中的匿名函数生成列表 [ {'a':'c',{'c':'d'}]
+5. list 对象 alist [{'name':'a','age':20},{'name':'b','age':30},{'name':'c','age':25}]， 请按 alist 中元素的age  由大到小排序；
+6.  l1=[1,2,3,4]
+	s='hel'
+	使用内置函数输出 [(1, 'h'), (2, 'e'), (3, 'l')]
+7. shares = {
+	    'IBM': 36.6,
+	    'Lenovo': 23.2,
+	    'oldboy': 21.2,
+	    'ocean': 10.2,
+	}
+
+	输出钱大于20的人名  结果为['IBM', 'Lenovo', 'oldboy']
+
+
+8. name=['alex','wupeiqi','yuanhao']   将每个人名后加_sb 结果为['alex_sb','wupeiqi_sb','yuanhao_sb']
+
+9. salaries={
+	    'egon':3000,
+	    'alex':100000000,
+	    'wupeiqi':10000,
+	    'yuanhao':250
+	}
+
+	输出钱最多的人名  结果为alex
+
+10. salaries={
+	    'egon':3000,
+	    'alex':100000000,
+	    'wupeiqi':10000,
+	    'yuanhao':250
+	}
+	1. 按字典的key去排序，结果salaries={'alex':100000000,'egon':3000,'wupeiqi':10000,'yuanhao':250}
+	2. 按照值排序，按照从小到大的顺序打印出key 结果为['yuanhao', 'egon', 'wupeiqi', 'alex']
+
+
+
+
+
+
+
