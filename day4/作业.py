@@ -156,11 +156,10 @@ def update(match_data,left_yuju):
         :return:
         '''
     filter_cols = left_yuju.split('from')[0].split()[1].split('=') #取出['name', 'bob']
-    # filter_valus = left_yuju.split('from')[0].split()[1].split('=')[1].strip("'")##取出name对应的值
     for line in match_data:
-        line_id = line[0]
-        index = dic["id"].index(line_id)
-        dic[filter_cols[0]][index] = filter_cols[1]
+        line_id = line[0] #取出id
+        index = dic["id"].index(line_id)##取出id在上面字典里的索引
+        dic[filter_cols[0]][index] = filter_cols[1] #dic[filter_cols[0]] #获取出所有的名字，然后在获取名字对应的索引
         update_file(dic)
         #return dic
 
@@ -182,13 +181,6 @@ def update_file(update):
     os.remove("userinfo")
     os.rename('userinfo.bak','userinfo')
 
-    # with open('userinfo',encoding='utf-8',mode='a')as f1,\
-    #     open('userinfo.bak',encoding='utf-8',mode='w')as f2:
-    #     for line in f1:
-    #         new_line=line.replace('filtered_str','i')
-    #         f2.write(new_line)
-    # os.remove('userinfo')
-    # os.rename('userinfo.bak','userinfo')
 ##输入语句
 def yuju():
     while True:

@@ -16,7 +16,7 @@
 #     print('ok')
 # else:
 #     print('bad')
-left_yuju="update name=bob from  userinfo  where age=25"
+left_yuju="update age=35 from  userinfo  where name=wusir"
 filter_cols = left_yuju.split('from')[0].split()[1].split('=')
 res = [i.strip() for i in filter_cols]
 print(filter_cols)
