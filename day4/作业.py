@@ -1,4 +1,7 @@
 import os
+##打印支持的语句
+with open('sentence',encoding='utf-8',mode='r')as f1:
+    print('\033[1;33m目前支持的语句有: \n %s\033[0m' % f1.read())
 
 ##转换数据
 TITLE=['id','name','age','phone','job']
@@ -14,7 +17,7 @@ with open('userinfo',encoding='utf-8',mode='r') as f1:
         dic['age'].append(age)
         dic['phone'].append(phone)
         dic['job'].append(job)
-print(dic)
+#print(dic)
 
 def gt(a,b):
     match_list =[]
@@ -137,17 +140,22 @@ def check_input(cmd):  ## 检测输入的语句，并分割成两个语句（cmd
         'delete':delete
 
     }
-    if cmd.split()[0] in ('select','update','delete','insert'):#取出用户输入的第一个命令
+    if cmd.split()[0] in ('select','update','delete',):#取出用户输入的第一个命令
         left_yuju,right_yuju = cmd.split('where')#以where关键字分割语句
         matched_data=check_where(right_yuju)#把where后面的语句传送给了check_where
         #print(matched_data)
         syntax_list[cmd.split()[0]](matched_data,left_yuju)  #  select update inst select() res = dic
         # update_file(res)
+    elif cmd.split()[0] == 'insert':
+        insert(cmd)
     else:
         print("语法错误")
 
 def insert(cmd):
-    pass
+    filter_values = cmd.split('values')[-1].split(',')
+    insert_file(filter_values)
+
+
 
 def update(match_data,left_yuju):
     '''
@@ -163,9 +171,45 @@ def update(match_data,left_yuju):
         update_file(dic)
         #return dic
 
-def delete():
-    pass
-#
+def delete(match_data,left_yuju):
+    filter_cols = left_yuju.split('from')[0].split()[1].split('=')
+    for del_line in match_data:
+        line_id = del_line[0]  # 取出id
+        index = dic["id"].index(line_id)  ##取出id在上面字典里的索引
+        dic.get("id").pop(index)
+        dic.get("name").pop(index)
+        dic.get("age").pop(index)
+        dic.get("phone").pop(index)
+        dic.get("job").pop(index)
+        #print(dic)
+        delete_file(dic)
+def insert_file(filter_values):
+    with open('userinfo', encoding='utf-8', mode='a+') as f1:
+        n = 0
+        for i in filter_values:
+            n += 1
+            if n < 5:
+                f1.write(i.strip() + ',')
+            else:
+                f1.write(i + "\n")
+                print("添加完毕")
+                f1.seek(0)
+
+
+def delete_file(dic):
+    list_id = dic.get('id')
+    list_name = dic.get('name')
+    list_age = dic.get('age')
+    list_phone = dic.get('phone')
+    list_job = dic.get('job')
+    list_data = zip(list_id, list_name, list_age, list_phone, list_job)
+    for i in list_data:
+       with open('userinfo.bak',encoding='utf-8',mode="a")as f1:
+           str_i=",".join(i)
+           #print(str_i)
+           f1.write(str_i)
+    os.remove('userinfo')
+    os.rename("userinfo.bak","userinfo")
 def update_file(update):
     list_id = dic.get('id')
     list_name = dic.get('name')
@@ -176,8 +220,9 @@ def update_file(update):
     for i in a:
         with open("userinfo.bak", "a", encoding="utf-8") as f1:
                 str_i = ",".join(i)
-                print(str_i)
+                #print(str_i)
                 f1.write(str_i)
+
     os.remove("userinfo")
     os.rename('userinfo.bak','userinfo')
 
