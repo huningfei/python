@@ -1,7 +1,7 @@
 ##查询语句
- select id ,name, age from userinfo where age>22
- select * from userinfo where age>22
- select * from userinfo where phone like 133
+select id ,name, age from userinfo where age>22
+select * from userinfo where age>22
+select * from userinfo where phone like 133
 ##更新语句
 update name=bob from  userinfo  where age=25
 ##删除语句

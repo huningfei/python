@@ -1,4 +1,5 @@
 import os
+from tabulate import tabulate
 ##打印支持的语句
 with open('sentence',encoding='utf-8',mode='r')as f1:
     print('\033[1;33m目前支持的语句有: \n %s\033[0m' % f1.read())
@@ -52,7 +53,10 @@ def lt(a,b):
 def eq(a,b):
     match_list = []
     for index, val in enumerate(dic[a]):  ##age[22,23,]并求出age的各个索引
-        if str(val) == str(b):  ##匹配上了
+        print(dic)
+        print(index,val)
+        if str(val) == str(b.strip()):  ##匹配上了
+            print("找到了")
             # print("match",val)
             onwer_list = []
             for col in TITLE:
@@ -84,6 +88,7 @@ def check_where(right_yuju):
         #print(value)
         if fu_hao in right_yuju:
             a,b = right_yuju.split(fu_hao)#a和b接受到了age和22
+            print("a,b %s %s" % (a,b))
             matched_data = value(a.strip(),b.strip())
             #print(matched_data)
             return matched_data
@@ -104,28 +109,29 @@ def select(match_data,left_yuju):
 
     filter_cols_tmp = left_yuju.split('from')[0].split()[1:] #取出name,和age 例：[' name', ' age ']
     filter_cols = [i.strip().strip(",") for i in filter_cols_tmp] ##取出干净的name和age
+    #print(match_data)
     reformat_data_set = []  ##最终要打印的数据
-    if filter_cols==['*']:
+    if "*" in filter_cols:
+        filter_cols = TITLE  # [id,age,name,phone,job]
         #reformat_data_set = []  ##最终要打印的数据
-        for row in match_data:  ##row是['3', 'nezha', '25', '1333235322', 'IT']
-            filtered_vals = []  ##['Egon', '23']  ['nezha', '25']
-            for col in TITLE:  ##col是name和age
-                #print(col)
-                col_index = TITLE.index(col)  ##name和age在title里面的索引1和2的位置
-                filtered_vals.append(row[col_index])  # ['3', 'nezha', '25', '1333235322', 'IT'][1]
-            #print(filtered_vals)
-            reformat_data_set.append(filtered_vals)
-        print(reformat_data_set)
+        # for row in match_data:  ##row是['3', 'nezha', '25', '1333235322', 'IT']
+        #     row[-1] = row[-1].strip()
+        #     filtered_vals = []  ##['Egon', '23']  ['nezha', '25']
+        #     for col in TITLE:  ##col是name和age
+        #         #print(col)
+        #         col_index = TITLE.index(col)  ##name和age在title里面的索引1和2的位置
+        #         filtered_vals.append(row[col_index])  # ['3', 'nezha', '25', '1333235322', 'IT'][1]
+        #     #print(filtered_vals)
+        #     reformat_data_set.append(filtered_vals)
+        # print(reformat_data_set)
 
-    else:
         for row in match_data: ##row是['3', 'nezha', '25', '1333235322', 'IT']
             filtered_vals=[]  ##['Egon', '23']  ['nezha', '25']
             for col in filter_cols: ##col是name和age
                 col_index = TITLE.index(col) ##name和age在title里面的索引1和2的位置
                 filtered_vals.append(row[col_index])#['3', 'nezha', '25', '1333235322', 'IT'][1]
             reformat_data_set.append(filtered_vals)
-        print(reformat_data_set)
-
+        print(tabulate(reformat_data_set, headers=TITLE, tablefmt="grid"))
 
 
 def check_input(cmd):  ## 检测输入的语句，并分割成两个语句（cmd是从用户输入的命令传过来的）
