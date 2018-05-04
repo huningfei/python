@@ -59,22 +59,18 @@
 # print(b['age'][d])
 
 ##更新语句
-left_yuju='insert into userinfo id,name,age,phone,job values 8,jack,23,123456789,python'
+#left_yuju='insert into userinfo id,name,age,phone,job values 8,jack,23,123456789,python'
 #
 # filter_index = left_yuju.split('userinfo')[-1].split('values')[:-1]
-filter_values=left_yuju.split('values')[-1].split(',')
+#filter_values=left_yuju.split('values')[-1].split(',')
 #
 # print(filter_index,type(filter_index))
 #print(filter_values)
+from tabulate import tabulate
+new_list=[]
+with open('userinfo',encoding='utf-8',mode='r') as f1:
+    new_list.append(f1.readline())
 
-with open('userinfo',encoding='utf-8',mode='a+') as f1:
-    n = 0
-    for i in filter_values:
-        n+=1
-        if n<5:
-            f1.write(i.strip()+',')
-        else:
-            f1.write(i+"\n")
-            f1.seek(0)
-
+print(new_list)
+# print(tabulate(new_list,tablefmt="grid"))
 # insert into userinfo id,name,age,phone,job values 5,jinxing,43,123456789,python
