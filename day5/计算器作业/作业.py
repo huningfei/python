@@ -25,7 +25,7 @@ def check_rede_and_except(s):
         else:
             break
 
-        return jisuan_jia_and_jian(l)
+    return jisuan_jia_and_jian(l)
 
 
 def jisuan_rede_and_except(l, x):
@@ -50,7 +50,6 @@ def jisuan_rede_and_except(l, x):
     l.insert(a - 1, str(k))
 
     return l  #['100.5', '+', '100.0', '-', '3.0', '+', '9'] 上面的计算加减的函数接收到l
-
 
 def jisuan_jia_and_jian(l):
     '''
@@ -79,7 +78,6 @@ def jisuan_jia_and_jian(l):
         break
     return sum
 
-
 def brackets(expression):
     '''
     检查是否有括号
@@ -91,23 +89,17 @@ def brackets(expression):
     k = res.search(expression).group()  # 取出最小括号里面的值
     expression = expression.replace(k, str(check_rede_and_except(k[1:len(k) - 1])))
     # 把刚才计算的式子替换成计算的结果eg:2*3  替换成6 ，直到没有括号为止
-    '''
-        expression结果：
-        1 - 2 * ( (60-30 +-5.0 * (9-2*5/3 + 7 /3*99/4*2998 +10 * 568/14 )) - (-4*3)/ (16-3*2) )
-        1 - 2 * ( (60-30 +-5.0 * 173545.88095238098) - (-4*3)/ (16-3*2) )
-        1 - 2 * ( -867699.4047619049 - (-4*3)/ (16-3*2) )
-        1 - 2 * ( -867699.4047619049 - -12.0/ (16-3*2) )
-        1 - 2 * ( -867699.4047619049 - -12.0/ 10.0 )
-        1 - 2 * -867698.2047619049
-
-    '''
     return brackets(expression)
+
+print("\033[1;33m退出请按q\Q，运行请先查看readme\033[0m")
 while True:
-    # print("退出请按q\Q")
+
     s = input('请输入你想要计算的数字:')
     a = s.replace(' ', '')
+    if a=='q' or a=='Q':
+        break
     if input_filter.search(a) or a.count('(') != a.count(')'):
-        print("你输入的表达式有误，请重新输入")
+        print("\033[1;33m你输入的表达式有误，请重新输入\033[0m")
         continue
     if a=='':
         continue
