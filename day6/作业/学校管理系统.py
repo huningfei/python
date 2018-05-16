@@ -210,15 +210,22 @@ def wrapper(f2):
                             user_status['status'] = True
 
                             print("\033[1;33m登录成功\033[0m")
-                            main()
+                            #main()
                             student_view()
                             return username
                         elif a[0] == username and a[1] == password and a[2] == 'teacher':
                             user_status['status'] = True
 
                             print("\033[1;33m登录成功\033[0m")
-                            main()
+                            #main()
                             teacher_view()
+                            return username
+                        elif a[0] == username and a[1] == password and a[2] == 'manage':
+                            user_status['status'] = True
+
+                            print("\033[1;33m登录成功\033[0m")
+                            #main()
+                            control_view()
                             return username
 
                     else:
@@ -270,11 +277,14 @@ def student_view(): #学生视图
 def teacher_view(): #老师视图
     choice_id = input("\n*************************讲师功能********************\n"
                       "0.查看班级"
-                      "1.查看课程")
+                      "1.查看课程"
+                      "2.退出\n: ")
     if choice_id == '0':
         schoolid.show_class()
     elif choice_id == '1':
         schoolid.show_course()
+    elif choice_id =='2':
+        sys.exit()
 
 #@wrapper
 def select_school():
@@ -291,10 +301,10 @@ def select_school():
         sys.exit()
     else:
         print("\033[4;35m请输入真确的选项:\033[0m")
-@wrapper
+#@wrapper
 def select_fun():  # 选择功能
     global choice_id
-    choice_id = input("\n*************************请选择功能********************\n"
+    choice_id = input("\n*************************请选择角色********************\n"
                       "1.学员视图"
                       "2.讲师视图"
                       "3.管理视图"
@@ -315,12 +325,12 @@ def select_fun():  # 选择功能
     #     return
     #time.sleep(2)
 
-@wrapper
+#@wrapper
 def main():
     while True:
         select_school() #选择学校
         while True:
-            select_fun() #选择功能
+            login() #选择功能
 
 
 
