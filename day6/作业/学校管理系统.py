@@ -1,58 +1,7 @@
-#https://gitee.com/ygqygq2/python_homework/tree/master/day6%E4%BD%9C%E4%B8%9A
-import pickle
-'''
-
-import json
-class School:
-    def __init__(self,name,place):
-        self.name=name
-        self.place=place
-    def create(self):
-        dic={"name":self.name,"place":self.place}
-        str=json.loads(dic)
-        print(type(str))
-        # with open('file',encoding='utf-8',mode='a') as f1:
-        #     print(self.name)
-        #     f1.write(str)
-
-
-
-        #print('创建了%s校区，地址在%s'%(self.name,self.place))
-
-
-    # def beijing(self):
-    #     在北京-属性
-    #
-    # def shanghai(self):
-    #     地点在上海-属性
-beijing=School('北京','昌平沙河')
-beijing.create()
-
-
-# class 学员
-#     选择学校-方法
-#     选择班级-方法
-#
-#
-#
-# class 课程
-#     linux方法 在北京开
-#     周期和价格
-#     go   方法 在上海开
-#     周期和价格
-#     python 方法 在北京开
-#     周期和价格
-# class 讲师
-#     关联学校
-#
-# class 登录
-#     学员登录-方法
-#     讲师登录-方法
-#     管理员登录-方法
-'''
 import json
 import sys
 import time
+import os
 class School: #学校类
     def __init__(self,name):
         self.name=name
@@ -61,7 +10,7 @@ class School: #学校类
         print('欢迎创建班级'.center(50,'#'),'\n')
         class_name=input("请输入班级名称")
         class_obj=Classroom(class_name)
-        print("创建班级成功,信息如下：".center(50, '-'), '\n')
+        print("创建班级成功".center(50, '-'), '\n')
         class_dict = {
             "班级名称": class_name,
         }
@@ -69,20 +18,29 @@ class School: #学校类
         if schoolid == school1:
 
             f=open('bj_class_info','a')
-            f.write(json.dumps(class_dict,ensure_ascii=False))
+            f.write(json.dumps(class_dict,ensure_ascii=False)+'\n')
+            f.seek(0,2)
             control_view()
         else:
             f = open('sh_class_info', 'a')
-            f.write(json.dumps(class_dict, ensure_ascii=False))
+            f.write(json.dumps(class_dict, ensure_ascii=False)+'\n')
+            f.seek(0,2)
             control_view()
 
     def show_class(self):#查看班级
-        if schoolid == school1:
-            f=open('bj_class_info','r')
-            print(f.read())
+        if os.path.isfile('bj_class_info') and os.path.isfile('sh_class_info'):
+            if schoolid == school1:
+                f=open('bj_class_info','r')
+                f.seek(0)
+                print(f.read())
+                control_view()
+            else:
+                f = open('sh_class_info', 'r')
+                f.seek(0)
+                print(f.read())
+                control_view()
         else:
-            f = open('sh_class_info', 'r')
-            print(f.read())
+            print("你还没有创建班级")
 
     def creat_course(self): # 创建课程
         print('欢迎创建课程'.center(50, '#'), '\n')
@@ -96,65 +54,85 @@ class School: #学校类
               "课程周期":course_time,
               "课程价格":course_price
         }
+
         if schoolid == school1:
             f = open('bj_course_info', 'a')
+
             f.write(json.dumps(course_dict, ensure_ascii=False)+'\n')
+            f.seek(0,2)
             control_view()
         else:
             f = open('sh_course_info', 'a')
+
             f.write(json.dumps(course_dict, ensure_ascii=False)+'\n')
+            f.seek(0,2)
             control_view()
     def show_course(self): #查看课程
-        if schoolid == school1:
-            f = open('bj_course_info', 'r')
-            print(f.read())
+        if os.path.isfile('bj_course_info') and os.path.isfile('sh_course_info'):
+            if schoolid == school1:
+                f = open('bj_course_info', 'r')
+                f.seek(0)
+                print(f.read())
+                control_view()
 
+            else:
+                f = open('sh_course_info', 'r')
+                f.seek(0)
+                print(f.read())
+                control_view()
         else:
-            f = open('sh_course_info', 'r')
-            print(f.read())
+            print("还没有创建课程")
+            control_view()
 
 
     def create_teacher(self):
+
         print("创建讲师".center(50,'#'))
         teacher_name=input("请输入讲师姓名:")
-        teacher_sex=input("请输入讲师性别:")
+        teacher_passwd=input("请输入讲师密码:")
         teacher_age=input("请输入讲师年龄:")
         teacher_school=input("请输入讲师所在学校:")
         teacher_class=input("请输入讲师所在班级:")
         teacher_course=input("请输入讲师教授的课程:")
-        teacher_obj=(teacher_name,teacher_sex,teacher_age,teacher_school,teacher_class,teacher_course)
+        teacher_obj=(teacher_name,teacher_passwd,teacher_age,teacher_school,teacher_class,teacher_course)
         print("创建讲师成功：".center(50, '-'), '\n')
         teachers[teacher_name] = teacher_obj
         teachers_dic={
             "讲师姓名": teacher_name,
-            "讲师性别": teacher_sex,
+            "讲师密码": teacher_passwd,
             "讲师年龄": teacher_age,
             "讲师所在学校": teacher_school,
             "讲师教授课程": teacher_course,
-            "讲师所在班级": teacher_class
+            "讲师所在班级": teacher_class, }
 
-        }
         if schoolid == school1:
             f = open('bj_teacher_info', 'a')
-            f.write(json.dumps(teachers_dic, ensure_ascii=False))
+            f.write(json.dumps(teachers_dic, ensure_ascii=False)+'\n')
+            f.seek(0,2)
             control_view()
         else:
             f = open('sh_teacher_info', 'a')
-            f.write(json.dumps(teachers_dic, ensure_ascii=False))
+            f.write(json.dumps(teachers_dic, ensure_ascii=False)+'\n')
+            f.seek(0,2)
             control_view()
+
+
     def show_teacher(self): #查看讲师
-        if schoolid == school1:
-            f = open('bj_teacher_info', 'r')
-            print(f.read())
+        if os.path.isfile('bj_teacher_info') and os.path.isfile('sh_teacher_info'):
+
+            if schoolid == school1:
+                f = open('bj_teacher_info', 'r')
+                f.seek(0)
+                print(f.read())
+                control_view()
+            else:
+                f = open('sh_teacher_info', 'r')
+                f.seek(0)
+                print(f.read())
+                control_view()
         else:
-            f = open('sh_teacher_info', 'r')
-            print(f.read())
-
-
-
-
-
-
+            print("你还没有创建老师")
+            control_view()
 
 
 
@@ -167,20 +145,16 @@ class Course: #课程类
         self.course_time=course_time
         self.course_price=course_price
 class Person:
-    def __init__(self,name,sex,age):
+    def __init__(self,name,passwd,age):
         self.name=name
-        self.sex=sex
+        self.passwd=passwd
         self.age=age
 class Teacher(Person):
-    def __init__(self,teacher_name,teacher_sex,teacher_age,teacher_school,teacher_class,teacher_course):
-        super(Teacher,self).__init__(teacher_name,teacher_sex,teacher_age)
+    def __init__(self,name,passwd,age,teacher_school,teacher_class,teacher_course):
+        Person.__init__(self,name,passwd,age)
         self.teacher_school=teacher_school
         self.teacher_course=teacher_course
-        self.teacher_age=teacher_age
-
-
-
-
+        self.teacher_class=teacher_class
 
 ##存贮用户登录状态的
 user_status = {
@@ -209,22 +183,21 @@ def wrapper(f2):
                         if a[0] == username and a[1] == password and a[2] == 'student':
                             user_status['status'] = True
 
-                            print("\033[1;33m登录成功\033[0m")
-                            #main()
+                            print("欢迎%s回来" %(username))
+                            select_school()
                             student_view()
                             return username
                         elif a[0] == username and a[1] == password and a[2] == 'teacher':
                             user_status['status'] = True
 
-                            print("\033[1;33m登录成功\033[0m")
-                            #main()
+                            print("欢迎%s回来" %(username))
+                            select_school()
                             teacher_view()
                             return username
                         elif a[0] == username and a[1] == password and a[2] == 'manage':
                             user_status['status'] = True
-
-                            print("\033[1;33m登录成功\033[0m")
-                            #main()
+                            print("欢迎%s回来" %(username))
+                            select_school()
                             control_view()
                             return username
 
@@ -239,15 +212,14 @@ def login(): ##这里重新定义一个login函数，因为你如果直接执行
 #@wrapper
 def control_view():#管理视图
 
-    choice_id = input("\n*************************请选择功能********************\n"
+    choice_id = input("\033[1;32m*************************请选择功能********************\n"
                       "0.查看班级"
                       "1.创建班级"
                       "2.创建课程"
                       "3.查看课程"
                       "4.创建讲师"
-                      "5.查看讲师"
-                      "6.返回"
-                      "7.退出\n: ")
+                      "5.查看讲师"    
+                      "6.退出\n: \033[0m")
     if choice_id =='0':
         schoolid.show_class()
     if choice_id == '1':
@@ -261,9 +233,9 @@ def control_view():#管理视图
     elif choice_id == '5':
         schoolid.show_teacher()
 
+    # elif choice_id == '6':
+    #     select_school()
     elif choice_id == '6':
-        select_fun()
-    elif choice_id == '7':
         sys.exit()
 def student_view(): #学生视图
     choice_id = input("\n*************************学生功能********************\n"
@@ -289,10 +261,10 @@ def teacher_view(): #老师视图
 #@wrapper
 def select_school():
     global schoolid
-    choice_school_id = input("\n*************************请选择学校********************\n"
+    choice_school_id = input("\033[1;32m*************************请选择学校********************\n"
                              "a.北京校区"
                              "b.上海校区"
-                             "q.退出\n: ")
+                             "q.退出\n: \033[0m")
     if choice_school_id == 'a':
         schoolid = school1
     elif choice_school_id == 'b':
@@ -309,7 +281,7 @@ def select_fun():  # 选择功能
                       "2.讲师视图"
                       "3.管理视图"
                       "4.返回\n: ")
-    # choice_id = int(choice_id)  #input 输入时字符串格式下面的 choice 是int 类型 需要进行类型转换
+
     if choice_id == '1':
         student_view()
 
@@ -328,9 +300,10 @@ def select_fun():  # 选择功能
 #@wrapper
 def main():
     while True:
-        select_school() #选择学校
-        while True:
-            login() #选择功能
+        login()
+        #选择学校
+        # while True:
+        #     login()#选择功能
 
 
 
@@ -341,7 +314,6 @@ if __name__ == '__main__':
     students = {}
     school1 = School('昌平校区')
     school2 = School('浦东校区')
-
 
     main()
 
