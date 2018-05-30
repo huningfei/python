@@ -30,7 +30,6 @@ while True:
         username=user_pwd[0]
         pwd=user_pwd[1]
         print(user_pwd[0],user_pwd[1])
-        register_login()
 
 
     conn.close()

@@ -1,6 +1,6 @@
 [hnf]
 passwd=123
-md5passwd=03c7c8c69c1f8d273fab31228014354a
+md5=03c7c8c69c1f8d273fab31228014354a
 [alex]
 passwd=123
-md5passwd=b75bd008d5fecb1f50cf026532e8ae67
+md5=b75bd008d5fecb1f50cf026532e8ae67
