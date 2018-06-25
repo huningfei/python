@@ -1,0 +1,45 @@
+<!--表格标签用<table>表示。-->
+<!--一个表格<table>是由每行<tr>组成的，每行是由<td>组成的。-->
+<!--表格的<thead>标签、<tbody>标签、<tfoot>标签-->
+<!--1、如果写了，那么这三个部分的代码顺序可以任意，浏览器显示的时候还是按照thead、tbody、tfoot的顺序依次来显示内容。如果不写thead、tbody、tfoot，那么浏览器解析并显示表格内容的时候是从按照代码的从上到下的顺序来显示。-->
+<!--2、当表格非常大内容非常多的时候，如果用thead、tbody、tfoot标签的话，那么数据可以边获取边显示。如果不写，则必须等表格的内容全部从服务器获取完成才能显示出来-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格标签</title>
+</head>
+<body>
+<!--border边框-->
+ <!--style="border-collapse:collapse细边框-->
+<table border="1" style="border-collapse:collapse;">
+    <caption>人物介绍</caption>
+    <tbody>
+    <tr>
+        <td>孙悟空</td>
+        <td>500</td>
+        <td>男</td>
+        <td rowspan="3">中国</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>小月月</td>
+        <td>45</td>
+        <td>男</td>
+
+    </tr>
+    </tfoot>
+    <thead>
+    <tr>
+        <td>邓紫棋</td>
+        <td>23</td>
+        <td>女</td>
+
+    </tr>
+    </thead>
+</table>
+
+
+</body>
+</html>
