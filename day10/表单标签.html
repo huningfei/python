@@ -20,6 +20,7 @@
     <input type="file" value="文件上传按钮"><br>
 
     <!--下拉标签-->
+    <!--selected：预选中。没有属性值。-->
 
     <select>
         <option value="a">小学</option>
@@ -27,6 +28,23 @@
         <option value="">高中</option>
         <option value="">大学</option>
         <option selected="">研究生</option>
+    </select><br>
+    <!--如果属性值大于1，则列表为滚动视图。默认属性值为1，即下拉视图-->
+    <select size="3">
+         <option>小学</option>
+            <option>初中</option>
+            <option>高中</option>
+            <option>大学</option>
+            <option>研究生</option>
+
+    </select><br>
+    <!--multiple：可以对下拉列表中的选项进行多选。没有属性值。-->
+    <select multiple="">
+        <option>小学</option>
+            <option>初中</option>
+            <option selected="">高中</option>
+            <option selected="">大学</option>
+            <option>研究生</option>
     </select>
 
 
