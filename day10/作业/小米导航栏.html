@@ -4,55 +4,81 @@
     <meta charset="UTF-8">
     <title>小米导航栏</title>
     <style>
-        .header{
+
+        .container{
             background-color: #333333;
             color: #b0b0b0;
             height: 40px;
             font-size: 12px;
             display: block;
         }
-        span{
-            padding-left: 30px;
-            padding-top: 130px;
+        .topbar-nav{
+            float: left;
+            height:40px;
+            line-height: 40px;
+        }
 
+        .topbar-info{
+            float:right;
+            line-height: 40px;
+        }
+        .topbar-cart{
+            line-height: 40px;
+            float:right;
+            margin-left: 30px;
         }
         a{
             color: #b0b0b0;
             text-decoration:none;
+            line-height: 40px;
+            margin-left:10px;
         }
         a:hover{
             color: beige;
         }
-        #login{
-            padding-left: 20px;
+        span{
+            color:#333333;
+            margin-left: 3px;
         }
+        .yangshi{
+            width: 1250px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40px"
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
     </style>
 </head>
 <body>
-<div class="header">
+<div class="container">
+    <div class="yangshi">
+        <div class="topbar-nav">
+            <a href="https://www.mi.com/index.html">小米商城</a><span>|</span>
+            <a href="https://www.miui.com/">MIUI </a><span>|</span>
+            <a href="https://iot.mi.com/index.html">loT </a><span>|</span>
+            <a href="https://i.mi.com">云服务</a><span>|</span>
+            <a href="https://jr.mi.com">金融</a><span>|</span>
+            <a href="https://youpin.mi.com">有品</a><span>|</span>
+            <a href="https://shuidi.mi.comm">小爱开发平台</a><span>|</span>
+            <a href="https://b.mi.com">政企服务</a><span>|</span>
+            <a href="#">Selec Region</a><span>|</span>
+        </div>
 
-    <span>
-        <a href="#">小米商城|</a>
-        <a href="#">MIUI|</a>
-        <a href="#">loT|</a>
-        <a href="#">云服务|</a>
-        <a href="#">金融|</a>
-        <a href="#">有品|</a>
-        <a href="#">小爱开发平台|</a>
-        <a href="#">|政企服务|</a>
-        <a href="#">Selec Region|</a>
-        &nbsp  &nbsp  &nbsp  &nbsp  &nbsp
+         <div class="topbar-cart">
+            <a href="#"> 购物车</a>
+        </div>
 
+        <div class="topbar-info">
+            <a href="#">登录 </a><span>|</span>
+            <a href="https://account.xiaomi.com/pass/register"> 注册 </a><span>|</span>
+            <a href="#"> 消息通知</a><span>|</span>
+        </div>
 
-        <a id="login" href="#">登录 </a>
-        <a href="#"> 注册 </a>
-        <a href="#"> 消息通知</a>
-        <a href="#"> 购物车</a>
-
-    </span>
-
-
-
+    </div>
 </div>
 
 </body>

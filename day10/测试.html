@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .box{
+            width: 960px;
+            /*height: 60px;*/
+            overflow: hidden;
+            margin: 0 auto;
+            /*border: 1px solid green;*/
+        }
+        .box ul li{
+            float: left;
+            /*width: 160px;*/
+            /*height: 60px;*/
+            line-height: 60px;
+            text-align: center;
+
+
+        }
+        .box ul li a{
+            text-decoration: none;
+            display: block;
+            width: 40px;
+            height: 60px;
+            color: #000;
+            padding: 0 60px;
+            background-color: yellow;
+        }
+        .box .show{
+            width: 100%;
+            height: 200px;
+            position: absolute;
+            /*background-color: red;*/
+            top: 60px;
+            left: 0;
+            border-top: 1px solid #666;
+            border-bottom: 1px solid #666;
+            border-left: 1px solid #666;
+            border-right: 1px solid #666;
+
+            display: none;
+            box-shadow: 0 0 5px #777;
+        }
+        .box .show.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>
+            <a href=" ">小米手机</a >
+            <div class="show">
+                <div class="container">
+张三
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">小米手机</a >
+            <div class="show">
+                <div class="container">
+李四
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">小米手机</a >
+            <div class="show">
+                <div class="container">
+王五
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">小米手机</a >
+            <div class="show">
+                <div class="container">
+赵六
+                </div>
+            </div>
+        </li>
+         <li>
+            <a href="#">小米手机</a >
+            <div class="show">
+                <div class="container">
+武七
+                </div>
+            </div>
+        </li>
+         <li>
+            <a href="#">小米手机</a >
+            <div class="show">
+                <div class="container">
+哈哈哈哈
+                </div>
+            </div>
+        </li>
+</div>
+        <script type="text/javascript" src='jquery-3.3.1.js'></script>
+        <script type="text/javascript">
+    $(function(){
+        // 控制当鼠标第一次呼入的动画效果
+          var animated = false;
+
+        $('.box>ul>li>a').mouseenter(function(ev){
+
+            // 下面代码时鼠标第一次滑入a标签的动画效果
+            if(!animated){
+                animated = true;
+                var jQa = $(this);
+                jQa.css('color','#F52809')
+                // next()表示当前标签的紧挨着的兄弟标签
+                $(this).next("div").stop().slideDown(600);
+            }else{
+
+                 var jQa = $(this);
+                      // 修改a标签的样式
+                  jQa.css('color','#F52809').parent('li').siblings('li').children('a').css('color','black');
+                  // 切换下面显示区域的内容
+                  jQa.next('div').stop().show().parents('li').siblings('li').children('.show').stop().hide();
+
+            }
+
+
+        });
+        // 鼠标进入到下方区域，保持不变
+          $('.show').mouseenter(function(ev){
+
+
+            $(this).stop().show();
+        })
+          // 鼠标离开下方区域
+           $('.show').mouseleave(function(ev){
+
+
+            $(this).stop().slideUp(300);
+            animated = false
+        })
+           // 鼠标离开导航栏列表
+        $('.box').mouseleave(function(ev){
+
+            console.log($(ev.target));
+            $(ev.target).next("div").stop().slideUp(300);
+            animated = false;
+
+        });
+
+
+
+
+    })
+
+
+
+
+
+</script>
+</body>
+</html>
