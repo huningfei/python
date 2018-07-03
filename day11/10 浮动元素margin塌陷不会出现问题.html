@@ -1,0 +1,57 @@
+<!--（9）浮动元素margin的问题-->
+				<!--标准流下的标签,兄弟之间使用margin调整位置，父子之间使用padding调整子标签的位置（小心盒模型的计算）-->
+		<!---->
+				<!--脱标的元素，margin和padding可以任意使用-->
+				<!---->
+		<!---->
+				<!--浮动的盒子： margin: 0 auto;不起任何作用-->
+				<!---->
+				<!---->
+				<!--使用margin：0 auto;注意点：-->
+
+				<!--1.使用margin: 0 auto;水平居中盒子必须有width，要有明确width，文字水平居中使用text-align: center;-->
+
+				<!--2.只有标准流下的盒子 才能使用margin:0 auto; -->
+
+				<!--当一个盒子浮动了，固定定位，绝对定位(后面会讲)，margin:0 auto; 不能用了-->
+
+				<!--3.margin：0 auto;居中盒子。而不是居中文本，文字水平居中使用text-align: center;-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动元素margin塌陷不会出现问题</title>
+    <style>
+        .father{
+            width: 300px;
+            height: 500px;
+            border: 1px solid red;
+        }
+        .box1{
+            width: 200px;
+            height: 30px;
+            background-color: yellow;
+            margin-bottom: 50px;
+            float: left;
+        }
+        .box2{
+            width: 200px;
+            height: 50px;
+            background-color: green;
+            margin-top: 50px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="box1">
+        1
+    </div>
+    <div class="box2">
+        2
+    </div>
+</div>
+
+</body>
+</html>

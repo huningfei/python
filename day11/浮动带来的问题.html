@@ -1,0 +1,95 @@
+<!--（6）浮动带来的问题-->
+		     <!--父盒子撑不起来了-->
+<!--解决办法：-->
+<!--（7）浮动解决：-->
+		     <!--（1）给父盒子设置固定高度  百年不变导航栏-->
+			 <!--（2）内墙法：第二种方法不常用-->
+					<!--给最后一个浮动的元素添加一个块级标签，并且该标签设置属性 clear：both;-->
+					<!---->
+					<!---->
+					<!--BFC-->
+		<!---->
+			  <!--（3）伪元素清除法：********-->
+					<!--.clearfix:after {-->
+						<!--content: ".";-->
+						<!--display: block;-->
+						<!--height: 0;-->
+						<!--visibility: hidden;-->
+						<!--clear: both-->
+					<!--}-->
+			    <!--（4）overflow:hidden-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动带来的问题</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .father{
+            width: 100%;
+            margin: 0 auto;
+            /*height: 200px;*/
+            /*第一种解决办法给父盒子设置固定高度*/
+            background-color: black;
+            /*第四种方法：给父盒子加上overflow*/
+            /*overflow: hidden;*/
+
+        }
+        .box1{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            float: left;
+            margin: 0 auto;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            float: left;
+        }
+        .box3{
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            float: left;
+        }
+        /*第二种方法内墙法*/
+        .clearfix{
+            clear: both;
+        }
+        /*第三种方法伪元素清除法*/
+        /*.clearfix:after{*/
+            /*content: '.';*/
+            /*display: block;*/
+            /*height: 0;*/
+            /*visibility: hidden;*/
+            /*clear: both;*/
+        /*}*/
+
+
+
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="box1">
+         1
+    </div>
+    <div class="box2">
+         2
+    </div>
+    <div class="box3">
+        3
+    </div>
+    <div class="clearfix">
+
+    </div>
+</div>
+<div class="active"></div>
+
+</body>
+</html>

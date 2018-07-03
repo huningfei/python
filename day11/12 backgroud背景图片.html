@@ -1,0 +1,32 @@
+<!--（12）background-->
+		     <!--background-image:url(./1.jpg)-->
+			 <!--background-repeat: repeat|no-repeat|repeat-x|repeat-y-->
+			 <!--background-position: x y;-->
+			  <!--x和y如果是正值，意味着调整当前图片的位置信息，相对于原来的位置进行调整-->
+			  <!--x和y如果是负值，切背景图，注意：一定要有明确的width和height    "精灵图技术"-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style>
+        .jieyi{
+            border: 1px solid red;
+            width: 1200px;
+            height: 1000px;
+            background-image: url("./zixia.jpg");
+            background-repeat: no-repeat;
+            /*!*调整图片位置*,可以写正数，也可以写负数/*/
+            background-position: -133px -97px ;
+            /*设置固定背景图像，图像不会随着页面的其他部分滚动*/
+            background-attachment: fixed;
+
+        }
+    </style>
+</head>
+<body>
+<div class="jieyi"></div>
+<div class="taobao"></div>
+
+</body>
+</html>
