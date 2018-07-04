@@ -89,6 +89,7 @@
             margin-top: 25px;
 
         }
+
         .site-header.container{
             width: 1226px;
             margin-right: auto;
@@ -108,6 +109,15 @@
             line-height: 48px;
             display: block;
             /*outline: 0;*/
+
+        }
+        .head-search #find{
+            height: 48px;
+            padding: 0 10px;
+            border: 1px solid #e0e0e0;
+            display: inline;
+            float: right;
+            margin-right: 110px;
 
         }
         .there{
@@ -243,6 +253,4 @@
         height: 50px;
 
     }
-    /*.four-left .iconfont{*/
-        /*width: 10px;*/
-    /*}*/
+
