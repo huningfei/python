@@ -15,7 +15,7 @@
         .topbar-info{
             float:left;
             line-height: 40px;
-            margin-left: 300px;
+            margin-left: 200px;
             /*width: 140px;*/
 
         }
@@ -77,6 +77,9 @@
         .head-nav a:hover{
             color: #ff6700;
         }
+        .head-search #find a:hover{
+            color: #ff6700;
+        }
         .head-nav li{
             display: block;
             float: left;
@@ -86,7 +89,7 @@
         .head-search{
             float: right;
             width: 296px;
-            margin-top: 25px;
+            margin-top:  -25px;
 
         }
 
@@ -98,7 +101,7 @@
         }
         .head-search #search{
             position: absolute;
-            margin-right: 100px;
+            margin-right: 80px;
             right: 51px;
             /*z-index: 1;*/
             width: 223px;
@@ -108,37 +111,40 @@
             font-size: 14px;
             line-height: 48px;
             display: block;
-            /*outline: 0;*/
+
 
         }
         .head-search #find{
-            height: 48px;
+            height: 50px;
             padding: 0 10px;
             border: 1px solid #e0e0e0;
             display: inline;
             float: right;
-            margin-right: 110px;
+            margin-right: 92px;
+            background-color: white;
+
 
         }
         .there{
             position: relative;
             width: 1226px;
             overflow: hidden;
-            margin-right: auto;
-            margin-left: auto;
+            /*margin-right: auto;*/
+            /*margin-left: auto;*/
             /*height: 420px;*/
         }
         .there-right{
             height: 420px;
-            width: 860px;
+            width: 900px;
             float: right;
 
             margin-top: 50px;
-            margin-right:165px;
+            margin-right:58px;
         }
         .there-right img{
             width:890px;
             height: 420px;
+            /*margin-top: 0px;*/
         }
         .there-left{
             float: left;
@@ -146,6 +152,7 @@
             height: 420px;
             border: 0;
             margin-top: 50px;
+            margin-left: 70px;
             color: white;
         }
         .there-left li{
@@ -175,13 +182,14 @@
               background-color: #ff6700;
 
         }
+
         .four-left{
 
             height: 169px;
             float: left;
             margin-top: 10px;
             background-color: #333333;
-            margin-left: 60px;
+            margin-left: 68px;
             width: 200px;
 
         }
@@ -223,6 +231,18 @@
             height: 170px;
 
         }
+        .five h2 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 200;
+            line-height: 58px;
+            color: #333;
+            display: block;
+            float: left;
+            margin-top: 50px;
+            margin-left: 80px;
+        }
+
 
         body{
             margin: 0;
