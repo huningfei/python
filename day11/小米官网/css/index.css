@@ -48,21 +48,21 @@
         }
         /*第二个样式*/
         .site-header{
-            /*height: 100px;*/
+            height: 100px;
             /*background-color: red;*/
-            position: relative;
+            /*position: relative;*/
         }
         .head-logo {
             float: left;
             /*width: 62px;*/
             margin-top: 22px;
             margin-left: 68px;
-            position: relative;
+            /*position: relative;*/
 
         }
         .head-nav{
             float: left;
-            width: 850px;
+            width: 750px;
             margin-left: 50px;
             display: block;
             margin-top: 18px;
@@ -89,7 +89,9 @@
         .head-search{
             float: right;
             width: 296px;
-            margin-top:  -25px;
+            height: 50px;
+            /*margin-top:  -25px;*/
+              /*margin-top: 18px;*/
 
         }
 
@@ -97,31 +99,33 @@
             width: 1226px;
             margin-right: auto;
             margin-left: auto;
-            position: relative;
+            /*position: relative;*/
+
         }
         .head-search #search{
-            position: absolute;
-            margin-right: 80px;
-            right: 51px;
-            /*z-index: 1;*/
+            float: right;
+            margin-right: 158px;
+            margin-top: -49px;
             width: 223px;
             height: 48px;
             padding: 0 10px;
             border: 1px solid #e0e0e0;
             font-size: 14px;
-            line-height: 48px;
+            /*line-height: 48px;*/
             display: block;
 
 
         }
         .head-search #find{
-            height: 50px;
-            padding: 0 10px;
+            height: 49px;
+            padding: 0 14px;
             border: 1px solid #e0e0e0;
             display: inline;
             float: right;
-            margin-right: 92px;
+            margin-right: 106px;
             background-color: white;
+            line-height: 50px;
+            margin-top: 18px;
 
 
         }
@@ -129,31 +133,36 @@
             position: relative;
             width: 1226px;
             overflow: hidden;
-            /*margin-right: auto;*/
-            /*margin-left: auto;*/
-            /*height: 420px;*/
+            float: left;
+
+            margin-left: 28px;
+
         }
         .there-right{
             height: 420px;
-            width: 900px;
+            width: 1226px;
             float: right;
 
             margin-top: 50px;
             margin-right:58px;
         }
         .there-right img{
-            width:890px;
+            width:1226px;
             height: 420px;
             /*margin-top: 0px;*/
+            margin-left: 96px;
         }
         .there-left{
             float: left;
             background-color:#333333;
+            width: 233px;
             height: 420px;
             border: 0;
             margin-top: 50px;
-            margin-left: 70px;
+            margin-left: 40px;
             color: white;
+            position: absolute;
+            top:2px;
         }
         .there-left li{
             margin-right: 40px;
@@ -174,23 +183,19 @@
               color: white;
 
         }
-        /*.four-left a:hover{*/
-            /*background-color: white;*/
 
-        /*}*/
         .there-left li:hover{
               background-color: #ff6700;
 
         }
 
         .four-left{
-
             height: 169px;
             float: left;
             margin-top: 10px;
             background-color: #333333;
             margin-left: 68px;
-            width: 200px;
+            width: 233px;
 
         }
         .four-left a{
@@ -205,7 +210,7 @@
         .four-one{
             margin-top: 10px;
             float: left;
-            width: 282px;
+            /*width: 300px;*/
             height: 170px;
 
             margin-left: 15px;
@@ -214,23 +219,24 @@
         .four-two{
             margin-top: 10px;
             float:left;
-            width: 282px;
+            /*width: 300px;*/
             height: 170px;
             margin-left: 15px;
         }
         .four-three{
             margin-top: 10px;
-            float:left;
-            width: 282px;
+            float:right;
+            width: 180px;
             height: 170px;
-            margin-left: 15px;
+            margin-right: 210px;
 
         }
         .four img{
-             width: 282px;
+             width: 306px;
             height: 170px;
 
         }
+
         .five h2 {
             margin: 0;
             font-size: 22px;
@@ -242,6 +248,135 @@
             margin-top: 50px;
             margin-left: 80px;
         }
+        .title{
+                margin: 0;
+                font-size: 22px;
+                font-weight: 200;
+                line-height: 58px;
+                color: #333;
+        }
+        .title h2{
+            display: block;
+        }
+        .five{
+            margin-bottom: 20px;
+            float: left;
+            height: 80px;
+
+        }
+        .five-box-bd{
+            width: 1226px;
+            overflow: hidden;
+
+            float: left;
+
+        }
+        .five-box-bd .box-bd-left{
+            float: left;
+            display: block;
+            margin-left: 5px;
+            margin-top: 80px;
+
+        }
+        .box-bd-left li {
+            background: #f1eded;
+            float: left;
+            margin-left: 20px;
+            display: block;
+            text-align: center;
+            border-top-color: #e53935;
+            width: 233px;
+            height: 340px;
+            margin-top: -40px;
+
+        }
+
+        .box-bd-left .list .time{
+                font-size: 21px;
+                color: #ef3a3b;
+                padding-top: 58px;
+        }
+        .box-bd-left .list img{
+                margin: 25px auto;
+        }
+        .box-bd-left .list .sub{
+                color: rgba(0,0,0,0.54);
+                font-size: 15px;
+                display: block;
+        }
+        .box-bd-left li .colock{
+            width: 200px;
+            margin: 28px auto 0;
+            display: block;
+            text-align: center;
+            float: left;
+            margin-left: 40px;
+
+
+        }
+        .box-bd-left li .colock .box{
+                width: 36px;
+                height: 36px;
+                background-color: #605751;
+                color: #fff;
+                font-size: 24px;
+                line-height: 46px;
+                float: left;
+                display: block;
+                text-align: center;
+        }
+        .box-bd-left li .colock .dosh{
+            width: 15px;
+            float: left;
+            height: 46px;
+            line-height: 46px;
+            color: #605751;
+            font-size: 28px;
+        }
+        .five-right li{
+
+                padding-top: 39px;
+                border-top-width: 1px;
+                border-top-style: solid;
+                text-align: center;
+                float: left;
+                margin-top: 60px;
+                margin-left: 20px;
+                display: block;
+                border-top-color: #e53935;
+                width: 233px;
+                height: 340px;
+
+        }
+        .five-right .right-one .content img{
+            width: 160px;
+            height: 160px;
+            border: 0;
+        }
+        .five-right .right-one .content .title{
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .five-right a{
+            color:black;
+            text-decoration: none;
+        }
+        .five-right .desc{
+                height: 18px;
+                margin: 0 20px 12px;
+                font-size: 12px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                color: #b0b0b0;
+        }
+        .five-right .price{
+            color: #ff6700;
+        }
+
+
+
+
 
 
         body{
@@ -258,11 +393,19 @@
      }
 	.iconfont{
 	    font-family:"iconfont" !important;
-	    font-size:16px;font-style:normal;
+	    font-size:30px;font-style:normal;
 	    -webkit-font-smoothing: antialiased;
 	    -webkit-text-stroke-width: 0.2px;
 	    -moz-osx-font-smoothing: grayscale;
 	}
+    .shop{
+          font-family:"iconfont" !important;
+	    font-size:16px;font-style:normal;
+	    -webkit-font-smoothing: antialiased;
+	    -webkit-text-stroke-width: 0.2px;
+	    -moz-osx-font-smoothing: grayscale;
+
+    }
     .head-search i{
         display: block;
         margin-left: 100px;
