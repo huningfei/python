@@ -56,7 +56,7 @@
             float: left;
             /*width: 62px;*/
             margin-top: 22px;
-            margin-left: 68px;
+            margin-left: 48px;
             /*position: relative;*/
 
         }
@@ -150,7 +150,7 @@
             width:1226px;
             height: 420px;
             /*margin-top: 0px;*/
-            margin-left: 96px;
+            margin-left: 76px;
         }
         .there-left{
             float: left;
@@ -159,7 +159,7 @@
             height: 420px;
             border: 0;
             margin-top: 50px;
-            margin-left: 40px;
+            margin-left: 20px;
             color: white;
             position: absolute;
             top:2px;
@@ -188,15 +188,26 @@
               background-color: #ff6700;
 
         }
+        /*.four{*/
+            /*width:1240px;*/
+            /*height: 170px;*/
+        /*}*/
 
         .four-left{
             height: 169px;
             float: left;
             margin-top: 10px;
             background-color: #333333;
-            margin-left: 68px;
+            margin-left: 50px;
             width: 233px;
 
+        }
+        .four .four-left li{
+                position: relative;
+                float: left;
+                width: 70px;
+                height: 82px;
+                padding: 0 3px;
         }
         .four-left a{
             margin-left: 16px;
@@ -207,13 +218,25 @@
             text-align: center;
 
         }
+        .four-right{
+            width: 978px;
+            float: left;
+            margin-left: 280px;
+            display: block;
+            margin-top: -180px;
+        }
+        .four-right li{
+                float: left;
+                width: 316px;
+                height: 170px;
+        }
         .four-one{
             margin-top: 10px;
             float: left;
             /*width: 300px;*/
             height: 170px;
 
-            margin-left: 15px;
+            margin-left: 12px;
 
         }
         .four-two{
@@ -221,14 +244,14 @@
             float:left;
             /*width: 300px;*/
             height: 170px;
-            margin-left: 15px;
+            margin-left: 4px;
         }
         .four-three{
             margin-top: 10px;
             float:right;
             width: 180px;
             height: 170px;
-            margin-right: 210px;
+            margin-right: 146px;
 
         }
         .four img{
@@ -246,7 +269,7 @@
             display: block;
             float: left;
             margin-top: 50px;
-            margin-left: 80px;
+            margin-left: 44px;
         }
         .title{
                 margin: 0;
@@ -280,8 +303,10 @@
         }
         .box-bd-left li {
             background: #f1eded;
+             border-top-width: 1px;
+             border-top-style: solid;
             float: left;
-            margin-left: 20px;
+            margin-left: -8px;
             display: block;
             text-align: center;
             border-top-color: #e53935;
@@ -335,25 +360,25 @@
         }
         .five-right li{
 
-                padding-top: 39px;
-                border-top-width: 1px;
-                border-top-style: solid;
-                text-align: center;
-                float: left;
-                margin-top: 60px;
-                margin-left: 20px;
-                display: block;
-                border-top-color: #e53935;
-                width: 233px;
-                height: 340px;
+            padding-top: 39px;
+            border-top-width: 1px;
+            border-top-style: solid;
+            text-align: center;
+            float: left;
+            margin-top: 56px;
+            margin-left: 10px;
+            display: block;
+            border-top-color: #ff6700;
+            width: 233px;
+            height: 340px;
 
         }
-        .five-right .right-one .content img{
+        .five-right  img{
             width: 160px;
             height: 160px;
             border: 0;
         }
-        .five-right .right-one .content .title{
+        .five-right .title{
             font-size: 14px;
             font-weight: 400;
         }
@@ -370,13 +395,17 @@
                 overflow: hidden;
                 color: #b0b0b0;
         }
-        .five-right .price{
+        .five-right .price .now{
             color: #ff6700;
         }
-
-
-
-
+        .five-right .right-four{
+            float: right;
+            margin-top: 56px;
+            margin-right: -18px;
+        }
+        ul li{
+            list-style: none;
+        }
 
 
         body{
