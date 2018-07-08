@@ -1,0 +1,83 @@
+<!--
+(2)绝对定位
+现象：
+	1.设置绝对定位的盒子，脱离标准流
+参考点：
+
+	一、单独一个绝对定位的盒子
+
+	1.当我使用top属性描述的时候 是以页面的左上角（跟浏览器的左上角区分）为参考点来调整位置
+	2.当我使用bottom属性描述的时候。是以首屏页面左下角为参考点来调整位置。（爱立信）
+
+	二、以父辈盒子作为参考点
+	1.父辈元素设置相对定位，子元素设置绝对定位，那么会以父辈元素左上角为参考点，这个父辈元素不一定是爸爸，它也可以是爷爷，曾爷爷。
+
+	2.如果父亲设置了定位，那么以父亲为参考点。那么如果父亲没有设置定位，那么以父辈元素设置定位的为参考点
+
+	3.不仅仅是父相子绝，父绝子绝 ，父固子绝,都是以父辈元素为参考点
+
+	注意了：父绝子绝，没有实战意义，做站的时候不会出现父绝子绝。因为绝对定位脱离标准流，
+	影响页面的布局。相反‘父相子绝’在我们页面布局中，是常用的布局方案。因为父亲设置相对定位，
+	不脱离标准流，子元素设置绝对定位，仅仅的是在当前父辈元素内调整该元素的位置。
+
+	还要注意，绝对定位的盒子无视父辈的padding
+设置绝对定位之后，margin:0 auto;不起任何作用，如果想让绝对定位的盒子居中。
+当做公式记下来 设置子元素绝对定位，然后left:50%; margin-left等于元素宽度的一半，
+实现绝对定位盒子居中
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 500px;
+            height: 500px;
+            background-color: green;
+            position: relative;
+            /*向下走50px*/
+            top: 50px;
+            /*向右走100px*/
+            left: 100px;
+
+        }
+        .father2{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            position: relative;
+            padding: 30px;
+            margin-left: 30px;
+            /*top: 10px;*/
+            /*left: 10px;*/
+        }
+        .box1{
+
+
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+    </style>
+</head>
+<body style="height: 2000px">
+<div class="father">
+        <div class="father2">
+            <div class="box1">
+
+            </div>
+        </div>
+</div>
+
+
+</body>
+</html>

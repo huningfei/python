@@ -1,0 +1,41 @@
+<!--
+(1)相对定位
+如果仅仅对当前盒子设置相对定位，那么它与原来的盒子没有任何变化、
+
+只有一个作用：父相子绝
+不要使用相对定位来做压盖现象
+
+二种现象：
+1.不脱标
+2.形影分离老家留坑
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相对定位</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: black;
+            position: relative;
+            top: 200px;
+            left: 0px;
+        }
+        .box3{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</body>
+</html>
