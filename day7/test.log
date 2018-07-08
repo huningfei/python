@@ -1,0 +1,5 @@
+Mon, 21 May 2018 22:27:49 logging模块.py[line:13] DEBUG debug message
+Mon, 21 May 2018 22:27:49 logging模块.py[line:14] INFO info message
+Mon, 21 May 2018 22:27:49 logging模块.py[line:15] WARNING warning message
+Mon, 21 May 2018 22:27:49 logging模块.py[line:16] ERROR error message
+Mon, 21 May 2018 22:27:49 logging模块.py[line:17] CRITICAL critical message

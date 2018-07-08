@@ -1,0 +1,6 @@
+{"username": "alex", "password": "1234"}
+{"username": "wusir", "password": "1234"}
+{"username": "dabai", "password": "saozi"}
+{"username": "hanmeimei", "password": "1234"}
+{"username": "saozi", "password": "1234"}
+{"username": "obama", "password": "1234"}

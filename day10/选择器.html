@@ -1,0 +1,42 @@
+<!--优先级大小-->
+<!--id class 标签 三者依次从左到右的个数，那个左边的数字大，那个就会生效，所以pa生效-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <!--下面这个是把默认的样式重置-->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/reset-css@4.0.1/reset.css">
+    <style type="text/css" media="screen">
+        /*1 0 0*/
+        #pa{
+            color: yellow;
+
+        }
+        /*0 1 0*/
+        .app{
+            color:red;
+        }
+        /*0 0 1*/
+        p{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <div>
+        <div>
+            <div class="child">
+                <p id="pa" class="app">猜猜我是什么颜色</p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<p>段落</p>
+
+</body>
+</html>

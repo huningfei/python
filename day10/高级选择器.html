@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高级选择器</title>
+     <link rel="stylesheet" type="text/css" href="https://unpkg.com/reset-css@4.0.1/reset.css">
+    <style type="text/css" media="screen">
+        /*后代选择器，使用空格表示后代选择器*/
+        #box p{
+            /*哈哈*/
+            color:red;
+        }
+        /*子代选择器使用>表示子代选择器，不包含孙子*/
+        #box>p{
+            color:yellow;
+        }
+        /*2 2 0*/
+        #box #box2 .wrap3 .app{
+            color:black;
+        }
+        /*2 1 0*/
+        #box #box2 .wrap3{
+            color:red;
+        }
+        /*2 0 1*/
+        #box #box2 div{
+            color:green;
+        }
+        span{
+            color:black;
+
+        }
+        /*交集选择器。使用.表示交集选择器。第一个标签必须是标签选择器，第二个标签必须是类选择器 语法：div.active*/
+        span.active{
+            color:brown;
+            font-size: 20px;
+        }
+        /*鼠标悬浮变颜色,伪类选择器*/
+        span:hover{
+            color:green;
+            font-size:30px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="box" class="wrap">
+    <p>哈哈</p>
+    <div id="box2" class="wrap2">
+
+    <div id="box3" class="wrap3" >
+        <p id="pa" class="app">猜猜我是什么颜色</p>
+    </div>
+    </div>
+</div>
+<span class="active">比较</span>
+<span>你好</span>
+</body>
+</html>

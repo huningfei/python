@@ -1,0 +1,12 @@
+##查询语句
+select id ,name, age from userinfo where age>22
+select * from userinfo where age>22
+select * from userinfo where phone like 133
+select * from userinfo where job=IT
+select * from userinfo
+##更新语句
+update name=bob from  userinfo  where age=35
+##删除语句
+delete name=wusir from userinfo where age=35
+##插入语句
+insert into userinfo id,name,age,phone,job values 5,jinxing,43,123456789,python

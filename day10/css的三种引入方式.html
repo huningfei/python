@@ -1,0 +1,31 @@
+<!--外接式和导入式只能同时存在一个-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css引入方式</title>
+    <!--文件类型内接式-->
+    <style type="text/css">
+        p{
+            color: green;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <!--外接式，不用写style-->
+    <link rel="stylesheet" href="./css/index.css">
+    <!--导入式-->
+    <style type="text/css" media="screen">
+        @import url('./css/index.css');
+
+    </style>
+</head>
+<body>
+<div style="color:red;">
+    我是一个div
+</div>
+<p>段落</p>
+<a href="#">百度</a>
+
+</body>
+</html>
