@@ -1,0 +1,82 @@
+<!--position: fixed;-->
+<!--1.有脱标现象 2.固定导航栏 3.小广告-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固定定位</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        body{
+            padding-top: 80px;
+        }
+        .head{
+            width: 100%;
+            height: 80px;
+            background-color: rgba(0,0,0,.5);
+            position:fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+        .head p{
+             margin-left: 600px;
+        }
+        .wrapper{
+            width:100%;
+            height: 500px;
+            background-color: red;
+        }
+        .top{
+            width: 100px;
+			height: 100px;
+			background-color: black;
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			line-height: 100px;
+			text-align: center;
+        }
+        body{
+            height: 2000px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="head">
+        <p>导航栏</p>
+    </div>
+    <div class="wrapper">
+        中心内容
+        <p style="position: absolute; color: black;background-color: white;"></p>
+    </div>
+    <a href="#">
+        <div class="top">
+            返回顶部
+        </div>
+    </a>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js" type="text/javascript" charset="utf-8">
+
+    </script>
+
+    <script type="text/javascript">
+        $('.top').click(function(){
+            $('html,body').animate({
+                scrollTop: '0'
+            },2000);
+
+            });
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米购物车</title>
+    <style>
+        .cart{
+            width: 100px;
+            height: 50px;
+            background-color: #000;
+            position: relative;
+            margin: 100px auto;
+            /*鼠标放上去变成小手*/
+            cursor: pointer;
+
+        }
+        .cart .word{
+            color: white;
+        }
+        .cart-info{
+            position: absolute;
+			width: 300px;
+			height: 100px;
+			/*background-color: red;*/
+			top: 50px;
+			left: -200px;
+			/*display: none;*/
+
+        }
+        .cart:hover .cart-info{
+            /*display: block;*/
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="cart">
+     <span class="word">购物车</span>
+    <span class="cart-info"></span>
+</div>
+
+</body>
+</html>

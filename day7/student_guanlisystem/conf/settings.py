@@ -1,0 +1,7 @@
+userinfo = '../db/userinfo'
+school_info = '../db/school_info'
+course_info = '../db/course_info'
+class_info = '../db/class_info'
+teacher_info = '../db/teacher_info'
+student_info = '../db/student_info'
+classes_dir = '../db/classes'

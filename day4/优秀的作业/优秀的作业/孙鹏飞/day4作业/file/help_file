@@ -1,0 +1,17 @@
+                                     <<<帮助>>>
+支持语法：增删改查
+    # 查看表
+    show dbs;
+    # 查询示例
+    select * from user_info
+    select name,age from user_info where age > 22
+    select * from user_info where id = 1
+    select id,name form user_info where name like ex
+    # 修改示例
+    update user_info set age = 25 where name = Egon
+    update user_info set job = python where job = IT
+    # 增加示例
+    insert into user_info values(5,nezha,25,1333235322,IT)
+    # 删除示例
+    delete from user_info  where job = IT
+    delete from user_info  where name like ex

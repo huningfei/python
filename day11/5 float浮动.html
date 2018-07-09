@@ -1,0 +1,48 @@
+<!--（1）脱标：脱标的元素不在标准文档流下占位置-->
+						<!--浏览器认为第一个盒子不是标准文档流的盒子，认为第二个盒子为标准文档流下的盒子-->
+				<!---->
+<!--（2）浮动的元素互相贴靠-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: red;
+            float: left;
+            height: 300px;
+        }
+        .box2{
+            background-color: yellow;
+            float:left;
+            width: 230px;
+        }
+        .box3{
+            background-color: blue;
+            float: left;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    1
+</div>
+<div class="box2">
+    2
+</div>
+<div class="box3">
+    3
+</div>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+http://www.cnblogs.com/qingmu6/p/8953549.html    #内置函数——filter和map
+http://www.cnblogs.com/qingmu6/p/8962268.html   #内置函数——sorted
+http://www.cnblogs.com/qingmu6/p/8953327.html   #内置函数和匿名函数
+http://www.cnblogs.com/qingmu6/p/8952552.html   #内置函数——eval、exec、compile
+http://www.cnblogs.com/qingmu6/p/8952177.html   #迭代器-生成器
+https://www.processon.com/view/link/5aeac924e4b0411f64e2b37c  /内置函数整合
+ 

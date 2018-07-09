@@ -1,0 +1,52 @@
+<!--从父现象：父亲怂了，儿子再牛逼也没用,儿子的z-index会优先继承父类的z-index-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z-index从父现象</title>
+    <style>
+        .father1{
+            position: relative;
+            z-index: 20;
+        }
+        .father2{
+            position: relative;
+            z-index: 3;
+        }
+        .box{
+			width: 500px;
+			height: 500px;
+			background-color: red;
+
+			position: absolute;
+			left: 50%;
+			margin-left: -250px;
+			z-index: 20;
+		}
+        .box2{
+			width: 300px;
+			height: 300px;
+			background-color: green;
+			position: absolute;
+			left: 50%;
+			margin-left: -150px;
+			z-index: 1000000;
+		}
+    </style>
+</head>
+<body>
+	<div class="father1">
+		<div class="box">
+
+		</div>
+
+	</div>
+
+	<div class="father2">
+		<div class="box2">
+
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+    <style>
+        /*去除超链接的下划线*/
+        a{
+            text-decoration:none;
+        }
+        /*鼠标放到超链接上线显示的样式*/
+      	a:hover{
+            color: red;
+
+				}
+
+        /*设置第一个首字母的样式*/
+        p:first-letter{
+            color: red;
+            font-size: 30px;
+
+        }
+        /* 在....之前 添加内容   这个属性使用不是很频繁 了解  使用此伪元素选择器一定要结合content属性*/
+        p:before{
+            content: 'alex';
+        }
+        /*在....之后 添加内容，使用非常频繁 通常与咱们后面要讲到布局 有很大的关联（清除浮动）*/
+
+        p::after{
+
+            /*解决浮动带来的问题*/
+            content:'.';
+            display: block;
+            /*width: 100px;
+            height: 100px;
+            background-color: red;*/
+            visibility: hidden;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+<p>我是p标签1</p>
+<a href="http://www.baidu.com">百度一下</a>
+
+</body>
+</html>
