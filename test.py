@@ -5,3 +5,4 @@ while n<=100:
     if num==0:
         print(n)
 
+##huningfei
