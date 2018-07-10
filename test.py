@@ -5,4 +5,4 @@ while n<=100:
     if num==0:
         print(n)
 
-##huningfei胡宁飞
+##huningfei胡宁飞哈哈啊成功了
