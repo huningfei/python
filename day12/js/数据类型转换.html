@@ -5,6 +5,45 @@
     <title>数据类型转换</title>
 </head>
 <body>
+<script>
+    //隐式转换
+    // var n1=123;
+    // var n2='123';
+    // var n3=n1+n2;
+    // console.log(typeof n3);//字符串类型
+    //强制类型转换
+    // var str1=String(n1);
+    // console.log(str1,typeof str1);//强制转换成字符串
+    // var num=234;
+    // console.log(num.toString());//转成字符串
+    //将字符串类型转换成数值类型
+    // var stringNum='789.12113kjk';
+    // var num2=Number(stringNum);
+    // console.log(num2,typeof num2);//NaN "number"
+    // console.log(parseInt(stringNum));//789 只保留整数部分
+    // console.log(parseFloat(stringNum));//789.123 保留数字部分
+    //转换成boolean类型
+    var b1='123';
+    var b2=0;
+    var b3=-123;
+    var b4=Infinity;
+    console.log(typeof b1);
+    console.log(typeof b2);
+    console.log(typeof b3);
+    console.log(typeof b4);//number
+    console.log(typeof b5);//mumber
+    console.log(typeof b7);//object
+    console.log(Boolean(b7));//false
+
+    console.log(Boolean(b4));//true
+    //下面三个都是为false
+    var b5 = NaN;
+
+    var b6; //undefined
+    var b7 = null;
+
+
+</script>
 
 </body>
 </html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用内置对象</title>
+</head>
+<body>
+<script>
+    //---------- 数组array创建---------------------------------
+    // var arr=[1,2,3];
+    // console.log(arr);
+    // 数组赋值
+    // arr[0]=1234;
+    // arr[1]='呵呵';
+    // arr[2]='嘿嘿';
+    // -----数组的常用方法------
+    // concat合并数组
+    //         var north = ['北京','山东','天津'];
+    //         var south = ['东莞','深圳','上海'];
+    //         var newCity = north.concat(south);
+    //         console.log(newCity); // ["北京", "山东", "天津", "东莞", "深圳", "上海"]
+    // join() 将数组中的元素使用指定的字符串连接起来，它会形成一个新的字符串
+            // var score = [98,78,76,100,0];
+            // var str = score.join('|');
+            // console.log(str);//98|78|76|100|0
+    // 将数组转换成字符串 toString()
+    //         var score = [98,78,76,100,0];
+            //toString() 直接转换为字符串  每个元素之间使用逗号隔开
+            // var str = score.toString();
+            // console.log(str);//98,78,76,100,0
+     // slice(start,end); 返回数组的一段，顾头不顾尾
+            // var list= ['1','2','3','4'];  //list不能写成name,不知道是什么原因
+            // var newArr  = list.slice(1,3);
+            // console.log(newArr);
+
+
+    // pop 移除数组的最后一个元素
+            // var arr = ['张三','李四','王文','赵六'];
+            // var newArr  = arr.pop();
+            // console.log(arr);//["张三", "李四"，"王文"]
+
+    // push() 向数组最后添加一个元素
+            // var arr = ['张三','李四','王文','赵六'];
+            // var newArr  = arr.push('张三丰');
+            // console.log(arr);//["张三", "李四", "王文", "赵六", "张三丰"]
+
+    // ---reverse()翻转数组------
+            // var arr1 = ['张三','李四','王文','赵六'];
+            // arr1.reverse();
+            // console.log(arr1);//["赵六", "王文", "李四", "张三"]
+
+    // sort对数组排序
+            // var names = ['alex','xiaoma','tanhuang','abngel'];
+            // names.sort();
+            // console.log(names);// ["abngel", "alex", "tanhuang", "xiaoma"]
+
+    //isarray()判断是否是数组
+            // var arr1 = ['张三','李四','王文','赵六'];
+            // console.log(Array.isArray(arr1)); //true
+            //
+            // var a=3;
+            // console.log(Array.isArray(a)); //false
+    // --------------字符串----------------------
+    // chartAt() 返回指定索引的位置的字符
+            // var str='alex';
+            // var charset=str.charAt(3);
+            // console.log(charset);
+    // concat 返回字符串值，表示两个或多个字符串的拼接
+            var str1 = 'al';
+            var str2  = 'ex';
+            console.log(str1.concat(str2,str2));//alexex
+     // replace(a,b) 将字符串a替换成字符串b
+            //  var a = '1234567755';
+            // var newStr = a.replace("4567","****");//把4567替换成****
+            // console.log(newStr);//123****755
+    // indexof() 查找字符的下标，如果找到返回字符串的下标，找不到则返回-1 。跟seach()方法用法一样
+            // var str = 'alex';
+            // console.log(str.indexOf('e'));//2
+            // console.log(str.indexOf('p'));//-1
+    // slice(start，end) 左闭右开 分割字符串
+            var aa='你是谁';
+            console.log(aa.slice(1,2));//是
+    // split('a',1) 以字符串a分割字符串，并返回新的数组。如果第二个参数没写，表示返回整个数组，如果定义了个数，则返回数组的最大长度
+    //         var  str =  '我的天呢,a是嘛,你在说什么呢?a哈哈哈';
+    //         console.log(str.split('a',2));
+    // substr(statr,end) 左闭右开，可以显示从那到哪，顾头不顾尾
+    //         var  str =  '我的天呢,a是嘛,你在说什么呢?a哈哈哈';
+    //         console.log(str.substr(0,6));//我的天呢
+    //  toLowerCase()转小写
+    //             var str = 'XIAOMAGE';
+    //             console.log(str.toLowerCase());//xiaomage
+    // toUpperCase()转大写
+    //             var str4 = 'xiaomage';
+    //             console.log(str4.toUpperCase());
+    // 数字转换字符串
+    //     var num = 132.32522;
+    //     var numStr = num.toString();
+    //     console.log(typeof numStr);//string
+    // 四舍五入
+    //     var newNum = num.toFixed(2);
+    //     console.log(newNum);
+
+    // #####################data日期对象##############################
+    var mydate=new Date();
+    console.log(mydate); //Tue Jul 10 2018 15:58:05 GMT+0800 (中国标准时间)
+    console.log(mydate.getDate());//获取当前日期具体是哪天
+    //返回本地时间
+            console.log(mydate.toLocaleDateString());//2018/7/10
+    console.log(mydate.getFullYear());//只获取年份
+    console.log(mydate.getMonth()+1);//获取当前月份，必须加1
+
+    // ################math内置对象##############
+    //  Math.ceil() 向上取整，'天花板函数'
+            var x = 1.234;
+            //天花板函数  表示大于等于 x，并且与它最接近的整数是2
+            var a = Math.ceil(x);
+            console.log(a);//2
+    // Math.floor 向下取整，'地板函数'
+            var y = 1.234;
+            // 小于等于 x，并且与它最接近的整数 1
+            var b = Math.floor(y);
+            console.log(b);//1
+    // 求两个数的最大值和最小值
+            console.log(Math.max(2,5));//5
+            console.log(Math.min(2,5));//2
+    // 随机数 Math.random()
+            var ran = Math.random();
+            console.log(ran);//0.3176434165181341
+    // 求100-200之间的随机数
+             //min+Math.random()*(max-min)公式背过
+            console.log(Math.floor(100+Math.random()*(100)));
+
+
+</script>
+
+
+</body>
+</html>
