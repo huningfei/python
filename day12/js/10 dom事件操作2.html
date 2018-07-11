@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM事件</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        /*.active{*/
+            /*background-color: yellow;*/
+        /*}*/
+
+    </style>
+    <script>
+        //js入口函数，当文档和图片都加载完成之后，入口函数才调用叫window
+        window.onload=function() {
+            console.log(111);
+            var oDiv=document.getElementById('box');//获取id
+            console.dir(oDiv);
+            console.log(oDiv.id);
+            console.log(oDiv.className);
+            // 第一种写法
+            var isRed=true;
+            oDiv.onclick=function () { //添加一个点击事件
+                if (isRed){
+                      oDiv.style.backgroundColor='black';
+                      oDiv.style.width='300px';
+                      isRed=false
+                }else{
+                    oDiv.style.backgroundColor='red';
+                    oDiv.style.width='200px';
+                    isRed=true;
+                }
+
+
+            };
+
+        };
+    </script>
+</head>
+<body>
+    <div id="box" class="box1 active">
+    </div>
+
+</body>
+</html>

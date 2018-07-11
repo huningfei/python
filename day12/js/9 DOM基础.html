@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM基础</title>
+</head>
+<body>
+<img src="./1.jpg" alt="a" id="a1" title="手机图片" class="image">
+<script type="text/javascript">
+    //获取节点属性值
+    var myNode = document.getElementsByTagName("img")[0];
+
+    // console.log(myNode.src);
+    // console.log(myNode.className);    //注意，是className，不是class
+    // console.log(myNode.title);
+    //
+    // console.log("-----第一种方式-------");
+    //
+    // console.log(myNode["src"]);
+    // console.log(myNode["className"]); //注意，是className，不是class
+    // console.log(myNode["title"]);
+    // console.log('--------------------第二种方式-----------');
+    // console.log(myNode.getAttribute("src"));
+    // console.log(myNode.getAttribute("class"));   //注意是class，不是className
+    // console.log(myNode.getAttribute("title"));
+    //设置节点属性值
+    // console.log("-----第一种方式-------");
+    // myNode.src='./2.jpg';
+    // myNode.className='image2';
+    console.log('--------------------第二种方式------');
+     myNode.setAttribute("src","./3.jpg");
+    myNode.setAttribute("class","image3-box");
+    myNode.setAttribute("id","你好");
+    //删除节点的属性
+    myNode.removeAttribute('class');
+    myNode.removeAttribute('id');
+</script>
+</body>
+</html>

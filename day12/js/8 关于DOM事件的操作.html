@@ -4,28 +4,44 @@
     <meta charset="UTF-8">
     <title>DOM事件</title>
     <style>
-        .box1{
-            width: 200px;
-            height: 200px;
-            background-color: red;
-        }
+
+
     </style>
     <script>
-            window.onload=function () {
-            console.log(111);
-            var oDiv=document.getElementById('box');//获取id
-            console.dir(oDiv);
-            // console.log(oDiv.id);
-            // console.log(oDiv.className)
+
+        // -------------第二种例子，图片切换--------------------------------
+        window.onload=function (ev) {
+                var oimg=document.getElementsByTagName('img')[0];//获取第一个img标签
+                console.log(oimg);
+                var obtn=document.getElementsByClassName('btn')[0];//获取第一个btn类名
+                obtn.style.width='100px';//可以单独设置btn按钮的样式
+                obtn.style.height='100px';
+                var tu=true;//设置添加为true
+                obtn.onclick=function(){
+
+                    if (tu){
+                         oimg.src='./1.jpg';//第一次默认是1图片
+                         console.log(oimg.id);//获取img的id,相当于get
+                         oimg.id='lv';//相当于set
+                         tu=false
+
+                    }else{
+                        oimg.src='./2.jpg';
+                        tu=true
+                    }
+
+
+            }
+
         }
+
     </script>
 </head>
 <body>
-<div id="box1" class="box2">
-
-</div>
-
-
-
+    <div id="box" class="box1 active">
+    </div>
+    <img src="./2.jpg" alt="手机" title="小米" id="one">
+    <!--<img src="./3.jpg" alt="手机" title="小米" id="two">-->
+    <button class="btn">切换</button>
 </body>
 </html>
