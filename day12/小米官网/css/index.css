@@ -1,9 +1,9 @@
         .site-topbar{
-                background-color: #333333;
-                color: #b0b0b0;
-                height: 40px;
-                font-size: 12px;
-                display: block;
+            background-color: #333333;
+            color: #b0b0b0;
+            height: 40px;
+            font-size: 12px;
+            display: block;
             }
         .topbar-nav{
             float: left;
@@ -15,14 +15,37 @@
         .topbar-info{
             float:left;
             line-height: 40px;
-            margin-left: 200px;
+            margin-left: 294px;
             /*width: 140px;*/
 
         }
+        /*购物车放到上面的样式*/
         .topbar-cart{
             line-height: 40px;
             float:right;
-            margin-right: 132px;
+            margin-right: 96px;
+        }
+        .topbar-cart:hover{
+            background-color: white;
+        }
+        .topbar-cart .cart-info{
+            position: absolute;
+			width: 336px;
+			height: 100px;
+			background-color: white;
+			top: 38px;
+			left: -200px;
+			display: none;
+            color: black;
+            font-size: 12px;
+            border: solid 1px #b0b0b0;
+            float: left;
+            margin-left: 1116px;
+        }
+        .topbar-cart .cart-info .info{
+            float: left;
+            margin-top: 29px;
+            margin-left: 64px;
         }
         .site-topbar a{
             color: #b0b0b0;
@@ -49,8 +72,7 @@
         /*第二个样式*/
         .site-header{
             height: 100px;
-            /*background-color: red;*/
-            /*position: relative;*/
+
         }
         .head-logo {
             float: left;
@@ -134,7 +156,7 @@
             width: 1226px;
             overflow: hidden;
             float: left;
-
+            margin-top: -46px;
             margin-left: 28px;
 
         }
@@ -152,6 +174,7 @@
             /*margin-top: 0px;*/
             margin-left: 76px;
         }
+        /*两个箭头的样式*/
         .there-right .jiatou .ui-prev{
             position: absolute;
             top: 50%;
@@ -171,8 +194,6 @@
             z-index: 999;
             width: 41px;
             height: 69px;
-            /*margin-top: 0px;*/
-            /*text-indent: -9999px;*/
             left: 1183px;
             overflow: hidden;
             background: url("https://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png") no-repeat -125px 50%;
@@ -182,6 +203,39 @@
             background-color: #757575;
             text-decoration: none;
             cursor: pointer;
+        }
+        /*图片上面园点的样式*/
+        .there-right .gradan.ui-pager-item{
+           font-size: 12px;
+            text-align: center;
+            color: #666;
+        }
+        .there-right .gradan .ui-pager-item a{
+
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            margin: 0 5px;
+            border: 2px solid #fff;
+            border-color: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            text-align: left;
+            text-indent: -9999px;
+            overflow: hidden;
+            background: #f5f5f5;
+            background: rgba(0,0,0,0.4);
+        }
+        .gradan .ui-pager-item a:hover{
+            background: white;
+            border-color: rgba(0,0,0,0.4);
+
+
+        }
+        .gradan .ui-pager-item{
+            margin-left: 1080px;
+            position: absolute;
+            margin-top: 382px;
+
         }
         .there-left{
             float: left;
