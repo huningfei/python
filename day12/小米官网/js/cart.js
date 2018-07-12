@@ -10,4 +10,4 @@
                 cart2.style.display='none';
 
             };
-        }
+        };

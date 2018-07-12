@@ -4,6 +4,7 @@
             height: 40px;
             font-size: 12px;
             display: block;
+
             }
         .topbar-nav{
             float: left;
@@ -15,7 +16,7 @@
         .topbar-info{
             float:left;
             line-height: 40px;
-            margin-left: 294px;
+            margin-left: 257px;
             /*width: 140px;*/
 
         }
@@ -23,7 +24,8 @@
         .topbar-cart{
             line-height: 40px;
             float:right;
-            margin-right: 96px;
+            margin-right: 22px;
+
         }
         .topbar-cart:hover{
             background-color: white;
@@ -45,7 +47,7 @@
         .topbar-cart .cart-info .info{
             float: left;
             margin-top: 29px;
-            margin-left: 64px;
+            margin-left: 60px;
         }
         .site-topbar a{
             color: #b0b0b0;
@@ -64,7 +66,8 @@
             margin-left: 3px;
         }
         .site-topbar.container{
-            width: 1250px;
+            /*width: 1250px;*/
+            width:100%;
             margin-left: auto;
             margin-right: auto;
             height: 40px;
@@ -112,13 +115,13 @@
             float: right;
             width: 296px;
             height: 50px;
-            /*margin-top:  -25px;*/
-              /*margin-top: 18px;*/
+           margin-right: -183px;
 
         }
 
         .site-header.container{
-            width: 1226px;
+            /*width: 1226px;*/
+            width: 100%;
             margin-right: auto;
             margin-left: auto;
             /*position: relative;*/
@@ -144,7 +147,7 @@
             border: 1px solid #e0e0e0;
             display: inline;
             float: right;
-            margin-right: 96px;
+            margin-right: 91px;
             background-color: white;
             line-height: 50px;
             margin-top: 18px;
@@ -320,14 +323,14 @@
             float:left;
             /*width: 300px;*/
             height: 170px;
-            margin-left: 6px;
+            margin-left: 8px;
         }
         .four-three{
             margin-top: 10px;
             float:right;
             width: 180px;
             height: 170px;
-            margin-right: 140px;
+            margin-right: 137px;
 
         }
         .four img{
