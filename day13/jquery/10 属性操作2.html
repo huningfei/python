@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .active{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="a1"></div>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        $('div').click(function(){
+    //动态的切换class类名为active，存在就删除，不存在就添加
+    $(this).toggleClass('active')
+})
+
+    })
+</script>
+
+</body>
+</html>

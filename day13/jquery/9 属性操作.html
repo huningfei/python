@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性操作</title>
+    <style>
+        div{
+          width: 100px;
+          height: 100px;
+       }
+       .wrap{
+
+        background-color: red;
+       }
+       .wrap2{
+        background-color: yellow;
+       }
+    </style>
+</head>
+<body>
+<div class="wrap" id="box" title='123'></div>
+
+ 男<input type="radio" id='test' name="sex"  checked/>
+女<input type="radio" id='test2' name="sex" />
+
+<input type="text" name="hu" value="123">
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        console.log($('.wrap').attr('id'));
+        //attr  设置属性值或者 返回被选元素的属性值
+        console.log($('.wrap').attr('class'));
+
+        //更改class的名字，把wrap替换成wrap2
+        $('.wrap').attr('class','wrap wrap2');
+        //删除类名，
+        $('.wrap').removeAttr('class');
+        //attr prop区别
+        // 1.是有true,false两个属性使用prop();
+        // 2.其他则使用attr();
+         console.log($('#test').attr('checked'));//返回对象的属性
+              // console.log($('#test'));
+        console.log($('#test2').prop('checked'));//返回bom对象的属性
+        //添加classname
+        $('div').addClass("box box2 box3 box4");
+        //获取值
+        console.log( $('input').val());
+        //设置值
+        console.log( $('input').val(1111));
+
+
+    })
+</script>
+
+</body>
+</html>
