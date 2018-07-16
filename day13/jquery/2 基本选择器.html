@@ -1,0 +1,38 @@
+<!--id  类  标签-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本选择器</title>
+</head>
+<body>
+    <div></div>
+    <div id="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div></div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            //三种获取方式
+            var jqbox1=$("#box");
+            var jqbox2=$(".box");
+            var jqbox3=$("div");
+            //操作标签选择器
+            jqbox3.css('width',100);
+            jqbox3.css('height',100);
+            jqbox3.css('backgroundColor','red');
+            jqbox3.css('margin-top',10);
+            //操作类选择器
+            jqbox2.css({
+                'background':'green'
+            });
+            jqbox2.text('哈哈哈');
+            //操作id选择器
+            jqbox1.css('backgroundColor','yellow');
+     })
+
+    </script>
+
+</body>
+</html>

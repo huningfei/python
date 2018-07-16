@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+</head>
+<body>
+<div id="box">
+    <p id="p1">1113</p>
+
+
+</div>
+<button id="btn">
+    添加元素
+</button>
+<script>
+    //获取文档
+    console.log(document);
+    //获取的html对象
+    console.dir(document.documentElement);
+    console.dir(document.getElementsByTagName('html')[0]);
+    //获取body
+    console.log(document.body);
+    var oBtn=document.getElementById('btn');
+    var oBox=document.getElementById('box');
+    var op1=document.getElementById('p1');
+    oBtn.onclick=function () {
+        var op=document.createElement('p');//创建标签
+        // // op.innerText=123;//添加文本
+        op.innerHTML='<a href="#">123</a>';//添加标签
+        // oBox.appendChild(op);//追加孩子节点
+
+        op.style.color='red';
+        console.log(op.parentNode);//获取p标签的父节点是div
+        console.log(op.children[0]);//获取p标签的子节点是  a
+        console.log(oBox.nextElementSibling.innerHTML);//火狐、谷歌、IE9+版本：都指的是下一个元素节点（标签）,就是div下面的button标签
+        oBox.insertBefore(op,op1);//在参考标签之前添加一个标签，op1是参考标签，op是要添加的标签
+
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

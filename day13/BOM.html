@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+<script>
+    window.onload=function (ev) {
+        console.log(111);
+        console.log(window.navigator);
+        console.log(navigator.userAgent);
+        console.log(navigator.platform);//查看浏览器支持的系统
+
+        setTimeout(function () {
+            //这两个不能同时存在
+            window.open('http://www.baidu.com','_self');//打开一个新的网页
+            // window.location.reload();//2秒之后整改网页刷新，全局刷新，不建议使用
+
+        },2000);
+
+    }
+</script>
+
+</body>
+</html>

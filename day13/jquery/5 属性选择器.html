@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+</head>
+<body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    //标签名[属性名] 查找所有含有id属性的该标签名的元素
+    $(function () {
+        $('li[id]').css('color','red');
+        //匹配li标签属性是what的元素
+        $('li[class=what]').css('font-size','30px');
+        //匹配li标签class 不等于waht的元素
+        $('li[class!=what]').css('font-size','40px');
+        //匹配以username开头的元素
+        $('input[name^=username]').css('background','gray');
+        //匹配以222结尾的元素
+        $('input[name$=222]').css('background','greenyellow');
+         //匹配给定的属性是以包含某些值的元素
+        $('button[class*=btn]').css('background','red')
+
+
+
+    })
+</script>
+<div id="box">
+            <h2 class="title">属性选择器</h2>
+            <!--<p class="p1">我是一个段落</p>-->
+            <ul>
+                <li id="li1">分手应该体面</li>
+                <li class="what" id="li2">分手应该体面</li>
+                <li class="what">分手应该体面</li>
+                <li class="heihei">分手应该体面</li>
+
+            </ul>
+
+            <form action="" method="post">
+
+                <input name="username" type='text' value="1" checked="checked"></input>
+                <input name="username1111" type='text' value="1"></input>
+                <input name="username2222" type='text' value="1"></input>
+                <input name="abcusername3333" type='text' value="1"></input>
+                <button class="btn-default">按钮1</button>
+                <button class="btn-info">按钮1</button>
+                <button class="bt-success">按钮1</button>
+                <button class="btn-danger">按钮1</button>
+
+            </form>
+</div>
+
+</body>
+</html>

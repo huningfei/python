@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画效果</title>
+    <style>
+    .box{
+			 position: absolute;
+            left: 20px;
+            top: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        display: none;
+		}
+    </style>
+</head>
+<body>
+<button id="btn">显示</button>
+<div class="box"></div>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        // var isShow =true;
+        // $('#btn').click(function () {
+        //     var _this=$(this);
+        //     if (isShow){
+        //          $('.box').show(2000,function () {
+        //               _this.text('隐藏');
+        //
+        //          });
+        //
+        //          isShow=false;
+        //     }else{
+        //         $('.box').hide(2000);
+			// 		isShow = true;
+			// 		$(this).text('显示');
+        //     }
+        // })
+        //第二种简单写法
+        $('#btn').click(function () {
+            // // $('.box').stop().toggle('2000');
+            //滑入滑出
+            // $('.box').stop().slideToggle(2000,function () {
+            //
+            // })
+            //淡入淡出动画效果
+            $('.box').stop().fadeToggle(1000, function() {
+
+            });
+
+
+
+
+        })
+
+    })
+
+</script>
+
+
+</body>
+</html>

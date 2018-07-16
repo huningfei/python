@@ -1,0 +1,42 @@
+<!--$(".outer div")  $(".outer>div")   $(".outer+div")  $(".outer~div")-->
+<!--层级选择器就是选择符后面的那个元素，比如div>p是选择>后面的p元素-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层级选择器</title>
+</head>
+<body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        //后代选择器，空格
+        var jqli=$("ul li");
+        jqli.css('margin',5);
+        jqli.css('background','pink');
+        //子代选择器，只应用于亲儿子
+        var jqli1=$('ul >li');
+        jqli1.css('background','red');
+        //紧邻选择器
+        var jqli2=$("ul + p");
+        jqli2.css('color','blue');
+        //兄弟选择器
+        var jqli3=$('ul ~p');
+        jqli3.css('color','red');
+
+    })
+</script>
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <ol>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ol>
+</ul>
+<p>我是p标签</p>
+<p>风卷残云</p>
+</body>
+</html>

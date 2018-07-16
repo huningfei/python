@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引入jquery</title>
+</head>
+<body>
+<script src="jquery-3.3.1.min.js"></script>
+
+<div id="app"></div>
+<div class="box"></div>
+<div class="box"></div>
+<script>
+    console.log($('#app'));
+    console.log($('.box'));
+    console.log($('div'));
+    $('div').css({
+          'width': '200px',
+            'height': '200px',
+            "background-color":'red',
+            'margin-top':'20px'
+})
+    // $('div')[0];
+
+</script>
+
+
+</body>
+</html>

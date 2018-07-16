@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本过滤选择器</title>
+    <style>
+        li{
+
+            list-style-type: none
+        }
+    </style>
+</head>
+<body>
+  <ul>
+            <li>哈哈哈哈，基本过滤选择器</li>
+            <li>嘿嘿嘿</li>
+            <li>天王盖地虎</li>
+            <li>小鸡炖蘑菇</li>
+
+  </ul>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+      $(function () {
+          //奇数
+          $('li:odd').css('color','red');
+          //选择索引值为0的元素
+          $('li:eq(0)').css('font-size','40px');
+          //选择索引值大于1的
+          $('li:gt(1)').css('font-size','30px');
+          //选择索引值小于1的
+           $('li:lt(1)').css('font-size','20px');
+
+
+      })
+  </script>
+</body>
+</html>

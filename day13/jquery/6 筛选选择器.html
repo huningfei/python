@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>筛选选择器</title>
+</head>
+<body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        //获取第n个元素 数值从0开始
+        $('span').eq(1).css('color','green');
+          //获取第一个元素和最后一个元素 :first :last
+        $('span').last().css('color','greenyellow');
+         $('span').first().css('color','black');
+         //查找span标签的父元素（亲的）
+         $('span').parent('.p1').css({"width":'200px','height':'200px',"background":'red'});
+         //选择所有的兄弟元素（不包括自己）
+         $('.list').siblings('li').css('color','red');
+         //查找所有的后代元素
+        $('div').find('button').css('background','yellow');
+         //不写参数代表获取所有子元素。
+       $('ul').children().css("background", "green");
+       $('ul').children("li").css("margin-top", 10);
+
+
+    })
+</script>
+  <div id="box">
+            <p class="p1">
+                <span>我是第一个span标签</span>
+                <span>我是第二个span标签</span>
+                <span>我是第三个span标签</span>
+            </p>
+            <button>按钮</button>
+  </div>
+        <ul>
+            <li class="list">2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+</body>
+</html>
