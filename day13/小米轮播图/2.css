@@ -1,0 +1,84 @@
+ .there-right{
+            height: 420px;
+            width: 1226px;
+            float: right;
+
+            margin-top: 50px;
+            margin-right:58px;
+        }
+         img{
+            width:1226px;
+            height: 420px;
+            /*margin-top: 0px;*/
+            margin-left: 76px;
+            display: none;
+        }
+        /*两个箭头的样式*/
+        .there-right .jiatou .ui-prev{
+            position: absolute;
+            top: 50%;
+            z-index: 999;
+            width: 41px;
+            height: 69px;
+            /*margin-top: 0px;*/
+            text-indent: -9999px;
+            margin-left: 321px;
+            overflow: hidden;
+            background: url("https://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png") no-repeat -84px 50%;
+            outline: 0;
+        }
+        .there-right .jiatou .ui-next{
+            position: absolute;
+            top: 52%;
+            z-index: 999;
+            width: 41px;
+            height: 69px;
+            left: 1183px;
+            overflow: hidden;
+            background: url("https://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png") no-repeat -125px 50%;
+            outline: 0;
+        }
+        .there-right .jiatou a:hover {
+            background-color: #757575;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /*图片上面园点的样式*/
+        .there-right .gradan.ui-pager-item{
+           font-size: 12px;
+            text-align: center;
+            color: #666;
+        }
+        .there-right .gradan .ui-pager-item a{
+
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            margin: 0 5px;
+            border: 2px solid #fff;
+            border-color: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            text-align: left;
+            text-indent: -9999px;
+            overflow: hidden;
+            background: #f5f5f5;
+            background: rgba(0,0,0,0.4);
+        }
+        /*.gradan .ui-pager-item a:hover{*/
+            /*background: white;*/
+            /*border-color: rgba(0,0,0,0.4);*/
+            /**/
+        /*}*/
+        .gradan .ui-pager-item{
+            margin-left: 1080px;
+            position: absolute;
+            margin-top: 382px;
+
+        }
+        .hide{
+
+            display: block;
+        }
+        /*.yangshi{*/
+            /*background-color: white;*/
+        /*}*/
