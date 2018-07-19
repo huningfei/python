@@ -1,23 +1,12 @@
  $(function () {
-            // function   yuandian() {
-            //     for (var i=0;i < $(".gradan .ui-pager-item").length;i++){
-            //         if ($(".gradan.ui-pager-item").eq(i).css('background','white'));
-            //             $(".ui-pager-item a").eq(i+1).css('background','white').siblings().css('background','#666');
-            //             $("img").eq(i).addClass("hide").siblings().removeClass("hide");
-            //
-            //
-            //     }
-            //
-            // }
-            //   $('.gradan').click(function () {
-            //       clearInterval(down);
-            //       yuandian()
-            //
-            //    });
-            function next() {
-                // var img=document.getElementsByClassName('lunbo');
 
-                    for (var i = 0; i < $("img").length; i++) {
+            function next() {
+
+                //筛选选择器
+                var img=$(".lunbo").find("img");
+                console.log(img);
+
+                    for (var i = 0; i < img.length; i++) {
                         if ($("img").eq(i).hasClass("hide")) {
                             if (i == 5) {
                                 i = -1

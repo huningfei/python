@@ -6,13 +6,16 @@
             margin-top: 50px;
             margin-right:58px;
         }
-         img{
+
+          .there-right img{
             width:1226px;
             height: 420px;
             /*margin-top: 0px;*/
             margin-left: 76px;
-            display: none;
+              display: none;
+
         }
+
         /*两个箭头的样式*/
         .there-right .jiatou .ui-prev{
             position: absolute;
@@ -64,21 +67,21 @@
             background: #f5f5f5;
             background: rgba(0,0,0,0.4);
         }
-        /*.gradan .ui-pager-item a:hover{*/
-            /*background: white;*/
-            /*border-color: rgba(0,0,0,0.4);*/
-            /**/
-        /*}*/
+        .gradan .ui-pager-item a:hover{
+            background: white;
+            border-color: rgba(0,0,0,0.4);
+
+        }
         .gradan .ui-pager-item{
             margin-left: 1080px;
             position: absolute;
             margin-top: 382px;
 
         }
-        .hide{
+        .xianshi {
 
             display: block;
         }
-        /*.yangshi{*/
-            /*background-color: white;*/
-        /*}*/
+        .yincang{
+            display: none;
+        }
