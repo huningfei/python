@@ -7,6 +7,7 @@
                 console.log(img);
 
                     for (var i = 0; i < img.length; i++) {
+                        // if ($("img").eq(i).has("block")){
                         if ($("img").eq(i).hasClass("xianshi")) {
                             if (i == 5) {
                                 i = -1

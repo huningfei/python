@@ -2,19 +2,23 @@
             height: 420px;
             width: 1226px;
             float: right;
-
             margin-top: 50px;
             margin-right:58px;
+
         }
 
           .there-right img{
             width:1226px;
             height: 420px;
-            /*margin-top: 0px;*/
-            margin-left: 76px;
+          position: absolute;
+
+
               display: none;
+              z-index: 0;
+
 
         }
+
 
         /*两个箭头的样式*/
         .there-right .jiatou .ui-prev{
@@ -78,10 +82,10 @@
             margin-top: 382px;
 
         }
-        .xianshi {
+        #xianshi {
+            position: absolute;
 
             display: block;
+            z-index: 100;
         }
-        .yincang{
-            display: none;
-        }
+

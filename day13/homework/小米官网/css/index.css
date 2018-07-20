@@ -78,7 +78,7 @@
             height: 100px;
 
         }
-        .head-logo {
+        .head-logo a{
             float: left;
             /*width: 62px;*/
             margin-top: 22px;
@@ -172,7 +172,7 @@
             margin-top: 50px;
             margin-right:58px;
         }
-         .there-right img{
+          .there-right img{
             width:1226px;
             height: 420px;
             /*margin-top: 0px;*/
