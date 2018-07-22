@@ -7,14 +7,11 @@
 
         }
 
-          .there-right img{
+          .there-right  img{
             width:1226px;
             height: 420px;
-          position: absolute;
-
-
-              display: none;
-              z-index: 0;
+            display: none;
+        /**/
 
 
         }
@@ -71,21 +68,19 @@
             background: #f5f5f5;
             background: rgba(0,0,0,0.4);
         }
-        .gradan .ui-pager-item a:hover{
-            background: white;
-            border-color: rgba(0,0,0,0.4);
+        /*.gradan .ui-pager-item a:hover{*/
+            /*background: white;*/
+            /*border-color: rgba(0,0,0,0.4);*/
 
-        }
+        /*}*/
         .gradan .ui-pager-item{
             margin-left: 1080px;
             position: absolute;
             margin-top: 382px;
 
         }
-        #xianshi {
-            position: absolute;
 
+        .there-right .hide{
             display: block;
-            z-index: 100;
         }
 

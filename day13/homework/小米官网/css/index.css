@@ -177,9 +177,9 @@
             height: 420px;
             /*margin-top: 0px;*/
             margin-left: 76px;
-            /*display: none;*/
+            display: none;
         }
-        .hide{
+        .there-right .hide{
 
             display: block;
         }
