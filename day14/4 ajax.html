@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+	<p></p>
+	<button type="button">获取天气</button>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        $(function () {
+            $('button').click(function (event) {
+                $.ajax({
+                    url:'https://free-api.heweather.com/s6/weather/now?location=beijing&key=7e2f47ead8a94ecab4b9e04f1f8d4a3f',
+                    type:'get',
+                    // dataType:'text',
+                    success:function (data) {
+                        console.log(data.HeWeather6[0].now);
+                        $('p').text(data.HeWeather6[0].now.tmp+'℃'+data.HeWeather6[0].now.cond_text)+'cond-icon-heweather.cond_text.png';
+                        // $('p').text(data.HeWeather6[0].now.cond_txt);
+                    },
+						// console.log(typeof data);
+
+						// var jsonData = JSON.parse(data);
+						// console.log(jsonData);
+                        	//做DOM操作
+					//
+					// },
+					error:function (err) {
+						console.log(err);
+					}
+
+
+                })
+
+            })
+        })
+    </script>
+
+</body>
+</html>
