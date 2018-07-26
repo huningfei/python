@@ -12,6 +12,8 @@
     </style>
 </head>
 <body>
+<script src="../jquery-3.3.1.min.js"></script>
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -43,15 +45,10 @@
         <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">排版</h3>
+                    <h3 class="panel-title">响应式图片</h3>
                 </div>
                 <div class="panel-body">
-                    <h1>h1. Bootstrap heading排版</h1>
-                    <h2>h2. Bootstrap heading</h2>
-                    <h3>h3. Bootstrap heading</h3>
-                    <h4>h4. Bootstrap heading</h4>
-                    <!--<h5>h5. Bootstrap heading</h5>-->
-                    <!--<h6>h6. Bootstrap heading</h6>-->
+                   <img src="./1.jpg" class="img-responsive" alt="Responsive image">
                 </div>
             </div>
 
@@ -361,7 +358,7 @@
                         <h3 class="panel-title">对齐</h3>
                     </div>
                     <div class="panel-body">
-                       <p class="text-left">Left aligned text.</p>
+                        <p class="text-left">Left aligned text.</p>
                         <p class="text-center">Center aligned text.</p>
                         <p class="text-right">Right aligned text.</p>
                         <p class="text-justify">Justified text.</p>
@@ -394,7 +391,7 @@
                         <h3 class="panel-title">变量</h3>
                     </div>
                     <div class="panel-body">
-                       <var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+                        <var>y</var> = <var>m</var><var>x</var> + <var>b</var>
                     </div>
                 </div>
             </div>
@@ -439,7 +436,7 @@
                         <h3 class="panel-title">情景背景色</h3>
                     </div>
                     <div class="panel-body">
-                       <p class="bg-primary">...</p>
+                        <p class="bg-primary">...</p>
                         <p class="bg-success">...</p>
                         <p class="bg-info">...</p>
                         <p class="bg-warning">...</p>
@@ -457,7 +454,8 @@
                         <h3 class="panel-title">关闭按钮</h3>
                     </div>
                     <div class="panel-body">
-                        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -497,9 +495,9 @@
                         <h3 class="panel-title">Panel title</h3>
                     </div>
                     <div class="panel-body">
-                       <button type="button" class="btn btn-default" aria-label="Left Align">
-                           <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-                       </button>
+                        <button type="button" class="btn btn-default" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                        </button>
 
                         <button type="button" class="btn btn-default btn-lg">
                             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
@@ -662,15 +660,10 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
+                        <h3 class="panel-title">被删除的文本</h3>
                     </div>
                     <div class="panel-body">
-                        <h1>h1. Bootstrap heading排版</h1>
-                        <h2>h2. Bootstrap heading</h2>
-                        <h3>h3. Bootstrap heading</h3>
-                        <h4>h4. Bootstrap heading</h4>
-                        <h5>h5. Bootstrap heading</h5>
-                        <h6>h6. Bootstrap heading</h6>
+                        <del>This line of text is meant to be treated as deleted text.</del>
                     </div>
                 </div>
             </div>
@@ -681,15 +674,10 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
+                        <h3 class="panel-title">带下划线的文本</h3>
                     </div>
                     <div class="panel-body">
-                        <h1>h1. Bootstrap heading排版</h1>
-                        <h2>h2. Bootstrap heading</h2>
-                        <h3>h3. Bootstrap heading</h3>
-                        <h4>h4. Bootstrap heading</h4>
-                        <h5>h5. Bootstrap heading</h5>
-                        <h6>h6. Bootstrap heading</h6>
+                        <u>This line of text will render as underlined</u>
                     </div>
                 </div>
             </div>
@@ -699,60 +687,61 @@
 
                 <div class="panel panel-info">
                     <div class="panel-heading">
+                        <h3 class="panel-title">着重</h3>
+                    </div>
+                    <div class="panel-body">
+                        <strong>rendered as bold text</strong>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row">-->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">禁用状态</h3>
+                    </div>
+                    <div class="panel-body">
+                        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..."
+                               disabled>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--<div class="row">-->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">调整列（column）尺寸</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <input type="text" class="form-control" placeholder=".col-xs-2">
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" placeholder=".col-xs-3">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" placeholder=".col-xs-4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--<div class="row">-->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
                         <h3 class="panel-title">排版</h3>
                     </div>
                     <div class="panel-body">
-                        所要演示的代码内容
-                    </div>
-                </div>
-            </div>
-            <!--<div class="row">-->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
-                    </div>
-                    <div class="panel-body">
-                        <h1>h1. Bootstrap heading排版</h1>
-                        <h2>h2. Bootstrap heading</h2>
-                        <h3>h3. Bootstrap heading</h3>
-                        <h4>h4. Bootstrap heading</h4>
-                        <h5>h5. Bootstrap heading</h5>
-                        <h6>h6. Bootstrap heading</h6>
-                    </div>
-                </div>
-            </div>
-
-
-            <!--<div class="row">-->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
-                    </div>
-                    <div class="panel-body">
-                        <h1>h1. Bootstrap heading排版</h1>
-                        <h2>h2. Bootstrap heading</h2>
-                        <h3>h3. Bootstrap heading</h3>
-                        <h4>h4. Bootstrap heading</h4>
-                        <h5>h5. Bootstrap heading</h5>
-                        <h6>h6. Bootstrap heading</h6>
-                    </div>
-                </div>
-            </div>
-
-
-            <!--<div class="row">-->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
-                    </div>
-                    <div class="panel-body">
-                        <h1>h1. Bootstrap heading排版</h1>
+                        <h1>h1. Bootstrap heading</h1>
                         <h2>h2. Bootstrap heading</h2>
                         <h3>h3. Bootstrap heading</h3>
                         <h4>h4. Bootstrap heading</h4>

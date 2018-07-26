@@ -51,7 +51,24 @@
 
 
                 });
+                $.ajax({
+                    url:'https://free-api.heweather.com/s6/air/now?parameters?location=beijing&key=7e2f47ead8a94ecab4b9e04f1f8d4a3f',
+                    type:'get',
+                    success:function (data){
+                        console.log(data.HeWeather6[0]);
+
+                    }
+
+
+
+
+                });
                $(function () {
+                   $(".wheater.there").click(function () {
+                       // location.href="http://www.weather.com.cn/weather/101010100.shtml#7d"
+                       window.open("https://www.baidu.com");
+
+                   });
                    $('.left-top').mouseover(function () {
                        $(".wheater").stop().slideDown(500);
                    }).mouseout(function () {
@@ -64,7 +81,8 @@
                    }).mouseout(function () {
 
                          $(".wheater").stop().slideUp(500);
-                   })
+                   });
+
 
                })
      });

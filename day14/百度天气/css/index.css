@@ -91,6 +91,8 @@ span a:hover{
     display: none;
     float: left;
     font-size: 12px;
+    border:solid 0.5px ;
+    margin-left: -100px;
 
 
 }
@@ -110,6 +112,9 @@ span a:hover{
 }
 .two span{
     padding: 10px;
+}
+.two.aa{
+    color: #0e90d2;
 }
 .site{
     float: right;
