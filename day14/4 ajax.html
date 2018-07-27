@@ -16,16 +16,21 @@
             $('button').click(function (event) {
                 $.ajax({
                     // url:'https://free-api.heweather.com/s6/weather/now?location=beijing&key=7e2f47ead8a94ecab4b9e04f1f8d4a3f',
-                    url:'https://free-api.heweather.com/s6/weather/forecast?location=beijing&key=7e2f47ead8a94ecab4b9e04f1f8d4a3f',
+                    // url:'https://free-api.heweather.com/s6/weather/forecast?location=beijing&key=7e2f47ead8a94ecab4b9e04f1f8d4a3f',
+                    url:'https://free-api.heweather.com/s6/air/now?location=beijing&key=7e2f47ead8a94ecab4b9e04f1f8d4a3f',
                     type:'get',
                     // dataType:'text',
                     success:function (data) {
-                        console.log(data.HeWeather6[0]);
-                        console.log(data.HeWeather6[0].daily_forecast[0].cond_code_d);
+                        // console.log(data)
+                        console.log(data.HeWeather6[0].air_now_city.pm25);
+                        console.log(data.HeWeather6[0].air_now_city.qlty);
+
+                        // console.log(data.HeWeather6[0].daily_forecast[0].cond_code_d);
                         // $('p').text(data.HeWeather6[0].daily_forecast[0].cond_code_d+".png")
 
-                        $('img').attr('src',"./cond-icon-heweather/"+data.HeWeather6[0].daily_forecast[0].cond_code_d+'.png');
+                        // $('img').attr('src',"./cond-icon-heweather/"+data.HeWeather6[0].daily_forecast[0].cond_code_d+'.png');
                         // $('p').text(data.HeWeather6[0].basic.location+data.HeWeather6[0].now.tmp+'℃'+data.HeWeather6[0].now.cond_txt);
+                        $('p').text(data.HeWeather6[0].air_now_city.qlty+data.HeWeather6[0].air_now_city.pm25)
 
                     },
 						// console.log(typeof data);

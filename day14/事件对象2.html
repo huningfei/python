@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+
+</form>
+<a href="http://www.baidu.com" title="">百度</a>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        formDom();
+
+        function formDom(argument) {
+            $('form').append(`
+				<label>用户名</label>
+				<input type="text" id='user'>
+				<input type="submit">`);
+        }
+
+        // 点击 type='submit'的按钮 会触发 form表单的submit事件
+        $('form').submit(function (event) {
+            // alert(event);
+
+            //  阻止from表单的默认行为
+            event.preventDefault();
+            console.log(event)
+        });
+
+
+        // 实时监听input输入框内的value 通过oninput事件
+        $('#user')[0].oninput = function (event) {
+            console.log(event.target.value);  //获取最后一个值
+        };
+        //阻止a标签的默认行为
+        $('a').click(function (event) {
+            event.preventDefault();//阻止默认事件
+            // console.log(event);
+            event.stopPropagation();//阻止a标签冒泡
+            // //下面这三个返回的内容是一样的，当结合冒泡使用的时候  event.target就是点击的当前的对象（内层的标签） / currentTarget指的是当前的标签
+
+            // console.log(event.target);
+            // console.log(event.currentTarget);
+            // console.log(this);
+            console.log('a标签点击了')
+        });
+    })
+</script>
+</body>
+</html>
