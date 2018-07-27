@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.top{
+    width: 100%;
+    height: 30px;
+    background-color: #0e90d2;
+  }
+.left-top{
+    float: left;
+    font-size:12px ;
+    text-align: center;
+
+}
+.right-top{
+    float: right;
+    margin-right: 15px;
+    margin-top: 5px;
+
+}
+.city a{
+    font-size: 12px;
+    color: white;
+    float: left;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.tianqi {
+    font-size: 12px;
+    color: white;
+    float: left;
+    margin-left: 55px;
+    margin-top: -22px;
+
+}
+.tianqi img{
+    margin-top: 2px;
+}
+
+
+.left-top span{
+    font-size: 12px;
+    float: left;
+    margin-top:2px;
+}
+
+.right-top a{
+    font-size: 13px;
+    color: white;
+    float: left;
+    margin-left: 20px;
+
+}
+.show-pollution span{
+    font-size: 12px;
+    color: white;
+    float: left;
+    margin-left: 20px;
+    margin-top: 7px;
+
+}
+.show-pollution span em{
+    margin-left: 5px;
+
+}
+.top .icons{
+    float: left;
+     margin-top: 7px;
+}
+
+.icons a{
+    font-size: 12px;
+    color: white;
+    float: left;
+    margin-left: 10px;
+}
+span a:hover{
+    color: white;
+}
+.left-top a{
+    text-decoration:none;
+
+}
+.left-top .tianqi img{
+    width: 22px;
+}
+.wheater{
+    width: 585px;
+    height: 100%;
+    display: none;
+    float: left;
+    font-size: 12px;
+    border:solid 0.5px ;
+    margin-left: -10px;
+    padding: 10px;
+
+
+}
+.wheater.one{
+    float: left;
+    background-color: #e0e0e0;
+    width: 585px;
+
+}
+
+.two{
+    float: left;
+    margin-top: 24px;
+    margin-left: 13px;
+    height: 20px;
+    width: 585px;
+}
+.two span{
+    padding: 10px;
+}
+.two.aa{
+    color: #0e90d2;
+}
+a{
+     text-decoration:none;
+}
+.site{
+    float: right;
+    margin-right: 80px;
+    margin-top: -10px;
+}
+.there{
+    float: left;
+    margin-left: 13px;
+    margin-top: 30px;
+    width: 585px;
+}
+
+
+.day1{
+    float: left;
+    /*width: 20px;*/
+    margin-left: 60px;
+}
+.day1 .wea{
+    margin-top: 15px;
+}
+.day1 .temp{
+    /*float: left;*/
+   margin-top: 10px;
+}
+.day2{
+    float: left;
+    margin-left: 60px;
+
+}
+.day2 .wea{
+    margin-top: 15px;
+}
+.day2 .temp{
+    /*float: left;*/
+   margin-top: 10px;
+}
+.day3{
+    float: left;
+    margin-left: 60px;
+
+}
+.day3 .wea{
+    margin-top: 15px;
+}
+.day3 .temp{
+    /*float: left;*/
+   margin-top: 10px;
+}
+.there img{
+    padding: 0;
+    margin-left: -19px;
+}
+.one img{
+    float: left;
+    width: 42px;
+    background-color: yellow;
+}
+.one p{
+    float: left;
+    margin-top: 12px;
+    margin-left: 17px;
+
+}
+.day{
+    cursor: pointer;
+}
+.day:hover{
+    color: blueviolet;
+}
+
+
+@font-face {
+  font-family: 'iconfont';  /* project id 755609 */
+  src: url('http://at.alicdn.com/t/font_755609_35tcqnx676b.eot');
+  src: url('http://at.alicdn.com/t/font_755609_35tcqnx676b.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_755609_35tcqnx676b.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_755609_35tcqnx676b.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_755609_35tcqnx676b.svg#iconfont') format('svg');
+}
+
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    float: left;
+    margin-left: 35px;
+    margin-top: -16px;
+}

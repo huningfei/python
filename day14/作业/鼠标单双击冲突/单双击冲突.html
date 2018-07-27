@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+<head>
+    <meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+	<form>
+
+	</form>
+	<a href="http://www.baidu.com" title="">百度</a>
+	<script src="../jquery-3.3.1.min.js"></script>
+
+	<script>
+        $(function () {
+            var time=null;
+			$('a').click(function(event) {
+				/* Act on the event */
+				event.preventDefault();
+
+				// 阻止冒泡
+				event.stopPropagation();
+				clearTimeout(time);
+
+
+
+				time=setTimeout(function () {
+				    console.log('单机')
+
+                },300)
+			});
+
+
+
+
+			$('a').dblclick(function(event) {
+			    clearTimeout(time);
+				/* Act on the event */
+				console.log('双击了')
+			});
+
+
+
+		})
+	</script>
+</body>
+</html>

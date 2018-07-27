@@ -1,0 +1,7 @@
+博客：https://www.cnblogs.com/huningfei/p/9366015.html
+http://www.cnblogs.com/huningfei/p/9368714.html
+
+本次有三个作业，
+第一，和风天气，利用ajax去获得实时数据。鼠标放到城市和天气上面会出现详细天气情况。展示页面为wheater.html
+第二 ，bootstrap 演示bootstrap官网上面的各个功能，并且展示在面板里面，展示页面为index.html
+第三，解决单机和双击的执行冲突，超过300ms就执行单机操作，小于300ms就执行双击操作。互不影响
