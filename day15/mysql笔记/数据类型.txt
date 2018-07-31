@@ -1,0 +1,368 @@
+1、整数类型
+
+整数类型：TINYINT SMALLINT MEDIUMINT INT BIGINT
+
+作用：存储年龄，等级，id，各种号码等
+
+========================================
+        tinyint[(m)] [unsigned] [zerofill]
+
+            小整数，数据类型用于保存一些范围的整数数值范围：
+            有符号：
+                -128 ～ 127
+            无符号：
+～ 255
+
+            PS： MySQL中无布尔值，使用tinyint(1)构造。
+
+
+
+========================================
+        int[(m)][unsigned][zerofill]
+
+            整数，数据类型用于保存一些范围的整数数值范围：
+            有符号：
+                    -2147483648 ～ 2147483647
+            无符号：
+～ 4294967295
+
+
+
+========================================
+        bigint[(m)][unsigned][zerofill]
+            大整数，数据类型用于保存一些范围的整数数值范围：
+            有符号：
+                    -9223372036854775808 ～ 9223372036854775807
+            无符号：
+ ～  18446744073709551615
+ 
+ 例子：
+ #tinyint默认为有符号
+ mysql> insert into t1 values(-128);
+Query OK, 1 row affected (0.33 sec)
+
+mysql> insert into t1 values(127);
+Query OK, 1 row affected (0.04 sec)
+
+
+
+#设置无符号tinyint
+create table t2(x tinyint unsigned);
+
+ mysql> insert into t3 values(0),(255);
+Query OK, 2 rows affected (0.34 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from t3;
++------+
+| x    |
++------+
+|    0 |
+|  255 |
++------+
+2 rows in set (0.00 sec)
+
+int类型有符号
+mysql> insert into t4 values (-2147483648),(2147483647);
+Query OK, 2 rows affected (0.33 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from t4;
++-------------+
+| x           |
++-------------+
+| -2147483648 |
+|  2147483647 |
++-------------+
+2 rows in set (0.00 sec)
+int 设置无符号
+mysql> create table t5(x int unsigned);
+Query OK, 0 rows affected (0.58 sec)
+
+mysql> insert into t5 values (-2147483648),(2147483647);有符号的插不进去了
+ERROR 1264 (22003): Out of range value for column 'x' at row 1
+mysql> insert into t5 values (2147483648),(2147483647);
+Query OK, 2 rows affected (0.09 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+==============有符号和无符号bigint=============
+有符号：
+mysql> insert into t6 values (-9223372036854775808),(9223372036854775807);
+Query OK, 2 rows affected (0.11 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+mysql> select * from t6
+    -> ;
++----------------------+
+| x                    |
++----------------------+
+| -9223372036854775808 |
+|  9223372036854775807 |
++----------------------+
+2 rows in set (0.00 sec)
+
+无符号：
+mysql> create table t7(x bigint unsigned);
+Query OK, 0 rows affected (0.62 sec)
+
+mysql> insert into t7 values (-9223372036854775808),(9223372036854775807);有符号的不能插入了
+ERROR 1264 (22003): Out of range value for column 'x' at row 1
+
+mysql> insert into t7 values (9223372036854775807);
+Query OK, 1 row affected (0.33 sec)
+无符号：
+mysql> select * from t7;
++---------------------+
+| x                   |
++---------------------+
+| 9223372036854775807 |
++---------------------+
+1 row in set (0.00 sec)
+
+2、浮点型
+
+定点数类型  DEC等同于DECIMAL　　
+
+浮点类型：FLOAT DOUBLE
+
+作用：存储薪资、身高、体重、体质参数等
+
+======================================
+#FLOAT[(M,D)] [UNSIGNED] [ZEROFILL]
+
+定义：
+        单精度浮点数（非准确小数值），m是数字总个数，d是小数点后个数。m最大值为255，d最大值为30
+
+有符号：
+           -3.402823466E+38 to -1.175494351E-38,
+           1.175494351E-38 to 3.402823466E+38
+无符号：
+           1.175494351E-38 to 3.402823466E+38
+
+
+精确度： 
+           **** 随着小数的增多，精度变得不准确 ****
+
+
+======================================
+#DOUBLE[(M,D)] [UNSIGNED] [ZEROFILL]
+
+定义：
+           双精度浮点数（非准确小数值），m是数字总个数，d是小数点后个数。m最大值为255，d最大值为30
+
+有符号：
+           -1.7976931348623157E+308 to -2.2250738585072014E-308
+           2.2250738585072014E-308 to 1.7976931348623157E+308
+
+无符号：
+           2.2250738585072014E-308 to 1.7976931348623157E+308
+            
+精确度：
+           ****随着小数的增多，精度比float要高，但也会变得不准确 ****
+
+======================================
+decimal[(m[,d])] [unsigned] [zerofill]
+
+定义：
+          准确的小数值，m是数字总个数（负号不算），d是小数点后个数。 m最大值为65，d最大值为30。
+
+
+精确度：
+           **** 随着小数的增多，精度始终准确 ****
+           对于精确数值计算时需要用此类型
+           decaimal能够存储精确值的原因在于其内部按照字符串存储。
+
+mysql> create table t1 (x float(255,30));
+Query OK, 0 rows affected (0.64 sec)
+
+mysql> create table t2(x double(255,30));
+Query OK, 0 rows affected (0.61 sec)
+
+mysql> create table t3(x decimal(65,30));
+Query OK, 0 rows affected (0.62 sec)
+分别插入数据：
+mysql> insert into t1 values(1.1111111111111111111111111111111);
+Query OK, 1 row affected (0.33 sec)
+
+mysql> insert into t2 values(1.1111111111111111111111111111111);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into t3 values(1.1111111111111111111111111111111);
+Query OK, 1 row affected, 1 warning (0.11 sec)
+
+三者比较：
+mysql> select * from t1;
++----------------------------------+
+| x                                |
++----------------------------------+
+| 1.111111164093017600000000000000 |
++----------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from t2;
++----------------------------------+
+| x                                |
++----------------------------------+
+| 1.111111111111111200000000000000 |
++----------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from t3;
++----------------------------------+
+| x                                |
++----------------------------------+
+| 1.111111111111111111111111111111 |
++----------------------------------+
+1 row in set (0.00 sec)
+
+三 日期类型
+
+DATE TIME DATETIME TIMESTAMP YEAR 
+
+作用：存储用户注册时间，文章发布时间，员工入职时间，出生时间，过期时间等
+
+		YEAR
+            YYYY（1901/2155）
+
+        DATE
+            YYYY-MM-DD（1000-01-01/9999-12-31）
+
+        TIME
+            HH:MM:SS（'-838:59:59'/'838:59:59'）
+
+        DATETIME（常用的）
+
+            YYYY-MM-DD HH:MM:SS（1000-01-01 00:00:00/9999-12-31 23:59:59    Y）
+
+        TIMESTAMP
+
+            YYYYMMDD HHMMSS（1970-01-01 00:00:00/2037 年某时）
+			
+			
+1 year 有个存储范围  1901---2155
+mysql> insert into time values (1900);
+ERROR 1264 (22003): Out of range value for column 'born_year' at row 1
+mysql> insert into time values (1901);
+Query OK, 1 row affected (0.33 sec)
+
+mysql> insert into time values (2156);
+ERROR 1264 (22003): Out of range value for column 'born_year' at row 1
+mysql> insert into time values (2155);
+Query OK, 1 row affected (0.32 sec)
+
+2============date,time,datetime===========
+mysql> create table time2(d date,t time, dt datetime);
+Query OK, 0 rows affected (0.64 sec)
+
+mysql> insert into time2 values (now(),now(),now());
+Query OK, 1 row affected, 1 warning (0.33 sec)
+
+mysql> select * from time2;
++------------+----------+---------------------+
+| d          | t        | dt                  |
++------------+----------+---------------------+
+| 2018-07-30 | 11:38:16 | 2018-07-30 11:38:16 |
++------------+----------+---------------------+
+1 row in set (0.00 sec)
+
+3  timestamp
+
+mysql> create table time3 (time timestamp);
+Query OK, 0 rows affected (0.61 sec)
+
+mysql> insert into time3 values();
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from time3;
++---------------------+
+| time                |
++---------------------+
+| 2018-07-30 11:42:04 |
++---------------------+
+1 row in set (0.00 sec)
+
+4 timestamp和datatime的区别
+在实际应用的很多场景中，MySQL的这两种日期类型都能够满足我们的需要，存储精度都为秒，但在某些情况下，会展现出他们各自的优劣。下面就来总结一下两种日期类型的区别。
+
+1.DATETIME的日期范围是1001——9999年，TIMESTAMP的时间范围是1970——2038年。
+
+2.DATETIME存储时间与时区无关，TIMESTAMP存储时间与时区有关，显示的值也依赖于时区。在mysql服务器，操作系统以及客户端连接都有时区的设置。
+
+3.DATETIME使用8字节的存储空间，TIMESTAMP的存储空间为4字节。因此，TIMESTAMP比DATETIME的空间利用率更高。
+
+4.DATETIME的默认值为null；TIMESTAMP的字段默认不为空（not null）,默认值为当前时间（CURRENT_TIMESTAMP），如果不做特殊处理，并且update语句中没有指定该列的更新值，则默认更新为当前时间。
+
+四 字符串类型
+#char类型：定长，简单粗暴，浪费空间，存取速度快
+    字符长度范围：0-255（一个中文是一个字符，是utf8编码的3个字节）
+    存储：
+        存储char类型的值时，会往右填充空格来满足长度
+        例如：指定长度为10，存>10个字符则报错，存<10个字符则用空格填充直到凑够10个字符存储
+
+    检索：
+        在检索或者说查询时，查出的结果会自动删除尾部的空格，除非我们打开pad_char_to_full_length SQL模式（SET sql_mode = 'PAD_CHAR_TO_FULL_LENGTH';）
+
+		
+#varchar类型：变长，精准，节省空间，存取速度慢
+    字符长度范围：0-65535（如果大于21845会提示用其他类型 。mysql行最大限制为65535字节，字符编码为utf-8：https://dev.mysql.com/doc/refman/5.7/en/column-count-limit.html）
+    存储：
+        varchar类型存储数据的真实内容，不会用空格填充，如果'ab  ',尾部的空格也会被存起来
+        强调：varchar类型会在真实数据前加1-2Bytes的前缀，该前缀用来表示真实数据的bytes字节数（1-2Bytes最大表示65535个数字，正好符合mysql对row的最大字节限制，即已经足够使用）
+        如果真实的数据<255bytes则需要1Bytes的前缀（1Bytes=8bit 2**8最大表示的数字为255）
+        如果真实的数据>255bytes则需要2Bytes的前缀（2Bytes=16bit 2**16最大表示的数字为65535）
+
+    检索：
+        尾部有空格会保存下来，在检索或者说查询时，也会正常显示包含空格在内的内容
+		
+		
+例子：
+char填充空格来满足固定长度，但是在查询时却会很不要脸地删除尾部的空格（装作自己好像没有浪费过空间一样），
+然后修改sql_mode让其现出原形
+mysql> insert into t4 values ('aac ','aac ');
+Query OK, 1 row affected (0.32 sec)
+查询：其实都是存了4个长度，
+mysql> select x,char_length(x),y,char_length(y) from t4;
++------+----------------+------+----------------+
+| x    | char_length(x) | y    | char_length(y) |
++------+----------------+------+----------------+
+| aac  |              3 | aac  |              4 |
++------+----------------+------+----------------+
+1 row in set (0.32 sec)
+更改一个设置
+mysql> SET sql_mode = 'PAD_CHAR_TO_FULL_LENGTH';
+Query OK, 0 rows affected, 1 warning (0.26 sec)
+再次查看：
+mysql> select x,char_length(x),y,char_length(y) from t4;
++-------+----------------+------+----------------+
+| x     | char_length(x) | y    | char_length(y) |
++-------+----------------+------+----------------+
+| aac   |              5 | aac  |              4 |
++-------+----------------+------+----------------+
+1 row in set (0.00 sec)
+
+
+五 枚举类型与集合类型
+
+字段的值只能在给定范围中选择，如单选框，多选框
+enum 单选	只能在给定的范围内选一个值，如性别 sex 男male/女female
+set 多选 在给定的范围内可以选择一个或一个以上的值（爱好1,爱好2,爱好3...）
+创建一个表：
+
+insert into consumer values('egon','male','vip5','read,study'),('alex','female','vip1','girl'); 
+插入数据：
+
+mysql> insert into consumer values('egon','male','vip5','read,study'),('alex','female','vip1','play,read');
+Query OK, 2 rows affected (0.32 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+查询：
+mysql> select * from consumer;
++------+--------+-------+------------+
+| name | sex    | level | hobby      |
++------+--------+-------+------------+
+| egon | male   | vip5  | read       |
+| alex | female | vip1  | play       |
+| egon | male   | vip5  | read,study |
+| alex | female | vip1  | play,read  |
++------+--------+-------+------------+
+4 rows in set (0.00 sec)
+

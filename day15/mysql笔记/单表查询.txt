@@ -1,0 +1,374 @@
+ 查询（单表查询）
+1 语法
+SELECT 字段1,字段2... FROM 表名
+                  WHERE 条件
+                  GROUP BY field
+                  HAVING 筛选
+                  ORDER BY field
+                  LIMIT 限制条数
+				  
+
+2 关键字的执行优先级(重点)
+
+
+重点中的重点：关键字的执行优先级从上到下
+from
+where
+group by
+having
+select
+distinct
+order by
+limit
+说明：
+1.找到表:from
+
+2.拿着where指定的约束条件，去文件/表中取出一条条记录
+
+3.将取出的一条条记录进行分组group by，如果没有group by，则整体作为一组
+
+4.将分组的结果进行having过滤
+
+5.执行select
+
+6.去重
+
+7.将结果按条件排序：order by
+8.限制结果的显示条数
+例子：
+company.employee
+    员工id      id                  int             
+    姓名        emp_name            varchar
+    性别        sex                 enum
+    年龄        age                 int
+    入职日期     hire_date           date
+    岗位        post                varchar
+    职位描述     post_comment        varchar
+    薪水        salary              double
+    办公室       office              int
+    部门编号     depart_id           int
+
+
+
+#创建表
+create table employee(
+id int not null unique auto_increment,
+name varchar(20) not null,
+sex enum('male','female') not null default 'male', #大部分是男的
+age int(3) unsigned not null default 28,
+hire_date date not null,
+post varchar(50),
+post_comment varchar(100),
+salary double(15,2),
+office int, #一个部门一个屋子
+depart_id int
+);
+
+
+#查看表结构
+mysql> desc employee;
++--------------+-----------------------+------+-----+---------+----------------+
+| Field        | Type                  | Null | Key | Default | Extra          |
++--------------+-----------------------+------+-----+---------+----------------+
+| id           | int(11)               | NO   | PRI | NULL    | auto_increment |
+| name         | varchar(20)           | NO   |     | NULL    |                |
+| sex          | enum('male','female') | NO   |     | male    |                |
+| age          | int(3) unsigned       | NO   |     | 28      |                |
+| hire_date    | date                  | NO   |     | NULL    |                |
+| post         | varchar(50)           | YES  |     | NULL    |                |
+| post_comment | varchar(100)          | YES  |     | NULL    |                |
+| salary       | double(15,2)          | YES  |     | NULL    |                |
+| office       | int(11)               | YES  |     | NULL    |                |
+| depart_id    | int(11)               | YES  |     | NULL    |                |
++--------------+-----------------------+------+-----+---------+----------------+
+
+#插入记录
+#三个部门：教学，销售，运营
+insert into employee(name,sex,age,hire_date,post,salary,office,depart_id) values
+('egon','male',18,'20170301','老男孩驻沙河办事处外交大使',7300.33,401,1), #以下是教学部
+('alex','male',78,'20150302','teacher',1000000.31,401,1),
+('wupeiqi','male',81,'20130305','teacher',8300,401,1),
+('yuanhao','male',73,'20140701','teacher',3500,401,1),
+('liwenzhou','male',28,'20121101','teacher',2100,401,1),
+('jingliyang','female',18,'20110211','teacher',9000,401,1),
+('jinxin','male',18,'19000301','teacher',30000,401,1),
+('成龙','male',48,'20101111','teacher',10000,401,1),
+
+('歪歪','female',48,'20150311','sale',3000.13,402,2),#以下是销售部门
+('丫丫','female',38,'20101101','sale',2000.35,402,2),
+('丁丁','female',18,'20110312','sale',1000.37,402,2),
+('星星','female',18,'20160513','sale',3000.29,402,2),
+('格格','female',28,'20170127','sale',4000.33,402,2),
+
+('张野','male',28,'20160311','operation',10000.13,403,3), #以下是运营部门
+('程咬金','male',18,'19970312','operation',20000,403,3),
+('程咬银','female',18,'20130311','operation',19000,403,3),
+('程咬铜','male',18,'20150411','operation',18000,403,3),
+('程咬铁','female',18,'20140512','operation',17000,403,3)
+;
+
+#ps：如果在windows系统中，插入中文字符，select的结果为空白，可以将所有字符编码统一设置成gbk
+
+#简单查寻：
+select * from employee;
+ select name,salary from employee;
+ #避免重复
+ mysql> select distinct post from employee;
+ #通过四则运算查询
+ SELECT name, salary*12 AS Annual_salary FROM employee; #查询到的薪资乘以12，as是重命名
+ +------------+---------------+
+| name       | Annual_salary |
++------------+---------------+
+| egon       |      87603.96 |
+| alex       |   12000003.72 |
+| wupeiqi    |      99600.00 |
+| yuanhao    |      42000.00 |
+| liwenzhou  |      25200.00 |
+| jingliyang |     108000.00 |
+| jinxin     |     360000.00 |
+| 成龙       |     120000.00 |
+| 歪歪       |      36001.56 |
+| 丫丫       |      24004.20 |
+| 丁丁       |      12004.44 |
+| 星星       |      36003.48 |
+| 格格       |      48003.96 |
+| 张野       |     120001.56 |
+| 程咬金     |     240000.00 |
+| 程咬银     |     228000.00 |
+| 程咬铜     |     216000.00 |
+| 程咬铁     |     204000.00 |
++------------+---------------+
+
+#定义显示格式
+   CONCAT() 函数用于连接字符串
+   
+例子：
+mysql> SELECT CONCAT('姓名: ',name,'  年薪: ', salary*12)  AS Annual_salary
+    ->    FROM employee;
++---------------------------------------+
+| Annual_salary                         |
++---------------------------------------+
+| 姓名: egon  年薪: 87603.96            |
+| 姓名: alex  年薪: 12000003.72         |
+| 姓名: wupeiqi  年薪: 99600.00         |
+| 姓名: yuanhao  年薪: 42000.00         |
+| 姓名: liwenzhou  年薪: 25200.00       |
+| 姓名: jingliyang  年薪: 108000.00     |
+| 姓名: jinxin  年薪: 360000.00         |
+| 姓名: 成龙  年薪: 120000.00           |
+| 姓名: 歪歪  年薪: 36001.56            |
+| 姓名: 丫丫  年薪: 24004.20            |
+| 姓名: 丁丁  年薪: 12004.44            |
+| 姓名: 星星  年薪: 36003.48            |
+| 姓名: 格格  年薪: 48003.96            |
+| 姓名: 张野  年薪: 120001.56           |
+| 姓名: 程咬金  年薪: 240000.00         |
+| 姓名: 程咬银  年薪: 228000.00         |
+| 姓名: 程咬铜  年薪: 216000.00         |
+| 姓名: 程咬铁  年薪: 204000.00         |
++---------------------------------------+
+18 rows in set (0.32 sec)
+
+二 where条件约束
+where字句中可以使用：
+
+1. 比较运算符：> < >= <= <> !=
+2. between 80 and 100 值在10到20之间
+3. in(80,90,100) 值是10或20或30
+4. like 'egon%'
+    pattern可以是%或_，
+    %表示任意多字符
+    _表示一个字符 
+5. 逻辑运算符：在多个条件直接可以使用逻辑运算符 and or not
+
+#1:单条件查询
+    SELECT name FROM employee
+        WHERE post='sale';
+        
+#2:多条件查询
+    SELECT name,salary FROM employee
+        WHERE post='teacher' AND salary>10000;
+
+#3:关键字BETWEEN AND
+    SELECT name,salary FROM employee 
+        WHERE salary BETWEEN 10000 AND 20000;
+
+    SELECT name,salary FROM employee 
+        WHERE salary NOT BETWEEN 10000 AND 20000;
+    
+#4:关键字IS NULL(判断某个字段是否为NULL不能用等号，需要用IS)
+    SELECT name,post_comment FROM employee 
+        WHERE post_comment IS NULL;
+
+    SELECT name,post_comment FROM employee 
+        WHERE post_comment IS NOT NULL;
+        
+    SELECT name,post_comment FROM employee 
+        WHERE post_comment=''; 注意''是空字符串，不是null
+    ps：
+        执行
+        update employee set post_comment='' where id=2;
+        再用上条查看，就会有结果了
+
+#5:关键字IN集合查询
+    SELECT name,salary FROM employee 
+        WHERE salary=3000 OR salary=3500 OR salary=4000 OR salary=9000 ;
+    
+    SELECT name,salary FROM employee 
+        WHERE salary IN (3000,3500,4000,9000) ;
+
+    SELECT name,salary FROM employee 
+        WHERE salary NOT IN (3000,3500,4000,9000) ;
+
+#6:关键字LIKE模糊查询
+    通配符’%’
+    SELECT * FROM employee 
+            WHERE name LIKE 'eg%';
+
+    通配符’_’#双下划线一个_代表一个字符，两个代表两个字符
+  mysql> select * from emp where name like '__';
++----+--------+--------+-----+------------+-----------+--------------+----------+--------+-----------+
+| id | name   | sex    | age | hire_date  | post      | post_comment | salary   | office | depart_id |
++----+--------+--------+-----+------------+-----------+--------------+----------+--------+-----------+
+|  8 | 成龙   | male   |  48 | 2010-11-11 | teacher   | NULL         | 10000.00 |    401 |         1 |
+|  9 | 歪歪   | female |  48 | 2015-03-11 | sale      | NULL         |  3000.13 |    402 |         2 |
+| 10 | 丫丫   | female |  38 | 2010-11-01 | sale      | NULL         |  2000.35 |    402 |         2 |
+| 11 | 丁丁   | female |  18 | 2011-03-12 | sale      | NULL         |  1000.37 |    402 |         2 |
+| 12 | 星星   | female |  18 | 2016-05-13 | sale      | NULL         |  3000.29 |    402 |         2 |
+| 13 | 格格   | female |  28 | 2017-01-27 | sale      | NULL         |  4000.33 |    402 |         2 |
+| 14 | 张野   | male   |  28 | 2016-03-11 | operation | NULL         | 10000.13 |    403 |         3 |
++----+--------+--------+-----+------------+-----------+--------------+----------+--------+-----------+
+7 rows in set (0.00 sec)
+			
+			
+三 分组查询:GROUP BY
+#1、首先明确一点：分组发生在where之后，即分组是基于where之后得到的记录而进行的
+
+#2、分组指的是：将所有记录按照某个相同字段进行归类，比如针对员工信息表的职位分组，或者按照性别进行分组等
+
+如果想分组，则必须要设置全局的sql的模式为ONLY_FULL_GROUP_BY
+mysql> set global sql_mode='ONLY_FULL_GROUP_BY';
+
+#查看MySQL 5.7默认的sql_mode如下：
+mysql> select @@global.sql_mode;
++--------------------+
+| @@global.sql_mode  |
++--------------------+
+| ONLY_FULL_GROUP_BY |
++--------------------+
+row in set (0.00 sec)
+
+mysql> exit;#设置成功后，一定要退出，然后重新登录方可生效
+
+然后查询：使用分组必须和聚合函数一起使用
+mysql> select post,count(id) from employee group by post;
++-----------------------------------------+-----------+
+| post                                    | count(id) |
++-----------------------------------------+-----------+
+| operation                               |         5 |
+| sale                                    |         5 |
+| teacher                                 |         7 |
+| 老男孩驻沙河办事处外交大使              |         1 |
++-----------------------------------------+-----------+
+4 rows in set (0.34 sec)
+GROUP BY关键字和GROUP_CONCAT()函数一起使用
+
+mysql> SELECT post,GROUP_CONCAT(name) FROM employee GROUP BY post;
++-----------------------------------------+---------------------------------------------------------+
+| post                                    | GROUP_CONCAT(name)                                      |
++-----------------------------------------+---------------------------------------------------------+
+| operation                               | 张野,程咬金,程咬银,程咬铜,程咬铁                        |
+| sale                                    | 歪歪,丫丫,丁丁,星星,格格                                |
+| teacher                                 | alex,wupeiqi,yuanhao,liwenzhou,jingliyang,jinxin,成龙   |
+| 老男孩驻沙河办事处外交大使              | egon                                                    |
++-----------------------------------------+---------------------------------------------------------+
+4 rows in set (0.00 sec)
+
+四 聚合函数
+#强调：聚合函数聚合的是组的内容，若是没有分组，则默认一组
+
+示例：
+    SELECT COUNT(*) FROM employee;
+    SELECT COUNT(*) FROM employee WHERE depart_id=1;
+    SELECT MAX(salary) FROM employee;
+    SELECT MIN(salary) FROM employee;
+    SELECT AVG(salary) FROM employee;
+    SELECT SUM(salary) FROM employee;
+    SELECT SUM(salary) FROM employee WHERE depart_id=3;
+	
+五 HAVING过滤
+
+HAVING与WHERE不一样的地方在于!!!!!!
+
+#！！！执行优先级从高到低：where > group by > having 
+#1. Where 发生在分组group by之前，因而Where中可以有任意字段，但是绝对不能使用聚合函数。
+
+#2. Having发生在分组group by之后，因而Having中可以使用分组的字段，无法直接取到其他字段,可以使用聚合函数
+例子：
+mysql> select post,avg(salary) from emp group by post having avg(salary)> 10000;
++-----------+---------------+
+| post      | avg(salary)   |
++-----------+---------------+
+| operation |  16800.026000 |
+| teacher   | 151842.901429 |
++-----------+---------------+
+2 rows in set (0.27 sec)
+
+
+mysql> select post,avg(salary) from emp group by post having salary > 10000;
+ERROR 1054 (42S22): Unknown column 'salary' in 'having clause'
+
+分组后无法直接取到salary字段	
+例子3：
+mysql> select post,group_concat(name) from emp group by post having avg(salary) > 10000;
++-----------+---------------------------------------------------------+
+| post      | group_concat(name)                                      |
++-----------+---------------------------------------------------------+
+| operation | 张野,程咬金,程咬银,程咬铜,程咬铁                        |
+| teacher   | alex,wupeiqi,yuanhao,liwenzhou,jingliyang,jinxin,成龙   |
++-----------+---------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+六 查询排序:ORDER BY
+按单列排序
+    SELECT * FROM employee ORDER BY salary;
+    SELECT * FROM employee ORDER BY salary ASC;
+    SELECT * FROM employee ORDER BY salary DESC;
+
+按多列排序:先按照age排序，如果年纪相同，则按照薪资排序
+    SELECT * from employee
+        ORDER BY age,
+        salary DESC;
+		
+七 限制查询的记录数:LIMIT
+
+示例：
+    SELECT * FROM employee ORDER BY salary DESC 
+        LIMIT 3;                    #默认初始位置为0 
+    
+    SELECT * FROM employee ORDER BY salary DESC
+        LIMIT 0,5; #从第0开始，即先查询出第一条，然后包含这一条在内往后查5条
+
+    SELECT * FROM employee ORDER BY salary DESC
+        LIMIT 5,5; #从第5开始，即先查询出第6条，然后包含这一条在内往后查5条
+
+八 使用正则表达式查询
+
+
+SELECT * FROM employee WHERE name REGEXP '^ale';
+
+SELECT * FROM employee WHERE name REGEXP 'on$';
+
+SELECT * FROM employee WHERE name REGEXP 'm{2}';
+
+
+小结：对字符串匹配的方式
+WHERE name = 'egon';
+WHERE name LIKE 'yua%';
+WHERE name REGEXP 'on$';
+
+例子：
+查看所有员工中名字是jin开头，n或者g结果的员工信息
+
+select * from employee where name regexp '^jin.*[gn]$';
+	

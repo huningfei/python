@@ -1,0 +1,381 @@
+一 约束条件介绍：
+约束条件与数据类型的宽度一样，都是可选参数
+
+作用：用于保证数据的完整性和一致性
+主要分为：
+PRIMARY KEY (PK)    标识该字段为该表的主键，可以唯一的标识记录
+FOREIGN KEY (FK)    标识该字段为该表的外键
+NOT NULL    标识该字段不能为空
+UNIQUE KEY (UK)    标识该字段的值是唯一的
+AUTO_INCREMENT    标识该字段的值自动增长（整数类型，而且为主键）
+DEFAULT    为该字段设置默认值
+
+UNSIGNED 无符号
+ZEROFILL 使用0填充
+
+二 not null与default
+not null - 不可空
+null - 可空
+
+
+默认值，创建列时可以指定默认值，当插入数据时如果未主动设置，则自动添加默认值
+create table tb1(
+nid int not null defalut 2,
+num int not null
+)
+
+1  null
+mysql> create table t1(id int);
+Query OK, 0 rows affected (0.50 sec)
+
+mysql> desc t1;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| id    | int(11) | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+1 row in set (0.01 sec)
+
+mysql> insert into t1 values();
+Query OK, 1 row affected (0.10 sec)
+
+2 not null
+
+mysql> create table t2(id int not null);
+Query OK, 0 rows affected (0.64 sec)
+
+mysql> desc t2;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| id    | int(11) | NO   |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+再次插入空报错：
+mysql> insert into t2 values();
+ERROR 1364 (HY000): Field 'id' doesn't have a default value
+
+3 defalut
+#设置id字段有默认值后，则无论id字段是null还是not null，都可以插入空，插入空默认填入default指定的默认值
+mysql> create table t3(id int default 1);
+mysql> insert into t3 values();
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from t3;
++----+
+| id |
++----+
+|  1 |
++----+
+1 row in set (0.00 sec)
+
+mysql> alter table t3 modify id int not null default 1;
+
+三 unique唯一，不重复
+1 uniqe:
+ 创建一个表
+mysql> create table department1(
+    -> id int,
+    -> name varchar(20) unique,
+    -> comment varchar(100)
+    -> );
+Query OK, 0 rows affected (0.69 sec)
+
+
+ 插入数据
+mysql> insert into department1 values(1,'IT','技术');
+Query OK, 1 row affected (0.10 sec)
+再次插入数据报错：
+mysql> insert into department1 values(1,'IT','技术');
+ERROR 1062 (23000): Duplicate entry 'IT' for key 'name'
+
+2 uniqe和not null  相当于主键 primary key
+
+mysql> create table t4(id int not null unique);
+Query OK, 0 rows affected (0.61 sec)
+
+mysql> desc t4;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| id    | int(11) | NO   | PRI | NULL    |       |
++-------+---------+------+-----+---------+-------+
+1 row in set (0.01 sec)
+
+
+3 联合唯一
+
+mysql> create table service(
+    -> id int primary key auto_increment,
+    -> name varchar(20),
+    -> host varchar(15) not null,
+    -> port int not null,
+    -> unique(host,port) #联合唯一
+    -> );
+Query OK, 0 rows affected (0.69 sec)
+
+插入数据：
+
+insert into service values(1,'nginx','192.168.0.10',80),(2,'haproxy','192.168.0.20',80),(3,'mysql','192.168.0.30',3306);
+再次插入报错：
+mysql> insert into service(name,host,port) values('nginx','192.168.0.10',80);
+ERROR 1062 (23000): Duplicate entry '192.168.0.10-80' for key 'host'
+
+四 primary key
+从约束角度看primary key字段的值不为空且唯一，那我们直接使用not null+unique不就可以了吗，要它干什么？
+
+主键primary key是innodb存储引擎组织数据的依据，innodb称之为索引组织表，一张表中必须有且只有一个主键。
+
+一个表中可以：
+
+单列做主键
+多列做主键（复合主键）
+
+1 单列做主键
+
+方法1：
+mysql> create table t5(id int not null unique,name varchar(20) not null unique,comment varchar(100));
+Query OK, 0 rows affected (0.63 sec)
+
+mysql> desc t5;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | NO   | PRI | NULL    |       |
+| name    | varchar(20)  | NO   | UNI | NULL    |       |
+| comment | varchar(100) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+方法2：在某一个字段后用primary key
+mysql> create table t6(id int primary key unique,name varchar(20),comment varchar(100));
+Query OK, 0 rows affected (0.70 sec)
+
+mysql> desc t6;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | NO   | PRI | NULL    |       |
+| name    | varchar(20)  | YES  |     | NULL    |       |
+| comment | varchar(100) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+方法3：在所有字段后单独定义primary key
+mysql> create table t7(id int,name varchar(20),comment varchar(100),constraint pk_name primary key(id));#创建主键并为其命名pk_name
+Query OK, 0 rows affected (0.64 sec)
+
+mysql> desc t7;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | NO   | PRI | NULL    |       |
+| name    | varchar(20)  | YES  |     | NULL    |       |
+| comment | varchar(100) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+2  多列做主键（复合主键）
+mysql> create table t8(ip varchar(15),port char(5),service_name varchar(10) not null,primary key(ip,port));
+Query OK, 0 rows affected (0.58 sec)
+
+mysql> desc t8;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| ip           | varchar(15) | NO   | PRI | NULL    |       |
+| port         | char(5)     | NO   | PRI | NULL    |       |
+| service_name | varchar(10) | NO   |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+插入数据：
+mysql> insert into t8 values('172.16.45.10','3306','mysqld'),('172.16.45.11','3306','mariadb');
+Query OK, 2 rows affected (0.33 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+再次插入数据报错：
+mysql> insert into service values ('172.16.45.10','3306','nginx');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+
+五 auto_increment
+
+约束字段为自动增长，被约束的字段必须同时被key约束
+
+1  不指定id
+mysql> create table student(id int primary key auto_increment,name varchar(20),sex enum('male','female') default 'male');
+Query OK, 0 rows affected (0.96 sec)
+
+mysql> desc student;
++-------+-----------------------+------+-----+---------+----------------+
+| Field | Type                  | Null | Key | Default | Extra          |
++-------+-----------------------+------+-----+---------+----------------+
+| id    | int(11)               | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(20)           | YES  |     | NULL    |                |
+| sex   | enum('male','female') | YES  |     | male    |                |
++-------+-----------------------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> insert into student(name) values
+    -> ('egon'),
+    -> ('alex')
+    -> ;
+Query OK, 2 rows affected (0.35 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++----+------+------+
+| id | name | sex  |
++----+------+------+
+|  1 | egon | male |
+|  2 | alex | male |
++----+------+------+
+2 rows in set (0.00 sec)
+
+2 指定id
+mysql> insert into student values(4,'taibai','female');
+Query OK, 1 row affected (0.33 sec)
+
+mysql> select * from student;
++----+--------+--------+
+| id | name   | sex    |
++----+--------+--------+
+|  1 | egon   | male   |
+|  2 | alex   | male   |
+|  4 | taibai | female |
++----+--------+--------+
+3 rows in set (0.00 sec)
+
+#对于自增的字段，在用delete删除后，再插入值，该字段仍按照删除前的位置继续增长
+mysql> delete from student;
+Query OK, 3 rows affected (0.37 sec)
+
+mysql> select * from student;
+Empty set (0.00 sec)
+
+mysql> insert into student(name) values('ysb');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from student;
++----+------+------+
+| id | name | sex  |
++----+------+------+
+|  5 | ysb  | male |
++----+------+------+
+1 row in set (0.00 sec)
+
+#如果用truncate是接清空表，那么表的id会从新开始计算
+例子：
+mysql> truncate student;
+Query OK, 0 rows affected (0.54 sec)
+
+mysql> select * from student;
+Empty set (0.00 sec)
+
+mysql> insert into student(name) values('egon');
+Query OK, 1 row affected (0.33 sec)
+
+mysql> select * from student;
++----+------+------+
+| id | name | sex  |
++----+------+------+
+|  1 | egon | male |
++----+------+------+
+1 row in set (0.00 sec)
+
+六 foreign key  用于关联
+1-1 快速理解foreign key
+1 创建父表
+#表类型必须是innodb存储引擎，且被关联的字段，即references指定的另外一个表的字段，必须保证唯一
+mysql> create table department(
+    -> id int primary key,
+    -> name varchar(20) not null
+    -> )engine=innodb;
+Query OK, 0 rows affected (0.60 sec)
+
+2 创建子表：
+#dpt_id外键，关联父表（department主键id），同步更新，同步删除
+
+mysql> create table employee(
+    -> id int primary key,
+    -> name varchar(20) not null,
+    -> dpt_id int,
+    -> constraint fk_name foreign key(dpt_id)
+    -> references department(id)
+    -> on delete cascade
+    -> on update cascade
+    -> )engine=innodb;
+Query OK, 0 rows affected (0.34 sec)
+分别再插入数据：
+mysql> insert into department values
+    -> (1,'欧德博爱技术有限事业部'),
+    -> (2,'艾利克斯人力资源部'),
+    -> (3,'销售部');
+Query OK, 3 rows affected (0.09 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> insert into employee values
+    -> (1,'egon',1),
+    -> (2,'alex1',2),
+    -> (3,'alex2',2),
+    -> (4,'alex3',2),
+    -> (5,'李坦克',3),
+    -> (6,'刘飞机',3),
+    -> (7,'张火箭',3),
+    -> (8,'林子弹',3),
+    -> (9,'加特林',3)
+    -> ;
+Query OK, 9 rows affected (0.19 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+#删父表department，子表employee中对应的记录跟着删
+mysql> delete from department where id=3;
+Query OK, 1 row affected (0.45 sec)
+
+mysql> select * from employee;
++----+-------+--------+
+| id | name  | dpt_id |
++----+-------+--------+
+|  1 | egon  |      1 |
+|  2 | alex1 |      2 |
+|  3 | alex2 |      2 |
+|  4 | alex3 |      2 |
++----+-------+--------+
+4 rows in set (0.00 sec)
+
+#更新父表department，子表employee中对应的记录跟着改
+mysql> update department set id=22222 where id=2;
+Query OK, 1 row affected (0.37 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee;
++----+-------+--------+
+| id | name  | dpt_id |
++----+-------+--------+
+|  1 | egon  |      1 |
+|  2 | alex1 |  22222 |
+|  3 | alex2 |  22222 |
+|  4 | alex3 |  22222 |
++----+-------+--------+
+4 rows in set (0.00 sec)
+
+2  如何找出两张表之间的关系
+
+分析步骤：
+#1、先站在左表的角度去找
+是否左表的多条记录可以对应右表的一条记录，如果是，则证明左表的一个字段foreign key 右表一个字段（通常是id）
+
+#2、再站在右表的角度去找
+是否右表的多条记录可以对应左表的一条记录，如果是，则证明右表的一个字段foreign key 左表一个字段（通常是id）
+
+#3、总结：
+#多对一：
+如果只有步骤1成立，则是左表多对一右表
+如果只有步骤2成立，则是右表多对一左表
+
+#多对多
+如果步骤1和2同时成立，则证明这两张表时一个双向的多对一，即多对多,需要定义一个这两张表的关系表来专门存放二者的关系
+
+#一对一:
+如果1和2都不成立，而是左表的一条记录唯一对应右表的一条记录，反之亦然。这种情况很简单，就是在左表foreign key右表的基础上，将左表的外键字段设置成unique即可
+
+

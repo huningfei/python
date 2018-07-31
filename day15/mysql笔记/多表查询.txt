@@ -1,0 +1,184 @@
+一 多表查询
+#建表
+create table department(
+id int,
+name varchar(20) 
+);
+
+create table employee(
+id int primary key auto_increment,
+name varchar(20),
+sex enum('male','female') not null default 'male',
+age int,
+dep_id int
+);
+
+#插入数据
+insert into department values
+(200,'技术'),
+(201,'人力资源'),
+(202,'销售'),
+(203,'运营');
+
+insert into employee(name,sex,age,dep_id) values
+('egon','male',18,200),
+('alex','female',48,201),
+('wupeiqi','male',38,201),
+('yuanhao','female',28,202),
+('liwenzhou','male',18,200),
+('jingliyang','female',18,204)
+;
+1 交叉连接：不适用任何匹配条件。生成笛卡尔积
+
+select * from employee,department;
+
+2 内连接：只连接匹配的行  inner join
+
+#找两张表共有的部分，相当于利用条件从笛卡尔积结果中筛选出了正确的结果
+#department没有204这个部门，因而employee表中关于204这条员工信息没有匹配出来
+
+mysql> select * from employee inner join department on employee.dep_id=department.id;
++----+-----------+--------+------+--------+------+--------------+
+| id | name      | sex    | age  | dep_id | id   | name         |
++----+-----------+--------+------+--------+------+--------------+
+|  1 | egon      | male   |   18 |    200 |  200 | 技术         |
+|  2 | alex      | female |   48 |    201 |  201 | 人力资源     |
+|  3 | wupeiqi   | male   |   38 |    201 |  201 | 人力资源     |
+|  4 | yuanhao   | female |   28 |    202 |  202 | 销售         |
+|  5 | liwenzhou | male   |   18 |    200 |  200 | 技术         |
++----+-----------+--------+------+--------+------+--------------+
+5 rows in set (0.27 sec)
+
+3 外链接之左连接：优先显示左表全部记录  left join
+mysql> select * from employee left join department on employee.dep_id=department.id;
++----+------------+--------+------+--------+------+--------------+
+| id | name       | sex    | age  | dep_id | id   | name         |
++----+------------+--------+------+--------+------+--------------+
+|  1 | egon       | male   |   18 |    200 |  200 | 技术         |
+|  5 | liwenzhou  | male   |   18 |    200 |  200 | 技术         |
+|  2 | alex       | female |   48 |    201 |  201 | 人力资源     |
+|  3 | wupeiqi    | male   |   38 |    201 |  201 | 人力资源     |
+|  4 | yuanhao    | female |   28 |    202 |  202 | 销售         |
+|  6 | jingliyang | female |   18 |    204 | NULL | NULL         |
++----+------------+--------+------+--------+------+--------------+
+6 rows in set (0.00 sec)
+	
+4 外链接之右连接：优先显示右表全部记录
+
+#以右表为准，即找出所有部门信息，包括没有员工的部门
+#本质就是：在内连接的基础上增加右边有左边没有的结果
+mysql> select * from employee right join department on employee.dep_id=department.id;
++------+-----------+--------+------+--------+------+--------------+
+| id   | name      | sex    | age  | dep_id | id   | name         |
++------+-----------+--------+------+--------+------+--------------+
+|    1 | egon      | male   |   18 |    200 |  200 | 技术         |
+|    2 | alex      | female |   48 |    201 |  201 | 人力资源     |
+|    3 | wupeiqi   | male   |   38 |    201 |  201 | 人力资源     |
+|    4 | yuanhao   | female |   28 |    202 |  202 | 销售         |
+|    5 | liwenzhou | male   |   18 |    200 |  200 | 技术         |
+| NULL | NULL      | NULL   | NULL |   NULL |  203 | 运营         |
++------+-----------+--------+------+--------+------+--------------+
+6 rows in set (0.00 sec)
+
+5 全外连接：显示左右两个表全部记录
+mysql> select * from employee left join department on employee.dep_id = department.id
+    -> union
+    -> select * from employee right join department on employee.dep_id = department.id
+    -> ;
++------+------------+--------+------+--------+------+--------------+
+| id   | name       | sex    | age  | dep_id | id   | name         |
++------+------------+--------+------+--------+------+--------------+
+|    1 | egon       | male   |   18 |    200 |  200 | 技术         |
+|    5 | liwenzhou  | male   |   18 |    200 |  200 | 技术         |
+|    2 | alex       | female |   48 |    201 |  201 | 人力资源     |
+|    3 | wupeiqi    | male   |   38 |    201 |  201 | 人力资源     |
+|    4 | yuanhao    | female |   28 |    202 |  202 | 销售         |
+|    6 | jingliyang | female |   18 |    204 | NULL | NULL         |
+| NULL | NULL       | NULL   | NULL |   NULL |  203 | 运营         |
+
++------+------------+------
+全外连接：在内连接的基础上增加左边有右边没有的和右边有左边没有的结果
+#注意：mysql不支持全外连接 full JOIN
+#强调：mysql可以使用此种方式间接实现全外连接	
+
+二 符合条件连接查询
+
+#示例1：以内连接的方式查询employee和department表，并且employee表中的age字段值必须大于25,即找出年龄大于25岁的员工以及员工所在的部门
+select employee.name,department.name from employee inner join department
+    on employee.dep_id = department.id
+    where age > 25;
+
+#示例2：以内连接的方式查询employee和department表，并且以age字段的升序方式显示
+select employee.id,employee.name,employee.age,department.name from employee,department
+    where employee.dep_id = department.id
+    and age > 25
+    order by age asc;
+	
+三 子查询
+#1：子查询是将一个查询语句嵌套在另一个查询语句中。
+#2：内层查询语句的查询结果，可以为外层查询语句提供查询条件。
+#3：子查询中可以包含：IN、NOT IN、ANY、ALL、EXISTS 和 NOT EXISTS等关键字
+#4：还可以包含比较运算符：= 、 !=、> 、<等
+
+1 带IN关键字的子查询
+说明：括号里面的语句是查出来大于25岁的部门id
+mysql> select id,name from department where id in (select dep_id  from employee group by dep_id having avg(age) > 25);
++------+--------------+
+| id   | name         |
++------+--------------+
+|  201 | 人力资源     |
+|  202 | 销售         |
++------+--------------+
+2 rows in set (0.31 sec)
+
+#查看技术部员工姓名
+select name from employee
+    where dep_id in 
+        (select id from department where name='技术');
+
+#查看不足1人的部门名(子查询得到的是有人的部门id)
+select name from department where id not in (select distinct dep_id from employee);
+
+2 带比较运算符的子查询
+
+
+#比较运算符：=、!=、>、>=、<、<=、<>
+例子1 #查询大于所有人平均年龄的员工名与年龄
+mysql> select name,age from employee where age > (select avg(age) from employee);
++---------+------+
+| name    | age  |
++---------+------+
+| alex    |   48 |
+| wupeiqi |   38 |
++---------+------+
+2 rows in set (0.00 sec)
+
+
+例子2：#查询大于部门内平均年龄的员工名、年龄
+mysql> select employee.name,employee.age from employee
+    -> inner join
+    -> (select dep_id,avg(age)as avg_age from employee group by dep_id) as dep
+    -> on employee.dep_id=dep.dep_id
+    -> where
+    -> employee.age>dep.avg_age;
++------+------+
+| name | age  |
++------+------+
+| alex |   48 |
++------+------+
+1 row in set (0.00 sec)
+
+查询最新入职的员工名字
+mysql> select name,emp.hire_date,emp.post from emp inner join (select post,max(hire_date) as hire_date from emp group by post) as t2 on emp.post=t2.post where emp.hire_date=t2.hire_date;
++--------+------------+-----------------------------------------+
+| name   | hire_date  | post                                    |
++--------+------------+-----------------------------------------+
+| egon   | 2017-03-01 | 老男孩驻沙河办事处外交大使              |
+| alex   | 2015-03-02 | teacher                                 |
+| 格格   | 2017-01-27 | sale                                    |
+| 张野   | 2016-03-11 | operation                               |
++--------+------------+-----------------------------------------+
+4 rows in set (0.00 sec)
+
+
+
