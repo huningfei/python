@@ -1,4 +1,5 @@
 程序说明：
+0 运行程序之前一定要先建立一个数据库，我的是运行在windows系统上面的，具体的数据库信息见数据库说明。
 1 运行start.py文件，开始程序
 2 选择你要的功能，登录或者注册,均有三次功能
 3 登录成功或者注册成功则退出程序
@@ -13,7 +14,9 @@ user = "root"
 
 #创建数据库：create database user;
 #创建表
-# create table t1 (id int primary key auto_increment,user varchar(20) not null unique,pwd varchar(20) not null);
-#插入数据：
+use user;
+create table t1 (id int primary key auto_increment,user varchar(20) not null unique,pwd varchar(20) not null);
+
+#测试能否正常插入数据：
 insert into t1(user,pwd) values ('aa',123);
 
