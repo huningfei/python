@@ -1,3 +1,6 @@
+博客：
+https://www.cnblogs.com/huningfei/p/9408427.html
+
 一 程序说明：
 0 运行程序之前一定要先建立一个数据库，我的是运行在windows系统上面的，具体的数据库信息见数据库说明。
 1 运行start.py文件，开始程序
@@ -44,3 +47,6 @@ mysql> select *  from t1;
 |  1 | hnf  | 123 |
 +----+------+-----+
 1 row in set (0.01 sec)
+
+
+
