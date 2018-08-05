@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出版社列表页面</title>
+</head>
+<body>
+
+<h1>出版社列表</h1>
+<p><a href="/add_publisher/">添加新出版社</a></p>
+<table border="1">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>出版社id</th>
+        <th>出版社名称</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <!-- 按照Django tempalte的特殊语法 写特殊符号 用来替换数据-->
+    {% for obj in data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ obj.id }}</td>
+            <td>{{ obj.name }}</td>
+            <td>
+                <a href="/edit_publisher/?id={{ obj.id }}">编辑</a>
+                <a href="/delete_publisher/?id={{ obj.id }}">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
+
+
+    </tbody>
+</table>
+
+<hr>
+
+{{ name }}
+
+{{ d.key }}
+</body>
+</html>

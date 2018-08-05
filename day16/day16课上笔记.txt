@@ -1,0 +1,247 @@
+day16 2018-08-05
+
+Django框架 
+
+之前的内容：
+	- Python基础
+	- 前端部分
+
+讲课内容： 
+
+1. web框架的本质（了解就行）
+	用户的浏览器(socket客户端) 和 网站的服务器（socket服务端）之间
+	
+	socket
+	
+	HTTP协议：
+		1. 请求（request）
+			
+		2. 响应(response)
+	
+	web框架本质 
+		0. socket收发消息
+			
+		1. 访问不同的URL返回不同的页面
+			用户访问的具体路径 --> 执行不同的函数 --> 返回不同的结果
+		2. 不同用户访问相同的URL返回不同的页面内容
+			字符串的替换
+			
+	Web框架的本质三大部分：
+		a. 收发socket消息      web服务器 
+		
+							   web应用程序
+		
+		b. 根据不同的请求执行不同的函数返回不同的内容
+		c. 字符串替换
+		
+		
+		Django开发阶段使用    wsgiref 模块来处理socket消息
+		
+		Django部署到线上使用  uWsgi/gunicorn 模块来处理socket消息
+		
+		
+		Python中 web服务器程序和Web应用程序之间传递消息：
+			WSGI协议
+			
+		
+		
+		
+	Python里面Web框架的分类：
+		1. 自己实现b和c,使用第三方的a:
+			Django框架
+		2. 自己实现b,使用第三方的a和c:
+			Flask
+		3. 自己实现a\b\c:
+			Tornado
+
+2. django安装和介绍 （自己走一遍就OK）
+	1. Django介绍
+		版本：1.8.3   1.11.x    2.x
+	2. 安装
+		pip3 install django==1.11.11
+		
+		pip3 list 查看当前Python解释器安装了哪些第三方包
+		
+		pip3 install django==1.11 -i https://pypi.tuna.tsinghua.edu.cn/simple
+		
+		pip3 uninstall django
+	3. 常用命令
+		1. 创建Django项目
+			1. 命令行创建
+				django-admin startproject s21django
+				在当前目录下创建一个名为 s21django 的Django项目
+			2. PyCharm创建
+				见群内截图
+			3. 启动Django项目
+				1. PyCharm里面启动：
+					点绿色的小三角
+				2. 命令行启动
+					1. 切换到项目目录下！
+					2. python manage.py runserver
+					   python manage.py runserver 127.0.0.1:8090
+					   python manage.py runserver 8091
+				
+			4. 创建APP
+				1. 在PyCharm创建
+				2. 在命令行创建
+					1. 切换到项目目录下！
+					2. python manage.py startapp app名字
+					3. 在settings.py里面注册你新创建的那个app
+					
+			5. Django项目使用静态文件的配置
+				1. 在项目目录下新建一个保存静态文件的文件夹
+				2. 告诉Django你去我上面新建的路径去找静态文件
+					settings.py中 加上相应的配置项：
+						# 静态文件存放的路径别名，我在HTML文件中使用的那个名字
+						STATIC_URL = '/static/'
+						# 静态文件实际保存的目录是哪一些
+						STATICFILES_DIRS = [
+							os.path.join(BASE_DIR, 'static')
+						]
+				3. 在HTML页面中使用刚才配置的静态文件
+					/static/...  来引用
+
+3. MVC和MTV （了解即可）
+	1. MVC   --> Model  View        Control
+	2. MTV   --> Model  Template    views
+
+4. 基本路由系统 (urls.py)
+	1. 路由是一个有顺序的列表，从上到下去匹配
+	2. 路由的路径是根据正则表达式来匹配的
+
+5. 基本视图函数（views.py）
+	1. 基础必会三件套
+		from django.shortcuts import HttpResponse, render
+		1. HttpResponse('字符串')
+		2. render(request, 'xx.html')
+		3. redirect
+
+--- ↑ Django基础部分 -----
+
+6. 基本模板引擎（templates/xx.html） 
+	1. render(request, 'xx.html', {"k": "v"})
+	2. 常用语法：
+		1. {{ 变量名 }}
+		2. {{ 变量名.key }}
+		
+		3. for循环
+			{% for x in xx %}
+				{{x}}
+			{% endfor %}
+		4. if判断
+			{% if 条件 %}
+				...
+			{% else %}
+				...
+			{% endif %}
+
+
+7. ORM（单表） 
+	1. 用pymysql连接MySQL数据库查询数据
+		1. import pymysql
+		2. 建立连接
+		3. 获取光标
+		4. 执行SQL语句
+		5. 获取数据
+		6. 关闭光标
+		7. 关闭连接
+	2. 使用pymysql连接数据库缺点：
+		1. 麻烦
+		2. 自己写SQL语句！！！
+	3. 使用ORM工具连接数据库
+		- 优点：
+			1. 不用自己写SQL语句！！！
+		- 缺点：
+			1. 执行效率不高
+	4. ORM是个啥？
+		1. 对象关系映射
+			
+			类                       数据表
+			属性                     字段
+			对象                     数据行
+		
+		2. Django中如何使用ORM
+			1. 告诉Django连接哪个MySQL数据库（settings.py）
+			2. 告诉Django用pymysql连接MySQL数据库 (默认用的是MySQLDB)
+			3. 去app/models.py里面创建类
+			4. 让Django去数据库帮我创建类对应的数据表
+				1. python manage.py makemigrations  --> 将models.py的改动记录在小本本上
+				2. python manage.py migrate         --> 将变更记录翻译成SQL语句，去数据库执行
+				
+		3. ORM的使用
+			1. 操作数据表
+			2. 操作数据行
+			
+	5. ORM单表的增删改查
+		1. 查询
+			models.Publisher.objects.all()               --> 查询所有的出版社数据
+			models.Publisher.objects.get(id=1)           --> 查询id=1的那个出版社
+		2. 增加
+			models.Publisher.objects.create(name='xx')   --> 创建一个名为xx的出版社
+		3. 删除
+			models.Publisher.objects.get(id=2).delete()  --> 删除id=2的那个出版社
+		4. 编辑
+			obj = models.Publisher.objects.get(id=2)     --> 找到要编辑的对象
+			obj.name = "新值"            				 --> 修改
+			obj.save()                                   --> 将修改同步到数据库
+			
+			
+8. request相关的知识点：
+	1. request.method  --> 获取用户请求的方法
+		- GET          --> 表示用户向我要一个页面这种操作
+		- POST         --> 表示用户向我发送一些数据
+	2. request获取URL中的参数
+		/xx/?name=alex&age=9000
+		request.GET                        --> 大字典
+			- request.GET['name']          --> 不推荐
+			- request.GET.get("name")      --> 推荐
+	3. request.POST                        --> 一个大字典，存的是用户post发过来的数据
+		1. request.POST['key']             --> 不推荐
+		2. request.POST.get('key', '默认值')
+		
+做人戾气不要太重！！！
+	
+				
+		
+		
+
+
+
+
+练习题： 
+
+	1. 什么是wsgi？ 
+
+	2. mvc和mtv的区别以及django属于哪一种？ 
+
+	3. django常见命令 
+
+	4. 如何通过GET和POST向后台传参 
+
+	5. django中如何获取POST和GET传入的参数 
+
+	6. 模板渲染时如何获取列表或字典的元素（根据索引）？ 
+
+	7. 什么是ORM？ 
+
+	8. 创建django程序时需要注意的配置有哪些？ 
+
+	9. 请写出流程：创建一张表并对其进行增删改查 
+
+
+
+
+
+
+
+作业：主机管理【01】：用户管理 
+
+	1. 基于django创建表： 
+
+		用户表：ID、用户名、密码 
+
+	2. 用户登录（md5加密） 
+
+	3. 用户管理：增删改查 
+
+	4. 套用BootStrap样式 
