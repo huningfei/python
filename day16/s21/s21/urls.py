@@ -18,15 +18,21 @@ from django.contrib import admin
 from app01 import views
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^index/', views.index),
-    url(r'^home/', views.home),
-    url(r'^login/', views.login),
-    #出版社列表
-    url(r'^publisher_list',views.publisher_list),
-    #添加出版社
-    url(r'^add_publisher',views.add_publisher),
-    #删除出版社
-    url(r'^del_publisher',views.del_publisher),
-    #编辑出版社
-    url(r'^edit_publisher/',views.edit_publisher),
+    # url(r'^index/', views.index),
+    # url(r'^home/', views.home),
+    url(r'^login', views.login),
+    url(r'^register_user/', views.register_user),
+    url(r'^show_user', views.show_user),
+    url(r'^del_user', views.del_user),
+    url(r'^edit_user', views.edit_user),
+
+
+    # #出版社列表
+    # url(r'^publisher_list',views.publisher_list),
+    # #添加出版社
+    # url(r'^add_publisher',views.add_publisher),
+    # #删除出版社
+    # url(r'^del_publisher',views.del_publisher),
+    # #编辑出版社
+    # url(r'^edit_publisher/',views.edit_publisher),
 ]

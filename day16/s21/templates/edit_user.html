@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑用户界面</title>
+</head>
+<body>
+<form action="/edit_user/" method="post">
+    <input type="text" name="id" value="{{ user.id }}" style="display: none">
+    <input type="text" name="username" value="{{ user.username }}">
+    <input type="text" name="password" value="{{ user.password }}">
+    <button>提交</button>
+</form>
+
+</body>
+</html>

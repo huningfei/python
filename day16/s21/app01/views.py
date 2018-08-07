@@ -1,42 +1,96 @@
 from django.shortcuts import render, HttpResponse, redirect
 from app01 import models
-
-
-def index(request):
-    '''
-
-    :param request: 所有的用户请求都封装到了一个名为request函数中
-    :return:
-    '''
-    print(request.method)  # 拿到用户的请求的方法
-    print(request.path_info)  # 拿到用户的请求路径
-    return render(request, "index.html")
-
-
-def home(request):
-    return render(request, "home.html")
+from app01 import my_md5
+#
+# def index(request):
+#     '''
+#     :param request: 所有的用户请求都封装到了一个名为request函数中
+#     :return:
+#     '''
+#     print(request.method)  # 拿到用户的请求的方法
+#     print(request.path_info)  # 拿到用户的请求路径
+#     return render(request, "index.html")
+#
+#
+# def home(request):
+#     return render(request, "home.html")
 
 
 # 登录页面
+#登录
 def login(request):
     if request.method == "POST":
         # print(request.POST)
-        user = request.POST.get("username", "")  # 这里的username必须和html里面的name的值一致
-        pwd = request.POST.get("password", "")
-        # print(username, pwd)
-        try:
-            obj = models.User.objects.get(username=user)
-        except Exception:
-            return HttpResponse("登录失败")
-        if obj.username == user and obj.password == pwd:
-            return redirect("/index/")
+        user = request.POST.get("username")  # 这里的username必须和html里面的name的值一致
+        pwd = request.POST.get("password")
+        # print(user, pwd)
+        # try:
+        obj = models.User.objects.get(username=user)
+        print(obj.username,obj.password)
+        # except Exception:
+        #     return HttpResponse("用户名不存在")
+        if obj.username == user and obj.password == my_md5.md5(user,pwd):
+            return redirect("/show_user/")
         else:
-            return HttpResponse("登录失败")
+            return HttpResponse("用户名或密码错误")
     else:
         return render(request, 'login.html')
+#展示页面
+def show_user(request):
+    data=models.User.objects.all()
+    return render(request, "show_user.html", {"data":data})
+
+#注册页面
+def register_user(request):
+    if request.method=="POST":
+        #获取用户添加的用户名和密码
+        user=request.POST.get("username")
+        pwd=request.POST.get("password")
+        #写入到数据库
+        try:
+            models.User.objects.create(username=user,password=my_md5.md5(user,pwd))
+        except Exception:
+            return HttpResponse("用户名已经存在")
 
 
-# Create your views here.
+        return redirect( "/login/")
+
+
+    else:
+        return render(request,"add_user.html")
+
+#删除用户
+def del_user(request):
+    #获取用户要删除的id
+    del_id=request.GET.get("id")
+    #去数据库里面删除
+    models.User.objects.get(id=del_id).delete()
+    #返回展示页面
+    # return render(request,"show_user.html")
+    return redirect("/show_user/")
+
+#编辑用户
+def edit_user(request):
+    if request.method=="POST":
+        edit_id=request.POST.get("id")
+        new_user=request.POST.get("username")
+        new_pwd=request.POST.get("password")
+        obj=models.User.objects.get(id=edit_id)
+        obj.username=new_user
+        obj.password=my_md5.md5(new_user,new_pwd)
+        obj.save()
+        return redirect("/show_user/")
+    else:
+        edit_id=request.GET.get("id")
+        obj = models.User.objects.get(id=edit_id)
+        #把要编辑的用户展示在这个页面上面
+        return render(request,"edit_user.html",{"user":obj})
+
+
+
+
+
+
 # 展示页面
 def publisher_list(request):
     data = models.Publisher.objects.all()
