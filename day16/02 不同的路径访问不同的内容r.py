@@ -30,4 +30,4 @@ while 1:
     conn.send(msg)
     conn.close()
 
-
+#http://127.0.0.1:8080/index/得到index页面

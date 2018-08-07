@@ -25,7 +25,7 @@ url_func = [
 while 1:
     conn, addr = sk.accept()
     # 接收消息
-    data = conn.recv(8000)
+    data = conn.recv(1024)
     # print(data)
     # 把字节类型的数据转换成字符串
     data_str = str(data, encoding="utf8")
