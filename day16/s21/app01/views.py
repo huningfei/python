@@ -8,15 +8,20 @@ from app01 import my_md5
 def login(request):
     if request.method == "POST":
         user = request.POST.get("username")  # 这里的username必须和html里面的name的值一致
+        # print(user)
         pwd = request.POST.get("password")
         if user == "" or pwd == "":
             data = '用户名或密码不能为空'
             return render(request, "login.html", {"data": data})
 
-        else:
 
-            obj = models.User.objects.get(username=user)
-            print(obj.username, obj.password)
+        else:
+            try:
+                obj = models.User.objects.get(username=user)
+            except Exception:
+                data="此用户不存在"
+                return render(request,"login.html",{"data":data})
+
             if obj.username == user and obj.password == my_md5.md5(user, pwd):
                 return redirect("/show_user/")
 
@@ -29,10 +34,10 @@ def login(request):
 
 
 # 展示页面
+
 def show_user(request):
     data = models.User.objects.all()
     return render(request, "show_user.html", {"data": data})
-
 
 # 注册页面
 def register_user(request):
@@ -51,8 +56,11 @@ def register_user(request):
             except Exception:
                 data = '用户名已经存在'
                 return render(request, "register_user.html", {"data": data})
-            return redirect("/login/")
+            data = '注册成功,请登录'
+
+            return render(request,"register_user.html",{"data":data})
     else:
+
         return render(request, "register_user.html")
 
 
