@@ -1,0 +1,24 @@
+博客：https://www.cnblogs.com/huningfei/p/9427502.html
+
+说明：
+1 首先创建一个数据库（mysql），在我的app01目录下的models.py文件里有创建数据库的语句，
+只需要在pycharm的terminal里面运行下面这两条语句即可创建
+python manage.py makemigrations
+python manage.py migrate
+
+2 实现的功能及其对应的url地址
+登录
+http://127.0.0.1:8000/login/
+注册
+http://127.0.0.1:8000/register_user/
+查看用户列表
+http://127.0.0.1:8000/show_user/
+编辑，删除和添加用户可以直接在用户列表里面做操作
+
+3 未实现的
+登录之后在右上角显示对应的用户名，并且有退出按钮
+如果正在编辑用户，当没有保存的时候你点击别的连接要弹出个弹框，提示你还没有保存
+管理员用户可以更改所有用户，普通用户只能更改自己的账户
+
+
+
