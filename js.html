@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $(".but").click(function(){
+    // $(this).hide();
+      $(".div1").show()
+
+  });
+});
+</script>
+</head>
+<body>
+
+<button class="but">
+    提交
+</button>
+<div class="div1"  style="display: none">
+    <div style="width: 100px" >
+        <p>确定要离开吗？</p>
+        <button>是</button>
+        <button>否</button>
+    </div>
+</div>
+
+</body>
+</html>
