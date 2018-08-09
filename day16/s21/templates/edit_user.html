@@ -52,19 +52,20 @@
                                     <div class="form-group">
                                         <span>用户名</span>
                                         <span>
-                                            <input type="text" value="{{ user.username }}" name="username"
+                                            <input style="width: 250px;" type="text" value="{{ user.username }}" name="username"
                                                    class="form-control" id="exampleInputEmail1"
                                                    placeholder="用户名">
                                         </span>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">密码</label>
-                                        <input type="password" value="{{ user.password }}" name="password"
+                                        <input style="width: 250px" type="password" value="{{ user.password }}" name="password"
                                                class="form-control"
                                                id="exampleInputPassword1" placeholder="密码">
                                         <span style="font-size: 14px;color:red; margin-left: 67px">{{ data }}</span>
                                     </div>
                                     <button type="submit" class="btn btn-success">确定</button>
+                                    <button style="margin-left: 120px" type="submit" class="btn btn-warning"><a href="/show_user/">取消</a></button>
                                 </form>
                             </div>
                         </div>

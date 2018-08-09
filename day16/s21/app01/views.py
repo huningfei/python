@@ -83,13 +83,16 @@ def edit_user(request):
         obj = models.User.objects.get(id=edit_id)
         obj.username = new_user
         obj.password = my_md5.md5(new_user, new_pwd)
+
+
         try:
             obj.save()
         except Exception:
             data = '用户名已经存在'
 
-            # return redirect("/show_user/")
             return render(request, "edit_user.html", {"data": data})
+        return redirect("/show_user/")
+
     else:
         edit_id = request.GET.get("id")
         obj = models.User.objects.get(id=edit_id)
