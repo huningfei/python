@@ -95,3 +95,8 @@ def edit_user(request):
         obj = models.User.objects.get(id=edit_id)
         # 把要编辑的用户展示在这个页面上面
         return render(request, "edit_user.html", {"user": obj})
+
+
+
+
+
