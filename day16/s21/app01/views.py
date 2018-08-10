@@ -4,25 +4,24 @@ from app01 import my_md5
 
 
 # 登录页面
-
+#
 def login(request):
     if request.method == "POST":
         user = request.POST.get("username")  # 这里的username必须和html里面的name的值一致
-        # print(user)
         pwd = request.POST.get("password")
         if user == "" or pwd == "":
             data = '用户名或密码不能为空'
             return render(request, "login.html", {"data": data})
-
-
         else:
             try:
                 obj = models.User.objects.get(username=user)
             except Exception:
-                data="此用户不存在"
-                return render(request,"login.html",{"data":data})
+                data = "此用户不存在"
+                return render(request, "login.html", {"data": data})
 
             if obj.username == user and obj.password == my_md5.md5(user, pwd):
+                request.session.set_expiry(0)
+                request.session['user'] = obj.username
                 return redirect("/show_user/")
 
             else:
@@ -37,7 +36,12 @@ def login(request):
 
 def show_user(request):
     data = models.User.objects.all()
-    return render(request, "show_user.html", {"data": data})
+    v = request.session.get('user')  # 获取登录的用户名
+    if v:
+        return render(request, "show_user.html", {"data": data, "v": v})
+    else:
+        return redirect('/login/')
+
 
 # 注册页面
 def register_user(request):
@@ -58,7 +62,7 @@ def register_user(request):
                 return render(request, "register_user.html", {"data": data})
             data = '注册成功,请登录'
 
-            return render(request,"register_user.html",{"data":data})
+            return render(request, "register_user.html", {"data": data})
     else:
 
         return render(request, "register_user.html")
@@ -71,6 +75,7 @@ def del_user(request):
     # 去数据库里面删除
     models.User.objects.get(id=del_id).delete()
     # 返回展示页面
+
     return redirect("/show_user/")
 
 
@@ -84,22 +89,42 @@ def edit_user(request):
         obj.username = new_user
         obj.password = my_md5.md5(new_user, new_pwd)
 
-
         try:
             obj.save()
         except Exception:
             data = '用户名已经存在'
-
             return render(request, "edit_user.html", {"data": data})
         return redirect("/show_user/")
 
     else:
         edit_id = request.GET.get("id")
         obj = models.User.objects.get(id=edit_id)
-        # 把要编辑的用户展示在这个页面上面
-        return render(request, "edit_user.html", {"user": obj})
+        v = request.session.get('user')
+        if v:
+            # 把要编辑的用户展示在这个页面上面
+            return render(request, "edit_user.html", {"user": obj, "v": v})
+        else:
+            return redirect("/login/")
+def add_user(request):
+    if request.method == "POST":
+        # 获取用户添加的用户名和密码
+        user = request.POST.get("username")
+        pwd = request.POST.get("password")
+        if user == "" or pwd == "":
+            data = '用户名和密码不能为空'
+            return render(request, "add_user.html", {"data": data})
+        else:
+            # 写入到数据库
+            try:
+                models.User.objects.create(username=user, password=my_md5.md5(user, pwd))
+            except Exception:
+                data = '用户名已经存在'
+                return render(request, "add_user.html", {"data": data})
+            return redirect("/show_user/")
+    else:
+        v = request.session.get('user')
+        if v:
 
-
-
-
-
+            return render(request, "add_user.html",{"v":v})
+        else:
+            return redirect("/login/")

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>编辑用户界面</title>
+    <title>添加用户界面</title>
     <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/user.css">
 
@@ -51,13 +51,13 @@
         <div class="col-md-10">
             <div class="panel panel-success" id="edit_user_right">
                 <div class="panel-heading">
-                    <h3 class="panel-title">编辑用户</h3>
+                    <h3 class="panel-title">添加用户</h3>
                 </div>
                 <div class="panel-body">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4">
-                                <form action="/edit_user/" method="post">
+                                <form action="/add_user/" method="post">
                                     <input type="text" name="id" value="{{ user.id }}" style="display: none">
                                     <div class="form-group">
                                         <span>用户名</span>
