@@ -89,8 +89,6 @@ def template_test(request):
         def dream(self):
             return "我的梦想是学好python"
     pw=Person("bob","环游世界")
-
-
     return render(request,"template_test.html",{
         "data":data,
         "file_size":filesize,
@@ -99,3 +97,16 @@ def template_test(request):
         "person":pw
 
      })
+# csrf 跨站请求
+def csrf_test(request):
+    if request.method=="POST":
+        print(request.POST)
+        return HttpResponse("OK")
+    else:
+        return render(request,"csrf_test.html")
+
+# book_list
+def book_list(request):
+    # 去数据库查询所有的书籍
+    data = models.Book.objects.all()
+    return render(request, "book_list.html", {"book_list": data})

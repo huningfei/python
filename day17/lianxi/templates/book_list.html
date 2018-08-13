@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table border="2">
+
+    <tr>
+        <th>#</th>
+        <th>书名</th>
+        <th>出版社名称</th>
+        <th>操作</th>
+    </tr>
+    {% for book in book_list %}
+        <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.publisher.name }}</td>
+        <td>
+            <a href="/delete_book/{{ book.id }}">删除</a>
+            <a href="/edit_book/{{ book.id }}">编辑</a>
+
+        </td>
+        </tr>
+    {% endfor %}
+
+
+</table>
+</body>
+</html>

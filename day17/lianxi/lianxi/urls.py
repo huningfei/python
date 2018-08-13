@@ -19,21 +19,27 @@ from app01 import views
 
 
 
-urlpatterns = [
+urlpatterns =  [
     url(r'^admin/', admin.site.urls),
     url(r'^publisher_list/$', views.publisher_list,name="list"),
-    #动态传参-FBV
+    # 动态传参-FBV
     # url(r'^edit_publisher/(\d+)/$', views.edit_publisher),
-    #动态传参-CBV
+    # 动态传参-CBV
     url(r'^edit_publisher/(?P<edit_id>\d+)/$', views.EditPublisher.as_view(), name="wusir"),
-    #url传参
+    # url传参
     # url(r'^edit_publisher/$', views.edit_publisher),
-    #上传文件
+    # 上传文件
     url(r'^upload/$', views.upload.as_view()),
     # 测试返回Json格式数据
     url(r'^json_test/$', views.JsonTest.as_view()),
     # 测试模板语法
     url(r'^template_test/$', views.template_test),
+    #  测试跨站请求伪造 （CSRF）
+    url(r'^csrf_test/$', views.csrf_test),
+
+    # 外键增删改查
+    url(r'^book_list/$', views.book_list),
+    
 
 
 
