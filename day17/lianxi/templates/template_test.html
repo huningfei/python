@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板语法</title>
+</head>
+<body>
+{#取索引为1的数据#}
+<p>{{ data.1 }}</p>
+{#当获取不到数据的时候会默认提示这个#}
+<p>{{ data|default:"暂无数据" }}</p>
+{#大小单位#}
+<p>{{ file_size|filesizeformat }}</p>
+{#时间格式#}
+<p>{{ today }}</p>
+{#格式化之后的时间#}
+<p>{{ today|date:"Y-m-d H:i:s"}}</p>
+{#链接#}
+<p>{{ value }}</p>
+<p>{{ value|safe }}</p>
+<hr>
+{##去循环data,最后一个数据不加逗号#}
+<p>
+{% for teacher in data %}
+    {% if forloop.last %}
+        {{ teacher }}
+    {% else %}
+        {{ teacher }},
+    {% endif %}
+{% endfor %}
+</p>
+<hr>
+{{ person.name }}
+{#会优先去调用属性，属性没有再去调用方法#}
+{{ person.dream }}
+</body>
+</html>

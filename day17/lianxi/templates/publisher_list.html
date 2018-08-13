@@ -1,0 +1,38 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>出版社列表</title>#}
+{#    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">#}
+{#</head>#}
+{#<body>#}
+{% extends "mother.html" %}
+{% block page-main %}
+
+            <table class="table table-bordered">
+                <tr>
+                    <th>#</th>
+                    <th>id</th>
+                    <th>出版社名字</th>
+                    <th>操作</th>
+                </tr>
+
+{#                 data这里一定要跟views里面的data一样#}
+                {% for publisher in data %}
+                    <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ publisher.id }}</td>
+                    <td>{{ publisher.name }}</td>
+                    <td>
+{#                           这是动态传参#}
+                        <a href="/edit_publisher/{{ publisher.id }}/" class="btn btn-info">编辑</a>
+{#                        这是浏览器传参数#}
+{#                        <a href="/edit_publisher/?id={{ publisher.id }}" class="btn btn-info">编辑</a>#}
+                        <a href="/del_publisher" class="btn btn-info">删除</a>
+                    </td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+
+{% endblock %}
