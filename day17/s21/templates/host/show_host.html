@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th>序号</th>
+        <th>id</th>
+        <th>主机名</th>
+        <th>密码</th>
+        <th>业务线id</th>
+        <th>操作</th>
+
+    </tr>
+    {% for host in host_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ host.id }}</td>
+            <td>{{ host.hostname }}</td>
+            <td>{{ host.pwd }}</td>
+            <td>{{ host.service.name }}</td>
+            <td>
+                <a class="btn btn-info" href="edit_host"/{{ host.id }}>编辑</a>
+                <a class="btn btn-warning" href="del_host"/{{ host.id }}>删除</a>
+            </td>
+        </tr>
+
+    {% endfor %}
+</table>
+
+
+</body>
+</html>

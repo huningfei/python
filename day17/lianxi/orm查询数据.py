@@ -47,5 +47,26 @@ from app01 import models
 # print(ret)
 
 # 查询生日在2018年的，（sqlit查不到）
-ret = models.Person.objects.filter(birthday__year=2018)
+# ret = models.Person.objects.filter(birthday__year=2018)
+# print(ret)
+
+# 查询第一本书关联的出版社名字
+#基于对象的查询
+# book_obj=models.Book.objects.first()
+# ret=book_obj.publisher.name
+# book_name=book_obj.title
+# print(book_name,ret)
+# 基于querset 的双下划线查询，双下划线表示跨表,查询出版社名字，并去重
+# ret = models.Book.objects.all().values_list("publisher__name").distinct()
+# print(ret)
+# 反向查询
+# 由出版社反向查找书籍
+publisher_obj=models.Publisher.objects.get(id=2)
+books=publisher_obj.book_set.all()
+title=books.values_list("title","id")
+print(title)
+
+# 2. 基于queryset的双下划线
+# 江出版社出版的所有书籍的书名
+ret = models.Publisher.objects.filter(id=2).values_list("book__title","book__id")
 print(ret)

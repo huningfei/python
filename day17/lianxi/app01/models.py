@@ -8,7 +8,7 @@ class Publisher(models.Model):
     name = models.CharField(max_length=22)
 
 
-# 书籍表
+# 书籍表关联出版社
 class Book(models.Model):
     title = models.CharField(max_length=32)
     publisher = models.ForeignKey(to="Publisher", on_delete=models.CASCADE)

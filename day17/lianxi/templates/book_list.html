@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title></title>#}
+{#</head>#}
+{% extends "mother.html" %}
+
+{% block page-main %}
 <table border="2">
 
     <tr>
@@ -19,14 +21,13 @@
         <td>{{ book.title }}</td>
         <td>{{ book.publisher.name }}</td>
         <td>
-            <a href="/delete_book/{{ book.id }}">删除</a>
+            <a href="/del_book/{{ book.id }}">删除</a>
             <a href="/edit_book/{{ book.id }}">编辑</a>
 
         </td>
         </tr>
     {% endfor %}
-
-
 </table>
-</body>
-</html>
+{% endblock %}
+{#</body>#}
+{#</html>#}

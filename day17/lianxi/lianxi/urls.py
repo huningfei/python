@@ -38,8 +38,19 @@ urlpatterns =  [
     url(r'^csrf_test/$', views.csrf_test),
 
     # 外键增删改查
+    # 查看列表
     url(r'^book_list/$', views.book_list),
-    
+    # 增加
+    url(r'^add_list/$', views.add_list,name="add_book"),
+
+    # 删除
+    url(r'^del_book/(?P<pk>\d+)$', views.del_book, name="del_book"),
+    # 编辑
+    url(r'^edit_book/(?P<pk>\d+)$', views.edit_book, name="edit_book"),
+    # 登录设置cookie
+    url(r'^login/$', views.login),
+
+
 
 
 
