@@ -17,7 +17,7 @@ class Service(models.Model):
 # 创建主机表
 class Host(models.Model):
     id = models.AutoField(primary_key=True)
-    hostname = models.CharField(max_length=32, unique=True)
+    hostname = models.CharField(max_length=32)
     pwd=models.CharField(max_length=32)
     service=models.ForeignKey(to="Service",on_delete=models.CASCADE)
 

@@ -28,7 +28,12 @@ urlpatterns = [
     # 关于主机管理的url
     url(r'^show_host/$',views.show_host),
     # 添加主机
-    url(r'^add_host/$',views.add_host,name="add_host"),
+    url(r'^add_host/$',views.add_host, name="add_host"),
+    # 编辑主机
+    url(r'^edit_host/(?P<pk>\d+)$',views.edit_host,name="edit_host"),
+    # 删除主机
+    url(r'^del_host/(?P<pk>\d+)$', views.del_host, name="del_host"),
+
 
 
 

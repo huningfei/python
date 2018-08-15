@@ -1,9 +1,11 @@
 #show_user{
     float: left;
     width: 1100px;
-    margin-left: 132px;
-    /*margin-top: 10px;*/
-    margin-top: -172px;
+    /*margin-left: 132px;*/
+    /*margin-left: 21px;*/
+
+    /*margin-top: -172px;*/
+    /*margin-top: -4px;*/
 }
 #edit_user{
     float: left;

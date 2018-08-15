@@ -9,8 +9,8 @@ from django.http import JsonResponse
 # 出版社列表
 def publisher_list(request):
     print(request.COOKIES)
-    v=request.COOKIES.get("hu")
-    if v=="hao":
+    v = request.COOKIES.get("hu")
+    if v == "hao":
         data = models.Publisher.objects.all()
         return render(request, "publisher_list.html", {"data": data})
     else:
@@ -129,8 +129,13 @@ def csrf_test(request):
 # book_list
 def book_list(request):
     # 去数据库查询所有的书籍
-    data = models.Book.objects.all()
-    return render(request, "book_list.html", {"book_list": data})
+    v = request.COOKIES.get("hu")
+    path = request.path_info
+    if v == "hao":
+        data = models.Book.objects.all()
+        return render(request, "book_list.html", {"book_list": data})
+    else:
+        return redirect("/login/?path=%s" %path)
 
 
 # add_book
@@ -154,38 +159,40 @@ def del_book(request, pk):
         models.Book.objects.get(id=pk).delete()
         return redirect("/book_list")
 
+
 # edit_book
-def edit_book(request,pk):
-    if request.method=="GET":
-        book_id=models.Book.objects.get(id=pk)
-        publisher_obj=models.Publisher.objects.all()
-        return render(request,"edit_book.html",{"book":book_id,"publisher_list":publisher_obj})
+def edit_book(request, pk):
+    if request.method == "GET":
+        book_id = models.Book.objects.get(id=pk)  # 获取书的id
+        publisher_obj = models.Publisher.objects.all()  # 查出所有的出版社
+        return render(request, "edit_book.html", {"book": book_id, "publisher_list": publisher_obj})
     else:
-        book_obj= models.Book.objects.get(id=pk)# 更改之前的书名字
-        new_title=request.POST.get("title")
-        new_publisher_id=request.POST.get("publisher")
-        book_obj.title=new_title
-        book_obj.publisher_id=new_publisher_id
+        book_obj = models.Book.objects.get(id=pk)  # 更改之前的书名字
+        new_title = request.POST.get("title")
+        new_publisher_id = request.POST.get("publisher")
+        book_obj.title = new_title
+        book_obj.publisher_id = new_publisher_id
         book_obj.save()
         return redirect("/book_list/")
 
 
-
 def login(request):
-    if request.method=="POST":
-        next = request.POST.get("next")
-        print(next)
-        username=request.POST.get("username")
-        pwd=request.POST.get("pwd")
-        if username=="alex" and pwd=="123":
-            if next:
-                rep = redirect(next)
+    if request.method == "POST":
+        path = request.GET.get("path")
+        print(path)
+        username = request.POST.get("username")
+        pwd = request.POST.get("pwd")
+        if username == "alex" and pwd == "123":
+            if path:
+                rep = redirect(path)
             else:
-                rep=redirect("/publisher_list/")
+                rep = redirect("/publisher_list/")
             rep.set_signed_cookie("hu", "hao", salt="ooxx", max_age=7)
             return rep
         else:
             return HttpResponse("用户名或者密码错误")
     else:
-        return render(request,"login.html")
+        # next = request.GET.get("next")
+        # print(next)
 
+        return render(request, "login.html")
