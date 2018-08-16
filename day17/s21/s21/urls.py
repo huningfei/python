@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^del_user', views.del_user),
     url(r'^edit_user', views.edit_user),
     url(r'^add_user', views.add_user),
+    url(r'^logout',views.logout),
     # 关于主机管理的url
     url(r'^show_host/$',views.show_host),
     # 添加主机
@@ -33,6 +34,7 @@ urlpatterns = [
     url(r'^edit_host/(?P<pk>\d+)$',views.edit_host,name="edit_host"),
     # 删除主机
     url(r'^del_host/(?P<pk>\d+)$', views.del_host, name="del_host"),
+
 
 
 
