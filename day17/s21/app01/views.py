@@ -212,24 +212,27 @@ def edit_host(request, pk):
             return redirect("/login/")
 
     else:
-        # 获取机器id
-        host_id = models.Host.objects.get(id=pk)
+        # 获取机器对象
+        host_obj = models.Host.objects.get(id=pk)
+
         # 获取主机名
         new_hostname = request.POST.get("hostname")
+        # print(new_hostname)
         # 获取密码
         new_pwd = request.POST.get("password")
         # 获取所在业务名称
         new_service_id = request.POST.get("service")
+
         # 更改
-        host_id.hostname = new_hostname
-        host_id.pwd = new_pwd
-        host_id.id = new_service_id
+        host_obj.hostname = new_hostname
+        host_obj.pwd = new_pwd
+        host_obj.service_id = new_service_id
         old_name = models.Host.objects.filter(hostname=new_hostname)
         if old_name:
             data = "主机名已存在"
             return render(request, "host/edit_host.html", {"data": data})
         else:
-            host_id.save()
+            host_obj.save()
         return redirect("/show_host/")
 
 
