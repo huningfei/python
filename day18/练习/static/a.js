@@ -1,0 +1,1 @@
+alert('这是publisher_list引用的js');
