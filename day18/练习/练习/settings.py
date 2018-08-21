@@ -49,8 +49,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'mymiddleware.MD1',
-    'mymiddleware.MD2',
+    # 'mymiddleware.MD1',
+    # 'mymiddleware.MD2',
+    # 'mymiddleware.Xianzhi',
 ]
 
 ROOT_URLCONF = '练习.urls'
@@ -128,3 +129,20 @@ STATICFILES_DIRS=[
 ]
 
 
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console':{
+#             'level':'DEBUG',
+#             'class':'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django.db.backends': {
+#             'handlers': ['console'],
+#             'propagate': True,
+#             'level':'DEBUG',
+#         },
+#     }
+# }

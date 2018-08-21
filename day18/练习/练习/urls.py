@@ -28,4 +28,17 @@ urlpatterns = [
     url(r'^publisher_list/$', views.publisher_list),
     # 中间件
     url(r'^test/$', views.test),
+    # orm多对多
+    url(r'^author_list/$',views.author_list),
+    url(r'^add_author/$',views.Addauthor.as_view()),
+    # 编辑
+    url(r'^edit_author/(\d+)/$',views.Editauthor.as_view()),
+    # 删除
+    url(r'^del_author/(\d+)/$',views.del_author),
+    # ajax
+    url(r'^ajax_test/$',views.ajax_test),
+    url(r'^calc/$',views.calc),
+    # 注册
+    url(r'^reg/$',views.reg),
+    url(r'^check_username/$',views.check_username),
 ]
