@@ -1,0 +1,63 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>添加用户和业务</title>#}
+{#</head>#}
+{#<body>#}
+{#<form action="" method="post">#}
+{#    {% csrf_token %}#}
+{#    <p>用户：#}
+{#        <input type="text" name="name">#}
+{#    </p>#}
+{#    <p>业务：#}
+{#        <select name="service" multiple>#}
+{#            {% for service in service_list %}#}
+{#                <option value="{{ service.id }}">{{ service.name }}</option>#}
+{#            {% endfor %}#}
+{#        </select>#}
+{#    </p>#}
+{#    <p>#}
+{#        <input type="submit" value="提交">#}
+{#    </p>#}
+{##}
+{#</form>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+
+{% extends "mother.html" %}
+
+
+{% block page-css %}
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/user.css">
+{% endblock %}
+
+
+{% block page-js %}
+    <script src="/static/jquery-3.3.1.min.js"></script>
+    <script src="/static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
+
+
+{% block page-main %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p>用户：
+        <input type="text" name="name">
+    </p>
+    <p>业务：
+        <select name="service" multiple>
+            {% for service in service_list %}
+                <option value="{{ service.id }}">{{ service.name }}</option>
+            {% endfor %}
+        </select>
+    </p>
+    <p>
+        <input type="submit" value="提交">
+    </p>
+
+</form>
+{% endblock %}

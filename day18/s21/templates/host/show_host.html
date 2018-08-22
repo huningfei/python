@@ -1,0 +1,54 @@
+{% extends "mother.html" %}
+{% block page-css %}
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/user.css">
+{% endblock %}
+
+{% block page-js %}
+    <script src="/static/jquery-3.3.1.min.js"></script>
+    <script src="/static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="/static/index.js"></script>
+{% endblock %}
+
+{% block page-main %}
+        <div class="col-md-10">
+            <div class="panel panel-info" id="show_user">
+                <div class="panel-heading">
+                    <h3 class="panel-title">主机列表</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                        <tr class="success">
+                            <th>序号</th>
+                            <th>id</th>
+                            <th>主机名</th>
+                            {#                <th>密码</th>#}
+                            <th>业务线名称</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+
+                        {% for host in host_list %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ host.id }}</td>
+                                <td>{{ host.hostname }}</td>
+                                {#                    <td>{{ host.pwd }}</td>#}
+                                <td>{{ host.service.name }}</td>
+                                <td>
+                                    <a class="btn btn-info" href="/edit_host/{{ host.id }}">编辑</a>
+                                    <a class="btn btn-warning" href="/del_host/{{ host.id }}">删除</a>
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+
+                    </table>
+                    <a class="btn btn-info" href="/add_host/">添加主机</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

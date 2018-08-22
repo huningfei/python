@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    {#    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">#}
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="main">
+    <div class="login">
+        <h1>主机管理系统</h1>
+        <div class="inset">
+            <!--start-main-->
+            <form action="login.html" method="post">
+                <div>
+                    <h2>管理登录</h2>
+                    <span><label>用户名</label></span>
+                    <span><input type="text" name="username" class="textbox" placeholder="请输入用户名"></span>
+                </div>
+                <div>
+                    <span><label>密码</label></span>
+                    <span><input type="password" name="password" class="password" placeholder="请输入密码"></span>
+                    <span style="font-size: 14px;color:red; margin-left: 67px">{{ data }}</span>
+                </div>
+                <div class="sign">
+                    <input type="submit" value="登录" class="submit"/>
+                    <a style="font-size: 12px" href="/register_user/">注册</a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--//end-main-->
+</div>
+
+<div class="copy-right">
+    <p>&copy; 2018 Ethos Login Form. All Rights Reserved</p>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+#show_user{
+    float: left;
+    width: 1100px;
+
+
+}
+#edit_user{
+    float: left;
+    margin-left: -109px;
+}
+#edit_user_right{
+    width: 118%;
+}
+#edit_user a:hover{
+    background-color: #2aabd2;
+}
+
+#show_user_menu a:hover{
+    background-color: #2aabd2;
+
+}
