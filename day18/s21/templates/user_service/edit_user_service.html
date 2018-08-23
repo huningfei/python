@@ -28,10 +28,13 @@
                                     <input type="text" name="name" value="{{ user_name.username }}">
                                 </p>
                                 <p>业务名：
-                                    <select name="services" multiple>
+                                    <select name="services" multiple style="width: 170px">
                                         {% for service in service_obj %}
-                                            {% if service in user.service.all %}
-                                                <option value="{{ service.id }}">{{ service.name }}</option>
+                                            {% if service in user_name.services.all %}
+{#                                            如果业务在你所选的用户属于的业务中，那么就加selected选中它，user_name是你view里面#}
+{#                                                得到的用户名#}
+
+                                                <option selected value="{{ service.id }}">{{ service.name }}</option>
                                             {% else %}
                                                 <option value="{{ service.id }}">{{ service.name }}</option>
                                             {% endif %}
@@ -39,7 +42,8 @@
                                     </select>
                                 </p>
                                 <p>
-                                    <input type="submit" value="提交">
+                                    <input type="submit" value="提交" class="btn btn-info">
+                                     <a href="/user_service_list/" class="btn btn-warning" style="margin-left: 140px">取消</a>
                                 </p>
 
                             </form>

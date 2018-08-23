@@ -2,6 +2,8 @@ from django.shortcuts import render, HttpResponse, redirect
 from app01 import models
 from app01 import my_md5
 from functools import wraps
+from app01 import mypage
+
 
 
 # session 登录装饰器
@@ -24,9 +26,6 @@ def logout(request):
     # 删除所有当前请求相关的session
     request.session.delete()
     return redirect("/login/")
-
-
-
 
 # 登录页面
 def login(request):
@@ -66,7 +65,14 @@ def login(request):
 def show_user(request):
     current_user = request.session.get("user", None)  # 获取用户名
     data = models.User.objects.all()
-    return render(request, "user/show_user.html", {"v": current_user, "data": data})
+    total_count=data.count()
+    current_page=request.GET.get("page")
+    page_obj = mypage.MyPage(current_page, total_count, url_prefix="show_user")
+    range = data[page_obj.start:page_obj.end]  # 从开始到结束
+    page_html = page_obj.page_html()
+    page_num = page_obj.num()
+
+    return render(request, "user/show_user.html", {"v": current_user, "data": range,"page_html":page_html,"num":page_num})
 
 
 # 注册页面
@@ -160,14 +166,21 @@ def add_user(request):
             return redirect("/login/")
 
 
-# 主机管理
+# #############################################################主机管理
 # 查看
 @login_check
 def show_host(request):
     current_user = request.session.get("user", None)  # 获取用户名
     data = models.Host.objects.all()
-    return render(request, "host/show_host.html", {"v": current_user, "host_list": data})
+    total_count=data.count() #总数据
+    current_page=request.GET.get("page") # 从浏览器获取页码
+    #分页功能
+    page_obj=mypage.MyPage(current_page, total_count, url_prefix="show_host")
+    range=data[page_obj.start:page_obj.end] # 从开始到结束
+    page_html=page_obj.page_html()
+    page_num=page_obj.num()
 
+    return render(request, "host/show_host.html", {"v": current_user, "host_list": range,"page_html":page_html,"num":page_num})
 
 
 # # 增加
@@ -242,39 +255,129 @@ def del_host(request, pk):
         models.Host.objects.get(id=pk).delete()
         return redirect("/show_host/")
 
-# 用户和业务关系
+###########################################################################业务管理
+# 展示
+@login_check
+def show_service(request):
+    current_user = request.session.get("user", None)  # 获取用户名
+    data=models.Service.objects.all()
+    total_count=data.count()
+    current_page=request.GET.get("page")
+    page_obj = mypage.MyPage(current_page, total_count, url_prefix="show_service")
+    range = data[page_obj.start:page_obj.end]  # 从开始到结束
+    page_html = page_obj.page_html()
+    page_num = page_obj.num()
+
+
+    return render(request,".//service/show_service.html",{"service_obj":range,"v":current_user,"page_html":page_html,"num":page_num})
+# 增加业务
+@login_check
+def add_service(request):
+    if request.method == "POST":
+
+        service = request.POST.get("name")
+
+        if service == "":
+            data = '业务名称不能为空'
+            return render(request, "service/add_service.html", {"data": data})
+        else:
+            # 写入到数据库
+            try:
+                models.Service.objects.create(name=service)
+            except Exception:
+                data = '业务名称已经存在'
+                return render(request, "service/add_service.html", {"data": data})
+            return redirect("/show_service/")
+    else:
+        v = request.session.get('user')
+        if v:
+
+            return render(request, "service/add_service.html", {"v": v})
+        else:
+            return redirect("/login/")
+
+# 编辑业务
+@login_check
+def edit_service(request, pk):
+    if request.method == "GET":
+        v = request.session.get('user')
+        if v:
+            # 获取业务id
+            service_id = models.Service.objects.get(id=pk)
+
+            return render(request, "service/edit_service.html", {"service_obj": service_id, "v": v})
+        else:
+            return redirect("/login/")
+
+    else:
+        # 获取机器对象
+        service_obj = models.Service.objects.get(id=pk)
+
+        # 获取业务名称
+        new_service = request.POST.get("name")
+
+        # 更改
+        service_obj.name = new_service
+        old_name = models.Service.objects.filter(name=new_service)
+        if old_name:
+            data = "业务名已存在"
+            return render(request, "service/edit_service.html", {"data": data})
+        else:
+            service_obj.save()
+        return redirect("/show_service/")
+
+# 删除业务
+def del_service(request,pk):
+    if request.method=="GET":
+        models.Service.objects.filter(id=pk).delete()
+        return redirect("/show_service/")
+    
+    
+# 用户和业务关系############################################################################
 # 展示页面
+@login_check
 def user_service_list(request):
+    current_user = request.session.get("user", None)
     user=models.User.objects.all()
-    return render(request, ".//user_service/user_service_list.html", {"user":user})
+    total_count=user.count()
+    current_page=request.GET.get("page")
+
+    page_obj=mypage.MyPage(current_page,total_count,url_prefix="user_service_list")
+    range = user[page_obj.start:page_obj.end]  # 从开始到结束
+    page_html = page_obj.page_html()
+    page_num = page_obj.num()
+    return render(request, ".//user_service/user_service_list.html", {"user":range,"v":current_user,"page_html":page_html,"num":page_num})
 
 # 添加
-def add_user_service(request):
-    if request.method=="GET":
-        service_list=models.Service.objects.all()
-        # print(service_list)
-        return render(request,".//user_service/add_user_service.html",{"service_list":service_list})
-    else:
-        # 获取用户新输入的用户名
-        username=request.POST.get("name")
-        print(username)
-        # 获取要选择的业务
-        service_id=request.POST.getlist("service")
-        print(service_id)
-        # 创建用户
-        user_obj=models.User.objects.create(username=username)
-        # 去关联用户和业务
-        user_obj.services.set(service_id)
-        return redirect("/user_service_list/")
+# def add_user_service(request):
+#     if request.method=="GET":
+#         service_list=models.Service.objects.all()
+#         # print(service_list)
+#         return render(request,".//user_service/add_user_service.html",{"service_list":service_list})
+#     else:
+#         # 获取用户新输入的用户名
+#         username=request.POST.get("name")
+#         print(username)
+#         # 获取要选择的业务
+#         service_id=request.POST.getlist("service")
+#         print(service_id)
+#         # 创建用户
+#         user_obj=models.User.objects.create(username=username)
+#         # 去关联用户和业务
+#         user_obj.services.set(service_id)
+#         return redirect("/user_service_list/")
+
 
 # 编辑
+@login_check
 def edit_user_service(request,pk):
     if request.method=="GET":
-        user_name=models.User.objects.filter(id=pk).first()
-        print(user_name)
-        service_obj=models.Service.objects.all()
-        print(service_obj)
-        return render(request,".//user_service/edit_user_service.html",{"user_name":user_name,"service_obj":service_obj})
+        v = request.session.get('user')
+        if v:
+            user_name=models.User.objects.filter(id=pk).first()
+            print(user_name)
+            service_obj=models.Service.objects.all()
+            return render(request,".//user_service/edit_user_service.html",{"user_name":user_name,"service_obj":service_obj,"v":v})
     else:
         user_name = models.User.objects.filter(id=pk).first()
         new_name=request.POST.get("name")

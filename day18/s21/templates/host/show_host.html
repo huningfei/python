@@ -31,7 +31,7 @@
 
                         {% for host in host_list %}
                             <tr>
-                                <td>{{ forloop.counter }}</td>
+                                <td>{{ forloop.counter| add:num }}</td>
                                 <td>{{ host.id }}</td>
                                 <td>{{ host.hostname }}</td>
                                 {#                    <td>{{ host.pwd }}</td>#}
@@ -48,7 +48,9 @@
                     <a class="btn btn-info" href="/add_host/">添加主机</a>
 
                 </div>
+
             </div>
+         {{ page_html|safe }}
         </div>
     </div>
 {% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="i1">+
+<input type="text" id="i2">=
+<input type="text" id="i3">
+
+{% csrf_token %}
+
+<input type="button" value="AJAX提交" id="b1">
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+{#<script src="/static/setup_ajax.js"></script>#}
+<script>
+    $("#b1").click(function () {
+        // 偷偷往后端发请求
+        $.ajax({
+            url: "/calc/",  // 往哪里发请求
+            type: "post",  // 发送请求的方式
+            data: {
+                "i1": $("#i1").val(),
+                "i2": $("#i2").val(),
+                {#"ooxx": JSON.stringify([11, 22, 33]),  // 多于1层的数据要使用JSON.stringify()#}
+                "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
+            },
+            success:function (res) {
+                // 当请求被正常响应，会自动调用执行这个函数
+                console.log(res);
+                $("#i3").val(res);
+            },
+            error:function (err) {
+                // 当请求出问题的时候，会自动调用执行这个函数
+                console.log(err)
+            }
+
+        })
+    })
+</script>
+
+</body>
+</html>

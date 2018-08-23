@@ -1,6 +1,6 @@
-博客：https://www.cnblogs.com/huningfei/p/9466778.html
-https://www.cnblogs.com/huningfei/p/9466679.html
-https://www.cnblogs.com/huningfei/p/9465345.html
+博客：https://www.cnblogs.com/huningfei/p/9516563.html
+https://www.cnblogs.com/huningfei/p/9516822.html
+
 
 说明：
 1 如何运行：
@@ -30,6 +30,14 @@ http://127.0.0.1:8000/show_host/ 需要提前登录
 在主机列表页面有添加，删除，编辑的功能
 添加主机（需要先登录）
 http://127.0.0.1:8000/add_host/
+---------------------------------------------------------------关于业务的操作
+查看业务列表
+http://127.0.0.1:8000/show_service/（需要先登录）
+列表里面有删除，添加，编辑的功能
+-----------------------------------------------------------关于用户和业务关系的
+查看用户和业务关系（需要先登录)
+http://127.0.0.1:8000/user_service_list/
+查看的页面有编辑的功能，没有添加和删除的功能，只可以添加，删除，用户或业务
 
 
 

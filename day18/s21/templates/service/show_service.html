@@ -1,4 +1,6 @@
+
 {% extends "mother.html" %}
+
 {% block page-css %}
     <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/user.css">
@@ -15,32 +17,29 @@
     <div class="col-md-10">
         <div class="panel panel-info" id="show_user">
             <div class="panel-heading">
-                <h3 class="panel-title">用户和业务关联</h3>
+                <h3 class="panel-title">业务列表</h3>
             </div>
             <div class="panel-body">
                 <table class="table table-hover table-bordered">
                     <thead>
                     <tr class="success">
                         <th>序号</th>
-                        <th>id</th>
-                        <th>用户名</th>
-                        <th>管理的业务</th>
+                        <th>业务id</th>
+                        <th>业务名称</th>
+
                         <th>操作</th>
                     </tr>
                     </thead>
 
-                    {% for user in user %}
+                    {% for obj in service_obj %}
                         <tr>
-                            <td>{{ forloop.counter }}</td>
-                            <td>{{ user.id }}</td>
-                            <td>{{ user.username }}</td>
-
-                            <td>{% for service in user.services.all %}{{ service.name }},{% endfor %}</td>
-
+                            <td>{{ forloop.counter| add:num }}</td>
+                            <td>{{ obj.id }}</td>
+                            <td>{{ obj.name }}</td>
                             <td>
 
-                                <a href="/edit_user_service/{{ user.id }}" class="btn btn-info">编辑</a>
-{#                                <a href="/del_user/?id={{ obj.id }}" class="btn btn-warning">删除</a>#}
+                                <a href="/edit_service/{{ obj.id }}" class="btn btn-info">编辑</a>
+                                <a href="/del_service/{{ obj.id }}" class="btn btn-warning">删除</a>
 
 
                             </td>
@@ -48,9 +47,10 @@
                     {% endfor %}
 
                 </table>
-{#                <a class="btn btn-info" href="/add_user/">添加用户</a>#}
+                <a class="btn btn-info" href="/add_service/">添加业务</a>
 
             </div>
+
         </div>
     {{ page_html|safe }}
     </div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+{% csrf_token %}
+<input type="text" id="i1"><span style="color: red"></span>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+    $("#i1").blur(function () {
+        $.ajax({
+            url:"/check_username/",
+            type:"post",
+            data:{
+                "name":$("#i1").val(),
+                 "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
+            },
+            success:function (res) {
+                console.log(res);
+                $("#i1+span").text(res);
+
+            }
+        })
+
+    })
+</script>
+
+</body>
+</html>

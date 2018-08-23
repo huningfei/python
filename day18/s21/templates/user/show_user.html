@@ -31,7 +31,7 @@
 
                     {% for obj in data %}
                         <tr>
-                            <td>{{ forloop.counter }}</td>
+                            <td>{{ forloop.counter|add:num }}</td>
                             <td>{{ obj.id }}</td>
                             <td>{{ obj.username }}</td>
                             <td>{{ obj.password }}</td>
@@ -50,6 +50,7 @@
 
             </div>
         </div>
+    {{ page_html|safe }}
     </div>
 
 {% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+{#             # table-striped 设置灰色背景#}
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>id</th>
+                    <th>作者名字</th>
+                    <th>写过的书</th>
+                    <th>操作</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for author in author %}
+                    <tr>
+                        <td>{{ forloop.counter}}</td>
+                        <td>{{ author.id }}</td>
+                        <td>{{ author.name }}</td>
+                        <td>{% for book in author.books.all%}{{ book.title }},{% endfor %}</td>
+                        <td>
+                            <a class="btn btn-warning" href="/del_author/{{ author.id }}/">删除</a>
+                            <a class="btn btn-info" href="/edit_author/{{ author.id }}/">编辑</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        {{ page_html|safe }}
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

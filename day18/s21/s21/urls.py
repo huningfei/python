@@ -34,10 +34,18 @@ urlpatterns = [
     url(r'^edit_host/(?P<pk>\d+)$',views.edit_host,name="edit_host"),
     # 删除主机
     url(r'^del_host/(?P<pk>\d+)$', views.del_host, name="del_host"),
+    # 关于业务的操作
+    url(r'^show_service/$', views.show_service),
+    # # 添加业务
+    url(r'^add_service/$', views.add_service, name="add_service"),
+    # # 编辑业务
+    url(r'^edit_service/(?P<pk>\d+)$', views.edit_service, name="edit_service"),
+    # # 删除业务
+    url(r'^del_service/(?P<pk>\d+)$', views.del_service, name="del_service"),
     # 用户业务关系
     url(r'^user_service_list/$',views.user_service_list),
     #添加
-    url(r'^add_user_service/$', views.add_user_service),
+    # url(r'^add_user_service/$', views.add_user_service),
     #编辑
     url(r'^edit_user_service/(?P<pk>\d+)$', views.edit_user_service),
 
