@@ -241,11 +241,11 @@ def edit_host(request, pk):
         host_obj.pwd = new_pwd
         host_obj.service_id = new_service_id
         old_name = models.Host.objects.filter(hostname=new_hostname)
-        if old_name:
-            data = "主机名已存在"
-            return render(request, "host/edit_host.html", {"data": data})
-        else:
-            host_obj.save()
+        # if old_name:
+        #     data = "主机名已存在"
+        #     return render(request, "host/edit_host.html", {"data": data})
+        # else:
+        host_obj.save()
         return redirect("/show_host/")
 
 

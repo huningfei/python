@@ -46,7 +46,12 @@
                                             <label for="exampleInputPassword1">业务名称</label>
                                             <select name="service">
                                                 {% for service in service_list %}
-                                                    <option value="{{ service.id }}">{{ service.name }}</option>
+                                                    {% if host.service == service %}
+{#                                                        当你点编辑的时候要正好显示这个主机对应的业务#}
+                                                        <option selected value="{{ service.id }}">{{ service.name }}</option>
+                                                    {% else %}
+                                                        <option  value="{{ service.id }}">{{ service.name }}</option>
+                                                    {% endif %}
 
                                                 {% endfor %}
                                             </select>
