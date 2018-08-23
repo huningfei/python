@@ -35,7 +35,17 @@
                             <td>{{ user.id }}</td>
                             <td>{{ user.username }}</td>
 
-                            <td>{% for service in user.services.all %}{{ service.name }},{% endfor %}</td>
+                            <td>{% for service in user.services.all %}
+                                 {% if forloop.last %}
+                                     {{ service.name }}
+                                 {% else %}
+                                      {{ service.name }},
+                                {% endif %}
+
+
+
+
+                            {% endfor %}</td>
 
                             <td>
 
@@ -48,7 +58,6 @@
                     {% endfor %}
 
                 </table>
-{#                <a class="btn btn-info" href="/add_user/">添加用户</a>#}
 
             </div>
         </div>
