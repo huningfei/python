@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑书籍</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>书名：
+        <input type="text" name="title" value="{{ book_obj.title }}">
+    </p>
+    <p>出版日期
+        <input type="date" name="publish_date" value="{{ book_obj.publish_date|date:'Y-m-d' }}">
+    </p>
+
+    <p>出版社
+        <select name="publisher">
+            {% for publisher in publisher_list %}
+                {% if publisher.id == book_obj.publisher_id %}
+                    <option selected value="{{ publisher.id }}">{{ publisher.name }}</option>
+                {% else %}
+                    <option value="{{ publisher.id }}">{{ publisher.name }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </p>
+    <p>作者：
+        <select name="authors" multiple>
+            {% for author in author_list %}
+                {% if author in book_obj.authors.all %}
+                    <option selected value="{{ author.id }}">{{ author.name }}</option>
+                {% else %}
+                    <option value="{{ author.id }}">{{ author.name }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </p>
+    <input type="submit" value="确定">
+</form>
+
+</body>
+</html>
