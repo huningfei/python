@@ -1,4 +1,4 @@
-"""form URL Configuration
+"""modelform URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -22,5 +22,8 @@ urlpatterns = [
     url(r'^book_list/$',views.book_list),
     url(r'^add_book/$',views.add_book),
     url(r'^edit_book/(\d+)/$',views.edit_book),
-    url(r'^del_book/(\d+)/$',views.del_book),
+    # auth认证
+    url(r'^login/$',views.login),
+    url(r'^reg/$',views.reg),
+    # url(r'^reg/$', views.RegView.as_view()),
 ]

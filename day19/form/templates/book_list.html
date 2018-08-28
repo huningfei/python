@@ -3,28 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 
-<a href="/add_book/">添加书籍</a>
-<table border="1">
-    <tbody>
-    {% for book in data %}
-        <tr>
-        <td>{{ forloop.counter }}</td>
-        <td>{{ book.id }}</td>
-        <td>{{ book.title }}</td>
-        <td>{{ book.publish_date }}</td>
-        <td>{{ book.publisher }}</td>
-        <td>{{ book.authors.all }}</td>
-        <td>
-            <a href="">删除</a>
-            <a href="/edit_book/{{ book.id }}/">编辑</a>
-        </td>
-        </tr>
-    {% endfor %}
 
-    </tbody>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <table border="1">
+                <tbody>
+                {% for book in data %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.publish_date }}</td>
+                        <td>{{ book.publisher }}</td>
+                        <td>{{ book.authors.all }}</td>
+                        <td>
+                            <a href="/del_book/{{ book.id }}">删除</a>
+                            <a href="/edit_book/{{ book.id }}/">编辑</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        <a href="/add_book/">添加书籍</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

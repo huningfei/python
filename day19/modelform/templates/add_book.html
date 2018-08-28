@@ -6,26 +6,26 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h1>添加书籍</h1>
+
             <form action="" method="post" novalidate autocomplete="off">
+                {% csrf_token %}
+
                 {% for field in form_obj %}
                     <div class="form-group">
                         <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                         {{ field }}
                         <p>{{ field.errors.0 }}</p>
-
                     </div>
                 {% endfor %}
-                 <input type="submit" class="btn btn-success">
+                <input type="submit" class="btn btn-success">
             </form>
-
         </div>
-
     </div>
-
 </div>
 
 </body>
