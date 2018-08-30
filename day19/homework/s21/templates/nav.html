@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航页</title>
+    <link rel="stylesheet" href="/static/nav.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">主机管理系统</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+{#            <li><a href="/register_user/"><span class="glyphicon glyphicon-user"></span> 注册</a></li>#}
+            <li><a href="/chage_password/" id="chage_password">修改密码</a></li><
+            <li class="dropdown">
+
+                <a id="username"  href="#" class="dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="false">{{ v }}<span class="caret"></span></a>
+
+                <ul class="dropdown-menu" style="min-width: 90px">
+                    <li style="min-width: 50px"><a href="/logout/">退出</a></li>
+
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+
+
+</body>
+</html>

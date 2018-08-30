@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    {% block page-css %}
+        {#       快里面都是单独的一些页面引用的#}
+    {% endblock %}
+</head>
+<body>
+{% include 'nav.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2" id="edit_user">
+            <div class="panel panel-success" style="height: 610px">
+                <div class="panel-heading">
+                    <h3 class="panel-title" >菜单栏</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li role="presentation"><a href="/show_user/">用户管理</a></li>
+                        <li role="presentation"><a href="/show_host/">主机管理</a></li>
+                        <li role="presentation"><a href="/show_service/">业务管理</a></li>
+                        <li role="presentation"><a href="/user_service_list/">用户和业务关系</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {% block page-main %}
+
+        {% endblock %}
+
+    </div>
+</div>
+</div>
+<script src="/static/jquery-3.3.1.min.js"></script>
+{% block page-js %}
+    {# 这个里面可以放一些个别页面引用的js样式#}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/login.css">
+</head>
+<body>
+<div class="main">
+    <div class="login ">
+        <h1>报障管理系统</h1>
+        <div class="inset login-box">
+            <!--start-main-->
+            <form action="" method="post">
+                <div>
+                    <h2>登录</h2>
+                    <label>用户名</label>
+{#                    <span><input type="text" name="username" class="textbox" placeholder="请输入用户名"></span>#}
+                    <input type="text" name="username" class="textbox" placeholder="请输入用户名">
+                </div>
+                <div>
+                    <span><label>密码</label></span>
+{#                    <span><input type="password" name="password" class="password" placeholder="请输入密码"></span>#}
+                    <input type="password" name="password" class="password" placeholder="请输入密码">
+                    <span style="font-size: 14px;color:red; margin-left: 67px">{{ data }}</span>
+                    <p class="error_msg">{{ error_msg }}</p>
+                </div>
+                <div class="sign">
+                    <input type="submit" value="登录" class="btn btn-info"/>
+
+
+                    <a class="btn btn-warning" style="font-size: 0.9em" href="/register_user/">注册</a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--//end-main-->
+</div>
+
+<div class="copy-right">
+    <p>&copy; 2018 Ethos Login Form. All Rights Reserved</p>
+
+</div>
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script src="/static/login.css"></script>
+
+</body>
+</html>
