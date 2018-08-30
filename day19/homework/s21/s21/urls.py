@@ -21,15 +21,7 @@ urlpatterns = [
     # 关于用户的url
     url(r'^login/$', views.login),
     url(r'^index/$', views.index),
-    # url(r'^change_password/$', views.change_password,
+    url(r'^change_password/$', views.change_password),
     url(r'^register_user/', views.register_user),
-    url(r'^logout',views.logout),
-
-
-
-
-
-
-
-
+    url(r'^logout/$',views.logout),
 ]

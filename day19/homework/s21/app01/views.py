@@ -50,10 +50,30 @@ def register_user(request):
         user_obj = User.objects.create_user(username=username, password=pwd)  # 用auth自带的去创建用户，这里用的是数据库自带的user表
         return redirect("/login/")
 # 更改密码
-# @login_required
-# def change_password():
-
-
+@login_required
+def change_password(request):
+    user = request.user
+    state = None
+    if request.method == 'POST':
+        old_password = request.POST.get('old_password', '')
+        new_password = request.POST.get('new_password', '')
+        repeat_password = request.POST.get('repeat_password', '')
+        if user.check_password(old_password):
+            if not new_password:
+                state = 'empty'
+            elif new_password != repeat_password:
+                state = 'repeat_error'
+            else:
+                user.set_password(new_password)
+                user.save()
+                return redirect("/login/")
+        else:
+            state = 'password_error'
+    content = {
+        'user': user,
+        'state': state,
+    }
+    return render(request, 'change_password.html',{"v":user})
 
 
 
