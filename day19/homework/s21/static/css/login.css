@@ -12,8 +12,9 @@
     color: red;
 }
 #edit_user{
-    float: left;
-    margin-left: -109px;
+
+    /*float: left;*/
+    margin-left: -60px;
 }
 
 /*body{background: url(/static/images/mei.jpg) no-repeat center 0}*/
