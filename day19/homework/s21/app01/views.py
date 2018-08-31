@@ -1,12 +1,10 @@
 from django.shortcuts import render, HttpResponse, redirect
-from app01 import models
-from app01 import my_md5
-from functools import wraps
+from app01 import loging
 from django.contrib import auth  # 必须先导入auth
 from django.contrib.auth.decorators import login_required  # auth装饰器
 from django.contrib.auth.models import User  # 创建用户auth自带
 
-
+log=loging.mylog()
 # 登录
 def login(request):
     if request.method == "GET":
@@ -22,9 +20,12 @@ def login(request):
             if next_url:
                 return redirect(next_url)
             else:
+                log.info("%s登录成功" %(username))
                 return redirect("/index/")
         else:
+            log.error("用户名或密码错误")
             return render(request, "login.html", {"error_msg": "用户名或密码错误"})
+
 
 
 # 首页
@@ -40,6 +41,8 @@ def index(request):
 def logout(request):
     # 删除所有当前请求相关的session
     request.session.delete()
+
+    log.info("此用户已退出")
     return redirect("/login/")
 
 
@@ -51,6 +54,7 @@ def register_user(request):
         username = request.POST.get("username")
         pwd = request.POST.get("password")
         user_obj = User.objects.create_user(username=username, password=pwd)  # 用auth自带的去创建用户，这里用的是数据库自带的user表
+        log.info("注册了%s用户" %(username))
         return redirect("/login/")
 
 
@@ -68,6 +72,7 @@ def change_password(request):
                 state = 'empty'
             elif new_password != repeat_password:
                 state = '两次密码不一致'
+                log.error("两次密码不一致")
                 return render(request, "change_password.html", {"error_new": state, "v": user})
             else:
                 user.set_password(new_password)
@@ -75,5 +80,6 @@ def change_password(request):
                 return redirect("/login/")
         else:
             state = '原始密码不对'
+            log.error("原始密码不对")
             return render(request, "change_password.html", {"error_old": state,  "v": user})
     return render(request, 'change_password.html', {"v": user})
