@@ -1,0 +1,21 @@
+.error_msg{
+    color: red;
+    margin-left: 47px;
+}
+
+
+.error_old{
+    color: red;
+
+}
+.error_new{
+    color: red;
+}
+#edit_user{
+    float: left;
+    margin-left: -109px;
+}
+
+/*body{background: url(/static/images/mei.jpg) no-repeat center 0}*/
+
+body{background:   url('../images/mei.jpg')  no-repeat   center top;}

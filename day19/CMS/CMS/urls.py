@@ -1,4 +1,4 @@
-"""s21 URL Configuration
+"""CMS URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,13 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from app01 import views
+from fault_reporting import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
-    url(r'^login/$', views.login),
+    url(r'^login/$', views.LoginView.as_view()),
     url(r'^index/$', views.index),
-    url(r'^change_password/$', views.change_password),
-    url(r'^register_user/', views.register_user),
-    url(r'^logout/$',views.logout),
+    url(r'^vcode/$', views.vcode),
+
 ]

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/login.css">
     {% block page-css %}
         {#       快里面都是单独的一些页面引用的#}
     {% endblock %}
@@ -20,10 +21,10 @@
                 </div>
                 <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked">
-                        <li role="presentation"><a href="/show_user/">用户管理</a></li>
-                        <li role="presentation"><a href="/show_host/">主机管理</a></li>
-                        <li role="presentation"><a href="/show_service/">业务管理</a></li>
-                        <li role="presentation"><a href="/user_service_list/">用户和业务关系</a></li>
+                        <li role="presentation"><a href="/show_user/">业务一故障</a></li>
+                        <li role="presentation"><a href="/show_host/">业务二故障</a></li>
+                        <li role="presentation"><a href="/show_service/">业务三故障</a></li>
+
 
                     </ul>
                 </div>
@@ -37,7 +38,7 @@
     </div>
 </div>
 </div>
-<script src="/static/jquery-3.3.1.min.js"></script>
+<script src="/static/plugins/jquery-3.3.1.min.js"></script>
 {% block page-js %}
     {# 这个里面可以放一些个别页面引用的js样式#}
 {% endblock %}

@@ -1,18 +1,27 @@
-
 {% extends "mother.html" %}
 
 
 {% block page-css %}
-    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/login.css">
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/login.css">
 {% endblock %}
 
 
 {% block page-js %}
-    <script src="/static/jquery-3.3.1.min.js"></script>
-    <script src="/static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="/static/plugins/jquery-3.3.1.min.js"></script>
+    <script src="/static/plugins/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 {% endblock %}
 
 {% block page-main %}
-    <h1>欢迎来到首页</h1>
+    <div class="col-md-10">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">首页</h3>
+            </div>
+            <div class="panel-body">
+                <h1>欢迎来到首页</h1>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
