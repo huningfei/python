@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax上传文件</title>
+</head>
+<body>
+<input type="file" name="avatar" id="i1">
+<input type="button" value="上传" id="b1">
+{% csrf_token %}
+
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+    $("#b1").click(function () {
+        // 先生成一个FormData对象
+        // 将要提交的数据 append 到FormData对象中
+        var fd = new FormData();
+        fd.append("csrfmiddlewaretoken", $("[name='csrfmiddlewaretoken']").val());
+        fd.append("avatar", $("#i1")[0].files[0]); // 获取文件名字
+        $.ajax({
+            url: "/ajax_upload/",
+            type: "post",
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                console.log(res)
+
+            }
+
+
+        })
+
+    });
+
+
+</script>
+
+</body>
+</html>
