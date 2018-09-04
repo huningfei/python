@@ -1,3 +1,27 @@
-.login-error{
+.login-error {
     color: red;
+}
+
+body {
+    background: url('../images/mei.jpg') no-repeat center top;
+}
+
+#v-code-img {
+    width: 150px;
+    height: 35px;
+    display: inline-block;
+   margin-top: 3px;
+    float: right;
+    margin-right: 29px;
+}
+
+#id_vcode {
+    height: 35px;
+    width: 150px;
+    display: inline-block
+}
+
+#login-button{
+    margin-right: 100px;
+
 }

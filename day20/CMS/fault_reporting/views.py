@@ -17,21 +17,24 @@ class LoginView(views.View):
         next_url = request.GET.get("next", "/index/")
         username = request.POST.get("username")
         pwd = request.POST.get("password")
-        v_code = request.POST.get("vcode", "").upper()  # 如果用户不写验证码就是空
-        if v_code == request.session.get("v_code"):
+        # v_code = request.POST.get("vcode", "").upper()  # 如果用户不写验证码就是空
+        # if v_code == request.session.get("v_code"):
 
-            user_obj = auth.authenticate(username=username, password=pwd)
-            if user_obj:
-                auth.login(request, user_obj)  # auth认证登录
-                return redirect(next_url)
-            else:
-                return render(request, "login.html", {"error_msg": "用户名或密码错误"})
+        user_obj = auth.authenticate(username=username, password=pwd)
+        if user_obj:
+            auth.login(request, user_obj)  # auth认证登录
+            return redirect(next_url)
         else:
-            return render(request, "login.html", {"error_msg": "验证码错误"})
+            return render(request, "login.html", {"error_msg": "用户名或密码错误"})
+        # else:
+        #     return render(request, "login.html", {"error_msg": "验证码错误"})
 
+def logout(request):
+    auth.logout(request)
+    return redirect("/login/")
 
 # 首页
-def index(request):
+def index(request,*args):
     return render(request, "index.html")
 
 
@@ -46,7 +49,7 @@ def vcode(request):
     image_obj = Image.new(
         "RGB",
         (250, 35),  # 背景图片的长和宽
-        random_color()
+        (255,255,140)
     )
     # 在该图片对象上生成一个画笔对象
     draw_obj = ImageDraw.Draw(image_obj)
@@ -60,7 +63,7 @@ def vcode(request):
         # 从上面三个随机选一个
         r = random.choice([l, u, n])
         # 将选中过的那个字符写到图片上
-        draw_obj.text((40 * i + 30, 0), r, fill=random_color(), font=font_obj)  # text指定的是从那开始写位置，fill是字体颜色
+        draw_obj.text((30 * i + 30, 0), r, fill=random_color(), font=font_obj)  # text指定的是从那开始写位置，fill是字体颜色
         tmp.append(r)
 
         v_code = "".join(tmp).upper()
@@ -79,6 +82,7 @@ def vcode(request):
 class RegisterView(views.View):
     def get(self, request):
         form_obj = forms.RegisterForm()
+
         return render(request, "register.html", locals())
 
     def post(self, request):
@@ -89,7 +93,7 @@ class RegisterView(views.View):
             form_obj.cleaned_data.pop("re_password")
             # 头像数据，文件对象
             avatar_obj = request.FILES.get("avatar")
-            # 头像文件保存到数据库
+            # 头像文件保存到数据库,如果你的models里面写的这个字段FileField，就会自动写在服务器上面
             models.UserInfo.objects.create_user(**form_obj.cleaned_data, avatar=avatar_obj)
             res["url"] = "/login/"
         else:
@@ -98,16 +102,70 @@ class RegisterView(views.View):
             res["error"] = form_obj.errors
         return JsonResponse(res)
 
+def change_password(request):
+    '''
+    更改密码
+    :param request:
+    :return:
+    '''
+    user = auth.get_user(request)
+    state = None
+    if request.method == 'POST':
+        old_password = request.POST.get('old_password', '')
+        new_password = request.POST.get('new_password', '')
+        repeat_password = request.POST.get('repeat_password', '')
+        if user.check_password(old_password):
+            if not new_password:
+                state = 'empty'
+            elif new_password != repeat_password:
+                state = '两次密码不一致'
+
+                return render(request, "change_password.html", {"error_new": state, "v": user})
+            else:
+                user.set_password(new_password)
+                user.save()
+                return redirect("/login/")
+        else:
+            state = '原始密码不对'
+
+            return render(request, "change_password.html", {"error_old": state,  "v": user})
+    return render(request, 'change_password.html', {"v": user})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #ajax_upload
-def ajax_upload(requst):
-    return render(requst,"ajax_upload.html")
+def ajax_upload(request):
+    if request.method == "POST":
+        # print(request.POST)
+        # print(request.FILES)
+        # 从上传的文件数据中拿到 avatar对应的文件对象
+        file_obj = request.FILES.get("avatar")
+        # 在服务端新建一个和上传文件同名的新文件
+        with open(file_obj.name, "wb") as f:
+            # 从上传文件对象中一点一点读数据
+            for i in file_obj:
+                # 写入服务端新建的文件
+                f.write(i)
+        return HttpResponse("OK")
+    return render(request,"ajax_upload.html")
 
 #upload
 def upload(request):
     if request.method == "POST":
-        print(request.POST)
-        print(request.FILES)
+        # print(request.POST)
+        # print(request.FILES)
         # 从上传的文件数据中拿到 avatar对应的文件对象
         file_obj = request.FILES.get("avatar")
         # 在服务端新建一个和上传文件同名的新文件

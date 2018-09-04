@@ -21,8 +21,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', views.LoginView.as_view()),
     url(r'^index/$', views.index),
+    url(r'^logout/$', views.logout),
     url(r'^vcode/$', views.vcode),
+    url(r'^change_password/$', views.change_password),
     url(r'register/$',views.RegisterView.as_view()),
+
 
     #ajax上传文件
     url(r'^ajax_upload/',views.ajax_upload),

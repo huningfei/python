@@ -40,10 +40,10 @@ class RegisterForm(forms.Form):
         label="邮箱",
         validators=[check_email, ]
     )
-
+     # 局部钩子
     def clean_username(self):
         # 做用户名不能重复的校验
-        username = self.cleaned_data.get("username")
+        username = self.cleaned_data.get("username") #获取用户名
         # 去数据库查重
         is_exist = models.UserInfo.objects.filter(username=username)
         if is_exist:
@@ -63,7 +63,7 @@ class RegisterForm(forms.Form):
             raise ValidationError("两次密码不一致")
         else:
             return self.cleaned_data
-
+     # 重写init
     def __init__(self, *args, **kwargs):
         super(RegisterForm, self).__init__(*args, **kwargs)
         # 循环给每个字段加 class: form-control
