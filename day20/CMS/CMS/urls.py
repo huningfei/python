@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from fault_reporting import views
+from django.views.static import serve # 用户上传文件用的模块
+from django.conf import settings #同样是上传用的
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,6 +27,8 @@ urlpatterns = [
     url(r'^vcode/$', views.vcode),
     url(r'^change_password/$', views.change_password),
     url(r'register/$',views.RegisterView.as_view()),
+    #给用户上传的那些文件路径做认证上传头像的
+    url(r'^media/(?P<path>.*)',serve,{"document_root":settings.MEDIA_ROOT}),
 
 
     #ajax上传文件

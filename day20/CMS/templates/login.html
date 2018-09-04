@@ -15,9 +15,7 @@
             <!--start-main-->
             <form action="" method="post">
                 {% csrf_token %}
-
                 <h2>登录</h2>
-
                 <div class="form-group">
                     <label for="id_username">用户名</label>
                     <input type="text" class="form-control" id="id_username" name="username" placeholder="用户名">
@@ -33,6 +31,7 @@
                 </div>
                 <div>
                     <button type="submit" class="btn btn-success" id="login-button">登陆</button>
+                    <p id="id-register">没有账号 <a href="/register/">立即注册</a></p>
 
                 </div>
 
@@ -43,11 +42,11 @@
     </div>
     <!--//end-main-->
 </div>
-
-<div class="copy-right">
-    <p>&copy; 2018 Ethos Login Form. All Rights Reserved</p>
-
-</div>
+{##}
+{#<div class="copy-right">#}
+{#    <p>&copy; 2018 Ethos Login Form. All Rights Reserved</p>#}
+{##}
+{#</div>#}
 <script src="/static/plugins/jquery-3.3.1.min.js"></script>
 <script src="/static/js/login.js"></script>
 
