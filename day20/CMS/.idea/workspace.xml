@@ -71,12 +71,13 @@
       <file leaf-file-name="register.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+            <state relative-caret-position="311">
+              <caret line="52" column="10" lean-forward="true" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
               <folding>
                 <element signature="e#1401#1420#0#HTML" expanded="true" />
                 <element signature="e#1543#1564#0#HTML" expanded="true" />
-                <element signature="e#1611#1637#0#HTML" expanded="true" />
+                <element signature="e#1611#1649#0#HTML" expanded="true" />
+                <element signature="e#1668#1688#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -271,7 +272,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="723" y="106" width="1077" height="461" extended-state="0" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -283,7 +284,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49924356" weight="0.39115646" />
       <window_info content_ui="combo" id="Project" order="1" weight="0.2174616" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="2" visible="true" weight="0.11579981" />
+      <window_info anchor="right" id="Database" order="2" visible="true" weight="0.09539208" />
       <window_info anchor="right" id="SciView" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
@@ -676,12 +677,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+        <state relative-caret-position="311">
+          <caret line="52" column="10" lean-forward="true" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
           <folding>
             <element signature="e#1401#1420#0#HTML" expanded="true" />
             <element signature="e#1543#1564#0#HTML" expanded="true" />
-            <element signature="e#1611#1637#0#HTML" expanded="true" />
+            <element signature="e#1611#1649#0#HTML" expanded="true" />
+            <element signature="e#1668#1688#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
