@@ -44,6 +44,16 @@ def index(request, *args):
         if args[0]=="lob":
             #按业务线查询
             report_list=report_list.filter(lob__title=args[1])
+        elif args[0] == "tag":
+            # 是按照标签查询
+            report_list = report_list.filter(tags__title=args[1])
+        else:
+            # 按照日期（年月）来查询
+            try:
+                year, month = args[1].split("-")
+                report_list = report_list.filter(create_time__year=year, create_time__month=month)
+            except Exception:
+                report_list = []
     # 导入
     from django.db.models import Count
     # 聚合查询业务线
