@@ -29,13 +29,37 @@ class LoginView(views.View):
         # else:
         #     return render(request, "login.html", {"error_msg": "验证码错误"})
 
+
 def logout(request):
     auth.logout(request)
     return redirect("/login/")
 
+
 # 首页
-def index(request,*args):
-    return render(request, "index.html")
+def index(request, *args):
+    # 取到所有的故障总结
+    report_list = models.FaultReport.objects.all()
+    if args and len(args) == 2:
+        #进入细分查询
+        if args[0]=="lob":
+            #按业务线查询
+            report_list=report_list.filter(lob__title=args[1])
+    # 导入
+    from django.db.models import Count
+    # 聚合查询业务线
+    lob_list = models.LOB.objects.all().annotate(num=Count("faultreport")).values("title", "num")
+    # 正常查询
+    # lob_list = models.LOB.objects.all()
+    # 取到所有标签
+    # tag_list=models.Tag.objects.all()
+    # 分组获取标签
+    tag_list = models.Tag.objects.all().annotate(num=Count("faultreport")).values("title", "num")
+    # 拿到一个日期归档数据
+    archive_list = models.FaultReport.objects.all().extra(
+        select={"ym": "strftime('%%Y-%%m', create_time)"}
+    ).values("ym").annotate(num=Count("id")).values("ym", "num")
+
+    return render(request, "index.html", locals())
 
 
 # 验证码路径
@@ -49,7 +73,7 @@ def vcode(request):
     image_obj = Image.new(
         "RGB",
         (250, 35),  # 背景图片的长和宽
-        (255,255,140)
+        (255, 255, 140)
     )
     # 在该图片对象上生成一个画笔对象
     draw_obj = ImageDraw.Draw(image_obj)
@@ -102,6 +126,7 @@ class RegisterView(views.View):
             res["error"] = form_obj.errors
         return JsonResponse(res)
 
+
 def change_password(request):
     '''
     更改密码
@@ -128,24 +153,11 @@ def change_password(request):
         else:
             state = '原始密码不对'
 
-            return render(request, "change_password.html", {"error_old": state,  "v": user})
+            return render(request, "change_password.html", {"error_old": state, "v": user})
     return render(request, 'change_password.html', {"v": user})
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#ajax_upload
+# ajax_upload
 def ajax_upload(request):
     if request.method == "POST":
         # print(request.POST)
@@ -159,9 +171,10 @@ def ajax_upload(request):
                 # 写入服务端新建的文件
                 f.write(i)
         return HttpResponse("OK")
-    return render(request,"ajax_upload.html")
+    return render(request, "ajax_upload.html")
 
-#upload
+
+# upload
 def upload(request):
     if request.method == "POST":
         # print(request.POST)

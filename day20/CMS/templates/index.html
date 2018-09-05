@@ -2,7 +2,7 @@
 {% extends "monther/monther.html" %}
 {% block page-css %}
     <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/mycss.css">
+    <link rel="stylesheet" href="/static/css/index.css">
 
 {% endblock %}
 
@@ -21,7 +21,7 @@
                 <div class="panel-heading">业务线分类</div>
                 <div class="panel-body">
                     {% for lob in lob_list %}
-                        <p><a href="">{{ lob.title }}({{ lob.faultreport_set.count }})</a></p>
+{#                        <p><a href="">{{ lob.title }}({{ lob.faultreport_set.count }})</a></p>#}
                         <p><a href="/fault-report/lob/{{ lob.title }}/">{{ lob.title }}({{ lob.num }})</a></p>
                     {% endfor %}
                 </div>
@@ -49,9 +49,11 @@
                 {% for report in report_list %}
                     <div class="report">
                         <div class="report-title">
+{#                            title#}
                             <h3><a href="">{{ report.title }}</a></h3>
                         </div>
                         <div class="report-desc">
+{#                            //简介#}
                             <p>{{ report.desc }}</p>
                         </div>
                         <div class="report-info">
@@ -59,6 +61,7 @@
                             <span>{{ report.create_time }}</span>
                             <span class="glyphicon glyphicon-comment" aria-hidden="true">评论({{ report.comment_count }})</span>
                             <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">支持({{ report.up_count }})</span>
+                            <hr style="height: 1px;background-color: black; ">
                         </div>
                     </div>
                 {% endfor %}
