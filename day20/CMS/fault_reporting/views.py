@@ -10,27 +10,35 @@ from django.http import JsonResponse
 
 # Create your views here.
 class LoginView(views.View):
+    '''
+    如果用户发送的是get就返回登录页面
+    如果是post请求，先获取用户想访问那个页面用next,然后让他输入用户名密码还有验证码，先验证
+    用户名和密码，然后再判断验证码是否正确，如果都是正确的，就跳转到用户访问的那个页面
+    '''
     def get(self, request):
         return render(request, "login.html")
-
     def post(self, request):
         next_url = request.GET.get("next", "/index/")
         username = request.POST.get("username")
         pwd = request.POST.get("password")
-        # v_code = request.POST.get("vcode", "").upper()  # 如果用户不写验证码就是空
-        # if v_code == request.session.get("v_code"):
-
-        user_obj = auth.authenticate(username=username, password=pwd)
-        if user_obj:
-            auth.login(request, user_obj)  # auth认证登录
-            return redirect(next_url)
+        v_code = request.POST.get("vcode", "").upper()  # 如果用户不写验证码就是空
+        if v_code == request.session.get("v_code"):
+            user_obj = auth.authenticate(username=username, password=pwd)
+            if user_obj:
+                auth.login(request, user_obj)  # auth认证登录
+                return redirect(next_url)
+            else:
+                return render(request, "login.html", {"error_msg": "用户名或密码错误"})
         else:
-            return render(request, "login.html", {"error_msg": "用户名或密码错误"})
-        # else:
-        #     return render(request, "login.html", {"error_msg": "验证码错误"})
+            return render(request, "login.html", {"error_msg": "验证码错误"})
 
 
 def logout(request):
+    '''
+    注销用auth模块，然后跳转到登录页面
+    :param request:
+    :return:
+    '''
     auth.logout(request)
     return redirect("/login/")
 
@@ -56,7 +64,7 @@ def index(request, *args):
                 report_list = []
     # 导入
     from django.db.models import Count
-    # 聚合查询业务线
+    # 聚合查询业务线 ,title是LOB表里的title
     lob_list = models.LOB.objects.all().annotate(num=Count("faultreport")).values("title", "num")
     # 正常查询
     # lob_list = models.LOB.objects.all()
@@ -114,9 +122,16 @@ def vcode(request):
 
 # 注册
 class RegisterView(views.View):
+    '''
+    如果是get请求，就返回注册页面，用的form写的注册页面，先导入刚才写的forms模块，然后调用RggisterForm
+    如果是post请求（就是提交请求），form_obj获取到用户填的所有内容，然后去校验数据格式是否正确，如果没问题，就去
+    数据库里面创建数据，创建之前，要先删除re_password这个字段，因为数据库里没有这个字段
+    然后接受头像文件，需要用request.FILES，去获取
+    最后去数据库保存，需要把你的普通数据和头像数据分开来存储。
+    注册成功之后，就跳转到登录界面，否则就报报错信息返回到页面上面
+    '''
     def get(self, request):
         form_obj = forms.RegisterForm()
-
         return render(request, "register.html", locals())
 
     def post(self, request):
@@ -165,6 +180,9 @@ def change_password(request):
 
             return render(request, "change_password.html", {"error_old": state, "v": user})
     return render(request, 'change_password.html', {"v": user})
+
+
+
 
 
 # ajax_upload
