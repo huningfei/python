@@ -15,8 +15,10 @@ class LoginView(views.View):
     如果是post请求，先获取用户想访问那个页面用next,然后让他输入用户名密码还有验证码，先验证
     用户名和密码，然后再判断验证码是否正确，如果都是正确的，就跳转到用户访问的那个页面
     '''
+
     def get(self, request):
         return render(request, "login.html")
+
     def post(self, request):
         next_url = request.GET.get("next", "/index/")
         username = request.POST.get("username")
@@ -45,13 +47,27 @@ def logout(request):
 
 # 首页
 def index(request, *args):
+    '''
+    index可以传参数类似 --/lob/视频/--格式的参数
+    args[1]代表第二个参数，0代表第一个
+
+    首先分别取到业务，标签，时间的个数，然后点击不同的业务，标签，或时间跳转属于自己的内容界面
+    时间这里加上了try except捕获异常，因为怕用户输入的时间日期，不符合格式，如果没有这个日期则返回空
+
+    统计数量用的是orm的聚合查询需要先导入count
+
+    :param request:
+    :param args:
+    :return:
+    '''
     # 取到所有的故障总结
     report_list = models.FaultReport.objects.all()
+    # 如果有参数，并且参数长度是2
     if args and len(args) == 2:
-        #进入细分查询
-        if args[0]=="lob":
-            #按业务线查询
-            report_list=report_list.filter(lob__title=args[1])
+        # 进入细分查询
+        if args[0] == "lob":
+            # 按业务线查询,只获取对应的业务线的内容lob表里的title字段为1的内容
+            report_list = report_list.filter(lob__title=args[1])
         elif args[0] == "tag":
             # 是按照标签查询
             report_list = report_list.filter(tags__title=args[1])
@@ -130,6 +146,7 @@ class RegisterView(views.View):
     最后去数据库保存，需要把你的普通数据和头像数据分开来存储。
     注册成功之后，就跳转到登录界面，否则就报报错信息返回到页面上面
     '''
+
     def get(self, request):
         form_obj = forms.RegisterForm()
         return render(request, "register.html", locals())
@@ -155,9 +172,14 @@ class RegisterView(views.View):
 def change_password(request):
     '''
     更改密码
+    首先获取用户名，当用户要改密码的时候让他先输入旧密码，然后在输入两次新密码，当点击提交的时候，会先检查旧密码
+    是否正确，如果是正确的就检查两次输入的新密码是否正确，如果两次新密码输入正确就保存，然后跳转到登录界面。如果旧密码不正确，
+    就提示错误。，两次新密码不一致也提示错误
+
     :param request:
     :return:
     '''
+    #获取用户名
     user = auth.get_user(request)
     state = None
     if request.method == 'POST':
@@ -181,39 +203,35 @@ def change_password(request):
             return render(request, "change_password.html", {"error_old": state, "v": user})
     return render(request, 'change_password.html', {"v": user})
 
-
-
-
-
-# ajax_upload
-def ajax_upload(request):
-    if request.method == "POST":
-        # print(request.POST)
-        # print(request.FILES)
-        # 从上传的文件数据中拿到 avatar对应的文件对象
-        file_obj = request.FILES.get("avatar")
-        # 在服务端新建一个和上传文件同名的新文件
-        with open(file_obj.name, "wb") as f:
-            # 从上传文件对象中一点一点读数据
-            for i in file_obj:
-                # 写入服务端新建的文件
-                f.write(i)
-        return HttpResponse("OK")
-    return render(request, "ajax_upload.html")
-
-
-# upload
-def upload(request):
-    if request.method == "POST":
-        # print(request.POST)
-        # print(request.FILES)
-        # 从上传的文件数据中拿到 avatar对应的文件对象
-        file_obj = request.FILES.get("avatar")
-        # 在服务端新建一个和上传文件同名的新文件
-        with open(file_obj.name, "wb") as f:
-            # 从上传文件对象中一点一点读数据
-            for i in file_obj:
-                # 写入服务端新建的文件
-                f.write(i)
-        return HttpResponse("OK")
-    return render(request, "upload.html")
+# # ajax_upload
+# def ajax_upload(request):
+#     if request.method == "POST":
+#         # print(request.POST)
+#         # print(request.FILES)
+#         # 从上传的文件数据中拿到 avatar对应的文件对象
+#         file_obj = request.FILES.get("avatar")
+#         # 在服务端新建一个和上传文件同名的新文件
+#         with open(file_obj.name, "wb") as f:
+#             # 从上传文件对象中一点一点读数据
+#             for i in file_obj:
+#                 # 写入服务端新建的文件
+#                 f.write(i)
+#         return HttpResponse("OK")
+#     return render(request, "ajax_upload.html")
+#
+#
+# # upload
+# def upload(request):
+#     if request.method == "POST":
+#         # print(request.POST)
+#         # print(request.FILES)
+#         # 从上传的文件数据中拿到 avatar对应的文件对象
+#         file_obj = request.FILES.get("avatar")
+#         # 在服务端新建一个和上传文件同名的新文件
+#         with open(file_obj.name, "wb") as f:
+#             # 从上传文件对象中一点一点读数据
+#             for i in file_obj:
+#                 # 写入服务端新建的文件
+#                 f.write(i)
+#         return HttpResponse("OK")
+#     return render(request, "upload.html")
