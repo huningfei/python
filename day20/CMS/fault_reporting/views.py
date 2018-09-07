@@ -66,15 +66,16 @@ def index(request, *args):
     if args and len(args) == 2:
         # 进入细分查询
         if args[0] == "lob":
-            # 按业务线查询,只获取对应的业务线的内容lob表里的title字段为1的内容
-            report_list = report_list.filter(lob__title=args[1])
+            # 按业务线查询,
+            report_list = report_list.filter(lob__title=args[1])  #args[1]指的是视频等业务
         elif args[0] == "tag":
             # 是按照标签查询
             report_list = report_list.filter(tags__title=args[1])
         else:
             # 按照日期（年月）来查询
             try:
-                year, month = args[1].split("-")
+                year, month = args[1].split("-")  #以-切割，取出年和月
+                print(year)
                 report_list = report_list.filter(create_time__year=year, create_time__month=month)
             except Exception:
                 report_list = []
@@ -203,35 +204,4 @@ def change_password(request):
             return render(request, "change_password.html", {"error_old": state, "v": user})
     return render(request, 'change_password.html', {"v": user})
 
-# # ajax_upload
-# def ajax_upload(request):
-#     if request.method == "POST":
-#         # print(request.POST)
-#         # print(request.FILES)
-#         # 从上传的文件数据中拿到 avatar对应的文件对象
-#         file_obj = request.FILES.get("avatar")
-#         # 在服务端新建一个和上传文件同名的新文件
-#         with open(file_obj.name, "wb") as f:
-#             # 从上传文件对象中一点一点读数据
-#             for i in file_obj:
-#                 # 写入服务端新建的文件
-#                 f.write(i)
-#         return HttpResponse("OK")
-#     return render(request, "ajax_upload.html")
-#
-#
-# # upload
-# def upload(request):
-#     if request.method == "POST":
-#         # print(request.POST)
-#         # print(request.FILES)
-#         # 从上传的文件数据中拿到 avatar对应的文件对象
-#         file_obj = request.FILES.get("avatar")
-#         # 在服务端新建一个和上传文件同名的新文件
-#         with open(file_obj.name, "wb") as f:
-#             # 从上传文件对象中一点一点读数据
-#             for i in file_obj:
-#                 # 写入服务端新建的文件
-#                 f.write(i)
-#         return HttpResponse("OK")
-#     return render(request, "upload.html")
+

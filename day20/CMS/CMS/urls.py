@@ -19,7 +19,7 @@ from fault_reporting import views
 from django.views.static import serve  # 用户上传文件用的模块
 from django.conf import settings  # 同样是上传用的
 from django.conf.urls import url, include
-from fault_reporting import urls as fault_report_urls  # 耳机路由
+from fault_reporting import urls as fault_report_urls  # 二级路由
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -34,8 +34,6 @@ urlpatterns = [
     # 故障总结主页面
     url(r'^fault-report/', include(fault_report_urls)),  # 以fault-report开头的所有路由都交给二级路由去处理
 
-    # ajax上传文件
-    # url(r'^ajax_upload/',views.ajax_upload),
-    # url(r'^upload/', views.upload),
+
 
 ]

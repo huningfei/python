@@ -119,7 +119,7 @@ STATICFILES_DIRS = [
 ]
 AUTH_USER_MODEL = "fault_reporting.Userinfo"  # 告诉djanjo用我自己定义的用户表
 
-
+# 导航栏显示图像的配置：
 # 告诉djanjo项目用户上传的文件保存在哪个目录下
 MEDIA_ROOT = os.path.join(BASE_DIR, "upload")
 # 告诉用户用哪个前缀来访问刚才的定义的那个目录
