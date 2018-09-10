@@ -66,11 +66,22 @@
                     //有错误就展示错误提示
                     $("#digg_tips").text(res.msg);
                 }else{
-                    //创建点赞记录
+                    //在页面展示效果
+                    // 数据库加1
                     if (isUp){
                         // 点赞数+1
-                        var
+                        var $upEle=$("#digg_count");//把找到$digg_count的值赋值给一个变量
+                        var oldNum = $upEle.text(); //获取到旧的值
+                        $upEle.text(+oldNum+1); //设置旧的值加1 oldNum默认是字符串前面加+转换成数字
+                    }else{
+                        //反对数加1
+                         var $downEle=$("#bury_count");//把找到$digg_count的值赋值给一个变量
+                        var oldNum = $downEle.text(); //获取到旧的值
+                        $downEle.text(parseInt(oldNum)+1); //设置旧的值加1 把字符串转换成数字
                     }
+                    //展示成功的提示信息，digg_tips显示文本的类
+                    $("#digg_tips").text(res.msg);
+
                 }
 
             }
