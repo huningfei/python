@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/mycss.css">
+</head>
+<body>
+<div class="main">
+    <div class="login ">
+        <h1>报障管理系统</h1>
+        <div class="inset login-box">
+            <!--start-main-->
+            <form action="" method="post">
+                {% csrf_token %}
+                <h2>登录</h2>
+                <div class="form-group">
+                    <label for="id_username">用户名</label>
+                    <input type="text" class="form-control" id="id_username" name="username" placeholder="用户名">
+                </div>
+                <div class="form-group">
+                    <label for="id_password">密码</label>
+                    <input type="password" class="form-control" id="id_password" name="password" placeholder="密码">
+                </div>
+                <div class="form-group">
+                    <label for="id_vcode" style="display: block">验证码</label>
+                    <input type="text" class="form-control" id="id_vcode" name="vcode" placeholder="验证码">
+                    <img src="/vcode/" id="v-code-img">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success" id="login-button">登陆</button>
+                    <p id="id-register">没有账号 <a href="/register/">立即注册</a></p>
+
+                </div>
+
+                <p class="login-error">{{ error_msg }}</p>
+
+            </form>
+        </div>
+    </div>
+    <!--//end-main-->
+</div>
+{##}
+{#<div class="copy-right">#}
+{#    <p>&copy; 2018 Ethos Login Form. All Rights Reserved</p>#}
+{##}
+{#</div>#}
+<script src="/static/plugins/jquery-3.3.1.min.js"></script>
+<script src="/static/js/login.js"></script>
+
+</body>
+</html>

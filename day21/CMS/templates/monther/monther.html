@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
+
+    {% block page-css %}
+        {#       快里面都是单独的一些页面引用的#}
+    {% endblock %}
+</head>
+<body>
+{% include 'nav.html' %}
+
+
+
+        {% block page-main %}
+
+        {% endblock %}
+
+
+<script src="/static/plugins/jquery-3.3.1.min.js"></script>
+{% block page-js %}
+    {# 这个里面可以放一些个别页面引用的js样式#}
+{% endblock %}
+</body>
+</html>

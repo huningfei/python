@@ -1,0 +1,73 @@
+
+{% extends "monther/monther.html" %}
+{% block page-css %}
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+
+{% endblock %}
+
+
+{% block page-js %}
+    <script src="/static/plugins/jquery-3.3.1.min.js"></script>
+    <script src="/static/plugins/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block page-main %}
+    {#<!--页面主要内容-->#}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">业务线分类</div>
+                <div class="panel-body">
+                    {% for lob in lob_list %}
+{#                        <p><a href="">{{ lob.title }}({{ lob.faultreport_set.count }})</a></p>#}
+                        <p><a href="/fault-report/lob/{{ lob.title }}/">{{ lob.title }}({{ lob.num }})</a></p>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">标签分类</div>
+                <div class="panel-body">
+                    {% for tag in tag_list %}
+                        <p><a href="/fault-report/tag/{{ tag.title }}/">{{ tag.title }}({{ tag.num }})</a></p>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div class="panel panel-warning">
+                <div class="panel-heading">日期归档</div>
+                <div class="panel-body">
+                    {% for archive in archive_list %}
+                        <p><a href="/fault-report/archive/{{ archive.ym }}/">{{ archive.ym }}({{ archive.num }})</a></p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="report-list">
+                {% for report in report_list %}
+                    <div class="report">
+                        <div class="report-title">
+{#                            title#}
+                            <h3><a href="/fault-report/report/{{ report.id }}">{{ report.title }}</a></h3>
+                        </div>
+                        <div class="report-desc">
+{#                            //简介#}
+                            <p>{{ report.desc }}</p>
+                        </div>
+                        <div class="report-info">
+                            <span>{{ report.user.username }}发布于</span>
+                            <span>{{ report.create_time }}</span>
+                            <span class="glyphicon glyphicon-comment" aria-hidden="true">评论({{ report.comment_count }})</span>
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">支持({{ report.up_count }})</span>
+                            <hr style="height: 1px;background-color: black; ">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

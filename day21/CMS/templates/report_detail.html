@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>故障总结详情页</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/report_detail.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="report">
+                <h1>{{ report.title }}</h1>
+                <!--故障总结的内容，一对一关系表-->
+                <p>{{ report.faultdetail.content |safe}}</p>
+            </div>
+
+        </div>
+    </div>
+    {% csrf_token %}
+        <!-- 点赞 开始-->
+    <div class="clearfix">
+        <div id="div_digg">
+            <div class="diggit s21">
+                <span class="diggnum" id="digg_count">{{ report.up_count }}</span>
+            </div>
+
+            <div class="buryit s21" >
+                <span class="burynum" id="bury_count">{{ report.down_count }}</span>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="diggword" id="digg_tips">
+
+            </div>
+        </div>
+    </div>
+    <!-- 点赞 结束-->
+    <hr>
+
+</div>
+<script src="/static/plugins/jquery-3.3.1.min.js"></script>
+<script>
+    //点赞操作
+    $(".s21").click(function () {
+        // 取到点赞操作需要的三个数据
+        // 1. 谁 2. 哪篇文章 3. 支持or反对
+        var userId = {{  request.user.id }};  //如果是字符串外面需要加引号
+        var reportId = {{ report.id }};
+        var isUp = $(this).hasClass("diggit"); //判断你现在点击的这个有没有这个样式类
+
+        // 往后端发送请求，创建点赞记录
+        $.ajax({
+            url: "/fault-report/updown/",
+            type: 'post',
+            data: {
+                "user_id": userId,
+                "report_id": reportId,
+                "is_up": isUp,
+                "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val() // 一定不要忘了
+            },
+            success:function (res) {
+                console.log(res);
+                if (res.code === 1){
+                    //有错误就展示错误提示
+                    $("#digg_tips").text(res.msg);
+                }else{
+                    //创建点赞记录
+                    if (isUp){
+                        // 点赞数+1
+                        var
+                    }
+                }
+
+            }
+
+
+        })
+    })
+
+</script>
+</body>
+</html>

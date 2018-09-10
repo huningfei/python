@@ -1,0 +1,38 @@
+.login-error {
+    color: red;
+}
+
+body {
+    background: url('../images/login.jpg') no-repeat center top;
+}
+
+#v-code-img {
+    width: 150px;
+    height: 35px;
+    display: inline-block;
+   margin-top: 3px;
+    float: right;
+    margin-right: 18px;
+}
+
+#id_vcode {
+    height: 35px;
+    width: 140px;
+    display: inline-block
+}
+
+#login-button{
+    margin-right: 100px;
+    width: 100%;
+    height: 45px;
+
+}
+
+#id-register{
+    line-height: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #9b9b9b;
+    letter-spacing: .26px;
+    padding-top: 20px;
+}
