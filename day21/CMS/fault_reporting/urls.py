@@ -17,7 +17,7 @@ urlpatterns = [
     url('^$', views.index),  # index(request)
     # 故障总结详情页面
     url(r'^report/(\d+)/$', views.report_detail),
-    url(r'^updown/$',views.updown),# 点赞
+    url(r'^updown/$', views.updown),  # 点赞
+    url(r'^comment/$', views.comment),  # 评论
 
 ]
-

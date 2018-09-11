@@ -13,20 +13,20 @@
             <div class="report">
                 <h1>{{ report.title }}</h1>
                 <!--故障总结的内容，一对一关系表-->
-                <p>{{ report.faultdetail.content |safe}}</p>
+                <p>{{ report.faultdetail.content |safe }}</p>
             </div>
 
         </div>
     </div>
     {% csrf_token %}
-        <!-- 点赞 开始-->
-    <div class="clearfix">
+    <!-- 点赞 开始-->
+    <div class="clearfix">  <!--clearfix清除浮动-->
         <div id="div_digg">
             <div class="diggit s21">
                 <span class="diggnum" id="digg_count">{{ report.up_count }}</span>
             </div>
 
-            <div class="buryit s21" >
+            <div class="buryit s21">
                 <span class="burynum" id="bury_count">{{ report.down_count }}</span>
             </div>
 
@@ -38,6 +38,51 @@
     </div>
     <!-- 点赞 结束-->
     <hr>
+    <!--评论展示区开始-->
+<div class="comment-list">
+        <div class="list-group">
+        <p>评论楼：</p>
+        {% for comment in report.comment_set.all %}
+            <div class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    <span>{{ forloop.counter }}楼</span>
+                    <span>{{ comment.create_time }}</span>
+                    <span>{{ comment.user.username }}</span>
+                </h4>
+                <!--判断当前评论内容有没有父评论，如果有父评论就展示父评论-->
+                {% if comment.parent_comment %}
+                    <div class="list-group-item well">
+                        @{{ comment.parent_comment.user.username }} <!--获取父评论的用户名-->
+                        <p>{{ comment.parent_comment.content }}</p> <!--父评论的内容-->
+                    </div>
+                {% endif %}
+                <p class="list-group-item-text">{{ comment.content }}</p>
+
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+    <!--评论展示区结束-->
+
+    <hr>
+    <!-- 发表评论区 开始 用的是一个面板-->
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                发表评论
+            </h3>
+        </div>
+        <div class="panel-body">
+            用户名：{{ request.user.username }}
+        </div>
+        <div>
+            <textarea id="content" cols="80" rows="10"></textarea>
+        </div>
+        <button class="btn btn-success" id="submit-comment">发表评论</button>
+    </div>
+    <!-- 发表评论区 结束-->
 
 </div>
 <script src="/static/plugins/jquery-3.3.1.min.js"></script>
@@ -60,24 +105,24 @@
                 "is_up": isUp,
                 "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val() // 一定不要忘了
             },
-            success:function (res) {
+            success: function (res) {
                 console.log(res);
-                if (res.code === 1){
+                if (res.code === 1) {
                     //有错误就展示错误提示
                     $("#digg_tips").text(res.msg);
-                }else{
+                } else {
                     //在页面展示效果
                     // 数据库加1
-                    if (isUp){
+                    if (isUp) {
                         // 点赞数+1
-                        var $upEle=$("#digg_count");//把找到$digg_count的值赋值给一个变量
+                        var $upEle = $("#digg_count");//把找到$digg_count的值赋值给一个变量
                         var oldNum = $upEle.text(); //获取到旧的值
-                        $upEle.text(+oldNum+1); //设置旧的值加1 oldNum默认是字符串前面加+转换成数字
-                    }else{
+                        $upEle.text(+oldNum + 1); //设置旧的值加1 oldNum默认是字符串前面加+转换成数字
+                    } else {
                         //反对数加1
-                         var $downEle=$("#bury_count");//把找到$digg_count的值赋值给一个变量
+                        var $downEle = $("#bury_count");//把找到$digg_count的值赋值给一个变量
                         var oldNum = $downEle.text(); //获取到旧的值
-                        $downEle.text(parseInt(oldNum)+1); //设置旧的值加1 把字符串转换成数字
+                        $downEle.text(parseInt(oldNum) + 1); //设置旧的值加1 把字符串转换成数字
                     }
                     //展示成功的提示信息，digg_tips显示文本的类
                     $("#digg_tips").text(res.msg);
@@ -86,10 +131,51 @@
 
             }
 
-
         })
-    })
+    });
+    //发表评论
+    $("#submit-comment").click(function () {
+        //需要获取1 文章id  2谁评论的  3 评论的内容
+        var reportId ={{ report.id }};
+        var content = $("#content").val(); //内容
+        $.ajax({
+                url: "/fault-report/comment/",
+                type: "post",
+                data: {
+                    "report_id": reportId,
+                    "content": content,
+                    "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
+                },
+                success: function (res) {
+                    //接受views里面传过来的res
+                    console.log(res);
+                    if (res.code === 0) {
+                        //评论完之后自动在页面显示评论的内容，用的模板字符串
+                        var s = `
+                                     <div class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    <span>${res.data.n}楼</span>
+                    <span>${res.data.create_time}</span>
+                    <span>${res.data.user}</span>
+                </h4>
+                <p class="list-group-item-text">
+                   ${res.data.content}
+                </p>`;
+                        //将创建好的评论楼 追加到评论列表中
+                    // 也就是将s字符串追加到 comment-list 下面的 div中
+                        $(".comment-list>div").append(s);
+                        //清空评论输入框
+                        $("#content").val("");
 
+                    }
+
+                }
+
+
+            }
+        )
+
+    })
 </script>
 </body>
 </html>

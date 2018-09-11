@@ -218,6 +218,7 @@ def info(request):
 def report_detail(request,report_id):
     # 根据id值去数据库中找到对应的那个故障总结
     report = models.FaultReport.objects.filter(id=report_id).first()
+
     if not report:
         return HttpResponse("404")
     return render(request,"report_detail.html",{"report":report})
@@ -225,6 +226,8 @@ def report_detail(request,report_id):
 # 点赞
 def updown(request):
     res={"code":0}
+    # print(request.user) #获取用户名
+    # print(request.user.username) #获取用户名
     # 获取用户id
     user_id=request.POST.get("user_id")
     # 获取点赞文章id
@@ -263,6 +266,28 @@ def updown(request):
         res["msg"]="支持成功" if is_up else "反对成功"
     return JsonResponse(res)
 
+def comment(request):
+    res={"code":0}
+    #取到用户发送的评论数据
+    report_id=request.POST.get("report_id")
+    content=request.POST.get("content")
+    parent_id=request.POST.get("parent_id",None)
+    # 去数据库创建一条新的子评论
+    comment_obj = models.Comment.objects.create(
+        fault_report_id=report_id,
+        user=request.user,
+        content=content,
+        parent_comment_id=parent_id)
+
+    res["data"]={
+        "id": comment_obj.id,
+        "n": models.Comment.objects.count(),
+        "create_time": comment_obj.create_time.strftime("%Y-%m-%d %H:%M:%S"),
+        "user": comment_obj.user.username,
+        "content": comment_obj.content
+    }
+    # print(res)
+    return JsonResponse(res)  # 把res的结果返回给ajax
 
 
 

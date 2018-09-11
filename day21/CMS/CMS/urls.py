@@ -35,8 +35,7 @@ urlpatterns = [
     url(r'^fault-report/', include(fault_report_urls)),  # 以fault-report开头的所有路由都交给二级路由去处理
     #个人中心页面
     url(r'^info/$',views.info),
-    #故障总结详情页
-    url(r'^fault-report/', include(fault_report_urls)),
+
 
 
 
