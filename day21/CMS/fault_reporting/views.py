@@ -271,13 +271,25 @@ def comment(request):
     #取到用户发送的评论数据
     report_id=request.POST.get("report_id")
     content=request.POST.get("content")
-    parent_id=request.POST.get("parent_id",None)
-    # 去数据库创建一条新的子评论
-    comment_obj = models.Comment.objects.create(
-        fault_report_id=report_id,
-        user=request.user,
-        content=content,
-        parent_comment_id=parent_id)
+    parent_id=request.POST.get("parent_id",None)  # 获取父评论id
+    # 去数据库创建一条新的评论
+    with transaction.atomic():
+        if not parent_id:
+            comment_obj = models.Comment.objects.create(
+                fault_report_id=report_id,
+                user=request.user,
+                content=content,
+            )
+        # 否则就创建一条子评论
+        else:
+            comment_obj = models.Comment.objects.create(
+                fault_report_id=report_id,
+                user=request.user,
+                content=content,
+                parent_comment_id=parent_id,
+            )
+        # 同时去更新评论数
+        models.FaultReport.objects.filter(id=report_id).update(comment_count=F("comment_count")+1)
 
     res["data"]={
         "id": comment_obj.id,
