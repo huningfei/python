@@ -9,6 +9,7 @@ from django.http import JsonResponse  # json格式
 from django.contrib.auth.decorators import login_required  # auth装饰器
 from bs4 import BeautifulSoup  # 用来清洗数据
 from django.db.models import F  # F查询，需要对数据库里面的字段计算
+import os
 
 
 # Create your views here.
@@ -175,13 +176,11 @@ class RegisterView(views.View):
 
 # 编辑注册信息
 def edit_register(request):
-
     user_obj = models.UserInfo.objects.filter(username=request.user).first()
     # print(user_obj)
     from django.forms import model_to_dict
     user_dict = model_to_dict(user_obj)
     form_obj = forms.RegisterForm(user_dict)
-
 
     if request.method == "POST":
         form_obj = forms.RegisterForm(request.POST)
@@ -367,10 +366,52 @@ def add_report(request):
             )
             return redirect("/fault-report/info/")
     lobs = models.LOB.objects.all()  # 业务线
-    return render(request, "add-report.html", locals())
+    return render(request, "add_report.html", locals())
 
 
 def edit_report(request, report_id):
     report_obj = models.FaultReport.objects.filter(id=report_id).first()
+    print(report_obj.id)
+    if request.method == "POST":
+        new_title = request.POST.get("title")
+        new_lob_id = request.POST.get("lob")
+        new_content = request.POST.get("content")
+        soup = BeautifulSoup(new_content, "html.parser")
+        # 把提交的内容包含有script的标签清洗掉
+        for i in soup.find_all("script"):
+            # 遍历所有的script标签，删除掉
+            i.decompost()
+        with transaction.atomic():
+
+            report_obj.title = new_title
+            report_obj.content = soup
+            report_obj.lob_id = new_lob_id
+            user=request.user
+            report_obj.save()
+            obj = models.FaultDetail.objects.get(fault_id=report_obj.id)
+            print(obj)
+            obj.content=soup.prettify()
+            fault_id = report_obj.id
+
+
+        return redirect("/fault-report/info/")
+
+
+    report_obj = models.FaultReport.objects.filter(id=report_id).first()
     lobs = models.LOB.objects.all()
     return render(request, "edit_report.html", locals())
+
+
+# 富文本编辑器上传图片的视图
+def upload_img(request):
+    print(request.FILES)
+    res = {"error": 0}
+    file_obj = request.FILES.get("imgFile")
+    file_path = os.path.join("upload", "report_images", file_obj.name)
+    # 将文件保存在本地
+    with open(file_path, "wb") as f:
+        for chunk in file_obj.chunks():
+            f.write(chunk)
+    # 将上传文件的url返回给富文本编辑器
+    res["url"] = "/media/report_images/{}".format(file_obj.name)
+    return JsonResponse(res)

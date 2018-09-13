@@ -25,5 +25,7 @@ urlpatterns = [
     url(r'^add-report/$', views.add_report),
     # 编辑故障总结
     url(r'^edit-report/(\d+)/$', views.edit_report),
+    #富文本编辑器
+    url(r'^upload-img/$', views.upload_img),
 
 ]

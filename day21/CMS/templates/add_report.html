@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加新的故障总结</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="" method="post">
+            {% csrf_token %}
+                <div class="form-group">
+                    <label for="title">标题</label>
+                    <input type="text" id="title" name="title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="content">内容</label>
+                    <textarea class="form-control" name="content" id="content" rows="20"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="">所属业务线</label>
+                    <select name="lob" id="lob">
+                        {% for lob in lobs %}
+                        <option value="{{ lob.id }}">{{ lob.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button class="btn btn-success" type="submit">发布</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/static/plugins/jquery-3.3.1.min.js"></script>
+<script charset="utf-8" src="/static/plugins/kindeditor/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="/static/plugins/kindeditor/lang/zh-CN.js"></script>
+
+<script>
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#content', {
+                    uploadJson: "/fault-report/upload-img/",
+                    extraFileUploadParams : {  // 上传文件时额外传递的参数
+                        csrfmiddlewaretoken : $("[name='csrfmiddlewaretoken']").val(),
+                }
+                });
+        });
+</script>
+</body>
+</html>
