@@ -1,23 +1,13 @@
 
-{% extends "monther/monther.html" %}
+{% extends "base.html" %}
 {% block page-css %}
     <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/index.css">
 
 {% endblock %}
 
-
-{% block page-js %}
-    <script src="/static/plugins/jquery-3.3.1.min.js"></script>
-    <script src="/static/plugins/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-{% endblock %}
-
-{% block page-main %}
-    {#<!--页面主要内容-->#}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2">
-            <div class="panel panel-info">
+{% block page-left %}
+     <div class="panel panel-info">
                 <div class="panel-heading">业务线分类</div>
                 <div class="panel-body">
                     {% for lob in lob_list %}
@@ -43,9 +33,11 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
-        <div class="col-md-10">
-            <div class="report-list">
+
+{% endblock %}
+
+{% block page-right %}
+     <div class="report-list">
                 {% for report in report_list %}
                     <div class="report">
                         <div class="report-title">
@@ -65,9 +57,5 @@
                         </div>
                     </div>
                 {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-
+     </div>
 {% endblock %}

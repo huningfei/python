@@ -19,5 +19,11 @@ urlpatterns = [
     url(r'^report/(\d+)/$', views.report_detail),
     url(r'^updown/$', views.updown),  # 点赞
     url(r'^comment/$', views.comment),  # 评论
+    # 个人中心页面
+    url(r'^info/$', views.info),
+    # 发表故障
+    url(r'^add-report/$', views.add_report),
+    # 编辑故障总结
+    url(r'^edit-report/(\d+)/$', views.edit_report),
 
 ]

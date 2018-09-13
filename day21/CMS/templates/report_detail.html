@@ -187,7 +187,7 @@
     });
     //给回复按钮绑定事件
     {#$(".replay").click(function () {#}
-    $(".comment-list").on("click", ".replay", function () {  //用这种绑定方式，新评论的显示的回复按钮也就默认绑定了这个效果
+    $(".comment-list").on("click", ".replay", function () {  //用事件委托这种绑定方式，新评论的显示的回复按钮也就默认绑定了这个效果
         //点击回复按钮，光标聚焦到输入框里面
         //获取回复的用户名
         var replayname = $(this).prev().text();//获取回复按钮上面的那个标签的内容prev是上面的

@@ -4,11 +4,11 @@ from django.contrib import auth
 import random
 from fault_reporting import forms
 from fault_reporting import models
-from django.db import transaction # 事务操作模块
-from django.http import JsonResponse # json格式
-from django.contrib.auth.decorators import login_required # auth装饰器
-
-from django.db.models import F #F查询，需要对数据库里面的字段计算
+from django.db import transaction  # 事务操作模块
+from django.http import JsonResponse  # json格式
+from django.contrib.auth.decorators import login_required  # auth装饰器
+from bs4 import BeautifulSoup  # 用来清洗数据
+from django.db.models import F  # F查询，需要对数据库里面的字段计算
 
 
 # Create your views here.
@@ -70,14 +70,14 @@ def index(request, *args):
         # 进入细分查询
         if args[0] == "lob":
             # 按业务线查询,
-            report_list = report_list.filter(lob__title=args[1])  #args[1]指的是视频等业务
+            report_list = report_list.filter(lob__title=args[1])  # args[1]指的是视频等业务
         elif args[0] == "tag":
             # 是按照标签查询
             report_list = report_list.filter(tags__title=args[1])
         else:
             # 按照日期（年月）来查询
             try:
-                year, month = args[1].split("-")  #以-切割，取出年和月
+                year, month = args[1].split("-")  # 以-切割，取出年和月
                 print(year)
                 report_list = report_list.filter(create_time__year=year, create_time__month=month)
             except Exception:
@@ -173,6 +173,38 @@ class RegisterView(views.View):
         return JsonResponse(res)
 
 
+# 编辑注册信息
+def edit_register(request):
+
+    user_obj = models.UserInfo.objects.filter(username=request.user).first()
+    # print(user_obj)
+    from django.forms import model_to_dict
+    user_dict = model_to_dict(user_obj)
+    form_obj = forms.RegisterForm(user_dict)
+
+
+    if request.method == "POST":
+        form_obj = forms.RegisterForm(request.POST)
+        print(form_obj)
+
+        print(form_obj)
+        if form_obj.is_valid():
+            form_obj.cleaned_data.pop("re_password")
+            form_obj.cleaned_data.pop("password")
+            user_obj.username = form_obj.cleaned_data.get("username")
+            # user_obj.password = form_obj.cleaned_data.get("password")
+            # user_obj.cleaned_data.get("re_password")
+            user_obj.phone = form_obj.cleaned_data.get("phone")
+            user_obj.email = form_obj.cleaned_data.get("email")
+            user_obj.save()
+
+            avatar_obj = request.FILES.get("avatar")
+            # avatar_obj=user_obj.avatar
+            print(avatar_obj)
+
+    return render(request, "edit_register.html", locals())
+
+
 def change_password(request):
     '''
     更改密码
@@ -183,7 +215,7 @@ def change_password(request):
     :param request:
     :return:
     '''
-    #获取用户名
+    # 获取用户名
     user = auth.get_user(request)
     state = None
     if request.method == 'POST':
@@ -207,71 +239,77 @@ def change_password(request):
             return render(request, "change_password.html", {"error_old": state, "v": user})
     return render(request, 'change_password.html', {"v": user})
 
+
 # 个人中心
 @login_required
 # 用auth自带的装饰器，需要去setting.py里面设置一下路径
 def info(request):
     # 把当前这个用户发布的所有内容故障总结展示出来
-    report_list=models.FaultReport.objects.filter(user=request.user)
-    return render(request,"info.html",locals())
+    report_list = models.FaultReport.objects.filter(user=request.user)
+    return render(request, "info.html", locals())
+
+
 # 故障详情页面
-def report_detail(request,report_id):
+def report_detail(request, report_id):
     # 根据id值去数据库中找到对应的那个故障总结
     report = models.FaultReport.objects.filter(id=report_id).first()
 
     if not report:
         return HttpResponse("404")
-    return render(request,"report_detail.html",{"report":report})
+    return render(request, "report_detail.html", {"report": report})
+
 
 # 点赞
 def updown(request):
-    res={"code":0}
+    res = {"code": 0}
     # print(request.user) #获取用户名
     # print(request.user.username) #获取用户名
     # 获取用户id
-    user_id=request.POST.get("user_id")
+    user_id = request.POST.get("user_id")
     # 获取点赞文章id
-    report_id=request.POST.get("report_id")
+    report_id = request.POST.get("report_id")
     # 获取是点反对还是支持
-    #is_up=request.POST.get("report_id") # 获取的true和false是字符串，要转换成python里面的true和false
-    is_up=True if request.POST.get("is_up")=="true" else False
+    # is_up=request.POST.get("report_id") # 获取的true和false是字符串，要转换成python里面的true和false
+    is_up = True if request.POST.get("is_up") == "true" else False
     #  2. 每个人只能给一篇文章点一次推荐或者点一次反对  等于号前面的字段是updonw数据库里面的字段
     is_exist = models.UpDown.objects.filter(user_id=user_id, fault_report_id=report_id).first()
-    if models.FaultReport.objects.filter(user_id=user_id,id=report_id): # 如果是自己给自己点赞
-        res["code"]=1
-        res["msg"]="不能支持自己的文章" if is_up else "不能反对自己的文章"
+    if models.FaultReport.objects.filter(user_id=user_id, id=report_id):  # 如果是自己给自己点赞
+        res["code"] = 1
+        res["msg"] = "不能支持自己的文章" if is_up else "不能反对自己的文章"
 
     elif is_exist:
-        #如果有记录就代表以及点过了
-        res["code"]=1
-        res["msg"]="你已经推荐过" if is_exist.is_up else "你已经反对过"
+        # 如果有记录就代表以及点过了
+        res["code"] = 1
+        res["msg"] = "你已经推荐过" if is_exist.is_up else "你已经反对过"
     else:
         # 数据没问题，去数据库里面创建数据
-    # 因为点赞表创建了新纪录同时还要更新故障总结表的点赞字段，涉及到事务操作
+        # 因为点赞表创建了新纪录同时还要更新故障总结表的点赞字段，涉及到事务操作
         with transaction.atomic():
-            #创建点赞记录去updown表里面
+            # 创建点赞记录去updown表里面
             models.UpDown.objects.create(
                 user_id=user_id,
                 fault_report_id=report_id,
                 is_up=is_up
             )
             # 去更新对应的故障总结里面的点赞数
-            if is_up: #如果为真，点赞
+            if is_up:  # 如果为真，点赞
                 # 先找到这篇文章，然后去更新她的up_count字段
-                models.FaultReport.objects.filter(id=report_id).update(up_count=F('up_count')+1)
+                models.FaultReport.objects.filter(id=report_id).update(up_count=F('up_count') + 1)
             else:
-                models.FaultReport.objects.filter(id=report_id).update(down_count=F("down_count")+1)
+                models.FaultReport.objects.filter(id=report_id).update(down_count=F("down_count") + 1)
 
-        #事务操作结束
-        res["msg"]="支持成功" if is_up else "反对成功"
+        # 事务操作结束
+        res["msg"] = "支持成功" if is_up else "反对成功"
     return JsonResponse(res)
 
+
+# 评论
 def comment(request):
-    res={"code":0}
-    #取到用户发送的评论数据
-    report_id=request.POST.get("report_id")
-    content=request.POST.get("content")
-    parent_id=request.POST.get("parent_id",None)  # 获取父评论id
+    res = {"code": 0}
+    # 取到用户发送的评论数据
+    report_id = request.POST.get("report_id")
+    content = request.POST.get("content")
+    parent_id = request.POST.get("parent_id", None)  # 获取父评论id
     # 去数据库创建一条新的评论
     with transaction.atomic():
         if not parent_id:
@@ -289,11 +327,11 @@ def comment(request):
                 parent_comment_id=parent_id,
             )
         # 同时去更新评论数
-        models.FaultReport.objects.filter(id=report_id).update(comment_count=F("comment_count")+1)
+        models.FaultReport.objects.filter(id=report_id).update(comment_count=F("comment_count") + 1)
 
-    res["data"]={
+    res["data"] = {
         "id": comment_obj.id,
-        "n": models.Comment.objects.count(),
+        "n": models.Comment.objects.filter(fault_report_id=report_id).count(),
         "create_time": comment_obj.create_time.strftime("%Y-%m-%d %H:%M:%S"),
         "user": comment_obj.user.username,
         "content": comment_obj.content
@@ -302,4 +340,37 @@ def comment(request):
     return JsonResponse(res)  # 把res的结果返回给ajax
 
 
+# 添加故障
+def add_report(request):
+    if request.method == "POST":
+        content = request.POST.get("content")  # 获取文章内容
+        soup = BeautifulSoup(content, "html.parser")
+        print(soup)
+        # 把提交的内容包含有script的标签清洗掉
+        for i in soup.find_all("script"):
+            # 遍历所有的script标签，删除掉
+            i.decompost()
 
+        with transaction.atomic():
+            # 先创建一条故障总结记录
+            report_obj = models.FaultReport.objects.create(
+                title=request.POST.get("title"),
+                # 简介
+                desc=soup.text[0:150],  # 只去html代码的文本内容
+                lob_id=request.POST.get("lob"),
+                user=request.user
+            )
+            # 创建一条故障总结详情记录
+            models.FaultDetail.objects.create(
+                content=soup.prettify(),  # 格式化完整的html内容
+                fault_id=report_obj.id
+            )
+            return redirect("/fault-report/info/")
+    lobs = models.LOB.objects.all()  # 业务线
+    return render(request, "add-report.html", locals())
+
+
+def edit_report(request, report_id):
+    report_obj = models.FaultReport.objects.filter(id=report_id).first()
+    lobs = models.LOB.objects.all()
+    return render(request, "edit_report.html", locals())

@@ -1,0 +1,58 @@
+{#<!--注释#}
+{# form_obj就是<label for="id_username">用户名:</label></th><td><input type="text" name="username" minlength="2"#}
+{#class="form-control" required id="id_username" />#}
+{#{{ field.id_for_label }} 就是id#}
+{#{{ field.label }}就是字段名#}
+{#{{ field }}就是input标签#}
+
+
+
+{% extends "monther/monther.html" %}
+{% block page-css %}
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
+{#    <link rel="stylesheet" href="/static/css/mycss.css">#}
+
+{% endblock %}
+
+
+{% block page-js %}
+    <script src="/static/plugins/jquery-3.3.1.min.js"></script>
+    <script src="/static/plugins/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="/static/js/register.js"></script>
+{% endblock %}
+
+{% block page-main %}
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form class="register-form">
+                {% csrf_token %}
+                {% for field in form_obj %}
+                <div class="form-group">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                         {{ field}}
+                         <p>{{ field.errors.0 }}</p>
+{#                         {{ user_obj.username }}#}
+                         <span class="help-block"></span>
+
+
+                </div>
+                {% endfor %}
+                <div class="form-group">
+                    <label for="id_avatar">头像
+                        <img src="/media/{{ user_obj.avatar }}" id="avatar-img" style="width: 60px">
+                    </label>
+                    <input type="aa" id="id_avatar" accept="image/*" class="form-control" style="display: none">
+
+                </div>
+                <div style="text-align: center">
+                     <button style="width: 100px" type="button" class="btn btn-success" id="submit-btn">提交</button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -15,7 +15,8 @@
             <h3 class="panel-title">资料管理</h3>
         </div>
         <div class="panel-body">
-            <p><a href="">修改密码</a></p>
+            <p><a href="/change_password/">修改密码</a></p>
+            <p><a href="/edit_info/">修改信息</a></p>
         </div>
     </div>
 {% endblock %}
@@ -35,7 +36,7 @@
         {% for report in report_list %}
         <tr>
             <td>{{ forloop.counter }}</td>
-            <td><a href="#">{{ report.title }}</a></td>
+            <td><a href="/fault-report/report/{{ report.id }}">{{ report.title }}</a></td>
             <td>{{ report.comment_count }}</td>
             <td>{{ report.up_count }}</td>
             <td>

@@ -28,13 +28,15 @@ urlpatterns = [
     url(r'^logout/$', views.logout),
     url(r'^vcode/$', views.vcode),
     url(r'^change_password/$', views.change_password),
-    url(r'register/$', views.RegisterView.as_view()),
+    # 注册
+    url(r'^register/$', views.RegisterView.as_view()),
+    # 编辑注册信息
+    url(r'^edit_info/$', views.edit_register),
     # 给用户上传的那些文件路径做认证上传头像的
     url(r'^media/(?P<path>.*)', serve, {"document_root": settings.MEDIA_ROOT}),
     # 故障总结主页面
     url(r'^fault-report/', include(fault_report_urls)),  # 以fault-report开头的所有路由都交给二级路由去处理
-    #个人中心页面
-    url(r'^info/$',views.info),
+
 
 
 
