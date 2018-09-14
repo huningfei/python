@@ -34,15 +34,15 @@
         </thead>
         <tbody>
         {% for report in report_list %}
-        <tr>
-            <td>{{ forloop.counter }}</td>
-            <td><a href="/fault-report/report/{{ report.id }}">{{ report.title }}</a></td>
-            <td>{{ report.comment_count }}</td>
-            <td>{{ report.up_count }}</td>
-            <td>
-                <a class="btn btn-danger btn-sm" href="">删除</a>
-                <a href="/fault-report/edit-report/{{ report.id }}/" class="btn btn-warning btn-sm">编辑</a>
-            </td>
-        </tr>
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="/fault-report/report/{{ report.id }}">{{ report.title }}</a></td>
+                <td>{{ report.comment_count }}</td>
+                <td>{{ report.up_count }}</td>
+                <td>
+                    <a class="btn btn-danger btn-sm" href="/fault-report/del-report/{{ report.id }}/">删除</a>
+                    <a href="/fault-report/edit-report/{{ report.id }}/" class="btn btn-warning btn-sm">编辑</a>
+                </td>
+            </tr>
         {% endfor %}
 {% endblock %}

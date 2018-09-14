@@ -8,39 +8,29 @@
 {##}
 {##}
 {% extends "monther/monther.html" %}
+
 {% block page-css %}
     <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
     {#    <link rel="stylesheet" href="/static/css/mycss.css">#}
-
 {% endblock %}
-
-
-{% block page-js %}
-    <script src="/static/js/register.js"></script>
-{% endblock %}
-
 
 {% block page-main %}
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form class="register-form">
+                <form class="register-form" method="post">
                     {% csrf_token %}
                     {% for field in form_obj %}
                         <div class="form-group">
                             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                             {{ field }}
                             <span class="help-block"></span>
-
-
                         </div>
                     {% endfor %}
                     <div class="form-group">
-                        <label for="id_avatar">头像
-                            <img src="/static/images/default.png" id="avatar-img" style="width: 60px">
+                        <label for="id_avatar">头像<img src="/static/images/default.png" id="avatar-img" style="width: 60px">
                         </label>
-                        <input type="aa" id="id_avatar" accept="image/*" class="form-control" style="display: none">
-
+                        <input type="file" id="id_avatar" accept="image/*" class="form-control" style="display: none">
                     </div>
                     <div style="text-align: center">
                         <button style="width: 100px" type="button" class="btn btn-success" id="submit-btn">提交</button>
@@ -54,7 +44,12 @@
     </div>
 {% endblock %}
 
-
+{% block page-js %}
+    <script>
+        console.log("JS11111")
+    </script>
+    <script src="/static/js/register.js"></script>
+{% endblock %}
 
 {#<!DOCTYPE html>#}
 {#<html lang="en">#}

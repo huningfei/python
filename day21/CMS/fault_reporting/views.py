@@ -181,27 +181,21 @@ def edit_register(request):
     from django.forms import model_to_dict
     user_dict = model_to_dict(user_obj)
     form_obj = forms.RegisterForm(user_dict)
-
     if request.method == "POST":
         form_obj = forms.RegisterForm(request.POST)
-        print(form_obj)
-
-        print(form_obj)
+        avatar_obj = request.FILES.get("avatar")
+        print(avatar_obj)
         if form_obj.is_valid():
-            form_obj.cleaned_data.pop("re_password")
-            form_obj.cleaned_data.pop("password")
+            # form_obj.cleaned_data.pop("re_password")
+            # form_obj.cleaned_data.pop("password")
             user_obj.username = form_obj.cleaned_data.get("username")
-            # user_obj.password = form_obj.cleaned_data.get("password")
-            # user_obj.cleaned_data.get("re_password")
             user_obj.phone = form_obj.cleaned_data.get("phone")
             user_obj.email = form_obj.cleaned_data.get("email")
+            user_obj.avatar=user_obj.avatar_obj
             user_obj.save()
-
-            avatar_obj = request.FILES.get("avatar")
-            # avatar_obj=user_obj.avatar
-            print(avatar_obj)
-
-    return render(request, "edit_register.html", locals())
+            return redirect("/index/")
+    else:
+        return render(request, "edit_register.html", locals())
 
 
 def change_password(request):
@@ -369,9 +363,8 @@ def add_report(request):
     return render(request, "add_report.html", locals())
 
 
+# 编辑故障
 def edit_report(request, report_id):
-    report_obj = models.FaultReport.objects.filter(id=report_id).first()
-    print(report_obj.id)
     if request.method == "POST":
         new_title = request.POST.get("title")
         new_lob_id = request.POST.get("lob")
@@ -382,24 +375,33 @@ def edit_report(request, report_id):
             # 遍历所有的script标签，删除掉
             i.decompost()
         with transaction.atomic():
-
-            report_obj.title = new_title
-            report_obj.content = soup
-            report_obj.lob_id = new_lob_id
-            user=request.user
-            report_obj.save()
-            obj = models.FaultDetail.objects.get(fault_id=report_obj.id)
-            print(obj)
-            obj.content=soup.prettify()
-            fault_id = report_obj.id
-
+            report_obj = models.FaultReport.objects.filter(id=report_id).update(
+                title=request.POST.get("title"),
+                # 简介
+                desc=soup.text[0:150],  # 只去html代码的文本内容
+                lob_id=request.POST.get("lob"),
+                user=request.user
+            )
+            # 创建一条故障总结详情记录,当你用了.first的时候不能用.update了，queeyset才可以用.update
+            models.FaultDetail.objects.filter(fault_id=report_id).update(
+                content=soup.prettify(),  # 格式化完整的html内容
+                fault_id=report_id
+            )
 
         return redirect("/fault-report/info/")
-
 
     report_obj = models.FaultReport.objects.filter(id=report_id).first()
     lobs = models.LOB.objects.all()
     return render(request, "edit_report.html", locals())
+
+
+# 删除故障信息
+def del_report(request, report_id):
+    with transaction.atomic():
+        models.FaultReport.objects.filter(id=report_id).delete()
+        # 创建一条故障总结详情记录
+        models.FaultDetail.objects.filter(fault_id=report_id).delete()
+    return redirect("/fault-report/info/")
 
 
 # 富文本编辑器上传图片的视图

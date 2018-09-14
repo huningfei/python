@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form class="register-form">
+                <form  action="" method="post">
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="title">用户名</label>
@@ -43,7 +43,7 @@
                         <label for="id_avatar">头像
                             <img src="/media/{{ user_obj.avatar }}" id="avatar-img" style="width: 60px">
                         </label>
-                        <input type="aa" id="id_avatar" accept="image/*" class="form-control" style="display: none">
+                        <input type="file" id="id_avatar" accept="image/*" class="form-control" style="display: none">
 
                     </div>
                     <div style="text-align: center">
