@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required  # auth装饰器
 from bs4 import BeautifulSoup  # 用来清洗数据
 from django.db.models import F  # F查询，需要对数据库里面的字段计算
 import os
+from fault_reporting import mypage
 
 
 # Create your views here.
@@ -66,21 +67,58 @@ def index(request, *args):
     '''
     # 取到所有的故障总结
     report_list = models.FaultReport.objects.all()
+    # 分页功能
+    total_count = report_list.count()  # 总数量
+    current_page = request.GET.get("page")  # 当前页
+    page_obj = mypage.MyPage(current_page, total_count, url_prefix="index")
+    page_html = page_obj.page_html()  # 显示页码的代码
+    range = report_list[page_obj.start:page_obj.end]
+
     # 如果有参数，并且参数长度是2
     if args and len(args) == 2:
         # 进入细分查询
         if args[0] == "lob":
             # 按业务线查询,
             report_list = report_list.filter(lob__title=args[1])  # args[1]指的是视频等业务
+            total_count = report_list.count()  # 总数量
+            current_page = request.GET.get("page")  # 当前页
+            page_obj = mypage.MyPage(current_page, total_count, url_prefix="fault-report/lob/args[1]")
+            page_html = page_obj.page_html()  # 显示页码的代码
+            try:
+                range = report_list[page_obj.start:page_obj.end]
+            except Exception:
+                return HttpResponse("此选项没有内容")
+
+
+
         elif args[0] == "tag":
             # 是按照标签查询
             report_list = report_list.filter(tags__title=args[1])
+            total_count = report_list.count()  # 总数量
+            current_page = request.GET.get("page")  # 当前页
+            page_obj = mypage.MyPage(current_page, total_count, url_prefix="fault-report/tag/args[1]")
+            page_html = page_obj.page_html()  # 显示页码的代码
+            try:
+                range = report_list[page_obj.start:page_obj.end]
+            except Exception:
+                return HttpResponse("此选项没有内容")
+
+
+
         else:
             # 按照日期（年月）来查询
             try:
                 year, month = args[1].split("-")  # 以-切割，取出年和月
                 print(year)
                 report_list = report_list.filter(create_time__year=year, create_time__month=month)
+                total_count = report_list.count()  # 总数量
+                current_page = request.GET.get("page")  # 当前页
+                page_obj = mypage.MyPage(current_page, total_count, url_prefix="fault-report/archive/args[1]")
+                page_html = page_obj.page_html()  # 显示页码的代码
+                try:
+                    range = report_list[page_obj.start:page_obj.end]
+                except Exception:
+                    return HttpResponse("此选项没有内容")
             except Exception:
                 report_list = []
     # 导入
@@ -98,7 +136,9 @@ def index(request, *args):
         select={"ym": "strftime('%%Y-%%m', create_time)"}
     ).values("ym").annotate(num=Count("id")).values("ym", "num")
 
-    return render(request, "index.html", locals())
+    # return render(request, "index.html", locals(),{"report_list":range})
+    return render(request, "index.html", {"report_list": range, "page_html": page_html, "lob_list": lob_list,
+                                          "tag_list": tag_list, "archive_list": archive_list})
 
 
 # 验证码路径
@@ -166,6 +206,7 @@ class RegisterView(views.View):
             avatar_obj = request.FILES.get("avatar")
             # 头像文件保存到数据库,如果你的models里面写的这个字段FileField，就会自动写在服务器上面
             models.UserInfo.objects.create_user(**form_obj.cleaned_data, avatar=avatar_obj)
+
             res["url"] = "/login/"
         else:
             # 数据有问题
@@ -177,25 +218,23 @@ class RegisterView(views.View):
 # 编辑注册信息
 def edit_register(request):
     user_obj = models.UserInfo.objects.filter(username=request.user).first()
-    # print(user_obj)
-    from django.forms import model_to_dict
-    user_dict = model_to_dict(user_obj)
-    form_obj = forms.RegisterForm(user_dict)
+
     if request.method == "POST":
-        form_obj = forms.RegisterForm(request.POST)
+        new_name = request.POST.get("name")
+        new_phone = request.POST.get("phone")
+        new_email = request.POST.get("email")
         avatar_obj = request.FILES.get("avatar")
-        print(avatar_obj)
-        if form_obj.is_valid():
-            # form_obj.cleaned_data.pop("re_password")
-            # form_obj.cleaned_data.pop("password")
-            user_obj.username = form_obj.cleaned_data.get("username")
-            user_obj.phone = form_obj.cleaned_data.get("phone")
-            user_obj.email = form_obj.cleaned_data.get("email")
-            user_obj.avatar=user_obj.avatar_obj
-            user_obj.save()
-            return redirect("/index/")
-    else:
-        return render(request, "edit_register.html", locals())
+        # print(avatar_obj)
+        user_obj.username = new_name
+        user_obj.phone = new_phone
+        user_obj.email = new_email
+        user_obj.avatar = avatar_obj
+        print(user_obj.avatar)
+        user_obj.save()
+
+        return redirect("/fault-report/info/")
+
+    return render(request, "edit_register.html", locals())
 
 
 def change_password(request):
