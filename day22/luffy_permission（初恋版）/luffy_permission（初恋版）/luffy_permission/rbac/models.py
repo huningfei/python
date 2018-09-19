@@ -11,6 +11,7 @@ class UserInfo(models.Model):
     username = models.CharField(max_length=16, verbose_name="用户名")
     password = models.CharField(max_length=32, verbose_name="密码")
     roles = models.ManyToManyField(to="Role", null=True, blank=True)
+    # null=TRUE是告诉数据库这个字段可以为空，blank=True告诉djangoadmin可以不填
 
     def __str__(self):
         return self.username
