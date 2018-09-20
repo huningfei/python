@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+{#    <link rel="stylesheet" href="/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">#}
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css' %}">
+
+</head>
+<body>
+{% load ooxx %}
+{#把时间转换成字符串用内置的date#}
+<p>{{ now|date:'Y-m-d H:i:s' }}</p>
+{#我自定义一个alex函数#}
+
+<p>{{ now|alex }}</p>
+<p>{{ now|alex:'5'}}</p>
+<!--自定义simple_tag-->
+<p>{% gold "燃烧" "我的" "卡路里" %}</p>
+
+<hr>
+
+<!--自定义inclusion_tag-->
+<p>
+    {% show_menu 10 %}
+</p>
+
+
+<p>
+    <i class="fa fa-heartbeat"></i>
+</p>
+
+</body>
+</html>
