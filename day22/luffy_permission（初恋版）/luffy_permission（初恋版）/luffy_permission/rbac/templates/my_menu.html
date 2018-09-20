@@ -1,0 +1,5 @@
+{% for menu in menu_list %}
+    <a href="{{ menu.url }}" class="active">
+        <span class="icon-wrap"><i class="fa {{ menu.icon }}"></i></span> {{ menu.title }}</a>
+
+{% endfor %}

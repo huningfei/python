@@ -24,6 +24,6 @@ def gold(arg1, arg2, arg3):
 # 用一些数据去填充一段HTML代码 把HTML代码返回给调用方
 # 类似于一个简化版的render(request, "xx.html", {})函数
 @register.inclusion_tag(filename="ul.html")
-def show_menu(arg):
-    ret = [i for i in range(arg)]
+def show_menu(arg): #必须传一个参数
+    ret = [i for i in range(arg)] #返回一个可迭代的对象
     return {"num": ret}
