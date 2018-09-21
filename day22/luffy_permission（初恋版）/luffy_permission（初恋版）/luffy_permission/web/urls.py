@@ -18,6 +18,8 @@ urlpatterns = [
     url(r'^payment/del/(?P<pid>\d+)/$', payment.payment_del),
 
     #登录
-    url(r'^login/$',user.login)
+    url(r'^login/$',user.login),
+    #注销
+    url(r'^logout/$',user.login),
 
 ]

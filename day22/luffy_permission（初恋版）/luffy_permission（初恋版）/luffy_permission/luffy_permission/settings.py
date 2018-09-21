@@ -166,6 +166,7 @@ FILE_UPLOAD_DIRECTORY_PERMISSIONS = None
 # 设置白名单
 PERMISSION_WHITE_URL=[
     "/login/",
+    "/logout/",
     "/admin/.*",
 ]
 #权限列表

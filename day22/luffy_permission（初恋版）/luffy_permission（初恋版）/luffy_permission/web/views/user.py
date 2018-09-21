@@ -23,4 +23,4 @@ def login(request):
         else:
             error_msg = "用户名或密码错误"
 
-    return render(request, "login.html")
+    return render(request, "login.html",locals())

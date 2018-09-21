@@ -13,9 +13,11 @@ class UserInfo(models.Model):
     roles = models.ManyToManyField(to="Role", null=True, blank=True)
     # null=TRUE是告诉数据库这个字段可以为空，blank=True告诉djangoadmin可以不填
 
+    # 显示具体的内容
     def __str__(self):
         return self.username
 
+    # 让字段显示中文
     class Meta:
         verbose_name = "用户表"
         verbose_name_plural = verbose_name
