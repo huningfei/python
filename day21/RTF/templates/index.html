@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="content">内容</label>
+        <textarea class="form-control" name="content" id="content" rows="20"></textarea>
+    </div>
+</form>
+
+
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script charset="utf-8" src="/static/kindeditor/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="/static/kindeditor/lang/zh-CN.js"></script>
+
+<script>
+    KindEditor.ready(function (K) {
+        window.editor = K.create('#content', {
+            uploadJson: "/fault-report/upload-img/",
+            extraFileUploadParams: {  // 上传文件时额外传递的参数
+                csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -446,7 +446,7 @@ def del_report(request, report_id):
 # 富文本编辑器上传图片的视图
 def upload_img(request):
     print(request.FILES)
-    res = {"error": 0}
+    res = {"error": 0} # 这是固定写法，必须用error
     file_obj = request.FILES.get("imgFile")
     file_path = os.path.join("upload", "report_images", file_obj.name)
     # 将文件保存在本地

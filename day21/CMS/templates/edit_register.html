@@ -6,7 +6,8 @@
 {#{{ field }}就是input标签#}
 
 
-{% extends "monther/monther.html" %}
+
+{% extends 'base.html' %}
 {% block page-css %}
     <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css">
     {#    <link rel="stylesheet" href="/static/css/mycss.css">#}
@@ -19,8 +20,29 @@
 {#    <script src="/static/plugins/bootstrap-3.3.7/js/bootstrap.min.js"></script>#}
     <script src="/static/js/edit_register.js"></script>
 {% endblock %}
+{% block page-left %}
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">内容管理</h3>
+        </div>
+        <div class="panel-body">
+            <a class="btn btn-default btn-block" href="/fault-report/add-report/">发布</a>
+            <hr>
+            <p><a href="">我的评论</a></p>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">资料管理</h3>
+        </div>
+        <div class="panel-body">
+            <p><a href="/change_password/">修改密码</a></p>
+            <p><a href="/edit_info/">修改信息</a></p>
+        </div>
+    </div>
+{% endblock %}
 
-{% block page-main %}
+{% block page-right %}
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
