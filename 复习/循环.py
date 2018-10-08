@@ -1,15 +1,15 @@
 # 如果while循环被break打断，就不走else
 
-# count = 1
-# while count < 5:
-#     if count ==4:
-#         break
-#     print(count)
-#     count += 1
-# else:
-#     print('循环正常完毕')
+count = 1
+while count < 5:
+    if count ==4:
+        break
+    print(count)
+    count += 1
+else:
+    print('循环正常完毕')
 
-#打印1-10 ，7除外
+# 打印1-10 ，7除外
 # count=0
 # while count <10:
 #     count += 1
@@ -17,20 +17,20 @@
 #         pass
 #     else:
 #         print(count)
-#求1到100所有数之和
+# 求1到100所有数之和
 # a=0
 # sum=0
 # while a <100:
 #     a=a+1
 #     sum=sum+a
 # print(sum)
-#求1到100所有奇数之和
+# 求1到100所有奇数之和
 # a=0
 # while a < 100:
 #     a = a + 1
 #     if a % 2 == 1:
 #         print(a)
-#所有偶数
+# 所有偶数
 # a=0
 # while a < 100:
 #     a = a + 1
@@ -49,7 +49,7 @@
 #         sum2=sum2+i
 # print(sum1-sum2)
 
-#用户登录三次机会
+# 用户登录三次机会
 '''
 user='hu'
 passwd='123'
@@ -74,12 +74,13 @@ while i <3:
 # for item in msg:
 #     print(item)
 
-li = ['alex','银角','女神','egon','太白']
-for i in enumerate(li):
-    print(i)
-
-for index,name in enumerate(li):
-    print(index,name)
+# li = ['alex','银角','女神','egon','太白']
+# for i in enumerate(li):
+#     print(i)
+#
+# for index,name in enumerate(li):
+#     print(index,name)
 
 # for index, name in enumerate(li, 100):  # 起始位置默认是0，可更改
 #     print(index, name)
+

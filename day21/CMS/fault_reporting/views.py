@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django import views
-from django.contrib import auth
+from django.contrib import auth  # auth认证模块
 import random
-from fault_reporting import forms
+from fault_reporting import forms  # 用forms注册
 from fault_reporting import models
 from django.db import transaction  # 事务操作模块
 from django.http import JsonResponse  # json格式
@@ -10,7 +10,8 @@ from django.contrib.auth.decorators import login_required  # auth装饰器
 from bs4 import BeautifulSoup  # 用来清洗数据
 from django.db.models import F  # F查询，需要对数据库里面的字段计算
 import os
-from fault_reporting import mypage
+from fault_reporting import mypage  # 分页功能
+from django.db.models import Count  # 计算数据库里面的数字
 
 
 # Create your views here.
@@ -89,8 +90,6 @@ def index(request, *args):
             except Exception:
                 return HttpResponse("此选项没有内容")
 
-
-
         elif args[0] == "tag":
             # 是按照标签查询
             report_list = report_list.filter(tags__title=args[1])
@@ -102,9 +101,6 @@ def index(request, *args):
                 range = report_list[page_obj.start:page_obj.end]
             except Exception:
                 return HttpResponse("此选项没有内容")
-
-
-
         else:
             # 按照日期（年月）来查询
             try:
@@ -121,15 +117,14 @@ def index(request, *args):
                     return HttpResponse("此选项没有内容")
             except Exception:
                 report_list = []
-    # 导入
-    from django.db.models import Count
-    # 聚合查询业务线 ,title是LOB表里的title
+
+    # 聚合查询业务线 ,title是LOB表里的title，获取业务线后面括号里的数字
     lob_list = models.LOB.objects.all().annotate(num=Count("faultreport")).values("title", "num")
     # 正常查询
     # lob_list = models.LOB.objects.all()
     # 取到所有标签
     # tag_list=models.Tag.objects.all()
-    # 分组获取标签
+    # 分组获取标签，获取标签分类括号里面的数字
     tag_list = models.Tag.objects.all().annotate(num=Count("faultreport")).values("title", "num")
     # 拿到一个日期归档数据
     archive_list = models.FaultReport.objects.all().extra(
@@ -217,14 +212,16 @@ class RegisterView(views.View):
 
 # 编辑注册信息
 def edit_register(request):
-    user_obj = models.UserInfo.objects.filter(username=request.user).first()
+    user_obj = models.UserInfo.objects.filter(username=request.user).first()  # 获取你要编辑的用户
 
     if request.method == "POST":
+        # 获取新的字段
         new_name = request.POST.get("name")
         new_phone = request.POST.get("phone")
         new_email = request.POST.get("email")
         avatar_obj = request.FILES.get("avatar")
         # print(avatar_obj)
+        # 数据库更改字段
         user_obj.username = new_name
         user_obj.phone = new_phone
         user_obj.email = new_email
@@ -337,8 +334,14 @@ def updown(request):
 
 # 评论
 def comment(request):
+    '''
+    首先取到由ajax发送过来的评论数据，包括文章id,评论内容，父评论，如果没有父id,就创建新的一条评论，
+    如果有父id,就创建一个子评论，并且同时去更新faultreport里面的评论数
+    :param request:
+    :return:
+    '''
     res = {"code": 0}
-    # 取到用户发送的评论数据
+    # 取到用户发送的评论数据，下面这三个数据是ajax给发送过来的
     report_id = request.POST.get("report_id")
     content = request.POST.get("content")
     parent_id = request.POST.get("parent_id", None)  # 获取父评论id
@@ -346,9 +349,9 @@ def comment(request):
     with transaction.atomic():
         if not parent_id:
             comment_obj = models.Comment.objects.create(
-                fault_report_id=report_id,
-                user=request.user,
-                content=content,
+                fault_report_id=report_id,  # 故障id
+                user=request.user,  # 用户
+                content=content,  # 评论的内容
             )
         # 否则就创建一条子评论
         else:
@@ -360,10 +363,10 @@ def comment(request):
             )
         # 同时去更新评论数
         models.FaultReport.objects.filter(id=report_id).update(comment_count=F("comment_count") + 1)
-
+    # 把res返回给ajax，然后ajax根据返回的内容，自动刷新评论的内容，然后显示在网页上
     res["data"] = {
         "id": comment_obj.id,
-        "n": models.Comment.objects.filter(fault_report_id=report_id).count(),
+        "n": models.Comment.objects.filter(fault_report_id=report_id).count(), # 有多少条数据就有几楼
         "create_time": comment_obj.create_time.strftime("%Y-%m-%d %H:%M:%S"),
         "user": comment_obj.user.username,
         "content": comment_obj.content
@@ -446,7 +449,7 @@ def del_report(request, report_id):
 # 富文本编辑器上传图片的视图
 def upload_img(request):
     print(request.FILES)
-    res = {"error": 0} # 这是固定写法，必须用error
+    res = {"error": 0}  # 这是固定写法，必须用error
     file_obj = request.FILES.get("imgFile")
     file_path = os.path.join("upload", "report_images", file_obj.name)
     # 将文件保存在本地

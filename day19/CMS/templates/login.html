@@ -9,6 +9,7 @@
 <body>
 
 
+
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-sm-offset-3 login-box">
@@ -23,10 +24,13 @@
                     <label for="id_password">密码</label>
                     <input type="password" class="form-control" id="id_password" name="password" placeholder="密码">
                 </div>
-                <div class="form-group">
-                    <label for="id_vcode" style="display: block">验证码</label>
-                    <input type="text" class="form-control" id="id_vcode" name="vcode" placeholder="验证码" style="width: 250px;display: inline-block">
-                    <img src="/vcode/" id="v-code-img" style="width: 250px;height: 35px;display: inline-block;float: right">
+                <div class="form-group" id="embed-captcha">
+                    <p id="wait" class="show">正在加载验证码......</p>
+                    <p id="notice" class="hide">请先拖动验证码到相应位置</p>
+
+                    {#                    <label for="id_vcode" style="display: block" >验证码</label>#}
+                    {#                    <input type="text" class="form-control" id="id_vcode" name="vcode" placeholder="验证码" style="width: 250px;display: inline-block">#}
+                    {#                    <img src="/vcode/" id="v-code-img" style="width: 250px;height: 35px;display: inline-block;float: right">#}
                 </div>
                 <button type="submit" class="btn btn-success" id="login-button">登陆</button>
                 <p class="login-error">{{ error_msg }}</p>
@@ -35,8 +39,51 @@
         </div>
     </div>
 </div>
+
 <script src="/static/plugins/jquery-3.3.1.min.js"></script>
-<script src="/static/js/login.js"></script>
+{#<script src="/static/js/login.js"></script>#}
+<!-- 引入封装了failback的接口--initGeetest -->
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
+<!--滑动验证码的ajax操作-->
+<script>
+    var handlerEmbed = function (captchaObj) {
+        $("#login-button").click(function (e) {
+            var validate = captchaObj.getValidate();
+            if (!validate) {
+                $("#notice")[0].className = "show";
+                setTimeout(function () {
+                    $("#notice")[0].className = "hide";
+                }, 2000);
+                e.preventDefault();
+            }
+        });
+        // 将验证码加到id为captcha的元素里，同时会有三个input的值：geetest_challenge, geetest_validate, geetest_seccode
+        captchaObj.appendTo("#embed-captcha");
+        captchaObj.onReady(function () {
+            $("#wait")[0].className = "hide";
+        });
+        // 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
+    };
+    $.ajax({
+        // 获取id，challenge，success（是否启用failback）
+        url: "/ooxx/?t=" + (new Date()).getTime(), // 加随机数防止缓存
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+            // 使用initGeetest接口
+            // 参数1：配置参数
+            // 参数2：回调，回调的第一个参数验证码对象，之后可以使用它做appendTo之类的事件
+            initGeetest({
+                gt: data.gt,
+                challenge: data.challenge,
+                product: "embed", // 产品形式，包括：float，embed，popup。注意只对PC版验证码有效
+                offline: !data.success // 表示用户后台检测极验服务器是否宕机，一般不需要关注
+                // 更多配置参数请参见：http://www.geetest.com/install/sections/idx-client-sdk.html#config
+            }, handlerEmbed);
+        }
+    });
+</script>
+
 
 </body>
 </html>

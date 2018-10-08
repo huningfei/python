@@ -167,7 +167,7 @@
             success:function (res) {
                 console.log(res);
                 if (res.code === 0){
-                    // 手动的绘制一个评论楼
+                    // 手动的绘制一个评论楼，用的模板字符串
                     var s = `
                                 <div class="list-group-item">
                 <h4 class="list-group-item-heading" s21="${res.data.id}">

@@ -174,13 +174,15 @@ def show_host(request):
     data = models.Host.objects.all()
     total_count=data.count() #总数据
     current_page=request.GET.get("page") # 从浏览器获取页码
+
     #分页功能
     page_obj=mypage.MyPage(current_page, total_count, url_prefix="show_host")
     range=data[page_obj.start:page_obj.end] # 从开始到结束
     page_html=page_obj.page_html()
     page_num=page_obj.num()
 
-    return render(request, "host/show_host.html", {"v": current_user, "host_list": range,"page_html":page_html,"num":page_num})
+    # return render(request, "host/show_host.html", {"v": current_user, "host_list": range,"page_html":page_html,"num":page_num})
+    return render(request, "host/show_host.html", locals())
 
 
 # # 增加

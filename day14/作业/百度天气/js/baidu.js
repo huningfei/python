@@ -18,8 +18,8 @@
                     url:'https://free-api.heweather.com/s6/weather/forecast?location=beijing&key=7e2f47ead8a94ecab4b9e04f1f8d4a3f',
                     type:'get',
                     success:function (data) {
-                        console.log(data.HeWeather6[0]);
-                        console.log(data.HeWeather6[0].daily_forecast[0].cond_code_d);
+                        // console.log(data.HeWeather6[0]);
+                        // console.log(data.HeWeather6[0].daily_forecast[0].cond_code_d);
                         $('.left-top .tianqi img').attr('src',"./img/"+data.HeWeather6[0].daily_forecast[0].cond_code_d+'.png');
                         $('.one img').attr('src',"./img/"+data.HeWeather6[0].daily_forecast[0].cond_code_d+'.png');
                         $('.there .day1 img').attr('src',"./img/"+data.HeWeather6[0].daily_forecast[0].cond_code_d+'.png');
@@ -81,4 +81,4 @@
                          $(".wheater").stop().slideUp(500);
                    });
 
-     })
+     });

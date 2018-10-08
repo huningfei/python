@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', views.LoginView.as_view()),
     url(r'^index/$', views.index),
-    url(r'^vcode/$', views.vcode),
+    # url(r'^vcode/$', views.vcode),
+    url(r'^ooxx/$', views.pcgetcaptcha),
 
 ]
