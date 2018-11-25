@@ -26,3 +26,5 @@
 2018-09-23 16:00:51,670 - root - INFO - admin登录成功
 2018-09-23 16:01:09,174 - root - ERROR - 原始密码不对
 2018-09-23 16:01:26,348 - root - ERROR - 原始密码不对
+2018-11-14 12:52:50,920 - django.request - WARNING - Not Found: /
+2018-11-14 12:52:55,819 - django.request - WARNING - Not Found: /favicon.ico

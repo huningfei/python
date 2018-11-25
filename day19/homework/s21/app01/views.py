@@ -11,6 +11,7 @@ def login(request):
         return render(request, "login.html")
     else:
         next_url = request.GET.get("next")
+        print(next_url)
         username = request.POST.get("username")
         pwd = request.POST.get("password")
         user_obj = auth.authenticate(request, username=username, password=pwd)

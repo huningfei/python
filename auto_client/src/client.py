@@ -3,7 +3,7 @@ from conf import settings
 import requests
 from concurrent.futures import ThreadPoolExecutor  # 导入线程模块
 
-
+import json
 class BaseClient(object):  # 公共类，都向服务端发送数据
     def __init__(self):
         self.api = settings.API
@@ -32,7 +32,9 @@ class AgentClient(BaseClient):  # agent方式
 
 class SaltSshClient(BaseClient):  # Salt和ssh模式写到一起
     def get_host_list(self):
-        return ['c1.com', 'c2.com']  # 返回一个主机列表
+        response=requests.get(self.api)
+        print(response.text)
+        return json.load(response.text) # 返回一个主机列表
 
     def task(self, host):
         obj = PluginManager(host)  # 实例化一个对象
@@ -44,4 +46,4 @@ class SaltSshClient(BaseClient):  # Salt和ssh模式写到一起
         pool = ThreadPoolExecutor(10)  # 开启10个线程,每次处理10个
         host_list = self.get_host_list()
         for host in host_list:
-            pool.submit(self.task, host)  # 异步提交任务和参数
+            pool.submit(self.task, host['hostname'])  # 异步提交任务和参数

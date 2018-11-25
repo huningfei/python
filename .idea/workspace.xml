@@ -1,51 +1,273 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="474bc256-dea5-454a-a4de-ae149092fde7" name="Default" comment="Merge branch 'master' of https://github.com/huningfei/python&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change afterPath="$PROJECT_DIR$/cy_ip_list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day19/CMS/utils/geetest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/error_list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/复习/进程.py" afterDir="false" />
+    <list default="true" id="474bc256-dea5-454a-a4de-ae149092fde7" name="Default" comment="10-8">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/.idea/auto.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/.idea/dataSources/4c5d66fc-2c8c-4f3a-b3a4-47e6fb17f1fb.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/.idea/dataSources/4c5d66fc-2c8c-4f3a-b3a4-47e6fb17f1fb/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/app01/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/auto/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/auto/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/auto/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/auto/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/rbac/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/rbac/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/rbac/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/rbac/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/rbac/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/rbac/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/rbac/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/rbac/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/auto - 9 - 任务：构建权限和菜单的数据结构/auto - 9 - 任务：构建权限和菜单的数据结构/rbac/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/ajax_get请求.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/ajax_post请求.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/bs4 爬取三国.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/homework/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/homework/云打码平台使用流程/YunDaMa.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/homework/云打码平台使用流程/cookie带验证码.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/homework/云打码平台使用流程/使用流程" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/homework/校花网作业/爬取校花网图片.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/homework/糗事作业/糗事百科作业.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/ower/aa.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/ower/玩.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/xpath爬取方法.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/正则爬取.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/爬取多个页面.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/爬取搜狗的关键字数据get请求.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/爬取豆瓣网post请求.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day26/pearvideo/pearvideo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day26/selenium自动化操作/1 自动化.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day26/selenium自动化操作/2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day26/selenium自动化操作/chromedriver_win32/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day26/谷歌无头浏览器.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/.idea/dataSources/111a7968-2b8d-4c79-9886-94e12b832ca5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/.idea/dataSources/111a7968-2b8d-4c79-9886-94e12b832ca5/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/.idea/dataSources/84844528-66c5-453d-bb22-9664ab5e7150/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/.idea/dataSources/b60ea13f-2991-4ac5-850a-ba2028f36039/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/.idea/s21crm.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/forms/classes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/forms/course.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/forms/depart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/forms/private.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/forms/public.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/forms/record.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/forms/school.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/forms/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/middlewares/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/pwd/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/pwd/md5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/classes_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/classes_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/classes_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/course_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/course_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/course_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/depart_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/depart_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/depart_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/private_custom_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/private_custom_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/private_custom_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/public_custom_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/public_custom_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/public_custom_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/record_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/record_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/school_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/school_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/school_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/user_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/user_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/templates/user_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/views/classes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/views/course.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/views/depart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/views/login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/views/logout.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/views/private.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/views/public.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/views/record.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/views/school.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/views/userinfo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/middlewares/rbac.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/service/permission.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/css/commons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/css/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/css/nav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/imgs/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/imgs/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/imgs/luffy-study-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/imgs/luffy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/bootstrap/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/static/rbac/plugins/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/templates/rbac/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/templatetags/rbac.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/rbac/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/s21crm/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/s21crm/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/s21crm/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/s21crm/wsgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day12/小米官网/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/day12/小米官网/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day14/作业/bootstrap/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/day14/作业/bootstrap/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day14/作业/百度天气/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/day14/作业/百度天气/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day14/作业/百度天气/js/baidu.js" beforeDir="false" afterPath="$PROJECT_DIR$/day14/作业/百度天气/js/baidu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day16/s21/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day16/s21/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day16/s21/.idea/s21.iml" beforeDir="false" afterPath="$PROJECT_DIR$/day16/s21/.idea/s21.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day16/s21/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day16/s21/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auto_client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_client/conf/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_client/conf/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_client/files/disk.out" beforeDir="false" afterPath="$PROJECT_DIR$/auto_client/files/disk.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_client/lib/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_client/lib/config/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_client/lib/config/global_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_client/lib/config/global_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_client/src/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_client/src/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_client/src/plugins/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auto_server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_server/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_server/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_server/auto_server/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_server/auto_server/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_server/auto_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_server/auto_server/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_server/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/auto_server/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_server/repository/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_server/repository/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_server/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_server/web/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day17/lianxi/.idea/dataSources/a95ba063-43e9-4336-8c41-0d13aad996a0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day17/lianxi/.idea/dataSources/e5e2c9fc-8ce9-46c8-856d-14bb9eda0a55.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day17/lianxi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day17/lianxi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day17/s21/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/day17/s21/app01/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day17/s21/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/day17/s21/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/s21/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/s21/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/s21/.idea/dataSources/da50bd47-f202-4be6-9736-f38bbf1051b4.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/day18/s21/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day18/s21/.idea/s21.iml" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/.idea/s21.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/s21/app01/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/app01/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day18/s21/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/app01/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day18/s21/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/CMS/.idea/CMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/CMS/.idea/CMS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/CMS/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/CMS/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/CMS/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/CMS/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/CMS/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/CMS/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/CMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/CMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/CMS/CMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/day19/CMS/CMS/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/CMS/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/day19/CMS/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/CMS/fault_reporting/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/day19/CMS/fault_reporting/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/CMS/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/day19/CMS/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/homework/s21/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/homework/s21/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day19/homework/s21/.idea/s21.iml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/homework/s21/.idea/s21.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/s21/s21/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/s21/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/s21/s21/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/s21/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/s21/templates/host/show_host.html" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/templates/host/show_host.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/s21/templates/service/show_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/templates/service/show_service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/s21/templates/user/show_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/templates/user/show_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/s21/templates/user_service/user_service_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/day18/s21/templates/user_service/user_service_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day19/form/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/form/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day19/form/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/form/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day19/form/.idea/dataSources/e90551b8-83b1-4c5d-a709-d12809623e06.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day19/form/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/form/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day19/homework/s21/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/day19/homework/s21/app01/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day19/homework/s21/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/day19/homework/s21/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day19/homework/s21/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/day19/homework/s21/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day20/CMS/.idea/CMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/day20/CMS/.idea/CMS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day20/CMS/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day20/CMS/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day19/modelform/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day19/modelform/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day20/CMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day20/CMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day21/CMS/.idea/CMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/day21/CMS/.idea/CMS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day21/CMS/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day21/CMS/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day21/CMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day21/CMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day21/CMS/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/day21/CMS/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day21/CMS/fault_reporting/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/day21/CMS/fault_reporting/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day21/CMS/templates/report_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/day21/CMS/templates/report_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day22/luffy_permission/.idea/luffy_permission.iml" beforeDir="false" afterPath="$PROJECT_DIR$/day22/luffy_permission/.idea/luffy_permission.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day22/luffy_permission/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day22/luffy_permission/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day22/luffy_permission/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day22/luffy_permission/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day22/luffy_permission/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/day22/luffy_permission/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day22/luffy_permission/rbac/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/day22/luffy_permission/rbac/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day22/luffy_permission/readme" beforeDir="false" afterPath="$PROJECT_DIR$/day22/luffy_permission/readme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/.idea/dataSources/612cd338-9d40-4230-ac93-a5dce253d9fb.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/auto/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/auto/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/add_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/add_order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/add_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/add_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/orderlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/orderlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/userlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templates/userlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templatetags/ooxx.py" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/templatetags/ooxx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/views/home.py" beforeDir="false" afterPath="$PROJECT_DIR$/day23/auto - 2 - 固定二级菜单示例/web/views/home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excle.py" beforeDir="false" afterPath="$PROJECT_DIR$/excle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/复习/循环.py" beforeDir="false" afterPath="$PROJECT_DIR$/复习/循环.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,18 +277,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/python$mysql_.coverage" NAME="mysql 增删改 Coverage Results" MODIFIED="1533042493123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day15" />
-    <SUITE FILE_PATH="coverage/python$01str.coverage" NAME="01str Coverage Results" MODIFIED="1531197794439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
-    <SUITE FILE_PATH="coverage/python$.coverage" NAME="循环 Coverage Results" MODIFIED="1537929930882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/复习" />
     <SUITE FILE_PATH="coverage/python$01_socketserver.coverage" NAME="01 简版socketserver Coverage Results" MODIFIED="1533473163519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day16" />
-    <SUITE FILE_PATH="coverage/python$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1538036451092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_client/bin" />
     <SUITE FILE_PATH="coverage/python$mysql_fetchone.coverage" NAME="mysql_fetchone Coverage Results" MODIFIED="1533043412588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day15" />
-    <SUITE FILE_PATH="coverage/python$id.coverage" NAME="获取自增id Coverage Results" MODIFIED="1533044619317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day15" />
-    <SUITE FILE_PATH="coverage/python$test.coverage" NAME="test Coverage Results" MODIFIED="1538021190865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$02_r.coverage" NAME="02 不同的路径访问不同的内容r Coverage Results" MODIFIED="1533473370171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day16" />
+    <SUITE FILE_PATH="coverage/python$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1539684342409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/练习" />
     <SUITE FILE_PATH="coverage/python$03_r.coverage" NAME="03 函数版不同的路径访问不同的内容r Coverage Results" MODIFIED="1533473670709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day16" />
+    <SUITE FILE_PATH="coverage/python$bs4_.coverage" NAME="bs4 爬取三国 Coverage Results" MODIFIED="1541166310121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day25" />
+    <SUITE FILE_PATH="coverage/python$excle.coverage" NAME="excle Coverage Results" MODIFIED="1539676571928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$qiushi.coverage" NAME="qiushi Coverage Results" MODIFIED="1541427568174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day26/first/first/spiders" />
+    <SUITE FILE_PATH="coverage/python$cookie.coverage" NAME="cookie带验证码 Coverage Results" MODIFIED="1541169447920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day25/homework/云打码平台使用流程" />
+    <SUITE FILE_PATH="coverage/python$__1_.coverage" NAME="爬取校花网图片 (1) Coverage Results" MODIFIED="1541155935930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day25/homework/校花网作业" />
+    <SUITE FILE_PATH="coverage/python$ajax_post.coverage" NAME="ajax_post请求 Coverage Results" MODIFIED="1541211100708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day25" />
+    <SUITE FILE_PATH="coverage/python$test.coverage" NAME="test Coverage Results" MODIFIED="1539655584453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$mysql.coverage" NAME="mysql连接 Coverage Results" MODIFIED="1533042653891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day15" />
+    <SUITE FILE_PATH="coverage/python$aa.coverage" NAME="aa Coverage Results" MODIFIED="1541220892266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day25/ower" />
+    <SUITE FILE_PATH="coverage/python$01str.coverage" NAME="01str Coverage Results" MODIFIED="1531197794439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day2" />
+    <SUITE FILE_PATH="coverage/python$mysql_.coverage" NAME="mysql 增删改 Coverage Results" MODIFIED="1533042493123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day15" />
+    <SUITE FILE_PATH="coverage/python$xpath.coverage" NAME="xpath爬取方法 Coverage Results" MODIFIED="1541220074844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day25" />
+    <SUITE FILE_PATH="coverage/python$.coverage" NAME="谷歌无头浏览器 Coverage Results" MODIFIED="1541405077509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day26" />
+    <SUITE FILE_PATH="coverage/python$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1538036451092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_client/bin" />
+    <SUITE FILE_PATH="coverage/python$id.coverage" NAME="获取自增id Coverage Results" MODIFIED="1533044619317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day15" />
+    <SUITE FILE_PATH="coverage/python$02_r.coverage" NAME="02 不同的路径访问不同的内容r Coverage Results" MODIFIED="1533473370171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day16" />
     <SUITE FILE_PATH="coverage/python$04_.coverage" NAME="04 动态页面 Coverage Results" MODIFIED="1533473712980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day16" />
+    <SUITE FILE_PATH="coverage/python$post.coverage" NAME="爬取豆瓣网post请求 Coverage Results" MODIFIED="1540979567981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day25" />
+    <SUITE FILE_PATH="coverage/python$ajax_get.coverage" NAME="ajax_get请求 Coverage Results" MODIFIED="1540979661601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day25" />
+    <SUITE FILE_PATH="coverage/python$1_.coverage" NAME="1 自动化 Coverage Results" MODIFIED="1541400900318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day26/selenium自动化操作" />
+    <SUITE FILE_PATH="coverage/python$2.coverage" NAME="2 Coverage Results" MODIFIED="1541401358850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day26/selenium自动化操作" />
+    <SUITE FILE_PATH="coverage/python$pearvideo.coverage" NAME="pearvideo Coverage Results" MODIFIED="1541408928810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day26/pearvideo" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -88,34 +324,10 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="global_settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auto_client/lib/config/global_settings.py">
+    <leaf>
+      <file leaf-file-name="md5.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/pwd/md5.py">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auto_client/lib/config/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/auto_client/bin/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -148,40 +360,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/day12/js/函数.html" />
-        <option value="$PROJECT_DIR$/day12/小米官网/js/cart.js" />
-        <option value="$PROJECT_DIR$/day12/小米官网/css/index.css" />
-        <option value="$PROJECT_DIR$/day13/练习.py" />
-        <option value="$PROJECT_DIR$/day13/练习.html" />
-        <option value="$PROJECT_DIR$/day13/jequery练习.html" />
-        <option value="$PROJECT_DIR$/day13/jquery/9 属性操作.html" />
-        <option value="$PROJECT_DIR$/day13/jquery/练习.html" />
-        <option value="$PROJECT_DIR$/day13/小米轮播图/轮播图.html" />
-        <option value="$PROJECT_DIR$/day13/作业/天气.html" />
-        <option value="$PROJECT_DIR$/day13/作业/index.css" />
-        <option value="$PROJECT_DIR$/day13/小米轮播图/4.js" />
-        <option value="$PROJECT_DIR$/day13/小米轮播图/index.js" />
-        <option value="$PROJECT_DIR$/day13/小米轮播图/index.html" />
-        <option value="$PROJECT_DIR$/day13/小米轮播图/mi.css" />
-        <option value="$PROJECT_DIR$/day13/小米轮播图/2.css" />
-        <option value="$PROJECT_DIR$/day13/小米轮播图/1.html" />
-        <option value="$PROJECT_DIR$/day13/小米轮播图/3.js" />
-        <option value="$PROJECT_DIR$/day13/homework/小米官网/js/sowing.js" />
-        <option value="$PROJECT_DIR$/day13/homework/小米官网/css/index.css" />
-        <option value="$PROJECT_DIR$/day13/homework/小米官网/index.html" />
-        <option value="$PROJECT_DIR$/day14/单双击.html" />
-        <option value="$PROJECT_DIR$/day14/js.js" />
-        <option value="$PROJECT_DIR$/day14/bootstrap/index.html" />
-        <option value="$PROJECT_DIR$/day14/百度天气/css/index.css" />
-        <option value="$PROJECT_DIR$/day14/测试.html" />
-        <option value="$PROJECT_DIR$/day14/百度天气/天气.html" />
-        <option value="$PROJECT_DIR$/day14/百度天气/js/baidu.js" />
-        <option value="$PROJECT_DIR$/day14/作业/百度天气/wheater.html" />
-        <option value="$PROJECT_DIR$/day14/作业/百度天气/js/baidu.js" />
-        <option value="$PROJECT_DIR$/day14/作业/百度天气/css/index.css" />
-        <option value="$PROJECT_DIR$/day15/chars.html" />
-        <option value="$PROJECT_DIR$/day15/mysql 增删改.py" />
-        <option value="$PROJECT_DIR$/day15/mysql连接.py" />
         <option value="$PROJECT_DIR$/day15/mysql_fetchone.py" />
         <option value="$PROJECT_DIR$/day15/获取自增id.py" />
         <option value="$PROJECT_DIR$/day16/02 不同的路径访问不同的内容r.py" />
@@ -196,9 +374,43 @@
         <option value="$PROJECT_DIR$/复习/循环.py" />
         <option value="$PROJECT_DIR$/day22/luffy_permission/readme" />
         <option value="$PROJECT_DIR$/error_list" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/auto_client/lib/config/__init__.py" />
         <option value="$PROJECT_DIR$/auto_client/bin/test.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/练习/test.py" />
+        <option value="$PROJECT_DIR$/excle.py" />
+        <option value="$PROJECT_DIR$/day25/爬取搜狗的关键字数据.py" />
+        <option value="$PROJECT_DIR$/day25/爬取搜狗的关键字数据get请求.py" />
+        <option value="$PROJECT_DIR$/day25/爬取豆瓣网post请求.py" />
+        <option value="$PROJECT_DIR$/day25/ajax_get请求.py" />
+        <option value="$PROJECT_DIR$/day25/ajax_post请求.py" />
+        <option value="$PROJECT_DIR$/day25/爬取多个页面.py" />
+        <option value="$PROJECT_DIR$/day25/正则爬取.py" />
+        <option value="$PROJECT_DIR$/day25/homework/xiaohua.txt" />
+        <option value="$PROJECT_DIR$/day25/homework/爬取校花网图片.py" />
+        <option value="$PROJECT_DIR$/day25/homework/实现糗事百科中文字板块中的所有页面的指定数据.py" />
+        <option value="$PROJECT_DIR$/day25/bs4 爬取三国.py" />
+        <option value="$PROJECT_DIR$/day25/homework/云打码平台使用流程/使用流程" />
+        <option value="$PROJECT_DIR$/day25/homework/云打码平台使用流程/YunDaMa.py" />
+        <option value="$PROJECT_DIR$/day25/homework/云打码平台使用流程/cookie带验证码.py" />
+        <option value="$PROJECT_DIR$/day25/玩.py" />
+        <option value="$PROJECT_DIR$/day25/homework/校花网作业/爬取校花网图片.py" />
+        <option value="$PROJECT_DIR$/day25/homework/readme" />
+        <option value="$PROJECT_DIR$/day25/xpath爬取方法.py" />
+        <option value="$PROJECT_DIR$/day25/ower/aa.py" />
+        <option value="$PROJECT_DIR$/day26/first/first/settings.py" />
+        <option value="$PROJECT_DIR$/day25/homework/糗事作业/糗事百科作业.py" />
+        <option value="$PROJECT_DIR$/day25/homework/糗事作业/xiaohua.txt" />
+        <option value="$PROJECT_DIR$/day26/selenium自动化操作/1 自动化.py" />
+        <option value="$PROJECT_DIR$/day26/selenium自动化操作/2.py" />
+        <option value="$PROJECT_DIR$/day26/谷歌无头浏览器.py" />
+        <option value="$PROJECT_DIR$/day26/pearvideo/pearvideo.py" />
+        <option value="$PROJECT_DIR$/day26/first/qiubai.csv" />
+        <option value="$PROJECT_DIR$/day26/first/first/spiders/qiushi.py" />
+        <option value="$PROJECT_DIR$/day26/scrapy框架/pipelinepro/pipelinepro/items.py" />
+        <option value="$PROJECT_DIR$/day26/scrapy框架/pipelinepro/pipelinepro/settings.py" />
+        <option value="$PROJECT_DIR$/day26/scrapy框架/pipelinepro/pipelinepro/pipelines.py" />
+        <option value="$PROJECT_DIR$/day26/scrapy框架/pipelinepro/pipelinepro/spiders/qiubai.py" />
       </list>
     </option>
   </component>
@@ -212,10 +424,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="339" />
-    <option name="y" value="141" />
-    <option name="width" value="1302" />
-    <option name="height" value="774" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1943" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -225,6 +437,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,32 +448,18 @@
             <path>
               <item name="python" type="b2602c69:ProjectViewProjectNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="auto_client" type="462c0819:PsiDirectoryNode" />
+              <item name="day27" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python" type="b2602c69:ProjectViewProjectNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="auto_client" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="auto_client" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="auto_client" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="day27" type="462c0819:PsiDirectoryNode" />
+              <item name="s21crm - 2 - 部门列表" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,16 +473,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\python21\python" />
-      <recent name="D:\python21\python\day20" />
-      <recent name="D:\python21\python\day15" />
-      <recent name="D:\python21\python\day14\bootstrap" />
-      <recent name="D:\python21\python\day13" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\python21\python\day25\ower" />
+      <recent name="D:\python21\python\day25\homework\糗事作业\qiutu" />
+      <recent name="D:\python21\python\day25\homework\糗事作业" />
+      <recent name="D:\python21\python\day25\homework\校花网作业" />
       <recent name="D:\python21\python\day15\图表制作chars" />
-      <recent name="C:\老男孩python\day12\定位" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\python21\python\day27" />
+      <recent name="D:\python21\python\day26\selenium自动化操作" />
+      <recent name="D:\python21\python\day25\homework\糗事作业" />
+      <recent name="D:\python21\python\day24" />
+      <recent name="D:\python21\python\day23" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -298,8 +500,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test (1)">
-    <configuration name="循环" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.qiushi">
+    <configuration name="谷歌无头浏览器" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -307,18 +509,18 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/复习" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day26" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/复习/循环.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day26/谷歌无头浏览器.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="03 函数版不同的路径访问不同的内容r" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="1 自动化" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -326,18 +528,18 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day16" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day26/selenium自动化操作" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day16/03 函数版不同的路径访问不同的内容r.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day26/selenium自动化操作/1 自动化.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="04 动态页面" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -345,12 +547,69 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day16" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day26/selenium自动化操作" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day16/04 动态页面.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day26/selenium自动化操作/2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="爬取校花网图片" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day25/homework/校花网作业" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day25/homework/校花网作业/爬取校花网图片.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="爬取多个页面" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day25" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day25/爬取多个页面.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="实现糗事百科中文字板块中的所有页面的指定数据" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day25/homework" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day25/homework/实现糗事百科中文字板块中的所有页面的指定数据.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -413,7 +672,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="pearvideo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -421,18 +680,18 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/auto_client/bin" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day26/pearvideo" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/auto_client/bin/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day26/pearvideo/pearvideo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="qiushi" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -440,31 +699,31 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day26/first/first/spiders" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day26/first/first/spiders/qiushi.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.03 函数版不同的路径访问不同的内容r" />
-      <item itemvalue="Python.04 动态页面" />
-      <item itemvalue="Python.循环" />
-      <item itemvalue="Python.test" />
-      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.1 自动化" />
+      <item itemvalue="Python.2" />
+      <item itemvalue="Python.谷歌无头浏览器" />
+      <item itemvalue="Python.pearvideo" />
+      <item itemvalue="Python.qiushi" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.循环" />
-        <item itemvalue="Python.04 动态页面" />
-        <item itemvalue="Python.03 函数版不同的路径访问不同的内容r" />
+        <item itemvalue="Python.qiushi" />
+        <item itemvalue="Python.pearvideo" />
+        <item itemvalue="Python.谷歌无头浏览器" />
+        <item itemvalue="Python.2" />
+        <item itemvalue="Python.1 自动化" />
       </list>
     </recent_temporary>
   </component>
@@ -675,26 +934,62 @@
       <option name="project" value="LOCAL" />
       <updated>1537930052664</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="10-8">
+      <created>1538993190659</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1538993190659</updated>
+    </task>
+    <task id="LOCAL-00030" summary="10-8">
+      <created>1538993336403</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1538993336404</updated>
+    </task>
+    <task id="LOCAL-00031" summary="10-8">
+      <created>1539598240304</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1539598240304</updated>
+    </task>
+    <task id="LOCAL-00032" summary="10-8">
+      <created>1539684448593</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1539684448593</updated>
+    </task>
+    <task id="LOCAL-00033" summary="10-17">
+      <created>1539770666797</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1539770666797</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.5181892" side_tool="true" weight="0.32616487" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.2565543" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.48181084" weight="0.10843374" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.19892474" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4974359" visible="true" weight="0.15844786" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32958803" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.12172285" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4974359" visible="true" weight="0.19886823" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.05982215" />
+      <window_info anchor="right" id="Database" order="3" weight="0.024271844" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info id="Structure" order="1" sideWeight="0.50256413" side_tool="true" weight="0.25141472" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.48387095" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -702,8 +997,8 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.4987874" visible="true" weight="0.37096775" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4995958" weight="0.3297491" />
+      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.4987874" visible="true" weight="0.1329588" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4995958" weight="0.32958803" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -742,7 +1037,9 @@
     <MESSAGE value="8-30晚上" />
     <MESSAGE value="Merge branch 'master' of https://github.com/huningfei/python&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="9-26" />
-    <option name="LAST_COMMIT_MESSAGE" value="9-26" />
+    <MESSAGE value="10-8" />
+    <MESSAGE value="10-17" />
+    <option name="LAST_COMMIT_MESSAGE" value="10-17" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -750,128 +1047,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/day15/mysql 增删改.py" />
-    <entry file="file://$PROJECT_DIR$/day15/mysql_fetchone.py" />
-    <entry file="file://$PROJECT_DIR$/day15/获取自增id.py" />
-    <entry file="file://$PROJECT_DIR$/day16/01 简版socketserver.py">
+    <entry file="file://$PROJECT_DIR$/day26/scrapy框架/pipelinepro/pipelinepro/spiders/qiubai.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="95">
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day16/02 不同的路径访问不同的内容r.py">
+    <entry file="file://$PROJECT_DIR$/day26/scrapy框架/pipelinepro/pipelinepro/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day16/03 函数版不同的路径访问不同的内容r.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day16/04 动态页面.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day16/mysite/mysite/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2546">
-          <caret line="134" column="12" selection-start-line="132" selection-end-line="136" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day16/mysite/app01/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day16/S21/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/栅格.html" />
-    <entry file="file://$PROJECT_DIR$/day16/mysite/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" selection-start-line="29" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://24193fb0-3fea-4b12-a0a5-21e8fb23837f/schema/main/table/app01_publisher" />
-    <entry file="file://$PROJECT_DIR$/day14/作业/bootstrap/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="758" column="4" selection-start-line="754" selection-start-column="2" selection-end-line="764" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day19/form/form/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://24193fb0-3fea-4b12-a0a5-21e8fb23837f/schema/main/table/app01_book" />
-    <entry file="file://$PROJECT_DIR$/day16/S21/readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day20/s21/templates/register_user.html" />
-    <entry file="file://$PROJECT_DIR$/day20/s21/app01/views.py" />
-    <entry file="file://$PROJECT_DIR$/day20/s21/s21/urls.py" />
-    <entry file="file://$PROJECT_DIR$/day20/CMS/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day20/CMS/CMS/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day20/CMS/fault_reporting/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day19/form/templates/edit_book.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18" />
-      </provider>
-    </entry>
-    <entry file="das://24193fb0-3fea-4b12-a0a5-21e8fb23837f/schema/main/table/auth_user" />
-    <entry file="das://027b9dc8-bbef-43ee-bdbe-b89ab369f196/schema/main/table/app01_publisher">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://027b9dc8-bbef-43ee-bdbe-b89ab369f196/schema/main/table/app01_author_books">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+        <state relative-caret-position="380">
+          <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -882,86 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://027b9dc8-bbef-43ee-bdbe-b89ab369f196/schema/main/table/app01_book">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day18/练习/app01/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3990">
-          <caret line="214" selection-start-line="214" selection-end-line="214" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day17/lianxi/app01/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1140" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day17/s21/app01/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5014" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day18/s21/app01/mypage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2166">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day18/s21/app01/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1330">
-          <caret line="74" column="120" selection-start-line="74" selection-start-column="70" selection-end-line="74" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/复习/进程.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day22/teplate_about/app01/templatetags/ooxx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day22/teplate_about/templates/ul.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day22/teplate_about/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day21/CMS/CMS/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="122" selection-start-line="122" selection-end-line="125" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day21/CMS/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day21/CMS/readme">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -969,77 +1075,254 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day19/homework/s21/readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+    <entry file="das://027b9dc8-bbef-43ee-bdbe-b89ab369f196/schema/main/table/app01_book">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/复习/函数.py">
+    <entry file="file://$PROJECT_DIR$/day19/form之前/app01/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        <state relative-caret-position="304">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/复习/循环.py">
+    <entry file="file://$PROJECT_DIR$/day25/weizhenhai.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret column="1525" lean-forward="true" selection-start-column="1525" selection-end-column="1525" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/baidu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="5" column="106753" lean-forward="true" selection-start-line="5" selection-start-column="106753" selection-end-line="5" selection-end-column="106753" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cy_ip_list">
+    <entry file="file://$PROJECT_DIR$/day25/doubai.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1273">
-          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+        <state relative-caret-position="247">
+          <caret line="99" column="4" lean-forward="true" selection-start-line="99" selection-start-column="4" selection-end-line="99" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/error_list">
+    <entry file="file://$PROJECT_DIR$/day25/ajax_get请求.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="49">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/day25/美女1.html" />
+    <entry file="file://$PROJECT_DIR$/day25/美女2.html" />
+    <entry file="file://$PROJECT_DIR$/day25/homework/糗事作业/qiutu">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
+        <state relative-caret-position="-3078" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day22/luffy_permission/readme">
+    <entry file="file://$PROJECT_DIR$/day25/xiaohua.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
+        <state relative-caret-position="-294" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auto_client/lib/config/global_settings.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auto_client/lib/config/__init__.py">
+    <entry file="file://$PROJECT_DIR$/day25/正则爬取.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="780">
+          <caret line="77" column="37" selection-start-line="77" selection-start-column="37" selection-end-line="77" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auto_client/bin/test.py">
+    <entry file="file://$PROJECT_DIR$/day25/sanguo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-565" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/homework/云打码平台使用流程/YunDaMa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="92" column="23" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/homework/云打码平台使用流程/cookie带验证码.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/homework/云打码平台使用流程/使用流程">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/homework/糗事作业/qiutu/实现糗事百科中文字板块中的所有页面的指定数据.py" />
+    <entry file="file://$PROJECT_DIR$/day25/爬取搜狗的关键字数据get请求.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="33" selection-start-line="33" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/爬取豆瓣网post请求.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/ajax_post请求.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/爬取多个页面.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="26" column="54" lean-forward="true" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/homework/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/homework/校花网作业/爬取校花网图片.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/bs4 爬取三国.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/ower/玩.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/xpath爬取方法.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/ower/aa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/first/first/settings.py" />
+    <entry file="file://$PROJECT_DIR$/day25/homework/糗事作业/xiaohua.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day25/homework/糗事作业/糗事百科作业.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-725">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/selenium自动化操作/2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/selenium自动化操作/1 自动化.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="4" column="78" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/谷歌无头浏览器.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" selection-start-line="10" selection-end-line="11" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/pearvideo/pearvideo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-864">
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/first/qiubai.csv" />
+    <entry file="file://$PROJECT_DIR$/day26/first/first/items.py" />
+    <entry file="file://$PROJECT_DIR$/day26/first/first/spiders/qiushi.py" />
+    <entry file="file://$PROJECT_DIR$/day26/scrapy框架/pipelinepro/pipelinepro/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/scrapy框架/first/first/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="19" selection-start-line="19" selection-end-line="20" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/scrapy框架/pipelinepro/pipelinepro/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/scrapy框架/first/first/spiders/qiushi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/scrapy框架/pipelinepro/pipelinepro/spiders/qiubai.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day26/scrapy框架/pipelinepro/pipelinepro/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day27/s21crm - 2 - 部门列表/crm/pwd/md5.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <div class="panel panel-success">
+
+        <div class="panel-heading">编辑订单</div>
+        <div class="panel-body">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                <p>订单名：
+                    {{ form.name }}{{ form.name.errors.0 }}
+                </p>
+                <input type="submit" value="提交" class="btn btn-info">
+                <a href="/web/orderlist/" class="btn btn-warning" style="margin-left: 120px">取消</a>
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+    <h1>服务器列表</h1>
+    <table class="table table-bordered">
+        <thead id="tHead">
+        <tr>
+
+        </tr>
+
+        </thead>
+        <tbody id="tBody">
+        <tr>
+
+        </tr>
+
+
+        </tbody>
+
+    </table>
+
+</div>
+<script src="/static/js/jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        init();
+
+    });
+
+    /*
+    获取后台数据
+     */
+    function init() {
+        $('#loading').removeClass('hide');
+        $.ajax({
+            url: '/server_json.html',
+            type: 'GET',
+            data: {},
+            dataType: 'JSON',
+            success: function (response) {
+                /*
+                处理表头
+                 */
+                initTableHead(response.table_config);
+                /*
+                处理数据
+                 */
+                initTableBody(response.data_list,response.table_config);
+                $('#loading').addClass('hide')
+
+            },
+            error:function () {
+                $('#loading').addClass('hide');
+
+            }
+
+        });
+
+    }
+
+    function initTableHead(table_config) {
+        $('#tHead tr').empty();
+        $.each(table_config, function (k, conf) {
+            var th = document.createElement('th');
+            th.innerHTML = conf.title;
+            $('#tHead tr').append(th);
+
+        });
+
+    }
+    function initTableBody(data_list,table_config) {
+        $.each(data_list,function (k,row_dict) {
+            // row_dict就是下面的数据形式
+            // {'hostname':'xx', 'sn':'xx', 'os_platform':'xxx'},
+            // {'hostname':'xx1', 'sn':'xx2', 'os_platform':'xxx2'},
+            var tr=document.createElement('tr');
+            $.each(table_config,function (kk,vv) {
+                var td=document.createElement('td');
+                td.innerHTML = row_dict[vv.q];   //vv.q // None,hostname,sn,os_platform
+                $(tr).append(td);
+            });
+            $('#tBody').append(tr);
+
+        })
+
+    }
+</script>
+
+</body>
+</html>

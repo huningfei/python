@@ -11,7 +11,7 @@ class Memory(object):
         else:
             output = cmd_func("sudo dmidecode  -q -t 17 2>/dev/null")
         return self.parse(output)
-
+    # 解析收集到的命令
     def parse(self, content):
         """
         解析shell命令返回结果

@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web.apps.WebConfig',
+    'rbac.apps.RbacConfig',
 ]
 
 MIDDLEWARE = [
@@ -122,10 +123,13 @@ MENU_LIST = [
     {
         'title': '用户管理',
         'icon': 'fa-clipboard',
-        'class': 'hide',
+        'class': 'hide',  # 默认菜单都是隐藏的
         'children': [
-            {'title': '添加用户', 'url': '/web/add_user/'},
-            {'title': '用户列表', 'url': '/web/user/'},
+            {'title': '个人中心', 'url': '/web/info/', 'is_menu': True},
+            {'title': '用户列表', 'url': '/web/user/', 'is_menu': True},
+            {'title': '添加用户', 'url': '/web/add_user/', 'is_menu': False, 'parent_index': 1},
+            {'title': '编辑用户', 'url': '/web/edit_user/(\d+)/', 'is_menu': False, 'parent_index': 1},
+            # false就是不在页面上直接显示这个菜单 ,parent_index=1就是代表children这个列表里面索引等于1的选项
         ]
     },
     {
@@ -133,8 +137,10 @@ MENU_LIST = [
         'icon': 'fa-clipboard',
         'class': 'hide',
         'children': [
-            {'title': '订单列表', 'url': '/web/orderlist/'},
-            {'title': '添加订单', 'url': '/web/add_order/'},
+            {'title': '活动中心', 'url': '/web/orderinfo/', 'is_menu': True,},
+            {'title': '订单管理', 'url': '/web/orderlist/', 'is_menu': True},
+            {'title': '添加订单', 'url': '/web/add_order/', 'is_menu': False, 'parent_index': 1},
+            {'title': '编辑订单', 'url': '/web/edit_order/(\d+)/', 'is_menu': False, 'parent_index': 1},
         ]
     }
 ]

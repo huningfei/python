@@ -147,6 +147,7 @@
 <script src="{% static 'plugins/bootstrap/js/bootstrap.js' %} "></script>
 {% block js %} {% endblock %}
 <script>
+    {#用于菜单收缩#}
     $(function () {
         $('.multi-menu .title').click(function () {
             $(this).next().toggleClass('hide');

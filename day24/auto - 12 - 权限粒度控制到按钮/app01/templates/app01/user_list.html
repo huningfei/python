@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+
+{% block content %}
+    <h1>用户列表</h1>
+    <!-- 在模板中定义 filter函数：放在条件语句后面来进行判断。 -->
+    {% if "user_add"|permission:request %}
+        <a class="btn btn-primary" href="/app01/user/add/">添加</a>
+    {% endif %}
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                {% if "user_edit"|permission:request or "user_del"|permission:request %}
+                <th>操作</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in user_queryset %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.name }}</td>
+                    {% if "user_edit"|permission:request or "user_del"|permission:request %}
+                    <td>
+                        {% if "user_edit"|permission:request %}
+                            <a href="/app01/user/edit/{{ row.id }}/">编辑</a>
+                        {% endif %}
+
+                        {% if "user_del"|permission:request %}
+                        <a href="/app01/user/del/{{ row.id }}/">删除</a>
+                        {% endif %}
+                    </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+ {% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% load rbac %}
+{% block content %}
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">课程列表</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>课程名字</th>
+                    {% if "course_edit"|permission:request or "course_del"|permission:request %}
+                        <th>操作</th>
+                    {% endif %}
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in queryset %}
+                    <tr>
+                        <td>{{ row.name }}</td>
+
+                            {% if "course_edit"|permission:request or "course_del"|permission:request %}
+                                <td>
+                                    {% if "course_edit"|permission:request %}
+                                        <a href="{% url 'course_edit' row.id %}">编辑</a>
+                                    {% endif %}
+                                    {% if "course_del"|permission:request %}
+                                        <a href="{% url 'course_del' row.id %}/">删除</a>
+                                    {% endif %}
+                                </td>
+                            {% endif %}
+
+
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div>
+                {% if 'course_add'|permission:request %}
+                    <a class="btn btn-primary" href="{% url 'course_add' %}">添加</a>
+                {% endif %}
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

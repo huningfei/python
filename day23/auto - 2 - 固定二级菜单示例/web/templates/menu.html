@@ -6,7 +6,10 @@
 			</div>
 			<div class="body"{{ item.class }}>
 				{% for child in item.children %}
-					<a class="{{ child.class }}" href="{{ child.url }}">{{ child.title }}</a>
+{#                    如果是true则显示#}
+                    {% if child.is_menu %}
+					    <a class="{{ child.class }}" href="{{ child.url }}">{{ child.title }}</a>
+                    {% endif %}
 				{% endfor %}
 			</div>
 		</div>

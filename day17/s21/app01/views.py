@@ -12,7 +12,9 @@ def login_check(func):
         # print(path)
         # next_url=request.get_full_path()
         # print("next_url第一个", next_url)
-        if request.session.get('user'):
+
+        if request.session.get('user'): # session里面获取url
+
             return func(request, *args, **kwargs)
         else:
             return redirect("/login/?next_url={}".format(next_url))

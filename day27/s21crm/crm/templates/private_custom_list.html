@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <a href="{% url 'private_customer_add' %}" class="btn btn-success">添加</a>
+            <input type="submit" value="剔除到公户" class="btn btn-primary">
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>选择</th>
+                <th>姓名</th>
+                <th>联系方式</th>
+                <th>状态</th>
+                <th>转介绍</th>
+                <th>咨询课程</th>
+                <th>跟进</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in queryset %}
+                <tr>
+                    <td>
+                        <input name="pk" type="checkbox" value="{{ row.id }}">
+                    </td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.qq }}</td>
+                    <td>{{ row.get_status_display }}</td>
+                    <td>{{ row.referral_from.name }}</td>
+                    <td>
+                        {% for ele in row.courses.all %}
+                            <span style="display: inline-block;padding: 5px;border: 1px solid #dddddd;">
+                                    {{ ele.name }}
+                                </span>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <a href="{% url 'record_list' row.id %}">跟进</a>
+                    </td>
+
+
+                    <td>
+                        <a href="{% url 'private_customer_edit' row.id %}">编辑</a>
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </form>
+{% endblock %}

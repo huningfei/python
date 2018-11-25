@@ -10,6 +10,11 @@ class Board(object):
         return self.parse(output)
 
     def parse(self, content):
+        """
+        解析收集到的命令
+        :param content:
+        :return:
+        """
 
         result = {}
         key_map = {

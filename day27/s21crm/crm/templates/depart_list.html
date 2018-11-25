@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">部门列表</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>标题</th>
+                    {% if "depart_edit"|permission:request or "depart_del"|permission:request %}
+                        <th>操作</th>
+                    {% endif %}
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in queryset %}
+                    <tr>
+                        <td>{{ row.title }}</td>
+                        {% if "depart_edit"|permission:request or "depart_del"|permission:request %}
+                            <td>
+                                {% if "depart_edit"|permission:request %}
+                                    <a href="{% url 'depart_edit' row.id %}">编辑</a>
+                                {% endif %}
+                                {% if "depart_del"|permission:request %}
+                                    <a href="{% url 'depart_del' row.id %}/">删除</a>
+                                {% endif %}
+                            </td>
+                        {% endif %}
+
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div>
+                {% if 'depart_add'|permission:request %}
+                    <a class="btn btn-primary" href="{% url 'depart_add' %}">添加</a>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
