@@ -41,6 +41,7 @@ class AssetView(APIView):
         :param kwargs:
         :return:
         """
+        print(request.data)
         # ###################### agent模式汇报 ######################
         result = {'status':True,'data':None,'error':None}
         asset_type = request.data.get('type')
@@ -63,6 +64,7 @@ class AssetView(APIView):
             # 3. 网卡
             nic_info = request.data['nic']['data']
             for k,v in nic_info.items():
+                print(k,v)
                 v['server'] = server
                 v['name'] = k
                 models.NIC.objects.create(**v)
@@ -74,9 +76,7 @@ class AssetView(APIView):
         elif asset_type == 'update':
             # 更新资产
             hostname = request.data['basic']['data']['hostname']
-            # print(hostname)
             server = models.Server.objects.get(hostname=hostname)
-            print(server)
             service.process_basic(request,hostname)
             service.process_disk(request,server)
             service.process_nic(request, server)
@@ -86,8 +86,8 @@ class AssetView(APIView):
         elif asset_type == 'host_update':
             # 更新资产+更新主机名
             # 获取主机名
-            hostname = request.data['cert']
-            server = models.Server.objects.get(hostname=hostname)
+            hostname = request.data['cert'] # 老的主机名
+            server = models.Server.objects.filter(hostname=hostname)
             service.process_basic(request, hostname)
             service.process_disk(request, server)
             service.process_nic(request, server)
@@ -95,5 +95,6 @@ class AssetView(APIView):
 
 
         result['data'] = request.data['basic']['data']['hostname']
+        print(result['data'])
         return Response(result)
 

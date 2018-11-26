@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db [2]" uuid="05b70821-2678-4e15-9733-d5f575a1474f">
+    <data-source source="LOCAL" name="db" uuid="d90b8553-6d02-4784-918f-84143f333909">
       <driver-ref>3ec81817-24eb-4df6-b069-d8bf5ec03fa9</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>SQLite</remarks>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\BaiduNetdiskDownload\加：CMDB-大师班\L020-老男孩教育-Python架构-1期-VIP视频-cmdb-2\L020-老男孩教育-Python架构-1期-VIP视频-cmdb-2\cmdb-day02课上所有\auto_server - 7 - 资产信息入库\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\BaiduNetdiskDownload\加：CMDB-大师班\L021-老男孩教育-Python架构-1期-VIP视频-cmdb-3\L021-老男孩教育-Python架构-1期-VIP视频-cmdb-3\cmdb-day02课上所有\auto_server - 7 - 资产信息入库\db.sqlite3</jdbc-url>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>

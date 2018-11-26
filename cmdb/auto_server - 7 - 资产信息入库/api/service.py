@@ -26,13 +26,37 @@ def process_disk(request,server):
 
     # 更新
     for slot in update_disk_slot_list:
-        models.Disk.objects.filter(slot=slot, server=server).update(**disk_info[slot])
+        # models.Disk.objects.filter(slot=slot, server=server).update(**disk_info[slot])
+        obj = models.Disk.objects.filter(slot=slot, server=server).first()  # 找出对应的服务器上面对应的序号
+        row_dict = disk_info[slot]  # 代表客户端发送过来的硬盘数据
+        record_list = []
+        for name, new_value in row_dict.items():
+            old_value = str(getattr(obj, name)) #都是字符串互相比较
+            if old_value != new_value:
+                setattr(obj, name, new_value)
+                verbose_name = models.Disk._meta.get_field(name).verbose_name
+                msg = "【硬盘变更】槽位%s：%s由%s变更为%s" % (slot, verbose_name, old_value, new_value)
+                record_list.append(msg)
+        obj.save()
+        if record_list:
+            models.AssetRecord.objects.create(server=server, content=';'.join(record_list))
     # 删除
     models.Disk.objects.filter(server=server, slot__in=del_disk_slot_list).delete()
+    if del_disk_slot_list:
+        msg = "【硬盘变更】移除槽位%s上的硬盘" % (';'.join(del_disk_slot_list))
+        models.AssetRecord.objects.create(server=server, content=msg)
 
     # 添加
     for slot in add_disk_slot_list:
         row_dict = disk_info[slot]
+        row_record_list=[]
+        for name, new_value in row_dict.items():
+            verbose_name = models.Disk._meta.get_field(name).verbose_name
+            tpl = "%s:%s" % (verbose_name, new_value,) # 新增了那个硬盘
+            row_record_list.append(tpl)
+
+        msg = "【硬盘变更】槽位%s新增硬盘,硬盘信息：%s" % (slot, ';'.join(row_record_list),)
+        models.AssetRecord.objects.create(server=server, content=msg)
         row_dict['server'] = server
         models.Disk.objects.create(**row_dict)
 
@@ -52,16 +76,43 @@ def process_nic(request,server):
     del_nic_slot_list = nic_queryset_set - nic_info_set
 
     # 更新
-    for name in update_nic_slot_list:
-        models.NIC.objects.filter(name=name, server=server).update(**nic_info[name])
+    for nic_name in update_nic_slot_list:
+
+        # models.NIC.objects.filter(name=name, server=server).update(**nic_info[name])
+        obj = models.NIC.objects.filter(name=nic_name, server=server).first()
+        row_dict = nic_info[nic_name]
+        record_list = []
+        for name, new_value in row_dict.items():
+
+            old_value = str(getattr(obj, name))
+            if old_value != new_value:
+                setattr(obj, name, new_value)
+                verbose_name = models.NIC._meta.get_field(name).verbose_name
+                msg = "【网卡变更】网卡%s：%s由%s变更为%s" % (nic_name, verbose_name, old_value, new_value)
+                record_list.append(msg)
+        obj.save()
+        if record_list:
+            models.AssetRecord.objects.create(server=server, content=';'.join(record_list))
     # 删除
+    # for nic_name in del_nic_slot_list:
     models.NIC.objects.filter(server=server, name__in=del_nic_slot_list).delete()
+    if del_nic_slot_list:
+        msg = "【网卡变更】移除网卡%s" % (';'.join(del_nic_slot_list))
+        models.AssetRecord.objects.create(server=server, content=msg)
 
     # 添加
-    for name in add_nic_slot_list:
-        row_dict = nic_info[name]
+    for nic_name in add_nic_slot_list:
+        row_dict = nic_info[nic_name]
+        row_record_list = []
+        for name, new_value in row_dict.items():
+            verbose_name = models.NIC._meta.get_field(name).verbose_name
+            tpl = "%s:%s" % (verbose_name, new_value,)
+            row_record_list.append(tpl)
+
+        msg = "【网卡变更】新增网卡%s,网卡信息：%s" % (nic_name, ';'.join(row_record_list),)
+        models.AssetRecord.objects.create(server=server, content=msg)
         row_dict['server'] = server
-        row_dict['name'] = name
+        row_dict['name'] = nic_name
         models.NIC.objects.create(**row_dict)
 
 
