@@ -4,10 +4,14 @@ from api import models
 
 def process_basic(request,hostname):
     basic_dict = {}
+    print(basic_dict)
     basic_dict.update(request.data['basic']['data'])
     basic_dict.update(request.data['cpu']['data'])
     basic_dict.update(request.data['board']['data'])
+
     models.Server.objects.filter(hostname=hostname).update(**basic_dict)
+
+
 
 
 def process_disk(request,server):
@@ -84,7 +88,7 @@ def process_nic(request,server):
         record_list = []
         for name, new_value in row_dict.items():
 
-            old_value = str(getattr(obj, name))
+            old_value = (getattr(obj, name))
             if old_value != new_value:
                 setattr(obj, name, new_value)
                 verbose_name = models.NIC._meta.get_field(name).verbose_name
@@ -131,13 +135,40 @@ def process_memory(request,server):
     del_memory_slot_list = memory_queryset_set - memory_info_set
 
     # 更新
-    for slot in update_memory_slot_list:
-        models.Memory.objects.filter(slot=slot, server=server).update(**memory_info[slot])
+    for mem_name in update_memory_slot_list:
+        # models.Memory.objects.filter(slot=slot, server=server).update(**memory_info[slot])
+        obj = models.Memory.objects.filter(slot=mem_name, server=server).first()
+        row_dict = memory_info[mem_name]
+        record_list = []
+        for name, new_value in row_dict.items():
+
+            # old_value = str(getattr(obj, name))
+            old_value = (getattr(obj, name))
+            if old_value != new_value:
+                setattr(obj, name, new_value)
+                verbose_name = models.Memory._meta.get_field(name).verbose_name
+                msg = "【内存变更】内存%s：%s由%s变更为%s" % (mem_name, verbose_name, old_value, new_value)
+                record_list.append(msg)
+        obj.save()
+        if record_list:
+            models.AssetRecord.objects.create(server=server, content=';'.join(record_list))
     # 删除
     models.Memory.objects.filter(server=server, slot__in=del_memory_slot_list).delete()
+    if del_memory_slot_list:
+        msg = "【内存变更】移除内存%s" % (';'.join(del_memory_slot_list))
+        models.AssetRecord.objects.create(server=server, content=msg)
 
     # 添加
-    for slot in add_memory_slot_list:
-        row_dict = memory_info[slot]
+    for mem_name in add_memory_slot_list:
+        row_dict = memory_info[mem_name] # 符合插槽名字的内存信息
+        row_record_list = []
+        for name, new_value in row_dict.items():
+            verbose_name = models.Memory._meta.get_field(name).verbose_name
+            tpl = "%s:%s" % (verbose_name, new_value,)
+            row_record_list.append(tpl)
+
+        msg = "【网卡变更】新增网卡%s,网卡信息：%s" % (mem_name, ';'.join(row_record_list),)
+        models.AssetRecord.objects.create(server=server, content=msg)
+
         row_dict['server'] = server
         models.Memory.objects.create(**row_dict)
