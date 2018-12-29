@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% load web %}
+
+{% block content %}
+    <div class="luffy-container">
+        <form method="post" class="form-horizontal" novalidate>
+            {% csrf_token %}
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <i class="fa fa-book" aria-hidden="true"></i>发布信息
+                    <button href="" class="right btn btn-primary btn-xs" style="padding: 2px 8px;margin:-3px">
+                        <i class="fa fa-mail-forward" aria-hidden="true"></i>
+                        发布
+
+                    </button>
+                </div>
+                <div class="panel-body">
+                    <h5>项目：{{ deploy_object.project.title }}</h5>
+                    <h5>版本：{{ deploy_object.version }}</h5>
+                    <h5>显示路径：{{ deploy_object.project.online_path }}</h5>
+
+                </div>
+
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>选择</th>
+                        <th>主机</th>
+                        <th>状态</th>
+                        <th>日志</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for host in all_host_list %}
+                        <tr>
+
+                            <td>
+                                {% if host.id in deployed_host_dict %}
+                                    <input value="{{ host.id }}" type="checkbox" name="hosts" checked>
+                                {% else %}
+                                    <input value="{{ host.id }}" type="checkbox" name="hosts">
+                                {% endif %}
+
+                            </td>
+                            <td>{{ host.hostname }}</td>
+                            <td>
+                                {% deploy_status host.id deployed_host_dict %}
+
+
+                            </td>
+                            <td>-</td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            {#            <div>#}
+            {#                {{ form.hosts }}#}
+            {#            </div>#}
+            {#            <div class="form-group">#}
+            {#                <div class="col-sm-offset-2 col-sm-9">#}
+            {#                    <input type="submit" class="btn btn-primary" value="发 布">#}
+            {#                    <span style="color: red;">{{ form.hosts.errors.0 }}</span>#}
+            {#                </div>#}
+            {#            </div>#}
+        </form>
+    </div>
+{% endblock %}
