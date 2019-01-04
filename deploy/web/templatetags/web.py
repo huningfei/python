@@ -24,7 +24,7 @@ def memory_url(request, name, *args, **kwargs):
 
 @register.simple_tag
 def deploy_status(host_id, deployed_host_dict):
-    deploy_record_object = deployed_host_dict.get(host_id)  #  根据hostID
+    deploy_record_object = deployed_host_dict.get(host_id)  # 根据hostID
     if not deploy_record_object:
         return '未发布'
     else:
@@ -39,3 +39,25 @@ def host_version(host_id, deployed_host_dict):
         return '0'
     else:
         return deploy_record_object.host_version
+
+
+@register.simple_tag
+def host_datetime(host_id, deployed_host_dict):
+    deploy_record_object = deployed_host_dict.get(host_id)
+
+    if not deploy_record_object:
+        return '0'
+    else:
+        return deploy_record_object.deploy_time
+
+
+@register.simple_tag
+def log_info(host_id, deployed_host_dict):
+    deploy_record_object = deployed_host_dict.get(host_id)
+
+    if not deploy_record_object:
+        return '0'
+    else:
+        return deploy_record_object.log
+
+

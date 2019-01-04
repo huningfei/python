@@ -63,7 +63,10 @@ urlpatterns = [
     # 上传代码
     url(r'^deploy/push/(?P<project_id>\d+)/(?P<deploy_id>\d+)/$', deploy.deploy_push, name='deploy_push'),
 
-    url(r'^deploy/rollback_list/(?P<project_id>\d+)/$', deploy.deploy_rollback_list, name='deploy_rollback_list'),
+
+    # url(r'^deploy/rollback_list/(?P<project_id>\d+)/$', deploy.deploy_rollback_list, name='deploy_rollback_list'),
+    # 回滚
+    url(r'^deploy/rollback/(?P<project_id>\d+)/(?P<deploy_id>\d+)/$', deploy.deploy_rollback, name='deploy_rollback'),
 
     # script
     url(r'^script/list/$',script.script_list,name='script_list'),

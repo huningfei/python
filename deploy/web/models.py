@@ -87,6 +87,25 @@ class DeployRecord(models.Model):
     status = models.IntegerField(verbose_name='状态', choices=status_choice, default=1)
     deploy_time = models.DateTimeField(verbose_name='部署时间', auto_now_add=True)
 
+    log = models.TextField(verbose_name='日志')
+
+class RollbackRecord(models.Model):
+    """
+    服务器部署记录
+    """
+    deploy = models.ForeignKey(verbose_name='部署任务', to='Deploy')
+    host = models.ForeignKey(verbose_name='主机', to='Host')
+    host_version = models.CharField(verbose_name='版本', max_length=32,null=True)
+
+    status_choice = (
+        (1, '发布中'),
+        (2, '成功'),
+        (3, '失败'),
+    )
+    status = models.IntegerField(verbose_name='状态', choices=status_choice, default=1)
+    deploy_time = models.DateTimeField(verbose_name='部署时间', auto_now_add=True)
+
+    rollback_log = models.TextField(verbose_name='日志')
 
 class Script(models.Model):
     """
@@ -98,7 +117,8 @@ class Script(models.Model):
         ('sh', 'bash')
     }
     interpreter = models.CharField(verbose_name='解释器', choices=interpreter_choices, default='py', max_length=16)
-    code = models.TextField(verbose_name='代码')
+    code = models.TextField(verbose_name='上传脚本')
+    rollback_code = models.TextField(verbose_name='回滚脚本',null=True)
 
     def __str__(self):
         return self.title

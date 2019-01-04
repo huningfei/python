@@ -1,11 +1,268 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/web/templates/deploy_list.html" line="68" />
-    <bookmark url="file://$PROJECT_DIR$/web/templates/deploy_push.html" line="40" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="89a6e895-2712-44f5-9cf9-7b161822ad2a" name="Default" comment="" />
+    <list default="true" id="89a6e895-2712-44f5-9cf9-7b161822ad2a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../auto_client/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_client/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_client - 7 - 资产信息入库/config/cert" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/.idea/dataSources/88f7766c-d196-4dce-b3c1-2092dd743139/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/.idea/dataSources/cd37a401-cbe0-4efe-afc3-d27527348e07.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/.idea/dataSources/cd37a401-cbe0-4efe-afc3-d27527348e07/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/api/stark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/forms/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/forms/widgets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/service/stark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/css/commons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/css/nav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/imgs/bk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/imgs/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/imgs/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/imgs/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/imgs/logo_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/imgs/luffy-study-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/imgs/luffy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/js/date_picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/js/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/bootstrap/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/datetimepicker/bootstrap-datetimepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/datetimepicker/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/datetimepicker/bootstrap-datetimepicker.zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/datetimepicker/less/datetimepicker.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/CHANGES.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/README.ru.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/highlight.pack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/agate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/androidstudio.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/arduino-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/arta.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/ascetic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-cave-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-cave-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-dune-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-dune-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-estuary-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-estuary-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-forest-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-forest-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-heath-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-heath-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-lakeside-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-lakeside-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-plateau-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-plateau-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-savanna-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-savanna-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-seaside-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-seaside-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-sulphurpool-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atelier-sulphurpool-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atom-one-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/atom-one-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/brown-paper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/brown-papersq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/codepen-embed.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/color-brewer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/darcula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/darkula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/docco.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/dracula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/far.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/github-gist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/github.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/googlecode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/grayscale.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/gruvbox-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/gruvbox-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/hopscotch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/hybrid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/idea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/ir-black.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/kimbie.dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/kimbie.light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/magula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/mono-blue.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/monokai-sublime.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/monokai.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/obsidian.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/ocean.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/paraiso-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/paraiso-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/pojoaque.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/pojoaque.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/purebasic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/qtcreator_dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/qtcreator_light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/railscasts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/rainbow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/routeros.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/school-book.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/school-book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/solarized-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/solarized-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/sunburst.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/tomorrow-night-blue.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/tomorrow-night-bright.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/tomorrow-night-eighties.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/tomorrow-night.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/tomorrow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/vs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/vs2015.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/xcode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/xt256.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/static/stark/plugins/highlight/styles/zenburn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/templates/layout_no_left.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/templates/stark/change.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/templates/stark/changelist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/templates/stark/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/templates/stark/form/date_picker_input.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/templates/stark/table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/templatetags/stark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/utils/convert.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/utils/pagination.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/stark/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day17/s21/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day17/s21/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day18/s21/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day18/s21/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day19/homework/s21/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day19/homework/s21/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day20/CMS/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day21/CMS/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/rollback_script.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/deploy_lisBAKt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/deploy_pushbak.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/.idea/auto_client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/.idea/auto_client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/src/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/plugins/memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/src/plugins/memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/plugins/nic.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/src/plugins/nic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmdb/auto_client - 7 - 资产信息入库/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cmdb/auto_client - 7 - 资产信息入库/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmdb/auto_client - 7 - 资产信息入库/src/engine/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cmdb/auto_client - 7 - 资产信息入库/src/engine/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/.idea/dataSources/d90b8553-6d02-4784-918f-84143f333909.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/auto_server/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/auto_server/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/auto_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/auto_server/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../cmdb/auto_server - 7 - 资产信息入库/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day17/s21/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day17/s21/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day17/s21/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day17/s21/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day17/s21/.idea/s21.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../day17/s21/.idea/s21.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day17/s21/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../day17/s21/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day17/s21/templates/host/add_host.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day17/s21/templates/host/add_host.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day18/s21/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day18/s21/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day18/s21/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day18/s21/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day18/s21/.idea/s21.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../day18/s21/.idea/s21.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day18/s21/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../day18/s21/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day19/homework/s21/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day19/homework/s21/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day20/CMS/.idea/CMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../day20/CMS/.idea/CMS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day20/CMS/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day20/CMS/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day20/CMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day20/CMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day21/CMS/.idea/CMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../day21/CMS/.idea/CMS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day21/CMS/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day21/CMS/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day21/CMS/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day21/CMS/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day21/CMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day21/CMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day21/CMS/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../day21/CMS/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/46122c46-fe67-4409-b87a-064c0a50a627.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codes/XbLib/v5.0/XbLib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codes/XbLib/v5.0/XbLib20181229161814.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codes/dbhot/v3.0/dbhot20181229164007.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/script/put_script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0002_auto_20181201_1733.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0003_auto_20181201_1748.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0004_auto_20181216_1830.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0005_auto_20181222_2338.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0006_auto_20181223_1738.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0007_auto_20181228_1754.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0008_remove_host_deploy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0009_deployrecord_host_version.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/deploy_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/deploy_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/deploy_push.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/deploy_push.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/deploy_rollback_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/deploy_rollback_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templatetags/web.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/templatetags/web.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/deploy.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/deploy.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,77 +316,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deploy/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="65" column="111" selection-start-line="65" selection-start-column="111" selection-end-line="65" selection-end-column="111" />
-              <folding>
-                <element signature="e#640#672#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/views/deploy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="252" column="84" selection-start-line="252" selection-start-column="84" selection-end-line="252" selection-end-column="84" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#2262#2579#0" />
-                <element signature="e#2636#5030#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/templates/deploy_rollback_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="66" column="78" selection-start-line="66" selection-start-column="78" selection-end-line="66" selection-end-column="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/templatetags/web.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="95" column="9" selection-end-line="95" selection-end-column="9" />
+            <state relative-caret-position="284">
+              <caret line="46" column="77" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
               <folding>
-                <element signature="e#84#93#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/templates/deploy_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-957">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/templates/deploy_push.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-              <folding>
-                <element signature="e#472#508#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,8 +330,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="83" column="18" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
+            <state relative-caret-position="445">
+              <caret line="109" column="27" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templates/deploy_push.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templates/deploy_pushbak.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" column="28" selection-end-line="84" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templatetags/web.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -149,51 +380,43 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>print</find>
+      <find>depart_queryset</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/codes/XbLib/v5.0/XbLib" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/x2/f1.py" />
-        <option value="$PROJECT_DIR$/web/tests.py" />
-        <option value="$PROJECT_DIR$/web/utils/check_code.py" />
-        <option value="$PROJECT_DIR$/web/templates/login.html" />
-        <option value="$PROJECT_DIR$/web/forms/host.py" />
         <option value="$PROJECT_DIR$/web/views/host.py" />
         <option value="$PROJECT_DIR$/web/templates/host_list.html" />
         <option value="$PROJECT_DIR$/web/templates/depart_list.html" />
         <option value="$PROJECT_DIR$/web/forms/user.py" />
-        <option value="$PROJECT_DIR$/web/templates/user_list.html" />
         <option value="$PROJECT_DIR$/web/templates/project_list.html" />
         <option value="$PROJECT_DIR$/web/utils/urls.py" />
         <option value="$PROJECT_DIR$/web/forms/depart.py" />
         <option value="$PROJECT_DIR$/web/views/depart.py" />
         <option value="$PROJECT_DIR$/middlewares/rbac.py" />
         <option value="$PROJECT_DIR$/web/views/account.py" />
-        <option value="$PROJECT_DIR$/deploy/settings.py" />
         <option value="$PROJECT_DIR$/rbac/middlewares/rbac.py" />
         <option value="$PROJECT_DIR$/web/forms/project.py" />
         <option value="$PROJECT_DIR$/a.sh.py" />
         <option value="$PROJECT_DIR$/web/views/project.py" />
         <option value="$PROJECT_DIR$/codes/x1.py" />
-        <option value="$PROJECT_DIR$/web/templates/deploy_push.html" />
         <option value="$PROJECT_DIR$/web/views/user.py" />
         <option value="$PROJECT_DIR$/web/views/scripts.py" />
         <option value="$PROJECT_DIR$/web/forms/script.py" />
         <option value="$PROJECT_DIR$/web/forms/deploy.py" />
         <option value="$PROJECT_DIR$/web/views/script.py" />
-        <option value="$PROJECT_DIR$/web/templates/script_list.html" />
         <option value="$PROJECT_DIR$/web/templates/layout.html" />
         <option value="$PROJECT_DIR$/脚本/5.paramiko.py" />
         <option value="$PROJECT_DIR$/脚本/用户名密码.py" />
@@ -209,13 +432,22 @@
         <option value="$PROJECT_DIR$/script/压缩j解压缩.py" />
         <option value="$PROJECT_DIR$/script.py" />
         <option value="$PROJECT_DIR$/web/templates/deploy_rollback.html" />
+        <option value="$PROJECT_DIR$/script/rollback_script.py" />
         <option value="$PROJECT_DIR$/deploy/urls.py" />
+        <option value="$PROJECT_DIR$/web/templates/user_list.html" />
+        <option value="$PROJECT_DIR$/web/templates/script_list.html" />
         <option value="$PROJECT_DIR$/web/models.py" />
+        <option value="$PROJECT_DIR$/deploy/settings.py" />
+        <option value="$PROJECT_DIR$/web/templates/deploy_lisBAKt.html" />
         <option value="$PROJECT_DIR$/web/templates/deploy_list.html" />
+        <option value="$PROJECT_DIR$/test.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/web/templatetags/web.py" />
         <option value="$PROJECT_DIR$/web/templates/deploy_rollback_list.html" />
+        <option value="$PROJECT_DIR$/web/templatetags/web.py" />
         <option value="$PROJECT_DIR$/web/views/deploy.py" />
+        <option value="$PROJECT_DIR$/进度条.html" />
+        <option value="$PROJECT_DIR$/web/templates/deploy_push.html" />
+        <option value="$PROJECT_DIR$/readme" />
       </list>
     </option>
   </component>
@@ -231,6 +463,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,31 +474,26 @@
             <path>
               <item name="deploy" type="b2602c69:ProjectViewProjectNode" />
               <item name="deploy" type="462c0819:PsiDirectoryNode" />
-              <item name="codes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deploy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="deploy" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="deploy" type="b2602c69:ProjectViewProjectNode" />
               <item name="deploy" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite&#10;f87ef1f0-83a1-45e1-9540-9e240dabcc33" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -275,11 +503,11 @@
       <recent name="D:\BaiduNetdiskDownload\L025-老男孩教育-Python22期VIP视频\L025-老男孩教育-Python22期VIP视频\L025-老男孩教育-Python22期VIP视频\day25课上所有\deploy - 4 - 基本发布任务操作\rbac" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\PycharmProjects\python\deploy\web\templates" />
+      <recent name="C:\Users\Administrator\PycharmProjects\python\deploy\script" />
       <recent name="C:\Users\Administrator\Desktop\deploy\web\templates" />
       <recent name="C:\Users\Administrator\Desktop\deploy\script" />
       <recent name="C:\Users\Administrator\Desktop\deploy" />
-      <recent name="C:\Users\Administrator\Desktop\deploy\脚本" />
-      <recent name="D:\python21\python\deploy\web\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -459,28 +687,33 @@
       <updated>1543645724758</updated>
       <workItem from="1545897437596" duration="12422000" />
       <workItem from="1545963203924" duration="46450000" />
+      <workItem from="1546076918696" duration="3001000" />
+      <workItem from="1546394715687" duration="38403000" />
+      <workItem from="1546496582344" duration="15079000" />
+      <workItem from="1546513838924" duration="6709000" />
+      <workItem from="1546571258850" duration="16968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58872000" />
+    <option name="totallyTimeSpent" value="139032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
-      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="0" sideWeight="0.19784656" side_tool="true" weight="0.16645244" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.1966581" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.8021534" visible="true" weight="0.15809768" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32839838" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.44683716" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22880216" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4995958" weight="0.5881561" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4995958" weight="0.44414535" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004042" side_tool="true" weight="0.78504676" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.5813084" />
@@ -489,333 +722,212 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.08033419" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.048843186" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/templates/form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="das://9a94a79d-d1f7-4bb0-ba8d-83d9c2d765e2/schema/main/table/web_host" />
+    <entry file="das://6efd3ac0-8c60-46ff-8821-ff022d61b0f1/schema/main/table/web_userinfo" />
+    <entry file="das://c5acfc58-ff05-4668-90a4-8adee2fb0aa9/schema/main/table/django_migrations" />
+    <entry file="das://c5acfc58-ff05-4668-90a4-8adee2fb0aa9/schema/main/table/web_deployrecord" />
+    <entry file="das://1a28a169-d582-483d-a11d-c96ac57761c9/schema/main/table/django_migrations" />
+    <entry file="das://1a28a169-d582-483d-a11d-c96ac57761c9/schema/main/table/django_content_type" />
+    <entry file="das://15423eab-5c94-4a19-a7da-7b86a4045230/schema/main/table/web_department" />
+    <entry file="das://15423eab-5c94-4a19-a7da-7b86a4045230/schema/main/table/web_deploy" />
+    <entry file="das://a4e88e76-f4ea-45a0-844c-769150b9f41f/schema/main/table/web_userinfo" />
+    <entry file="das://a4e88e76-f4ea-45a0-844c-769150b9f41f/schema/main/table/web_deployrecord" />
+    <entry file="das://a4e88e76-f4ea-45a0-844c-769150b9f41f/schema/main/table/web_deploy" />
+    <entry file="das://a4e88e76-f4ea-45a0-844c-769150b9f41f/schema/main/table/web_department" />
+    <entry file="das://a4e88e76-f4ea-45a0-844c-769150b9f41f/schema/main/table/web_rollbackrecord" />
+    <entry file="file://$PROJECT_DIR$/web/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://65e0350f-b37f-46a7-9364-ccb9acb2a86d/schema/main/table/auth_user" />
-    <entry file="file://$PROJECT_DIR$/deploy/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbac/middlewares/rbac.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/account.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/forms/depart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a.sh.py" />
-    <entry file="file://$PROJECT_DIR$/web/views/depart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/forms/project.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://37652f38-228a-4785-a30f-80561f56c0ad/schema/main/table/web_project" />
-    <entry file="das://37652f38-228a-4785-a30f-80561f56c0ad/schema/main/table/web_deploy" />
-    <entry file="das://37652f38-228a-4785-a30f-80561f56c0ad/schema/main/table/auth_user" />
+    <entry file="das://cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0/schema/main/table/django_content_type" />
+    <entry file="das://cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0/schema/main/table/web_script" />
     <entry file="file://$PROJECT_DIR$/web/templates/user_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="62" column="7" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://37652f38-228a-4785-a30f-80561f56c0ad/schema/main/table/web_userinfo" />
-    <entry file="file://C:/python3.6/Lib/site-packages/paramiko/sftp_client.py" />
-    <entry file="file://$PROJECT_DIR$/web/forms/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/forms/script.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/forms/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/host.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/project.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/forms/deploy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/script.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://74e6ea43-676f-46d5-93b0-6bb645c6dfa4/schema/main/table/web_userinfo" />
-    <entry file="file://$PROJECT_DIR$/web/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="97" column="21" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://46122c46-fe67-4409-b87a-064c0a50a627/schema/main/table/web_userinfo">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/4.上传文件.py" />
-    <entry file="file://$PROJECT_DIR$/script/id_rsa">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="25" column="56" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/私钥连接.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/用户名密码.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/paramiko/pkey.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="403" column="16" selection-start-line="403" selection-start-column="16" selection-end-line="403" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/ssh.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="64" lean-forward="true" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/5.paramiko.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-61">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="239">
+          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/script_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state relative-caret-position="324">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/link.py">
+    <entry file="das://1f870bee-3a15-48fd-b47d-2322ac72c0be/schema/main/table/web_script" />
+    <entry file="das://1f870bee-3a15-48fd-b47d-2322ac72c0be/schema/main/table/web_userinfo" />
+    <entry file="das://1f870bee-3a15-48fd-b47d-2322ac72c0be/schema/main/table/web_deploy" />
+    <entry file="das://1f870bee-3a15-48fd-b47d-2322ac72c0be/schema/main/table/web_project" />
+    <entry file="das://1f870bee-3a15-48fd-b47d-2322ac72c0be/schema/main/table/web_deployrecord" />
+    <entry file="das://cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0/schema/main/table/web_project" />
+    <entry file="das://cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0/schema/main/table/web_project_hosts" />
+    <entry file="das://cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0/schema/main/table/web_userinfo" />
+    <entry file="file://$PROJECT_DIR$/web/views/account.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="494">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/压缩j解压缩.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://46122c46-fe67-4409-b87a-064c0a50a627/schema/main/table/auth_user">
+    <entry file="das://cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0/schema/main/table/web_department" />
+    <entry file="das://cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0/schema/main/table/web_host" />
+    <entry file="das://cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0/schema/main/table/web_rollbackrecord" />
+    <entry file="das://cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0/schema/main/table/web_deployrecord" />
+    <entry file="das://cf3d80c8-bb05-446a-bf7d-0e30c5e5a9e0/schema/main/table/web_deploy" />
+    <entry file="das://e211444e-b506-4257-b8c2-0017558a032d/schema/main/table/web_deploy">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="das://46122c46-fe67-4409-b87a-064c0a50a627/schema/main/table/web_host">
+    <entry file="das://e211444e-b506-4257-b8c2-0017558a032d/schema/main/table/auth_user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="das://46122c46-fe67-4409-b87a-064c0a50a627/schema/main/table/web_deploy">
+    <entry file="file://$PROJECT_DIR$/script/rollback_script.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/put_script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100" />
+      </provider>
+    </entry>
+    <entry file="das://e211444e-b506-4257-b8c2-0017558a032d/schema/main/table/web_userinfo">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/depart_list.html">
+    <entry file="file://$PROJECT_DIR$/web/templates/deploy_lisBAKt.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="95" column="9" selection-end-line="95" selection-end-column="9" />
+          <caret line="42" column="123" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="123" />
           <folding>
-            <element signature="e#84#93#0" expanded="true" />
+            <element signature="e#1112#1142#0#HTML" expanded="true" />
+            <element signature="e#1190#1210#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://46122c46-fe67-4409-b87a-064c0a50a627/schema/main/table/web_deployrecord">
+    <entry file="file://$PROJECT_DIR$/deploy/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e211444e-b506-4257-b8c2-0017558a032d/schema/main/table/web_deployrecord">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/deploy_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-957">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="65" column="111" selection-start-line="65" selection-start-column="111" selection-end-line="65" selection-end-column="111" />
-          <folding>
-            <element signature="e#640#672#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/deploy_push.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-          <folding>
-            <element signature="e#472#508#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templatetags/web.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/deploy_rollback_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="66" column="78" selection-start-line="66" selection-start-column="78" selection-end-line="66" selection-end-column="78" />
+    <entry file="das://e211444e-b506-4257-b8c2-0017558a032d/schema/main/table/web_rollbackrecord">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="83" column="18" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
+        <state relative-caret-position="445">
+          <caret line="109" column="27" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templatetags/web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/弹框.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="107" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/进度条.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="6" column="104" selection-start-line="6" selection-start-column="104" selection-end-line="6" selection-end-column="104" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/views/deploy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="252" column="84" selection-start-line="252" selection-start-column="84" selection-end-line="252" selection-end-column="84" />
+        <state relative-caret-position="220">
+          <caret line="174" column="19" lean-forward="true" selection-start-line="174" selection-start-column="19" selection-end-line="174" selection-end-column="19" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#2262#2579#0" />
-            <element signature="e#2636#5030#0" />
+            <element signature="e#2640#5056#0" />
+            <element signature="e#12075#18141#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/deploy_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <element signature="e#981#1011#0#HTML" expanded="true" />
+            <element signature="e#1059#1080#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/deploy_rollback_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="46" column="77" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/deploy_pushbak.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="28" selection-end-line="84" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/deploy_push.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>

@@ -1,12 +1,32 @@
 {% extends 'layout.html' %}
 {% load web %}
 
+
+<script src="../static/js/jquery-3.3.1.min.js"></script>
+<script src="../static/plugins/bootstrap/css/bootstrap.min.css"></script>
+<script src="../static/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    function f() {
+        var options = $("#version option:selected");
+        console.log(options.text());
+        alert(options.text())
+
+    }
+
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
+
+
+
 {% block content %}
     <div class="luffy-container">
-        <form method="post" class="form-horizontal" novalidate>
+        <form action="" method="post" class="form-horizontal" novalidate>
             {% csrf_token %}
             <div class="panel panel-default">
                 <!-- Default panel contents -->
+
                 <div class="panel-heading">
                     <i class="fa fa-book" aria-hidden="true"></i>回滚信息
                     <button href="" class="right btn btn-primary btn-xs" style="padding: 2px 8px;margin:-3px">
@@ -23,14 +43,21 @@
                     <h3>
                         <for
                         ="exampleInputPassword1">选择要回滚的版本:
-                    </
-                    ></h3>
-                    <select name="deploy" id="">
-                        {% for deploy in deploy_object_all %}
-                            <option value="">{{ deploy.version }}</option>
+                    </h3>
+                    <select name="version" id="version" style="width: 100px">
+                        {% for deploy in all_project_version %}
+                            <option value="{{ deploy.version }}" selected="selected">{{ deploy.version }} </option>
 
                         {% endfor %}
                     </select>
+                    {#                    {% for deploy in all_project_version %}#}
+                    {#                        <td>#}
+                    {#                            <input value="{{ deploy.version }}" type="radio" name="version">#}
+                    {#                        </td>#}
+                    {#                        <td>#}
+                    {#                            {{ deploy.version }}#}
+                    {#                        </td>#}
+                    {#                    {% endfor %}#}
 
                 </div>
 
@@ -41,8 +68,8 @@
                         <th>选择</th>
                         <th>主机</th>
 
-                        <th>日志</th>
                         <th>当前版本</th>
+                        <th>回滚时间</th>
 
 
                     </tr>
@@ -52,19 +79,19 @@
                         <tr>
 
                             <td>
-                             <input value="{{ host.id }}" type="checkbox" name="hosts">
-
-
+                                <input value="{{ host.id }}" type="checkbox" name="hosts">
 
                             </td>
                             <td>{{ host.hostname }}</td>
 
+
                             <td>
-                                <button class="btn btn-info">查看日志</button>
+                                {#   这个地方默认是不能这些写的，需要自己先定义一个simple函数#}
+                                {% host_version host.id deployed_host_dict %}
+
                             </td>
                             <td>
-{#                                这个地方默认是不能这些写的，需要自己先定义一个simple函数#}
-                                 {% host_version host.id deployed_host_dict %}
+                                {% host_datetime host.id deployed_host_dict %}
 
                             </td>
 
